@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
     LICENSE.txt
     README.txt
     lib/zen-grids.rb
+    templates/project/manifest.rb
     zen-grids.gemspec
   ]
 end
