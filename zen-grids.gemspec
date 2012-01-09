@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.files       = %w[
     LICENSE.txt
     README.txt
+    lib/zen-grids.rb
     zen-grids.gemspec
   ]
 end
