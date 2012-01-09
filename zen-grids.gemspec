@@ -21,6 +21,8 @@ Gem::Specification.new do |s|
     LICENSE.txt
     README.txt
     lib/zen-grids.rb
+    stylesheets/_zen.scss
+    stylesheets/zen/_grids.scss
     templates/project/manifest.rb
     zen-grids.gemspec
   ]
