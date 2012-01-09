@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
 
   s.files       = %w[
     LICENSE.txt
+    README.txt
     zen-grids.gemspec
   ]
 end
