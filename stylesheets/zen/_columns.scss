@@ -2,6 +2,7 @@
 // Mixins for Zen Columns layout method.
 //
 
+$zen-columns-box-sizing: content-box !default;
 $legacy-support-for-ie6: true !default;
 
 
@@ -54,7 +55,7 @@ $legacy-support-for-ie6: true !default;
 //
 @mixin zen-columns (
   // Information about the columns.
-  $box-sizing: content-box,
+  $box-sizing: $zen-columns-box-sizing,
   $selectors: ('.sidebar1', '.content', '.sidebar2'),
   $widths: (),
   $leading-direction: (),
