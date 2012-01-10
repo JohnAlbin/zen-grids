@@ -51,6 +51,48 @@ $zen-auto-include-unit-base: true !default;
 }
 
 //
+// Apply this to each content box. Set the $column-position to the column number
+// the content box starts on. And set the $column-span to the number of columns
+// that the content box spans.
+//
+@mixin zen-grid (
+  $column-position,
+  $column-span,
+  $float-direction: $zen-float-direction,
+  $column-count: $zen-column-count,
+  $gutter-width: $zen-gutter-width,
+  $grid-width: $zen-grid-width,
+  $box-sizing: $zen-box-sizing
+) {
+
+  // Calculate the unit width.
+  $unit-width: $grid-width / $column-count;
+
+  // Determine the float direction and its reverse.
+  $dir: $float-direction;
+  @if $zen-reverse-all-floats {
+    $dir: zen-direction-flip($dir);
+  }
+  $rev: zen-direction-flip($dir);
+
+  // Auto-apply the unit base mixin.
+  @if $zen-auto-include-unit-base {
+    @include zen-grid-unit-base($box-sizing);
+  }
+
+  float: $dir;
+  width: $column-span * $unit-width;
+  margin: {
+    #{$dir}: ($column-position - 1) * $unit-width;
+    #{$rev}: (1 - $column-position - $column-span) * $unit-width;
+  }
+  padding: {
+    left: $gutter-width / 2;
+    right: $gutter-width / 2;
+  }
+}
+
+//
 // Apply this mixin to each content box in the layout to prevent overflowing
 // content from breaking the layout.
 //
