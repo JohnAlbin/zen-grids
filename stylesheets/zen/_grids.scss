@@ -24,3 +24,44 @@ $zen-box-sizing: border-box !default;
 
 // This is a helper variable for RTL layouts.
 $zen-reverse-all-floats: false !default;
+
+
+
+
+//
+// This mixin should be applied to each content box in the layout to prevent
+// overflowing content from breaking the layout.
+//
+// The mixin has the following optional parameters:
+// - $box-sizing: The type of CSS3 box model each column should use. Can be set
+//   to content-box or border-box. Defaults to content-box, but border-box is
+//   way cooler. IE 6 and 7 don't support border-box.
+@mixin zen-grid-unit-base ($box-sizing: $zen-box-sizing) {
+  // Specify the border-box properties.
+  @if $box-sizing == border-box {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  // Prevent borders since they'll break the layout with content-box.
+  @if $box-sizing == content-box {
+    border: 0 !important;
+  }
+  // Prevent overflowing content from breaking the layout.
+  overflow: visible;
+  word-wrap: break-word; // A very nice CSS3 property.
+
+  @if $legacy-support-for-ie6 {
+    @if $box-sizing == content-box {
+      .ie6 & {
+        display: inline; // display inline or double your floated margin! [1]
+        overflow: hidden; // in IE6, overflow auto is broken [2] and so is overflow visible [3]
+        overflow-y: visible;
+      }
+    }
+    @else {
+      @warn "IE6 legacy support is on, but $box-sizing is set to #{$box-sizing}.";
+    }
+  }
+}
