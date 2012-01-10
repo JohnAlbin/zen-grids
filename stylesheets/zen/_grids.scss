@@ -30,6 +30,25 @@ $zen-reverse-all-floats: false !default;
 $zen-auto-include-unit-base: true !default;
 
 
+//
+// Apply this to the container element.
+//
+@mixin zen-grid-container () {
+  position: relative;
+  @include clearfix;
+}
+
+//
+// Apply this to any content box that is also a container element for a nested
+// grid.
+//
+@mixin zen-nested-container () {
+  @include zen-grid-container();
+  padding: {
+    left: 0;
+    right: 0;
+  }
+}
 
 //
 // Apply this mixin to each content box in the layout to prevent overflowing
