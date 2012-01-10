@@ -65,3 +65,16 @@ $zen-reverse-all-floats: false !default;
     }
   }
 }
+
+
+//
+// Helper functions for the Zen mixins.
+//
+
+// Returns the opposite direction, given "left" or "right".
+@function zen-direction-flip($dir) {
+  @if $dir == left {
+    @return right;
+  }
+  @return left;
+}
