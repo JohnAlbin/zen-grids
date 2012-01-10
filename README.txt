@@ -12,6 +12,8 @@ USAGE
 A simple example: a content column with a sidebar on each side, aligned to a 12
 column grid.
 
+  @import "zen";
+
   $zen-column-count: 12;    // Set the total number of columns in the grid.
   $zen-gutter-width: 30px;  // Set the gutter size. A half-gutter is used on each side of each column.
 
