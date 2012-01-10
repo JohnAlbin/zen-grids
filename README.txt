@@ -1,5 +1,5 @@
-ABOUT compass-zen-plugin
-------------------------
+ABOUT zen-grids
+---------------
 
 The Zen Grids system is a fluid responsive grid system that is immune to
 rounding errors and overflowing content. With an easy-to-use Sass mixin set, the
