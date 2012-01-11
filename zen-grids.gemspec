@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.rubyforge_project =
 
   s.version     = '1.0.alpha.1'
-  s.date        = '2012-01-10'
+  s.date        = '2012-01-11'
 
   s.authors     = ['John Albin Wilkins']
   s.email       = 'virtually.johnalbin@gmail.com'
