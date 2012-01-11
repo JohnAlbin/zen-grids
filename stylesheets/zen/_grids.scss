@@ -36,6 +36,12 @@ $legacy-support-for-ie6: false !default;
 
 
 //
+// Zen Grids requires the clearfix mixin.
+//
+@import "compass/utilities/general/clearfix";
+
+
+//
 // Apply this to the container element.
 //
 @mixin zen-grid-container () {
