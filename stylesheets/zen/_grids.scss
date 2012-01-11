@@ -19,7 +19,8 @@ $zen-float-direction: left !default;
 
 // Specify the CSS3 box-sizing method. The default, "border-box", is compatible
 // with all modern browsers, including IE 8 and later. Use "content-box" for
-// wider compatibility.
+// wider compatibility (Note: you'll also need to set $legacy-support-for-ie7
+// and $legacy-support-for-ie6 to true.)
 $zen-box-sizing: border-box !default;
 
 // This is a helper variable for RTL layouts.
@@ -28,6 +29,10 @@ $zen-reverse-all-floats: false !default;
 // You can generate more efficient CSS if you manually apply the unit base to
 // all grid elements in a single ruleset.
 $zen-auto-include-unit-base: true !default;
+
+// Turn off IE6/7 support since we're defaulting to box-sizing: border-box.
+$legacy-support-for-ie7: false !default;
+$legacy-support-for-ie6: false !default;
 
 
 //
