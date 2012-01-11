@@ -1,0 +1,86 @@
+// Ideally, variables should be initialized in a partial. We're setting
+// variables here to make the mixin usage more transparent.
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false;
+
+// Import Zen Grids.
+@import "zen";
+
+$zen-column-count: 12;
+$zen-gutter-width: 20px;
+
+$navbar-height: 4em;
+
+//
+// Skip link styling
+//
+@media all and (min-width: 480px) {
+  #skip-link a {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+      clip: rect(1px 1px 1px 1px); // IE6 and IE7 use the wrong syntax.
+    }
+    clip: rect(1px, 1px, 1px, 1px);
+
+    &:active,
+    &:focus {
+      position: static !important;
+      clip: auto;
+      height: auto;
+      width: auto;
+      overflow: auto;
+    }
+  }
+}
+
+#main {
+  @include zen-grid-container();
+}
+
+@media all and (min-width: 480px) and (max-width: 639px) {
+  $zen-column-count: 3;
+
+  #main {
+    padding-top: $navbar-height;
+  }
+  #main-menu {
+    @include zen-grid(1, 3);
+    margin-top: -$navbar-height;
+    height: $navbar-height;
+  }
+  #content {
+    @include zen-grid(1, 2);
+  }
+  #aside1 {
+    @include zen-grid(1, 1, right);
+  }
+  #aside2 {
+    clear: right;
+    @include zen-grid(1, 1, right);
+  }
+}
+
+@media all and (min-width: 640px) {
+  $zen-column-count: 5;
+
+  #main {
+    padding-top: $navbar-height;
+  }
+  #main-menu {
+    @include zen-grid(1, 5);
+    margin-top: -$navbar-height;
+    height: $navbar-height;
+  }
+  #content {
+    @include zen-grid(2, 3);
+  }
+  #aside1 {
+    @include zen-grid(1, 1);
+  }
+  #aside2 {
+    @include zen-grid(5, 1);
+  }
+}

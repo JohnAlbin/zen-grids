@@ -1,5 +1,11 @@
 description "The Zen Grids system."
 
+stylesheet 'common.scss', :media => 'all'
+stylesheet 'layout.scss', :media => 'all'
+stylesheet 'styles.scss', :media => 'all'
+
+html 'example.html'
+
 help %Q{
 The Zen Grids system is an easy-to-use responsive grid system. It's immune to
 browser rounding errors and its source order is mostly independent from display

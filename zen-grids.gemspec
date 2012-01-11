@@ -24,7 +24,11 @@ Gem::Specification.new do |s|
     stylesheets/_zen.scss
     stylesheets/zen/_columns.scss
     stylesheets/zen/_grids.scss
+    templates/project/example.html
     templates/project/manifest.rb
+    templates/project/common.scss
+    templates/project/layout.scss
+    templates/project/styles.scss
     zen-grids.gemspec
   ]
 end
