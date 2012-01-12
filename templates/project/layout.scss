@@ -72,8 +72,8 @@ $zen-gutter-width: 20px;
     @include zen-grid(1, 2);
   }
   #aside1 {
-    @include zen-grid(1, 1);
     @include zen-clear(); // Clear left-floated elements (#content)
+    @include zen-grid(1, 1);
   }
   #aside2 {
     @include zen-grid(2, 1);
@@ -87,10 +87,10 @@ $zen-gutter-width: 20px;
     @include zen-grid(1, 2);
   }
   #aside1 {
-    @include zen-grid(1, 1, right);
+    @include zen-grid(1, 1, right); // Position from the right
   }
   #aside2 {
-    @include zen-clear(left); // Clear right-floated elements (#content)
+    @include zen-clear(); // Clear left-floated elements (#content)
     @include zen-grid(1, 2);
   }
 }
@@ -102,7 +102,7 @@ $zen-gutter-width: 20px;
     @include zen-grid(1, 2);
   }
   #aside1 {
-    @include zen-grid(1, 1, right);
+    @include zen-grid(1, 1, right); // Position from the right
   }
   #aside2 {
     @include zen-clear(right); // Clear right-floated elements (#aside1)
