@@ -141,6 +141,20 @@ $legacy-support-for-ie6: false !default;
   }
 }
 
+//
+// Apply this to content boxes that need to be cleared below other content boxes.
+//
+@mixin zen-clear (
+  $float-direction: $zen-float-direction
+) {
+  // Determine the float direction.
+  $dir: $float-direction;
+  @if $zen-reverse-all-floats {
+    $dir: zen-direction-flip($dir);
+  }
+  clear: $dir;
+}
+
 
 //
 // Helper functions for the Zen mixins.
