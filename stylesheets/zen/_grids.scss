@@ -66,6 +66,9 @@ $legacy-support-for-ie6: false !default;
 // the content box starts on. And set the $column-span to the number of columns
 // that the content box spans.
 //
+// For content boxes that are floated right, the $column-position is counted
+// from the right instead of from the left.
+//
 @mixin zen-grid (
   $column-position,
   $column-span,
