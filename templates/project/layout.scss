@@ -9,7 +9,6 @@ $legacy-support-for-ie7: false;
 $zen-column-count: 12;
 $zen-gutter-width: 20px;
 
-$navbar-height: 4em;
 
 //
 // Skip link styling
@@ -36,21 +35,54 @@ $navbar-height: 4em;
   }
 }
 
+#header,
+#main,
+#footer {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  max-width: 1100px;
+}
+
 #main {
   @include zen-grid-container();
 }
 
-@media all and (min-width: 480px) and (max-width: 639px) {
-  $zen-column-count: 3;
+//
+// Horizontal navigation bar
+@media all and (min-width: 480px) {
+  $zen-column-count: 1;
+  $navbar-height: 4em;
 
   #main {
     padding-top: $navbar-height;
   }
   #main-menu {
-    @include zen-grid(1, 3);
+    @include zen-grid(1, 1);
     margin-top: -$navbar-height;
     height: $navbar-height;
   }
+}
+
+@media all and (min-width: 480px) and (max-width: 639px) {
+  $zen-column-count: 2;
+
+  #content {
+    @include zen-grid(1, 2);
+  }
+  #aside1 {
+    @include zen-grid(1, 1);
+    @include zen-clear(); // Clear left-floated elements (#content)
+  }
+  #aside2 {
+    @include zen-grid(2, 1);
+  }
+}
+
+@media all and (min-width: 640px) and (max-width: 799px) {
+  $zen-column-count: 3;
+
   #content {
     @include zen-grid(1, 2);
   }
@@ -58,22 +90,29 @@ $navbar-height: 4em;
     @include zen-grid(1, 1, right);
   }
   #aside2 {
-    clear: right;
+    @include zen-clear(left); // Clear right-floated elements (#content)
+    @include zen-grid(1, 2);
+  }
+}
+
+@media all and (min-width: 800px) and (max-width: 959px) {
+  $zen-column-count: 3;
+
+  #content {
+    @include zen-grid(1, 2);
+  }
+  #aside1 {
+    @include zen-grid(1, 1, right);
+  }
+  #aside2 {
+    @include zen-clear(right); // Clear right-floated elements (#aside1)
     @include zen-grid(1, 1, right);
   }
 }
 
-@media all and (min-width: 640px) {
+@media all and (min-width: 960px) {
   $zen-column-count: 5;
 
-  #main {
-    padding-top: $navbar-height;
-  }
-  #main-menu {
-    @include zen-grid(1, 5);
-    margin-top: -$navbar-height;
-    height: $navbar-height;
-  }
   #content {
     @include zen-grid(2, 3);
   }
