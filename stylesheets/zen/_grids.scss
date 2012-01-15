@@ -89,16 +89,16 @@ $legacy-support-for-ie6: false !default;
   }
   $rev: zen-direction-flip($dir);
 
-  // Auto-apply the unit base mixin.
-  @if $zen-auto-include-unit-base {
-    @include zen-grid-unit-base($gutter-width, $box-sizing);
-  }
-
   float: $dir;
   width: $column-span * $unit-width;
   margin: {
     #{$dir}: ($column-position - 1) * $unit-width;
     #{$rev}: (1 - $column-position - $column-span) * $unit-width;
+  }
+
+  // Auto-apply the unit base mixin.
+  @if $zen-auto-include-unit-base {
+    @include zen-grid-unit-base($gutter-width, $box-sizing);
   }
 }
 
