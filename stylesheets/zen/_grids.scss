@@ -174,3 +174,8 @@ $legacy-support-for-ie6: false !default;
   }
   @return left;
 }
+
+// Returns a half gutter width.
+@function zen-half-gutter($gutter-width: $zen-gutter-width) {
+  @return $gutter-width / 2;
+}
