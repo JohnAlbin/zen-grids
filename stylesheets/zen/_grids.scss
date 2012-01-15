@@ -136,16 +136,14 @@ $legacy-support-for-ie6: false !default;
   overflow: visible;
   word-wrap: break-word; // A very nice CSS3 property.
 
-  @if $legacy-support-for-ie6 {
-    @if $box-sizing == content-box {
-      .ie6 & {
-        display: inline; // display inline or double your floated margin! [1]
-        overflow: hidden; // in IE6, overflow auto is broken [2] and so is overflow visible [3]
-        overflow-y: visible;
-      }
-    }
-    @else {
-      @warn "IE6 legacy support is on, but $box-sizing is set to #{$box-sizing}.";
+  @if ($legacy-support-for-ie6 or $legacy-support-for-ie7) and $box-sizing == border-box {
+    @warn "IE legacy support is on, but $box-sizing is set to #{$box-sizing}.";
+  }
+  @else if $legacy-support-for-ie6 and $box-sizing == content-box {
+    .ie6 & {
+      display: inline; // display inline or double your floated margin! [1]
+      overflow: hidden; // in IE6, overflow auto is broken [2] and so is overflow visible [3]
+      overflow-y: visible;
     }
   }
 }
