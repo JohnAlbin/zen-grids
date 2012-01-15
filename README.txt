@@ -19,7 +19,7 @@ column grid.
                             // each side of each column.
 
   .container {
-    @include zen-grid-container();
+    @include zen-grid-container;
   }
   .sidebar1 {
     @include zen-grid(1, 3);  // 3 col. wide sidebar starting in the 1st column
