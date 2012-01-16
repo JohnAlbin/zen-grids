@@ -1,0 +1,42 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jwilkins\/Sites\/zengrids\/www\/sass\/layout\.scss}line{font-family:\000034}}
+#page {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
+  position: relative;
+  overflow: hidden;
+  *zoom: 1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jwilkins\/Sites\/zengrids\/www\/sass\/layout\.scss}line{font-family:\0000315}}
+#header,
+#main-menu,
+#footer {
+  padding-left: 15px;
+  padding-right: 15px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: visible;
+  word-wrap: break-word;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jwilkins\/Sites\/zengrids\/www\/sass\/layout\.scss}line{font-family:\0000319}}
+#logo {
+  display: block;
+  max-width: 293px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jwilkins\/Sites\/zengrids\/www\/sass\/layout\.scss}line{font-family:\0000326}}
+#main-menu {
+  margin: 30px 0;
+  text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jwilkins\/Sites\/zengrids\/www\/sass\/layout\.scss}line{font-family:\0000331}}
+#footer {
+  text-align: center;
+}

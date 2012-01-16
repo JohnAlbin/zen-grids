@@ -1,0 +1,43 @@
+@import "base";
+
+
+// Skip link styling
+#skip-link {
+  margin: 0;
+
+  a,
+  a:visited {
+    display: block;
+    width: 100%;
+    padding: 2px 0 3px 0;
+    text-align: center;
+    background-color: #666;
+    color: #fff;
+  }
+}
+
+@media all and (min-width: 480px) {
+  #skip-link a {
+    @include element-focusable;
+  }
+}
+
+#header {
+  h1 {
+    @include element-invisible;
+  }
+  h2 {
+    font-weight: normal;
+    margin: $zen-gutter-width 0;
+    text-align: center;
+
+    em {
+      display: block;
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,34 @@
+@import "base";
+
+
+#page {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  max-width: 900px;
+  @include zen-grid-container;
+}
+
+#header,
+#main-menu,
+#footer {
+  @include zen-grid-unit-base;
+}
+
+#logo {
+  display: block;
+  max-width: 293px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#main-menu {
+  margin: $zen-gutter-width 0;
+  text-align: center;
+}
+
+#footer {
+  text-align: center;
+}
+
