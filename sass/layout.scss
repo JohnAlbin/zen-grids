@@ -11,6 +11,7 @@
 }
 
 #header,
+#content,
 #main-menu,
 #footer {
   @include zen-grid-unit-base;
@@ -23,6 +24,7 @@
   text-align: center;
 }
 
+#content,
 #main-menu {
   margin: $zen-gutter-width 0;
   text-align: center;

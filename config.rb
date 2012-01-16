@@ -1,7 +1,7 @@
 
 # Change this to :production when ready to deploy the CSS to the live server.
-environment = :development
-#environment = :production
+#environment = :development
+environment = :production
 
 
 # Location of the theme's resources.
