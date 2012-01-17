@@ -26,8 +26,8 @@ $zen-box-sizing: border-box !default;
 // This is a helper variable for RTL layouts.
 $zen-reverse-all-floats: false !default;
 
-// You can generate more efficient CSS if you manually apply the unit base to
-// all grid elements in a single ruleset.
+// You can generate more efficient CSS if you manually apply the
+// zen-grid-unit-base mixin to all grid elements from within a single ruleset.
 $zen-auto-include-unit-base: true !default;
 
 // Turn off IE6/7 support since we're defaulting to box-sizing: border-box.
