@@ -40,7 +40,7 @@ INSTALLATION
 
 Zen grids is distributed as a Ruby Gem. On your computer, simply run:
 
-  sudo gem install zen-grids
+  sudo gem install zen-grids --pre
 
 Then to add it to an existing project, edit the project's configuration file,
 config.rb, and add this line:
