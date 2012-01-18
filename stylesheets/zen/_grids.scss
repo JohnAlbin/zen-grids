@@ -27,7 +27,7 @@ $zen-box-sizing: border-box !default;
 $zen-reverse-all-floats: false !default;
 
 // You can generate more efficient CSS if you manually apply the
-// zen-grid-unit-base mixin to all grid elements from within a single ruleset.
+// zen-grid-unit-base mixin to all grid items from within a single ruleset.
 $zen-auto-include-unit-base: true !default;
 
 // Turn off IE6/7 support since we're defaulting to box-sizing: border-box.
@@ -42,7 +42,7 @@ $legacy-support-for-ie6: false !default;
 
 
 //
-// Apply this to the container element.
+// Apply this to the grid container element.
 //
 @mixin zen-grid-container () {
   position: relative;
@@ -50,8 +50,8 @@ $legacy-support-for-ie6: false !default;
 }
 
 //
-// Apply this to any content box that is also a container element for a nested
-// grid.
+// Apply this to any grid item that is also a grid container element for a
+// nested grid.
 //
 @mixin zen-nested-container () {
   @include zen-grid-container;
@@ -62,11 +62,11 @@ $legacy-support-for-ie6: false !default;
 }
 
 //
-// Apply this to each content box. Set the $column-position to the column number
-// the content box starts on. And set the $column-span to the number of columns
-// that the content box spans.
+// Apply this to each grid item. Set the $column-position to the column number
+// the grid item starts on. And set the $column-span to the number of columns
+// that the grid item spans.
 //
-// For content boxes that are floated right, the $column-position is counted
+// For grid items that are floated right, the $column-position is counted
 // from the right instead of from the left.
 //
 @mixin zen-grid (
@@ -111,7 +111,7 @@ $legacy-support-for-ie6: false !default;
 // The mixin has the following optional parameters, but its better to use the
 // $zen-gutter-width and $zen-box-sizing variables instead:
 // - $gutter-width: Half of this value is applied as padding to the left and
-//   right sides of the element.
+//   right sides of the item.
 // - $box-sizing: The type of CSS3 box model each box should use. Can be set to
 //   content-box or border-box. Defaults to content-box, but border-box is way
 //   cooler. IE 6 and 7 don't support border-box.

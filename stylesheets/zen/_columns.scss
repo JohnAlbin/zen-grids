@@ -7,8 +7,8 @@ $legacy-support-for-ie6: true !default;
 
 
 //
-// This mixin should be applied to a container so that the children elements
-// become columns arranged with the Zen Columns layout method.
+// This mixin should be applied to a container so that the children items become
+// columns arranged with the Zen Columns layout method.
 //
 // The mixin has the following required parameters:
 // - $selectors: A list of selectors for all the columns inside the container.
@@ -39,8 +39,8 @@ $legacy-support-for-ie6: true !default;
 // In addition to standard columns, the mixin supports one horizontal navbar
 // that will appear (with a fixed height) above all the other columns. The
 // parameters for this optional navbar are:
-// - $navbar-selector: The selector for the navbar. It should be a child element
-//   of the container just as a normal column is.
+// - $navbar-selector: The selector for the navbar. It should be a child item of
+//   the container just as a normal column is.
 // - $navbar-height: The fixed height of the navbar. Required if the
 //   $navbar-selector is used.
 // - $navbar-width: The width of the navbar. Defaults to 100% of the container
