@@ -54,7 +54,7 @@ $legacy-support-for-ie6: false !default;
 // grid.
 //
 @mixin zen-nested-container () {
-  @include zen-grid-container();
+  @include zen-grid-container;
   padding: {
     left: 0;
     right: 0;
