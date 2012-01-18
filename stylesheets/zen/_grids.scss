@@ -120,8 +120,8 @@ $legacy-support-for-ie6: false !default;
   $box-sizing: $zen-box-sizing
 ) {
   padding: {
-    left: $gutter-width / 2;
-    right: $gutter-width / 2;
+    left: zen-half-gutter($gutter-width);
+    right: zen-half-gutter($gutter-width);
   }
   // Specify the border-box properties.
   @if $box-sizing == border-box {
@@ -180,5 +180,6 @@ $legacy-support-for-ie6: false !default;
 
 // Returns a half gutter width.
 @function zen-half-gutter($gutter-width: $zen-gutter-width) {
+  // @todo Handle odd-pixel-sized gutters.
   @return $gutter-width / 2;
 }
