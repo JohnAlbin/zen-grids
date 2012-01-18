@@ -69,7 +69,7 @@ $legacy-support-for-ie6: false !default;
 // For grid items that are floated right, the $column-position is counted
 // from the right instead of from the left.
 //
-@mixin zen-grid (
+@mixin zen-grid-item (
   $column-position,
   $column-span,
   $float-direction: $zen-float-direction,
