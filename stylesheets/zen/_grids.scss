@@ -76,7 +76,8 @@ $legacy-support-for-ie6: false !default;
   $column-count: $zen-column-count,
   $gutter-width: $zen-gutter-width,
   $grid-width: $zen-grid-width,
-  $box-sizing: $zen-box-sizing
+  $box-sizing: $zen-box-sizing,
+  $reverse-all-floats: $zen-reverse-all-floats
 ) {
 
   // Calculate the unit width.
@@ -84,7 +85,7 @@ $legacy-support-for-ie6: false !default;
 
   // Determine the float direction and its reverse.
   $dir: $float-direction;
-  @if $zen-reverse-all-floats {
+  @if $reverse-all-floats {
     $dir: zen-direction-flip($dir);
   }
   $rev: zen-direction-flip($dir);
@@ -152,11 +153,12 @@ $legacy-support-for-ie6: false !default;
 // Apply this to content boxes that need to be cleared below other content boxes.
 //
 @mixin zen-clear (
-  $float-direction: $zen-float-direction
+  $float-direction: $zen-float-direction,
+  $reverse-all-floats: $zen-reverse-all-floats
 ) {
   // Determine the float direction.
   $dir: $float-direction;
-  @if $zen-reverse-all-floats {
+  @if $reverse-all-floats {
     $dir: zen-direction-flip($dir);
   }
   clear: $dir;
