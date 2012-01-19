@@ -27,8 +27,8 @@ $zen-box-sizing: border-box !default;
 $zen-reverse-all-floats: false !default;
 
 // You can generate more efficient CSS if you manually apply the
-// zen-grid-unit-base mixin to all grid items from within a single ruleset.
-$zen-auto-include-unit-base: true !default;
+// zen-grid-item-base mixin to all grid items from within a single ruleset.
+$zen-auto-include-item-base: true !default;
 
 // Turn off IE6/7 support since we're defaulting to box-sizing: border-box.
 $legacy-support-for-ie7: false !default;
@@ -78,7 +78,7 @@ $legacy-support-for-ie6: false !default;
   $grid-width: $zen-grid-width,
   $box-sizing: $zen-box-sizing,
   $reverse-all-floats: $zen-reverse-all-floats,
-  $auto-include-unit-base: $zen-auto-include-unit-base
+  $auto-include-item-base: $zen-auto-include-item-base
 ) {
 
   // Calculate the unit width.
@@ -99,8 +99,8 @@ $legacy-support-for-ie6: false !default;
   }
 
   // Auto-apply the unit base mixin.
-  @if $auto-include-unit-base {
-    @include zen-grid-unit-base($gutter-width, $box-sizing);
+  @if $auto-include-item-base {
+    @include zen-grid-item-base($gutter-width, $box-sizing);
   }
 }
 
@@ -115,7 +115,7 @@ $legacy-support-for-ie6: false !default;
 // - $box-sizing: The type of CSS3 box model each box should use. Can be set to
 //   content-box or border-box. Defaults to content-box, but border-box is way
 //   cooler. IE 6 and 7 don't support border-box.
-@mixin zen-grid-unit-base (
+@mixin zen-grid-item-base (
   $gutter-width: $zen-gutter-width,
   $box-sizing: $zen-box-sizing
 ) {
