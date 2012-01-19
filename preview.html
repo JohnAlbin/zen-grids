@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7" lang="en"><![endif]-->
+<!--[if lte IE 6]><html class="ie6 ie6-7 ie6-8" lang="en"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="ie7 ie6-7 ie6-8" lang="en"><![endif]-->
+<!--[if IE 8]><html class="ie8 ie6-8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Zen Grids: a responsive grid system built with Compass and Sass</title>
+
+  <link rel="stylesheet" href="/preview/styles.css" media="all">
+  <link rel="shortcut icon" href="/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon">
+
+  <meta name="viewport" content="width=device-width, target-densityDpi=160dpi, initial-scale=1">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="cleartype" content="on">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+</head>
+<body>
+
+<p id="skip-link">
+<a href="#main-menu">Jump to main menu</a>
+</p>
+
+<div id="page">
+
+  <header id="header" role="banner">
+    <a href="/" title="Home" rel="home" id="logo"><img src="/images/zen-grids-logo.png" alt="Zen Grids" width="293" height="234"></a>
+    <hgroup>
+      <h1>Zen Grids</h1>
+      <h2>A responsive grid system <em>built with the power of <a href="#aside2">Sass</a></em></h2>
+    </hgroup>
+  </header>
+
+  <article id="content" role="main">
+    <h2>Using Zen Grids is easy!</h2>
+    <p>Here’s a simple example, a content column with a sidebar on each side, aligned to a 8 column grid:</p>
+    <pre><code>@import "zen";
+
+
+
+$zen-column-count: <span class="tooltip-target">8; <span class="tooltip down"><span class="pointer">//</span> <span class="text">Set the total number of columns in the grid.</span></span></span>
+$zen-gutter-width: <span class="tooltip-target">40px; <span class="tooltip up"><span class="pointer">//</span> <span class="text">Set the gutter size. A half-gutter is used on each side of each column.</span></span></span>
+
+
+
+.container {
+  @include zen-grid-container;
+}
+.sidebar1 {
+  @include <span id="ex-apply" class="tooltip-target">zen-grid-item(1, 2); <span class="tooltip up"><span class="pointer">//</span> <span class="text">Apply this mixin for each grid item in the container.</span></span></span>
+}
+
+
+
+
+.content {
+  @include zen-grid-item(<span id="ex-grid-item" class="tooltip-target">3, 5); <span class="tooltip down"><span class="pointer">//</span> <span class="text">Position this grid item in the 3rd column.</span></span> <span class="tooltip up"><span class="pointer">//</span> <span class="text">Make this grid item span 5 columns.</span></span></span>
+}
+
+.sidebar2 {
+  @include zen-grid-item(8, 1);
+}</code></pre>
+
+    <p><strong><em>That’s it!</em></strong> 1 import statement, 2 variables, and 2 mixins. You’re done. And, here’s the results:</p>
+
+    <figure id="example">
+      <p id="example-grid">
+        <span class="col-1">1</span>
+        <span class="col-2">2</span>
+        <span class="col-3">3</span>
+        <span class="col-4">4</span>
+        <span class="col-5">5</span>
+        <span class="col-6">6</span>
+        <span class="col-7">7</span>
+        <span class="col-8">8</span>
+      </p>
+      <div class="container">
+        <p class="content">
+          .content — <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor…</em>
+        </p>
+        <p class="sidebar1">
+          .sidebar1
+        </p>
+        <p class="sidebar2">
+          .sidebar2
+        </p>
+      </div>
+    </figure>
+
+    <p>Plus, within the <code>.container</code> element, the <code>.sidebar1</code>, <code>.sidebar2</code> and <code>.content</code> items can be arranged in any HTML source order.</p>
+
+    <p>Install the pre-release version:<br>
+    <kbd>gem install zen-grids --pre</kbd></p>
+    <p>Contribute, fix and discuss:<br>
+    <a href="https://github.com/JohnAlbin/compass-zen-grids">github.com/JohnAlbin/compass-zen-grids</a></p>
+  </article>
+
+  <nav id="main-menu" role="navigation">
+    <h2>Coming soon…</h2>
+    <p>
+    Intro ★
+    Usage ★
+    How it works ★
+    Layouts ★
+    About
+    </p>
+  </nav>
+
+  <aside id="aside1">
+    <h2>Installation is easy!</h2>
+    <p>If you haven’t already installed Sass and Compass:<br>
+    <kbd>gem install sass<br>
+    gem install compass</kbd></p>
+    <p class="more"><a href="http://sass-lang.com/download.html">More help…</a></p>
+    <p>And installing Zen Grids is just as easy:<br>
+    <kbd>gem install zen-grids</kbd></p>
+  </aside>
+
+  <aside id="aside2">
+    <h2>What are Sass and Compass?</h2>
+    <p>Sass = CSS + Awesomeness</p>
+    <p>Sass is a super-set of CSS. <strong>Any valid CSS code is valid Sass.</strong> But Sass adds developer-friendly compabilities such as nesting, variables, arithmatic and mixins. And Sass gets compiled into regular CSS so its 100% compatible with all browsers.</p>
+    <p>Compass is a tool to help build libraries of reusable, pre-made Sass code. You can learn more at:</p>
+    <p class="center"><a href="http://sass-lang.com/">sass-lang.com</a><br>
+    and<br>
+    <a href="http://compass-style.org/">compass-style.org</a></p>
+  </aside>
+
+  <section id="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+(function() {
+var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+dsq.src = 'http://zengrids.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+  </section>
+
+  <footer id="footer">
+    <small>© 2011-2012 <a href="http://john.albin.net/">John Albin Wilkins</a></small>
+  </footer>
+
+</div>
+
+</body>
+</html>
