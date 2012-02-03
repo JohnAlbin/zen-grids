@@ -10,12 +10,14 @@ $zen-column-count: 12 !default;
 // side of a grid column.
 $zen-gutter-width: 20px !default;
 
+// You can generate more efficient CSS if you manually apply the
+// zen-grid-item-base mixin to all grid items from within a single ruleset.
+$zen-auto-include-item-base: true !default;
+$zen-auto-include-html-item-base: true !default;
+
 // Specify the width of the entire grid. Defaults to 100% for a fluid responsive
 // design, but you can change this to a pixel value if you need a fixed grid.
 $zen-grid-width: 100% !default;
-
-// Specify the default floating direction for zen's mixins.
-$zen-float-direction: left !default;
 
 // Specify the CSS3 box-sizing method. The default, "border-box", is compatible
 // with all modern browsers, including IE 8 and later. Use "content-box" for
@@ -23,17 +25,15 @@ $zen-float-direction: left !default;
 // and $legacy-support-for-ie6 to true.)
 $zen-box-sizing: border-box !default;
 
-// This is a helper variable for RTL layouts.
-$zen-reverse-all-floats: false !default;
-
-// You can generate more efficient CSS if you manually apply the
-// zen-grid-item-base mixin to all grid items from within a single ruleset.
-$zen-auto-include-item-base: true !default;
-$zen-auto-include-html-item-base: true !default;
-
 // Turn off IE6/7 support since we're defaulting to box-sizing: border-box.
 $legacy-support-for-ie7: false !default;
 $legacy-support-for-ie6: false !default;
+
+// Specify the default floating direction for zen's mixins.
+$zen-float-direction: left !default;
+
+// This is a helper variable for RTL layouts.
+$zen-reverse-all-floats: false !default;
 
 
 //
