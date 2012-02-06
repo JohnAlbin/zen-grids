@@ -27,3 +27,25 @@
   text-align: center;
 }
 
+@media all and (min-width: 321px) {
+  #page {
+    padding-top: 3em;
+  }
+  #header {
+    margin-top: zen-half-gutter();
+  }
+  #main-menu {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    line-height: 3em;
+    margin: 0;
+
+    h2 {
+      @include element-invisible;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}

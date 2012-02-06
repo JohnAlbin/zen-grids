@@ -20,7 +20,7 @@ body {
   }
 }
 
-@media all and (min-width: 480px) {
+@media all and (min-width: 321px) {
   #skip-link a {
     @include element-focusable;
   }
