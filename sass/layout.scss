@@ -11,11 +11,13 @@
 }
 
 #header,
+#features,
 #content,
 #main-menu,
 #footer {
   @include zen-grid-item-base;
   margin: $zen-gutter-width 0;
+  text-align: center;
 }
 
 #logo {
@@ -25,11 +27,3 @@
   text-align: center;
 }
 
-#content,
-#main-menu {
-  text-align: center;
-}
-
-#footer {
-  text-align: center;
-}
