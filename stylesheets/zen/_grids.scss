@@ -216,7 +216,7 @@ $zen-reverse-all-floats: false !default;
 
   // Ensure the HTML item either has a full gutter or no gutter on each side.
   @if $alpha-gutter {
-    margin-#{dir}: zen-half-gutter($gutter-width);
+    margin-#{$dir}: zen-half-gutter($gutter-width);
   }
   @else {
     margin-#{$dir}: -1 * zen-half-gutter($gutter-width);
