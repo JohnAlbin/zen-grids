@@ -19,6 +19,10 @@ $zen-auto-include-flow-item-base: true !default;
 // design, but you can change this to a pixel value if you need a fixed grid.
 $zen-grid-width: 100% !default;
 
+// The box-sizing polyfill for IE6/7 requires an absolute path to the
+// boxsizing.htc file. See https://github.com/Schepp/box-sizing-polyfill
+$box-sizing-polyfill-path: "" !default;
+
 // Specify the CSS3 box-sizing method. The default, "border-box", is compatible
 // with all modern browsers, including IE 8 and later. Use "content-box" for
 // wider compatibility (Note: you'll also need to set $legacy-support-for-ie7
@@ -28,10 +32,6 @@ $zen-box-sizing: border-box !default;
 // Turn off IE6/7 support since we're defaulting to box-sizing: border-box.
 $legacy-support-for-ie7: false !default;
 $legacy-support-for-ie6: false !default;
-
-// The box-sizing polyfill for IE6/7 requires an absolute path to the
-// boxsizing.htc file. See https://github.com/Schepp/box-sizing-polyfill
-$box-sizing-polyfill-path: "" !default;
 
 // Specify the default floating direction for zen's mixins.
 $zen-float-direction: left !default;
