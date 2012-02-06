@@ -14,7 +14,7 @@
 #content,
 #main-menu,
 #footer {
-  @include zen-grid-unit-base;
+  @include zen-grid-item-base;
 }
 
 #logo {
