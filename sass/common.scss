@@ -41,6 +41,10 @@ body {
   }
 }
 
+#main-menu h2 {
+  @include element-invisible;
+}
+
 img {
   max-width: 100%;
   height: auto;
