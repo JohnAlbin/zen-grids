@@ -243,6 +243,12 @@ $zen-reverse-all-floats: false !default;
 // Helper functions for the Zen mixins.
 //
 
+// Returns a half gutter width.
+@function zen-half-gutter($gutter-width: $zen-gutter-width) {
+  // @todo Handle odd-pixel-sized gutters.
+  @return $gutter-width / 2;
+}
+
 // Returns the opposite direction, given "left" or "right".
 @function zen-direction-flip($dir) {
   @if $dir == left {
@@ -252,10 +258,4 @@ $zen-reverse-all-floats: false !default;
     @return left;
   }
   @return both;
-}
-
-// Returns a half gutter width.
-@function zen-half-gutter($gutter-width: $zen-gutter-width) {
-  // @todo Handle odd-pixel-sized gutters.
-  @return $gutter-width / 2;
 }
