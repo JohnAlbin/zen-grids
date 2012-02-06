@@ -9,13 +9,13 @@ Zen Grids system can be applied to an infinite number of layouts.
 USAGE
 -----
 
-A simple example: a content column with a sidebar on each side, aligned to a 12
-column grid.
+Here's a simple example: a content column with a sidebar on each side, aligned
+to a 12 column grid.
 
   @import "zen";
 
   $zen-column-count: 12;    // Set the total number of columns in the grid.
-  $zen-gutter-width: 30px;  // Set the gutter size. A half-gutter is used on
+  $zen-gutter-width: 40px;  // Set the gutter size. A half-gutter is used on
                             // each side of each column.
 
   .container {
@@ -34,22 +34,37 @@ column grid.
 Within the .container element, the .sidebar1, .sidebar2 and .content elements
 can be in any order.
 
+Zen Grids has built-in support for the Box-sizing Polyfill which adds
+"box-sizing: border-box" support to IE7 and earlier.
+
+- Download the polyfill at https://github.com/Schepp/box-sizing-polyfill
+- Place the boxsizing.htc file in your website.
+- Set Zen Grids' $box-sizing-polyfill-path variable to the absolute path to the
+  boxsizing.htc file on your website. For example:
+    $box-sizing-polyfill-path: "/scripts/polyfills/boxsizing.htc";
+
 
 INSTALLATION
 ------------
 
 Zen grids is distributed as a Ruby Gem. On your computer, simply run:
 
-  sudo gem install zen-grids --pre
+  sudo gem install zen-grids
 
-Then to add it to an existing project, edit the project's configuration file,
-config.rb, and add this line:
+If you are using Compass (and you should!) then you can add it to an existing
+project by editing the project's configuration file, config.rb, and adding this
+line:
 
   require 'zen-grids'
 
-And then, from the project's root directory, run:
+For Rails projects, from the project's root directory, run:
 
   compass install zen-grids
+
+You can then start using Zen Grids in your Sass files. Just add this line to one
+of your .sass or .scss files and start creating!
+
+  @import "zen";
 
 
 REQUIREMENTS
