@@ -15,6 +15,7 @@
 #main-menu,
 #footer {
   @include zen-grid-item-base;
+  margin: $zen-gutter-width 0;
 }
 
 #logo {
@@ -26,11 +27,9 @@
 
 #content,
 #main-menu {
-  margin: $zen-gutter-width 0;
   text-align: center;
 }
 
 #footer {
   text-align: center;
 }
-
