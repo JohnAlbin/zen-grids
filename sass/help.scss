@@ -1,0 +1,109 @@
+// Aggregate all the stylesheets into one file.
+@import "base";
+@import "common.scss";
+
+$zen-column-count: 2;
+$zen-auto-include-item-base: false;
+
+#page {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  max-width: 800px;
+  @include zen-grid-container;
+}
+#header,
+#content>section,
+#comments,
+#main-menu,
+#footer {
+  @include zen-grid-item-base;
+  margin: {
+    top: $zen-gutter-width;
+    bottom: $zen-gutter-width;
+  }
+}
+#header {
+  margin: {
+    top: 0 !important;
+    bottom: 0;
+  }
+}
+#header,
+#main-menu,
+#footer {
+  text-align: center;
+}
+
+@media all and (min-width: 540px) {
+  #header {
+    @include zen-grid-item(1, 1);
+  }
+
+  #help-toc {
+    @include zen-grid-item(2, 1);
+    margin-top: 0 !important;
+    h1 {
+      margin-top: 0;
+    }
+  }
+
+  #imports {
+    @include zen-clear(both);
+  }
+}
+
+#content h2 {
+  margin: {
+    left: -1 * zen-half-gutter();
+    right: -1 * zen-half-gutter();
+  }
+  padding: (zen-half-gutter() - 5px) zen-half-gutter();
+  background-color: #eee;
+  @include border-radius(5px);
+}
+
+#logo {
+  display: block;
+  max-width: 293px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media all and (min-width: 321px) {
+  #page {
+    padding-top: 3em;
+  }
+  #header {
+    margin-top: zen-half-gutter();
+  }
+  #main-menu {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    line-height: 3em;
+    margin: 0;
+
+    h2 {
+      @include element-invisible;
+    }
+    p {
+      margin: 0;
+    }
+  }
+
+  #content h2,
+  #content h3,
+  #content h4 {
+    margin-top: $zen-gutter-width;
+  }
+
+  #content article {
+    p,
+    pre,
+    ul {
+      margin-left: $zen-gutter-width;
+    }
+  }
+}

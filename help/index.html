@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7" lang="en"><![endif]-->
+<!--[if lte IE 6]><html class="ie6 ie6-7 ie6-8" lang="en"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="ie7 ie6-7 ie6-8" lang="en"><![endif]-->
+<!--[if IE 8]><html class="ie8 ie6-8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Zen Grids: a responsive grid system built with Compass and Sass</title>
+
+  <link rel="stylesheet" href="/css/help.css" media="all">
+  <link rel="shortcut icon" href="/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon">
+
+  <meta name="viewport" content="width=device-width, target-densityDpi=160dpi, initial-scale=1">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="cleartype" content="on">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+</head>
+<body>
+
+<p id="skip-link">
+<a href="#main-menu">Jump to main menu</a>
+</p>
+
+<div id="page">
+
+  <header id="header" role="banner">
+    <a href="/" title="Home" rel="home" id="logo"><img src="/images/zen-grids-logo.png" alt="Zen Grids" width="293" height="234"></a>
+    <hgroup>
+      <h1>Zen Grids</h1>
+      <h2>A responsive grid system <em>built with the power of <a href="#aside2">Sass</a></em></h2>
+    </hgroup>
+  </header>
+
+  <article id="content" role="main">
+    <section id="help-toc">
+    <h1>Reference</h1>
+
+    <ol>
+    <li><a href="#imports">Imports</a></li>
+    <li><a href="#vars">Configurable variables</a>
+      <ol>
+      <li><a href="#vars">Common variables</a></li>
+      <li><a href="#vars-adaptive">Adaptive design variable</a></li>
+      <li><a href="#vars-legacy">Legacy IE support variables</a></li>
+      <li><a href="#vars-rtl">RTL language variables</a></li>
+      </ol>
+    </li>
+    <li><a href="#mixins">Mix-ins</a>
+      <ol>
+      <li><a href="#zen-grid-container">zen-grid-container</a></li>
+      <li><a href="#zen-nested-container">zen-nested-container</a></li>
+      <li><a href="#zen-grid-item">zen-grid-item</a></li>
+      <li><a href="#zen-grid-item-base">zen-grid-item-base</a></li>
+      <li><a href="#zen-clear">zen-clear</a></li>
+      <li><a href="#zen-grid-flow-item">zen-grid-flow-item</a></li>
+      </ol>
+    </li>
+    <li><a href="#functions">Functions</a>
+      <ol>
+      <li><a href="#zen-half-gutter">zen-half-gutter</a></li>
+      <li><a href="#zen-direction-flip">zen-direction-flip</a></li>
+      </ol>
+    </li>
+    </ol>
+    </section>
+
+    <section>
+    <h2 id="imports">Imports</h2>
+    <p>
+    This file can be imported using: <code>@import "zen"</code>
+    </p>
+    </section>
+
+    <section id="vars">
+    <h2>Configurable Variables</h2>
+
+    <p>
+    Compass’ reference website has documentation about <a href="http://compass-style.org/help/tutorials/configurable-variables/">working with configurable variables</a>.
+    </p>
+
+    <h3>Common variables</h3>
+
+    <article>
+    <h4 id="zen-column-count">$zen-column-count</h4>
+    <p>
+    Specifies the number of columns in the grid. Defaults to 12 for no good reason. You should set this variable each time you want to use a different grid for a set of media queries.
+    </p>
+    <pre><code>$zen-column-count: 12 !default;</code></pre>
+    </article>
+
+    <article>
+    <h4 id="zen-gutter-width">$zen-gutter-width</h4>
+    <p>
+    Specifies the width of the gutters; half of the gutter will be placed on each side of a grid item.
+    </p>
+    <pre><code>$zen-gutter-width: 20px !default;</code></pre>
+    </article>
+
+    <article>
+    <h4 id="zen-auto-include-item-base">$zen-auto-include-item-base<br>
+    $zen-auto-include-flow-item-base</h4>
+    <p>
+    You can generate more efficient CSS if you set these to <code>false</code> and manually apply the <a href="#zen-grid-item-base">zen-grid-item-base()</a> mixin to all grid items (and flow items) from within a single ruleset.
+    </p>
+    <pre><code>$zen-auto-include-item-base: true !default;
+$zen-auto-include-flow-item-base: true !default;</code></pre>
+    </article>
+
+    <h3 id="vars-adaptive">Adaptive design variable</h3>
+
+    <article>
+    <h4 id="zen-grid-width">$zen-grid-width</h4>
+    <p>
+    Specify the width of the entire grid. Defaults to 100% for a fluid responsive design, but you can change this to a pixel value if you need a fixed grid.
+    </p>
+    <pre><code>$zen-grid-width: 100% !default;</code></pre>
+    </article>
+
+    <h3 id="vars-legacy">Legacy IE support variables</h3>
+
+    <article>
+    <h4 id="box-sizing-polyfill-path">$box-sizing-polyfill-path</h4>
+    <p>
+    The box-sizing polyfill for IE6/7 requires an absolute path to the boxsizing.htc file. See <a href="https://github.com/Schepp/box-sizing-polyfill">https://github.com/Schepp/box-sizing-polyfill</a>
+    </p>
+    <pre><code>$box-sizing-polyfill-path: "" !default;</code></pre>
+    </article>
+
+    <article>
+    <h4 id="zen-box-sizing">$zen-box-sizing</h4>
+    <p>
+    Specify the CSS3 box-sizing method. The default, "border-box", is compatible with all modern browsers, including IE 8 and later. Use "content-box" for wider compatibility (Note: you'll also need to set <a href="#legacy-support-for-ie7">$legacy-support-for-ie7</a> and <a href="#legacy-support-for-ie7">$legacy-support-for-ie6</a> to true.)
+    </p>
+    <pre><code>$zen-box-sizing: border-box !default;</code></pre>
+    </article>
+
+    <article>
+    <h4 id="legacy-support-for-ie7">$legacy-support-for-ie7<br>
+    $legacy-support-for-ie6</h4>
+    <p>
+    Toggles IE6/7 support. Since we're defaulting to <code>box-sizing: border-box</code>, these are off by default. If the <a href="#box-sizing-polyfill-path">$box-sizing-polyfill-path</a> variable is set, it will override these variables.
+    </p>
+    <pre><code>$legacy-support-for-ie7: false !default;
+$legacy-support-for-ie6: false !default;</code></pre>
+    </article>
+
+    <h3 id="vars-rtl">RTL language variables</h3>
+
+    <article>
+    <h4 id="zen-float-direction">$zen-float-direction</h4>
+    <p>
+    Specify the default floating direction for zen's mixins.
+    </p>
+    <pre><code>$zen-float-direction: left !default;</code></pre>
+    </article>
+
+    <article>
+    <h4 id="zen-reverse-all-floats">$zen-reverse-all-floats</h4>
+    <p>
+    This is a helper variable for RTL layouts.
+    </p>
+    <pre><code>$zen-reverse-all-floats: false !default;</code></pre>
+    </article>
+
+    </section>
+
+    <section id="mixins">
+    <h2>Mix-ins</h2>
+
+    <article>
+    <h3 id="zen-grid-container">zen-grid-container()</h3>
+    <p>
+    Apply this to the grid container element.
+    </p>
+    </article>
+
+    <article>
+    <h3 id="zen-nested-container">zen-nested-container()</h3>
+    <p>
+    Apply this to any grid item that is also a grid container element for a nested grid. This mixin ensures the container does not have a gutter since the nested grid items will have their own gutters.
+    </p>
+    </article>
+
+    <article>
+    <h3 id="zen-grid-item">zen-grid-item(
+      $column-position,
+      $column-span
+      )<br>
+      zen-grid-item(
+      $column-position,
+      $column-span,
+      $float-direction
+      )</h3>
+    <p>
+    Apply this to each grid item. Set the $column-position to the column number the grid item starts on. And set the $column-span to the number of columns that the grid item spans.
+    </p>
+    <p>
+    To make the grid item float from the right, set the $float-direction to right; it defaults to left (the value of <a href="#zen-float-direction">$zen-float-direction</a>.) For grid items that are floated right, the $column-position is counted from the right instead of from the left.
+    </p>
+    <p>Additional optional parameters and their defaults:</p>
+    <ul>
+    <li><code>$column-count: $zen-column-count</code></li>
+    <li><code>$gutter-width: $zen-gutter-width</code></li>
+    <li><code>$grid-width: $zen-grid-width</code></li>
+    <li><code>$box-sizing: $zen-box-sizing</code></li>
+    <li><code>$reverse-all-floats: $zen-reverse-all-floats</code></li>
+    <li><code>$auto-include-item-base: $zen-auto-include-item-base</code></li>
+    </ul>
+    </article>
+
+    <article>
+    <h3 id="zen-grid-item-base">zen-grid-item-base()</h3>
+    <p>
+    Apply this mixin to each content box in the layout to prevent overflowing content from breaking the layout.
+    </p>
+    <p>
+    The mixin has the following optional parameters, but its better to use the <a href="#zen-gutter-width">$zen-gutter-width</a> and <a href="#zen-box-sizing">$zen-box-sizing</a> variables instead:
+    </p>
+    <ul>
+    <li><code>$gutter-width: $zen-gutter-width</code> Half of this value is applied as padding to the left and right sides of the item.</li>
+    <li><code>$box-sizing: $zen-box-sizing</code> The type of CSS3 box model each box should use. Can be set to content-box or border-box. Defaults to content-box, but border-box is way cooler. IE 6 and 7 don't support border-box.</li>
+    </ul>
+    </article>
+
+    <article>
+    <h3 id="zen-clear">zen-clear()</h3>
+    <p>
+    Apply this to content boxes that need to be cleared below other content boxes.
+    </p>
+    <p>Optional parameters and their defaults:</p>
+    <ul>
+    <li><code>$float-direction: $zen-float-direction</code></li>
+    <li><code>$reverse-all-floats: $zen-reverse-all-floats</code></li>
+    </ul>
+    </article>
+
+    <article>
+    <h3 id="zen-grid-flow-item">zen-grid-flow-item(
+      $column-span,
+      $column-count
+      )<br>
+      zen-grid-flow-item(
+      $column-span,
+      $column-count,
+      $alpha-gutter,
+      $omega-gutter
+      )</h3>
+    <p>
+    Apply this to an HTML item that is in the normal flow of a document to help align it to the grid. Set the $column-span to the number of columns that the HTML element should span. Set the $column-count to the number of columns that the parent element spans.
+    </p>
+    <p>
+    Unlike the <a href="#zen-grid-item">zen-grid-item()</a> mixin, this mixin does not float the HTML item; it also does not have a half-gutter on each side. By default, it has no gutter in the "alpha position" (the left side) and a full gutter in the "omega position" (the right side.) You can turn on or off the alpha and omega gutters by setting the $alpha-gutter and $omega-gutter parameters to true or false.
+    </p>
+    <p>
+    Note: when the $flow-direction is set to right (for RTL languages), the alpha position is on the right and the omega position is on the left.
+    </p>
+    <p>Additional optional parameters and their defaults:</p>
+    <ul>
+    <li><code>$gutter-width: $zen-gutter-width</code></li>
+    <li><code>$grid-width: $zen-grid-width</code></li>
+    <li><code>$box-sizing: $zen-box-sizing</code></li>
+    <li><code>$auto-include-flow-item-base: $zen-auto-include-flow-item-base</code></li>
+    <li><code>$flow-direction: $zen-float-direction</code></li>
+    </ul>
+    </article>
+
+    </section>
+
+    <section id="functions">
+    <h2>Functions</h2>
+    <p>
+    Helper functions for the Zen mixins.
+    </p>
+
+    <h3>zen-half-gutter($gutter-width)</h3>
+    <p>
+    Returns a half gutter width. The $gutter-width defaults to $zen-gutter-width.
+    </p>
+
+    <h3>zen-direction-flip($dir)</h3>
+    <p>
+    Returns the opposite direction, given "left" or "right".
+    </p>
+
+    </section>
+
+  </article>
+
+  <nav id="main-menu" role="navigation">
+    <h2>Main menu</h2>
+    <p>
+    <a href="/">Intro</a> ★
+<!--
+    <a href="/quick-demo.html">Quick Demo</a> ★
+-->
+    <a href="/reference/">Reference</a>
+    </p>
+  </nav>
+
+  <section id="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+(function() {
+var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+dsq.src = 'http://zengrids.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+  </section>
+
+  <footer id="footer">
+    <small>© 2011-2012 <a href="http://john.albin.net/">John Albin Wilkins</a></small>
+  </footer>
+
+</div>
+
+</body>
+</html>
