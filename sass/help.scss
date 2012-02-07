@@ -43,7 +43,7 @@ $zen-auto-include-item-base: false;
 
   #help-toc {
     @include zen-grid-item(2, 1);
-    margin-top: 0 !important;
+    margin-top: 10px !important;
     h1 {
       margin-top: 0;
     }
