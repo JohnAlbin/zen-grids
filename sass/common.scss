@@ -3,6 +3,7 @@
 body {
   margin: 0;
   padding: 0;
+  @include font-rem(16px, 24px);
 }
 
 // Skip link styling

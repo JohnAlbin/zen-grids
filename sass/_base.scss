@@ -45,3 +45,15 @@
     @include element-invisible-off;
   }
 }
+
+// All browsers use a 16px default font size, but let it be overridden.
+$rem-base-font: 16px !default;
+// Add font-size and line-height with rem units, using px as a fallback value.
+@mixin font-rem($font-size, $line-height: 0) {
+  font-size: $font-size;
+  font-size: ($font-size / $rem-base-font) * 1rem;
+  @if ($line-height > 0) {
+    line-height: $line-height;
+    line-height: ($line-height / $rem-base-font) * 1rem;
+  }
+}
