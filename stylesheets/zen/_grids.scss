@@ -160,6 +160,9 @@ $zen-reverse-all-floats: false !default;
         @if $box-sizing-polyfill-path {
           behavior: url($box-sizing-polyfill-path);
         }
+        // 1. http://www.positioniseverything.net/explorer/doubled-margin.html
+        // 2. http://browservulsel.blogspot.com/2005/04/ie-overflow-auto-scrollbar-overlap.html
+        // 3. http://www.howtocreate.co.uk/wrongWithIE/?chapter=overflow%3Avisible%3B
       }
     }
   }
