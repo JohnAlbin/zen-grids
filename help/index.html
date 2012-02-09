@@ -187,16 +187,16 @@ $legacy-support-for-ie6: false !default;</code></pre>
 
     <article>
     <h3 id="zen-grid-item">zen-grid-item(
-      $column-position,
-      $column-span
+      $column-span,
+      $column-position
       )<br>
       zen-grid-item(
-      $column-position,
       $column-span,
+      $column-position,
       $float-direction
       )</h3>
     <p>
-    Apply this to each grid item. Set the $column-position to the column number the grid item starts on. And set the $column-span to the number of columns that the grid item spans.
+    Apply this to each grid item. Set the $column-span to the number of columns that the grid item spans. And set the $column-position to the column number the grid item starts on.
     </p>
     <p>
     To make the grid item float from the right, set the $float-direction to right; it defaults to left (the value of <a href="#zen-float-direction">$zen-float-direction</a>.) For grid items that are floated right, the $column-position is counted from the right instead of from the left.
