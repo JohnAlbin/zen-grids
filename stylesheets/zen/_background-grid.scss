@@ -1,0 +1,74 @@
+@import "zen/grids";
+
+// Specify the number of columns in the grid.
+$bg-grid-column-count: $zen-column-count !default;
+
+// Specify the width of the gutters; half of the gutter will be placed on each
+// side of a grid column.
+$bg-grid-gutter-width: $zen-gutter-width !default;
+
+$bg-grid-color: #ffdede !default;
+
+// Specify the width of the entire grid. Defaults to 100% for a fluid responsive
+// design, but you can change this to a pixel value if you need a fixed grid.
+$bg-grid-width: $zen-grid-width !default;
+
+$bg-grid-height: 100% !default;
+
+
+// This mixin currently requires the following markup at the top of the responsive container (e.g. body or div#page, etc.).
+// <p class="bg-grid">
+//   <span class="bgcol-1">1</span><span class="bgcol-2">2</span><span class="bgcol-3">3</span><span class="bgcol-4">4</span><span class="bgcol-5">5</span><span class="bgcol-6">6</span><span class="bgcol-7">7</span><span class="bgcol-8">8</span><span class="bgcol-9">9</span><span class="bgcol-10">10</span><span class="bgcol-11">11</span><span class="bgcol-12">12</span><span class="bgcol-13">13</span><span class="bgcol-14">14</span><span class="bgcol-15">15</span><span class="bgcol-16">16</span><span class="bgcol-17">17</span><span class="bgcol-18">18</span><span class="bgcol-19">19</span><span class="bgcol-20">20</span><span class="bgcol-21">21</span><span class="bgcol-22">22</span><span class="bgcol-23">23</span><span class="bgcol-24">24</span><span class="bgcol-25">25</span><span class="bgcol-26">26</span><span class="bgcol-27">27</span><span class="bgcol-28">28</span><span class="bgcol-29">29</span><span class="bgcol-30">30</span>
+//   <span class="bgcolrev-1">1</span><span class="bgcolrev-2">2</span><span class="bgcolrev-3">3</span><span class="bgcolrev-4">4</span><span class="bgcolrev-5">5</span><span class="bgcolrev-6">6</span><span class="bgcolrev-7">7</span><span class="bgcolrev-8">8</span><span class="bgcolrev-9">9</span><span class="bgcolrev-10">10</span><span class="bgcolrev-11">11</span><span class="bgcolrev-12">12</span><span class="bgcolrev-13">13</span><span class="bgcolrev-14">14</span><span class="bgcolrev-15">15</span><span class="bgcolrev-16">16</span><span class="bgcolrev-17">17</span><span class="bgcolrev-18">18</span><span class="bgcolrev-19">19</span><span class="bgcolrev-20">20</span><span class="bgcolrev-21">21</span><span class="bgcolrev-22">22</span><span class="bgcolrev-23">23</span><span class="bgcolrev-24">24</span><span class="bgcolrev-25">25</span><span class="bgcolrev-26">26</span><span class="bgcolrev-27">27</span><span class="bgcolrev-28">28</span><span class="bgcolrev-29">29</span><span class="bgcolrev-30">30</span>
+// </p>
+
+
+@mixin -experimental-bg-grid(
+  $column-count: $bg-grid-column-count,
+  $gutter-width: $bg-grid-gutter-width,
+  $grid-height: $bg-grid-height,
+  $grid-color: $bg-grid-color
+) {
+
+  @include zen-grid-container;
+  position: absolute;
+  position: fixed;
+  z-index: -1;
+  margin: 0 auto;
+  width: 100%;
+  height: $bg-grid-height;
+
+  span {
+    @include zen-grid-item-base;
+    text-align: center;
+    color: #fff;
+    @include text-shadow(darken($bg-grid-color, 75%) 0 0 4px);
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+  @for $i from 1 through $column-count {
+    .bgcol-#{$i} {
+      @include zen-grid-item($i, 1, $column-count: $bg-grid-column-count, $gutter-width: $bg-grid-gutter-width);
+      height: $bg-grid-height;
+      margin-bottom: -2em;
+      background-color: $bg-grid-color;
+      padding: 0;
+      border: {
+        left: zen-half-gutter($bg-grid-gutter-width) solid #fff;
+        right: zen-half-gutter($bg-grid-gutter-width) solid #fff;
+      }
+    }
+    .bgcolrev-1 {
+      clear: left;
+    }
+    .bgcolrev-#{$i} {
+      @include zen-grid-item($i, 1, $column-count: $bg-grid-column-count, $gutter-width: $bg-grid-gutter-width, $float-direction: right);
+    }
+  }
+  @for $i from ($column-count + 1) through 30 {
+    .bgcol-#{$i},
+    .bgcolrev-#{$i} {
+      display: none;
+    }
+  }
+}
