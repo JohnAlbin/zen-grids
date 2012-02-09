@@ -81,14 +81,14 @@ $zen-gutter-width: 20px;
   $zen-column-count: 2;
 
   #content {
-    @include zen-grid-item(1, 2);
+    @include zen-grid-item(2, 1);
   }
   #aside1 {
     @include zen-clear(); // Clear left-floated elements (#content)
     @include zen-grid-item(1, 1);
   }
   #aside2 {
-    @include zen-grid-item(2, 1);
+    @include zen-grid-item(1, 2);
   }
 }
 
@@ -96,14 +96,14 @@ $zen-gutter-width: 20px;
   $zen-column-count: 3;
 
   #content {
-    @include zen-grid-item(1, 2);
+    @include zen-grid-item(2, 1);
   }
   #aside1 {
     @include zen-grid-item(1, 1, right); // Position from the right
   }
   #aside2 {
     @include zen-clear(); // Clear left-floated elements (#content)
-    @include zen-grid-item(1, 2);
+    @include zen-grid-item(2, 1);
   }
 }
 
@@ -111,7 +111,7 @@ $zen-gutter-width: 20px;
   $zen-column-count: 3;
 
   #content {
-    @include zen-grid-item(1, 2);
+    @include zen-grid-item(2, 1);
   }
   #aside1 {
     @include zen-grid-item(1, 1, right); // Position from the right
@@ -126,12 +126,12 @@ $zen-gutter-width: 20px;
   $zen-column-count: 5;
 
   #content {
-    @include zen-grid-item(2, 3);
+    @include zen-grid-item(3, 2);
   }
   #aside1 {
     @include zen-grid-item(1, 1);
   }
   #aside2 {
-    @include zen-grid-item(5, 1);
+    @include zen-grid-item(1, 5);
   }
 }
