@@ -22,13 +22,13 @@ to a 12 column grid.
     @include zen-grid-container;
   }
   .sidebar1 {
-    @include zen-grid(1, 3);  // 3 col. wide sidebar starting in the 1st column
+    @include zen-grid(3, 1);  // 3 col. wide sidebar starting in the 1st column
   }
   .content {
-    @include zen-grid(4, 6);  // 6 col. wide element starting in the 4th column
+    @include zen-grid(6, 4);  // 6 col. wide element starting in the 4th column
   }
   .sidebar2 {
-    @include zen-grid(10, 3); // 3 col. wide sidebar starting in the 10th column
+    @include zen-grid(3, 10); // 3 col. wide sidebar starting in the 10th column
   }
 
 Within the .container element, the .sidebar1, .sidebar2 and .content elements
