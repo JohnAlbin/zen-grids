@@ -67,16 +67,16 @@ $zen-reverse-all-floats: false !default;
 }
 
 //
-// Apply this to each grid item. Set the $column-position to the column number
-// the grid item starts on. And set the $column-span to the number of columns
-// that the grid item spans.
+// Apply this to each grid item. Set the $column-span to the number of columns
+// that the grid item spans. And set the $column-position to the column number
+// the grid item starts on.
 //
 // For grid items that are floated right, the $column-position is counted
 // from the right instead of from the left.
 //
 @mixin zen-grid-item (
-  $column-position,
   $column-span,
+  $column-position,
   $float-direction: $zen-float-direction,
   $column-count: $zen-column-count,
   $gutter-width: $zen-gutter-width,
