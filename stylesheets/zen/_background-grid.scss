@@ -59,17 +59,17 @@ $bg-float-direction: $zen-float-direction !default;
 
   span {
     @include zen-grid-item-base;
+    padding: 0;
     text-align: center;
     color: $color-bg;
     @include text-shadow(darken($grid-color, 75%) 0 0 4px);
   }
   @for $i from 1 through $column-count {
     .bgcol-#{$i} {
-      @include zen-grid-item(1, $i, $column-count: $column-count, $gutter-width: $gutter-width, $float-direction: $dir);
+      @include zen-grid-item(1, $i, $column-count: $column-count, $gutter-width: $gutter-width, $float-direction: $dir, $auto-include-item-base: false);
       height: 100%;
       margin-bottom: -($line-height);
       background-color: $grid-color;
-      padding: 0;
       border: {
         left: zen-half-gutter($gutter-width) solid $color-bg;
         right: zen-half-gutter($gutter-width) solid $color-bg;
@@ -79,7 +79,7 @@ $bg-float-direction: $zen-float-direction !default;
 	  @if $i == 1 {
         @include zen-clear();
       }
-      @include zen-grid-item(1, $i, $column-count: $column-count, $gutter-width: $gutter-width, $float-direction: $rev);
+      @include zen-grid-item(1, $i, $column-count: $column-count, $gutter-width: $gutter-width, $float-direction: $rev, $auto-include-item-base: false);
     }
   }
   @for $i from ($column-count + 1) through 30 {
