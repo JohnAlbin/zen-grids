@@ -89,6 +89,10 @@ $zen-reverse-all-floats: false !default;
   // Calculate the unit width.
   $unit-width: $grid-width / $column-count;
 
+  @if unit($unit-width) == "px" and floor($unit-width) != ceil($unit-width) {
+    @warn "You may experience rounding errors as the grid width, #{$grid-width}, does not divide evenly into #{$column-count} columns.";
+  }
+
   // Determine the float direction and its reverse.
   $dir: $float-direction;
   @if $reverse-all-floats {
