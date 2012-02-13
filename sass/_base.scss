@@ -1,3 +1,12 @@
+// Variables
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false;
+
+$zen-column-count: 5;
+$zen-gutter-width: 40px;
+$zen-auto-include-unit-base: false;
+
+
 //
 // Partials to be shared with all .scss files.
 //
@@ -6,7 +15,6 @@
 // file is in charge of importing all the other partials needed for the theme.
 
 @import "compass/support"; // Add Compass' IE and vendor prefix support variables.
-@import "variables";       // Add your own shared variables here.
 
 @import "zen";
 @import "compass/css3";
