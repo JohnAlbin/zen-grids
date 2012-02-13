@@ -101,7 +101,16 @@ $zen-reverse-all-floats: false !default;
   $rev: zen-direction-flip($dir);
 
   float: $dir;
-  width: $column-span * $unit-width;
+  $width: $column-span * $unit-width;
+  @if $box-sizing == content-box {
+    @if not comparable($width, $gutter-width) {
+      $units-gutter: unit($gutter-width);
+      $units-grid: unit($grid-width);
+      @warn "The layout cannot be calculated correctly; when using box-sizing: content-box, the units of the gutter (#{$units-gutter} did not match the units of the grid width (#{$units-grid}).";
+    }
+    $width: $width - $gutter-width;
+  }
+  width: $width;
   margin: {
     #{$dir}: ($column-position - 1) * $unit-width;
     #{$rev}: (1 - $column-position - $column-span) * $unit-width;
@@ -263,7 +272,16 @@ $zen-reverse-all-floats: false !default;
 
   // Calculate the unit width.
   $unit-width: $grid-width / $columns;
-  width: $column-span * $unit-width;
+  $width: $column-span * $unit-width;
+  @if $box-sizing == content-box {
+    @if not comparable($width, $gutter-width) {
+      $units-gutter: unit($gutter-width);
+      $units-grid: unit($grid-width);
+      @warn "The layout cannot be calculated correctly; when using box-sizing: content-box, the units of the gutter (#{$units-gutter} did not match the units of the grid width (#{$units-grid}).";
+    }
+    $width: $width - $gutter-width;
+  }
+  width: $width;
 
   // Auto-apply the unit base mixin.
   @if $auto-include-flow-item-base {
