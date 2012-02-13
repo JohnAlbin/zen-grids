@@ -217,12 +217,12 @@ $zen-reverse-all-floats: false !default;
   $column-count,
   $alpha-gutter: false,
   $omega-gutter: true,
+  $flow-direction: $zen-float-direction,
   $gutter-width: $zen-gutter-width,
   $grid-width: $zen-grid-width,
   $box-sizing: $zen-box-sizing,
-  $auto-include-flow-item-base: $zen-auto-include-flow-item-base,
-  $flow-direction: $zen-float-direction,
-  $reverse-all-flows: $zen-reverse-all-floats
+  $reverse-all-flows: $zen-reverse-all-floats,
+  $auto-include-flow-item-base: $zen-auto-include-flow-item-base
 ) {
 
   $dir: $flow-direction;
