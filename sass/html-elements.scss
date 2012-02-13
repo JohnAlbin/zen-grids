@@ -1,0 +1,320 @@
+//
+// HTML Element Styling
+//
+
+@import "base";
+
+
+//
+// Fonts
+//
+body {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+body,
+caption,
+th,
+td,
+input,
+textarea,
+select,
+option,
+legend,
+fieldset {
+  font-family: Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
+}
+
+pre,
+code,
+kbd,
+samp,
+tt,
+var {
+  font-family: "Courier New", "DejaVu Sans Mono", monospace;
+  // Many browsers unwisely use a smaller font for monospace text.
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+
+//
+// HTML5 rules for legacy browsers
+//
+// Corrects for missing block and inline-block display in IE6/7/8/9 and FF3.
+//
+article, aside, footer, header, hgroup, nav, section,
+details, figcaption, figure, menu, summary {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+    .ie6-7 & {
+      display: inline;
+      zoom: 1;
+    }
+  }
+}
+
+
+//
+// Block-level elements
+//
+// To achieve a pleasant vertical rhythm, we use the 1.5em line height of our
+// base font as the top and bottom margins for our block level elements and make
+// the line heights of any larger fonts be a multiple of 1.5 ems. For more
+// information, see http://24ways.org/2006/compose-to-a-vertical-rhythm
+//
+p, blockquote, pre,
+ul, ol, dl,
+table, fieldset,
+details, summary, figure, figcaption {
+  margin: $base-line-height 0;
+}
+
+// Headings
+h2, h3, h4, h5, h6 {
+  // Let the headings settle next to the text below it.
+  margin: $base-line-height 0 0 0;
+}
+h1 {
+//  @include font-rem();
+}
+
+h2 {
+}
+
+h3 {
+}
+
+h4,
+h5,
+h6 {
+}
+
+// Other block-level elements
+p {
+}
+
+blockquote {
+  margin-left: $zen-gutter-width;
+  margin-right: $zen-gutter-width;
+}
+
+pre {
+}
+
+hr {
+  height: 1px;
+  border: 1px solid #666;
+  margin: {
+    top: $base-line-height / 2 - 1px;
+    bottom: $base-line-height / 2;
+  }
+}
+
+address {
+}
+
+
+//
+// Lists
+//
+// We need to standardize the list item indentation.
+//
+ul,
+ol {
+  margin-left: 0;
+  padding-left: $zen-gutter-width;
+}
+
+ul, ol {
+  ul, ol {
+    margin: 0;
+  }
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: disc;
+  ul {
+    list-style-type: circle;
+    ul {
+      list-style-type: square;
+      ul {
+        list-style-type: circle;
+}}}}
+
+ol {
+  list-style-type: decimal;
+  ol {
+    list-style-type: lower-alpha;
+    ol {
+      list-style-type: decimal;
+}}}
+
+dl {
+}
+
+dt {
+  margin: 0;
+  padding: 0;
+}
+
+dd {
+  margin: 0 0 0 $zen-gutter-width;
+  padding: 0;
+}
+
+
+//
+// Tables
+//
+table {
+  border-collapse: collapse;
+  width: 100%; // Prevent cramped-looking tables
+}
+
+th {
+}
+
+tbody {
+}
+
+thead {
+}
+
+tfoot {
+}
+
+caption {
+}
+
+colgroup {
+}
+
+col {
+}
+
+tr {
+}
+
+td {
+}
+
+
+//
+// Forms
+//
+form {
+  margin: 0;
+  padding: 0;
+}
+
+fieldset {
+  padding: 0.5em;
+}
+
+legend {
+}
+
+label {
+}
+
+input {
+}
+
+select {
+}
+
+optgroup {
+}
+
+option {
+}
+
+textarea {
+}
+
+button {
+}
+
+
+//
+// Links
+//
+// The order of link states are based on Eric Meyer's article:
+// http://meyerweb.com/eric/thoughts/2007/06/11/who-ordered-the-link-states
+//
+a:link,
+a:visited {
+  color: #0c3043;
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+}
+
+
+//
+// Other inline elements
+//
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  // vertical-align: bottom; // Suppress the space beneath the baseline
+}
+
+abbr, // Abbreviations
+acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+  white-space: nowrap;
+}
+
+q {
+}
+
+cite {
+}
+
+strong, b {
+}
+
+em, i {
+}
+
+code,
+kbd,
+samp,
+tt,
+var { // Code, keyboard input, sample output, teletype, variable
+}
+
+del {
+}
+
+ins {
+}
+
+big {
+}
+
+small {
+}
+
+sub {
+}
+
+sup {
+}
