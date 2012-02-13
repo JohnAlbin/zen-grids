@@ -6,6 +6,10 @@ $zen-column-count: 5;
 $zen-gutter-width: 40px;
 $zen-auto-include-unit-base: false;
 
+$base-font-size: 16px;
+$rem-base-font: $base-font-size;
+$base-line-height: 24px;
+
 
 //
 // Partials to be shared with all .scss files.
@@ -55,11 +59,11 @@ $zen-auto-include-unit-base: false;
 }
 
 // All browsers use a 16px default font size, but let it be overridden.
-$rem-base-font: 16px !default;
+$rem-base-font-size: 16px !default;
 // Add font-size and line-height with rem units, using px as a fallback value.
-@mixin font-rem($font-size, $line-height: 0) {
+@mixin font-rem($font-size: $rem-base-font-size, $line-height: 0) {
   font-size: $font-size;
-  font-size: ($font-size / $rem-base-font) * 1rem;
+  font-size: ($font-size / $rem-base-font-size) * 1rem;
   @if ($line-height > 0) {
     line-height: $line-height;
     line-height: ($line-height / $rem-base-font) * 1rem;
