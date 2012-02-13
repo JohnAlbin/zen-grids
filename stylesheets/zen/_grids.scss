@@ -258,17 +258,14 @@ $zen-reverse-all-floats: false !default;
   $auto-include-flow-item-base: $zen-auto-include-flow-item-base
 ) {
 
+  $columns: $column-count;
   @if unit($grid-width) == "%" {
     @if $parent-column-count == false {
       @warn "For responsive layouts with a percentage-based grid width, you must set the $column-count to the number of columns that the parent element spans.";
-      $columns: $column-count;
     }
     @else {
       $columns: $parent-column-count;
     }
-  }
-  @else {
-    $columns: $column-count;
   }
 
   $dir: $flow-direction;
