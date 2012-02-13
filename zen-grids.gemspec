@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.homepage    = 'http://zengrids.com'
   s.rubyforge_project =
 
-  s.version     = '1.0.beta.4'
-  s.date        = '2012-02-09'
+  s.version     = '1.0.beta.5'
+  s.date        = '2012-02-13'
 
   s.authors     = ['John Albin Wilkins']
   s.email       = 'virtually.johnalbin@gmail.com'
