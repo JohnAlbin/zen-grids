@@ -101,6 +101,12 @@ $zen-auto-include-item-base: false;
     margin-top: $zen-gutter-width;
   }
 
+  #content h3 em {
+    font-weight: normal;
+    font-style: normal;
+    @include font-rem($base-font-size);
+  }
+
   #content article {
     p,
     pre,

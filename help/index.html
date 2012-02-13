@@ -85,7 +85,7 @@
     <h3>Common variables</h3>
 
     <article>
-    <h4 id="zen-column-count">$zen-column-count</h4>
+    <h4 id="zen-column-count"><code>$zen-column-count</code></h4>
     <p>
     Specifies the number of columns in the grid. Defaults to 12 for no good reason. You should set this variable each time you want to use a different grid for a set of media queries.
     </p>
@@ -93,7 +93,7 @@
     </article>
 
     <article>
-    <h4 id="zen-gutter-width">$zen-gutter-width</h4>
+    <h4 id="zen-gutter-width"><code>$zen-gutter-width</code></h4>
     <p>
     Specifies the width of the gutters; half of the gutter will be placed on each side of a grid item.
     </p>
@@ -101,8 +101,8 @@
     </article>
 
     <article>
-    <h4 id="zen-auto-include-item-base">$zen-auto-include-item-base<br>
-    $zen-auto-include-flow-item-base</h4>
+    <h4 id="zen-auto-include-item-base"><code>$zen-auto-include-item-base<br>
+    $zen-auto-include-flow-item-base</code></h4>
     <p>
     You can generate more efficient CSS if you set these to <code>false</code> and manually apply the <a href="#zen-grid-item-base">zen-grid-item-base()</a> mixin to all grid items (and flow items) from within a single ruleset.
     </p>
@@ -113,7 +113,7 @@ $zen-auto-include-flow-item-base: true !default;</code></pre>
     <h3 id="vars-adaptive">Adaptive design variable</h3>
 
     <article>
-    <h4 id="zen-grid-width">$zen-grid-width</h4>
+    <h4 id="zen-grid-width"><code>$zen-grid-width</code></h4>
     <p>
     Specify the width of the entire grid. Defaults to 100% for a fluid responsive design, but you can change this to a pixel value if you need a fixed grid.
     </p>
@@ -123,7 +123,7 @@ $zen-auto-include-flow-item-base: true !default;</code></pre>
     <h3 id="vars-legacy">Legacy IE support variables</h3>
 
     <article>
-    <h4 id="box-sizing-polyfill-path">$box-sizing-polyfill-path</h4>
+    <h4 id="box-sizing-polyfill-path"><code>$box-sizing-polyfill-path</code></h4>
     <p>
     The box-sizing polyfill for IE6/7 requires an absolute path to the boxsizing.htc file. See <a href="https://github.com/Schepp/box-sizing-polyfill">https://github.com/Schepp/box-sizing-polyfill</a>
     </p>
@@ -131,7 +131,7 @@ $zen-auto-include-flow-item-base: true !default;</code></pre>
     </article>
 
     <article>
-    <h4 id="zen-box-sizing">$zen-box-sizing</h4>
+    <h4 id="zen-box-sizing"><code>$zen-box-sizing</code></h4>
     <p>
     Specify the CSS3 box-sizing method. The default, "border-box", is compatible with all modern browsers, including IE 8 and later. Use "content-box" for wider compatibility (Note: you'll also need to set <a href="#legacy-support-for-ie7">$legacy-support-for-ie7</a> and <a href="#legacy-support-for-ie7">$legacy-support-for-ie6</a> to true.)
     </p>
@@ -139,8 +139,8 @@ $zen-auto-include-flow-item-base: true !default;</code></pre>
     </article>
 
     <article>
-    <h4 id="legacy-support-for-ie7">$legacy-support-for-ie7<br>
-    $legacy-support-for-ie6</h4>
+    <h4 id="legacy-support-for-ie7"><code>$legacy-support-for-ie7<br>
+    $legacy-support-for-ie6</code></h4>
     <p>
     Toggles IE6/7 support. Since we're defaulting to <code>box-sizing: border-box</code>, these are off by default. If the <a href="#box-sizing-polyfill-path">$box-sizing-polyfill-path</a> variable is set, it will override these variables.
     </p>
@@ -151,7 +151,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <h3 id="vars-rtl">RTL language variables</h3>
 
     <article>
-    <h4 id="zen-float-direction">$zen-float-direction</h4>
+    <h4 id="zen-float-direction"><code>$zen-float-direction</code></h4>
     <p>
     Specify the default floating direction for zen's mixins.
     </p>
@@ -159,7 +159,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     </article>
 
     <article>
-    <h4 id="zen-reverse-all-floats">$zen-reverse-all-floats</h4>
+    <h4 id="zen-reverse-all-floats"><code>$zen-reverse-all-floats</code></h4>
     <p>
     This is a helper variable for RTL layouts.
     </p>
@@ -241,16 +241,25 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <article>
     <h3 id="zen-grid-flow-item">zen-grid-flow-item(
       $column-span,
-      $column-count
+      $parent-column-count
       )<br>
       zen-grid-flow-item(
       $column-span,
-      $column-count,
+      $parent-column-count,
       $alpha-gutter,
       $omega-gutter
+      )<br>
+      <em>or for fixed length (em, px, etc.) layouts:</em><br>
+      zen-grid-flow-item(
+      $column-span
+      )<br>
+      zen-grid-flow-item(
+      $column-span,
+      $alpha-gutter: [value],
+      $omega-gutter: [value]
       )</h3>
     <p>
-    Apply this to an HTML item that is in the normal flow of a document to help align it to the grid. Set the $column-span to the number of columns that the HTML element should span. Set the $column-count to the number of columns that the parent element spans.
+    Apply this to an HTML item that is in the normal flow of a document to help align it to the grid. Set the $column-span to the number of columns that the HTML element should span. For responsive layouts with a percentage-based grid width, set the $parent-column-count to the number of columns that the parent element spans; fixed-unit layouts using px, em, etc. do not need to specify this.
     </p>
     <p>
     Unlike the <a href="#zen-grid-item">zen-grid-item()</a> mixin, this mixin does not float the HTML item; it also does not have a half-gutter on each side. By default, it has no gutter in the "alpha position" (the left side) and a full gutter in the "omega position" (the right side.) You can turn on or off the alpha and omega gutters by setting the $alpha-gutter and $omega-gutter parameters to true or false.
@@ -260,11 +269,13 @@ $legacy-support-for-ie6: false !default;</code></pre>
     </p>
     <p>Additional optional parameters and their defaults:</p>
     <ul>
+    <li><code>$flow-direction: $zen-float-direction</code></li>
+    <li><code>$column-count: $zen-column-count</code></li>
     <li><code>$gutter-width: $zen-gutter-width</code></li>
     <li><code>$grid-width: $zen-grid-width</code></li>
     <li><code>$box-sizing: $zen-box-sizing</code></li>
+    <li><code>$reverse-all-flows: $zen-reverse-all-floats</code></li>
     <li><code>$auto-include-flow-item-base: $zen-auto-include-flow-item-base</code></li>
-    <li><code>$flow-direction: $zen-float-direction</code></li>
     </ul>
     </article>
 
