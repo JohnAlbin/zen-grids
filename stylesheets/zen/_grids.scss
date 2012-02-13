@@ -339,5 +339,9 @@ $zen-reverse-all-floats: false !default;
   @else if $dir == right {
     @return left;
   }
+  @else if $dir == none or $dir == both {
+    @return $dir;
+  }
+  @warn "Invalid direction passed to zen-direction-flip().";
   @return both;
 }
