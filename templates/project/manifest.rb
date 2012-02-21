@@ -7,9 +7,7 @@ stylesheet 'styles.scss', :media => 'all'
 html 'example.html'
 
 help %Q{
-The Zen Grids system is an easy-to-use responsive grid system. It's immune to
-browser rounding errors and its source order is mostly independent from display
-order. To learn more, visit:
+Zen Grids includes a fluid responsive grid system with an intuitive, flexible layout mechanism that leverages the natural source order of your content. With an easy-to-use Sass mixin set, the Zen Grids system can be applied to an infinite number of layouts, including adaptive and fixed-width layouts. To learn more, visit:
 
   http://zengrids.com
 }
@@ -20,6 +18,5 @@ how to use the system at:
 
   http://zengrids.com
 
-It's easy! And (bonus!) you'll find pre-made responsive layouts you can
-customize and start using on your website today.
+It's easy!
 }

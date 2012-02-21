@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.name        = 'zen-grids'
 
   s.summary     = %q{A Compass plugin for Zen Grids, a fluid responsive grid system}
-  s.description = %q{The Zen Grids system is a fluid responsive grid system that is immune to rounding errors and overflowing content. With an easy-to-use Sass mixin set, the Zen Grids system can be applied to an infinite number of layouts.}
+  s.description = %q{Zen Grids includes a fluid responsive grid system with an intuitive, flexible layout mechanism that leverages the natural source order of your content. With an easy-to-use Sass mixin set, the Zen Grids system can be applied to an infinite number of layouts, including adaptive and fixed-width layouts.}
 
   s.homepage    = 'http://zengrids.com'
   s.rubyforge_project =
