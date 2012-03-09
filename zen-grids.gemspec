@@ -23,7 +23,6 @@ Gem::Specification.new do |s|
     lib/zen-grids.rb
     stylesheets/_zen.scss
     stylesheets/zen/_background-grid.scss
-    stylesheets/zen/_columns.scss
     stylesheets/zen/_grids.scss
     templates/project/example.html
     templates/project/manifest.rb
