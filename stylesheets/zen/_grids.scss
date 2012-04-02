@@ -180,7 +180,7 @@ $zen-reverse-all-floats: false !default;
   }
   @else {
     @if ($legacy-support-for-ie6 or $legacy-support-for-ie7) {
-      @if $box-sizing-polyfill-path {
+      @if $box-sizing-polyfill-path != "" {
         @if $default-legacy-ie-approach == hack {
           *behavior: url($box-sizing-polyfill-path);
         }
