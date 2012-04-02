@@ -144,11 +144,10 @@ $zen-reverse-all-floats: false !default;
   @if $reverse-all-flows {
     $dir: zen-direction-flip($dir);
   }
-  $rev: zen-direction-flip($dir);
 
   padding: {
-    left: zen-half-gutter($gutter-width, $dir);
-    right: zen-half-gutter($gutter-width, $rev);
+    left: zen-half-gutter($gutter-width, left, $dir);
+    right: zen-half-gutter($gutter-width, right, $dir);
   }
   // Specify the border-box properties.
   @if $box-sizing == border-box {
