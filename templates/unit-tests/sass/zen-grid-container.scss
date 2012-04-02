@@ -1,0 +1,11 @@
+/**
+ * @file
+ * Test zen-grid-container()
+ */
+
+@import "zen";
+
+#test-zen-grid-container {
+  /* Test zen-grid-container() */
+  @include zen-grid-container();
+}

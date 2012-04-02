@@ -1,0 +1,13 @@
+/**
+ * @file
+ * Test zen-nested-container()
+ */
+/* line 8, ../sass/zen-nested-container.scss */
+#test-zen-nested-container {
+  /* Test zen-nested-container() */
+  position: relative;
+  overflow: hidden;
+  *zoom: 1;
+  padding-left: 0;
+  padding-right: 0;
+}

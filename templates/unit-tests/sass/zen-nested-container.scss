@@ -1,0 +1,11 @@
+/**
+ * @file
+ * Test zen-nested-container()
+ */
+
+@import "zen";
+
+#test-zen-nested-container {
+  /* Test zen-nested-container() */
+  @include zen-nested-container();
+}

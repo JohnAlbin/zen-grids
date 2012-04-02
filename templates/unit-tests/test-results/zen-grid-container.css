@@ -1,0 +1,11 @@
+/**
+ * @file
+ * Test zen-grid-container()
+ */
+/* line 8, ../sass/zen-grid-container.scss */
+#test-zen-grid-container {
+  /* Test zen-grid-container() */
+  position: relative;
+  overflow: hidden;
+  *zoom: 1;
+}
