@@ -10,6 +10,12 @@ $zen-column-count: 12 !default;
 // side of a grid column.
 $zen-gutter-width: 20px !default;
 
+// Specify the width of the side margins. This will be placed as padding on
+// each side of the grid cntainer. Defaults to half of the gutter width. You
+// can specify one or two values. If two values are specified, the first will
+// be applied to the side of the float direction.
+$zen-margin-width: $zen-gutter-width/2 !default;
+
 // You can generate more efficient CSS if you manually apply the
 // zen-grid-item-base mixin to all grid items from within a single ruleset.
 $zen-auto-include-item-base: true !default;
@@ -59,20 +65,30 @@ $zen-reverse-all-floats: false !default;
 //
 // Apply this to the grid container element.
 //
-@mixin zen-grid-container () {
+@mixin zen-grid-container (
+  $padding: $zen-margin-width,
+  $reverse-all-floats: $zen-reverse-all-floats
+) {
   position: relative;
   @include clearfix;
+  padding: {
+    left: zen-margin($padding, left, $reverse-all-floats);
+    right: zen-margin($padding, right, $reverse-all-floats);
+  }
 }
 
 //
 // Apply this to any grid item that is also a grid container element for a
 // nested grid.
 //
-@mixin zen-nested-container () {
+@mixin zen-nested-container (
+  $padding: 0,
+  $reverse-all-floats: $zen-reverse-all-floats
+) {
   @include zen-grid-container;
   padding: {
-    left: 0;
-    right: 0;
+    left: zen-margin($padding, left, $reverse-all-floats);
+    right: zen-margin($padding, right, $reverse-all-floats);
   }
 }
 
@@ -91,13 +107,14 @@ $zen-reverse-all-floats: false !default;
   $column-count: $zen-column-count,
   $gutter-width: $zen-gutter-width,
   $grid-width: $zen-grid-width,
+  $grid-margins: $zen-margin-width,
   $box-sizing: $zen-box-sizing,
   $reverse-all-floats: $zen-reverse-all-floats,
   $auto-include-item-base: $zen-auto-include-item-base
 ) {
 
   // Calculate the unit width.
-  $unit-width: $grid-width / $column-count;
+  $unit-width: ($grid-width - zen-total-margin($grid-margins) + $zen-gutter-width) / $column-count;
 
   @if unit($unit-width) == "px" and floor($unit-width) != ceil($unit-width) {
     @warn "You may experience rounding errors as the grid width, #{$grid-width}, does not divide evenly into #{$column-count} columns.";
@@ -110,6 +127,29 @@ $zen-reverse-all-floats: false !default;
   }
   $rev: zen-direction-flip($dir);
 
+  // Supress the padding on the outside edges of the first and last columns in
+  // the grid container.
+  $supress-gutter: none;
+  $width-adjustment: 0;
+  $margin-adjustment-start: zen-half-gutter($gutter-width, $dir, $float-direction);
+  $margin-adjustment-end: zen-half-gutter($gutter-width, $rev, $float-direction);
+  @if $column-span == $column-count {
+    $supress-gutter: both;
+    $width-adjustment: $gutter-width;
+    $margin-adjustment-start: 0;
+    $margin-adjustment-end: 0;
+  }
+  @elseif $column-position == 1 {
+    $supress-gutter: $dir;
+    $width-adjustment: zen-half-gutter($gutter-width, $dir, $float-direction);
+    $margin-adjustment-start: 0;
+  }
+  @elseif ($column-position + $column-span - 1) == $column-count {
+    $supress-gutter: $rev;
+    $width-adjustment: zen-half-gutter($gutter-width, $rev, $float-direction);
+    $margin-adjustment-end: 0;
+  }
+
   float: $dir;
   $width: $column-span * $unit-width;
   @if $box-sizing == content-box {
@@ -120,15 +160,18 @@ $zen-reverse-all-floats: false !default;
     }
     $width: $width - $gutter-width;
   }
+  @else {
+    $width: $width - $width-adjustment;
+  }
   width: $width;
   margin: {
-    #{$dir}: ($column-position - 1) * $unit-width;
-    #{$rev}: (1 - $column-position - $column-span) * $unit-width;
+    #{$dir}: ($column-position - 1) * $unit-width - $margin-adjustment-start;
+    #{$rev}: (1 - $column-position - $column-span) * $unit-width - $margin-adjustment-end;
   }
 
   // Auto-apply the unit base mixin.
   @if $auto-include-item-base {
-    @include zen-grid-item-base($gutter-width, $box-sizing);
+    @include zen-grid-item-base($gutter-width, $box-sizing, $supress-gutter);
   }
 }
 
@@ -146,6 +189,7 @@ $zen-reverse-all-floats: false !default;
 @mixin zen-grid-item-base (
   $gutter-width: $zen-gutter-width,
   $box-sizing: $zen-box-sizing,
+  $supress-gutter: none,
   $flow-direction: $zen-float-direction,
   $reverse-all-flows: $zen-reverse-all-floats
 ) {
@@ -157,8 +201,18 @@ $zen-reverse-all-floats: false !default;
   $rev: zen-direction-flip($dir);
 
   padding: {
-    left: zen-half-gutter($gutter-width, $dir);
-    right: zen-half-gutter($gutter-width, $rev);
+    @if $supress-gutter != left and $supress-gutter != both {
+      left: zen-half-gutter($gutter-width, $dir);
+    }
+    @else {
+      left: 0;
+    }
+    @if $supress-gutter != right and $supress-gutter != both {
+      right: zen-half-gutter($gutter-width, $rev);
+    }
+    @else {
+      right: 0;
+    }
   }
   // Specify the border-box properties.
   @if $box-sizing == border-box {
@@ -329,6 +383,43 @@ $zen-reverse-all-floats: false !default;
     }
   }
   @return $half-gutter;
+}
+
+// Returns the margin width for the specified side of a grid container.
+@function zen-margin(
+  $margins: $zen-margin,
+  $side: $zen-float-direction,
+  $reverse-all-flows: $zen-reverse-all-floats
+) {
+  $first-margin: 0;
+  $second-margin: 0;
+  @if length($margins) > 1 {
+    $first-margin: nth($margins, 1);
+    $second-margin: nth($margins, 2);
+  }
+  @else {
+    $first-margin: $margins;
+    $second-margin: $margins;
+  }
+  @if $reverse-all-flows {
+    $side: zen-direction-flip($side);
+  }
+  @if $side == $zen-float-direction {
+    @return $first-margin;
+  }
+  @else {
+    @return $second-margin;
+  }
+}
+
+// Returns the total margin width of a grid container.
+@function zen-total-margin($margins: $zen-margin-width) {
+  @if length($margins) > 1 {
+    @return nth($margins, 1) + nth($margins, 2);
+  }
+  @else {
+    @return 2 * $margins;
+  }
 }
 
 // Returns the opposite direction, given "left" or "right".
