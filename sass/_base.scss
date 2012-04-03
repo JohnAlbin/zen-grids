@@ -23,8 +23,8 @@
 // Zen does not require special handling for IE8 or later. But Compass defines
 // more Legacy IE variables that you might find useful for your theme. See the
 // documentation for them at http://compass-style.org/reference/compass/support/
-$legacy-support-for-ie6: false;
-$legacy-support-for-ie7: false;
+$legacy-support-for-ie6: true;
+$legacy-support-for-ie7: true;
 
 
 //
@@ -95,6 +95,7 @@ $color-link: #30672c;
 $zen-column-count: 5;
 $zen-gutter-width: 40px;
 $zen-auto-include-unit-base: false;
+$box-sizing-polyfill-path: "/js/boxsizing.htc";
 
 
 //
