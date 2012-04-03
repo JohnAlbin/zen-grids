@@ -1,0 +1,13 @@
+/**
+ * @file
+ * Test zen-grid-flow-item()
+ */
+
+@import "zen";
+
+#test-zen-grid-flow-item-fail {
+  /* Test zen-grid-flow-item(1, 4) with $zen-box-sizing: content-box and 20px gutter */
+  $zen-box-sizing: content-box;
+  @include zen-grid-flow-item(1, 4);
+  $zen-box-sizing: border-box;
+}
