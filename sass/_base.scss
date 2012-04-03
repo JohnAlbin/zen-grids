@@ -108,5 +108,6 @@ $box-sizing-polyfill-path: "/js/boxsizing.htc";
 @import "compass/css3";     // Use one CSS3 mixin instead of multiple vendor prefixes.
 @import "compass/typography/vertical_rhythm"; // Helps set up a vertical rhythm.
 @import "zen";              // Add the Zen Grids responsive layout mixins.
+@import "rem";
 
 @import "custom";           // Import our custom mixins last.

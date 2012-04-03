@@ -1,0 +1,53 @@
+/**
+ * Plugin that adds rem support to Compass.
+ */
+
+
+$base-font-size: 16px !default;
+$base-line-height: 24px !default;
+
+
+// For the given property, use rem units with px as a fallback value.
+@mixin rem(
+  $property,
+  $size,
+  $root-font-size: $base-font-size
+) {
+  #{$property}: $size;
+  #{$property}: ($size / $root-font-size) * 1rem;
+}
+
+// Establishes the root font size and sets a baseline vertical rhythm with the
+// line-height.
+@mixin set-root-font-sizes(
+  $root-font-size: $base-font-size,
+  $line-height: $base-line-height
+) {
+  // IE6 refuses to resize fonts set in pixels and it weirdly resizes fonts
+  // whose root is set in ems. IE7/8 also cannot resize fonts set in pixels. So
+  // we set the root font size in percentages of the default font size, 16px.
+  html {
+    font-size: 100% * ($root-font-size / 16px);
+    @include rem(line-height, $line-height, $root-font-size);
+  }
+}
+
+// Add font-size and line-height with rem units, using px as a fallback value.
+@mixin rem-font-size(
+  $font-size,
+  $line-height: false,
+  $root-font-size: $base-font-size
+) {
+  @include rem(font-size, $font-size, $root-font-size);
+  @if ($line-height != false) {
+    @include rem(line-height, $line-height, $root-font-size);
+  }
+}
+
+// Given a $size, returns a value converted to rem.
+@function rem(
+  $size,
+  $root-font-size: $base-font-size
+) {
+  @return ($size / $root-font-size) * 1rem;
+}

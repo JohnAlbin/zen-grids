@@ -132,7 +132,7 @@ $zen-auto-include-item-base: false;
     h3 em {
       font-weight: normal;
       font-style: normal;
-      @include font-rem($base-font-size);
+      @include rem-font-size($base-font-size);
     }
 
     article {
