@@ -234,8 +234,18 @@ hr {
   height: 1px;
   border: 1px solid #666;
   padding-bottom: -1px;
-  margin: rhythm(1) 0;
+  margin: (rhythm(1)/2) 0;
 }
+/*
+hr {
+  height: 1px;
+  border: 1px solid #666;
+  margin: {
+    top: $base-line-height / 2 - 1px;
+    bottom: $base-line-height / 2;
+  }
+}
+*/
 
 /*
  * Addresses styling not present in IE7/8/9, S5, Chrome
