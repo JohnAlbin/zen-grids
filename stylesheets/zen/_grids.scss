@@ -93,7 +93,7 @@ $zen-reverse-all-floats: false !default;
   // If $columns is a list, add up the appropriate column widths.
   @if type-of($columns) == "list" {
     $length: length($columns);
-    $width: zen-asymetric-grid-width(
+    $width: zen-asymmetric-grid-width(
       $column-span,
       $column-position
     );
@@ -103,7 +103,7 @@ $zen-reverse-all-floats: false !default;
       $margin-before: 0;
     }
     @else {
-      $margin-before: zen-asymetric-grid-width(
+      $margin-before: zen-asymmetric-grid-width(
         $column-position - 1,
         1
       );
@@ -114,7 +114,7 @@ $zen-reverse-all-floats: false !default;
 
     // Display a warning if units are % and add up to more than 100%.
     @if unit($width) == "%" {
-      @if (zen-asymetric-grid-width($length, 1) > 100% ) {
+      @if (zen-asymmetric-grid-width($length, 1) > 100% ) {
         @warn "Your column widths are greater than 100%, which may cause columns to wrap.";
       }
     }
@@ -344,9 +344,9 @@ $zen-reverse-all-floats: false !default;
 }
 
 //
-// Returns the width of an asymetrical zen-grid-item.
+// Returns the width of an asymmetrical zen-grid-item.
 //
-@function zen-asymetric-grid-width (
+@function zen-asymmetric-grid-width (
   $column-span,
   $column-position,
   $columns: $zen-column-count
