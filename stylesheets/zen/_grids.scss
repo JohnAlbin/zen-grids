@@ -78,7 +78,7 @@ $zen-reverse-all-floats: false !default;
   $column-span,
   $column-position,
   $float-direction: $zen-float-direction,
-  $column-count: $zen-column-count,
+  $columns: $zen-column-count,
   $gutter-width: $zen-gutter-width,
   $grid-width: $zen-grid-width,
   $box-sizing: $zen-box-sizing,
@@ -86,11 +86,53 @@ $zen-reverse-all-floats: false !default;
   $auto-include-item-base: $zen-auto-include-item-base
 ) {
 
-  // Calculate the unit width.
-  $unit-width: $grid-width / $column-count;
+  $width: 0;
+  $space-before: 0;
+  $space-after: 0;
 
-  @if unit($unit-width) == "px" and floor($unit-width) != ceil($unit-width) {
-    @warn "You may experience rounding errors as the grid width, #{$grid-width}, does not divide evenly into #{$column-count} columns.";
+  // If $columns is a list, add up the appropriate column widths.
+  @if type-of($columns) == "list" {
+    $length: length($columns);
+    $width: zen-asymetric-grid-width(
+      $column-span,
+      $column-position
+    );
+
+    // Calculate the space before the grid-item.
+    @if $column-position == 1 {
+      $space-before: 0;
+    }
+    @else {
+      $space-before: zen-asymetric-grid-width(
+        $column-position - 1,
+        1
+      );
+    }
+
+    // Calculate the space after the grid-item.
+    $space-after: 0 - $width - $space-before;
+
+    // Display a warning if units are % and add up to more than 100%.
+    @if unit($width) == "%" {
+      @if (zen-asymetric-grid-width($length, 1) > 100% ) {
+        @warn "Your column widths are greater than 100%, which may cause columns to wrap.";
+      }
+    }
+  }
+
+  // Otherwise, set the $unit-width based on equal width columns.
+  @else {
+    // Calculate the unit width.
+    $unit-width: $grid-width / $columns;
+
+    // Display a warning if $columns is does not a multiple of $grid-width.
+    @if unit($unit-width) == "px" and floor($unit-width) != ceil($unit-width) {
+      @warn "You may experience rounding errors as the grid width, #{$grid-width}, does not divide evenly into #{$columns} columns.";
+    }
+
+    $width: $column-span * $unit-width;
+    $space-before: ($column-position - 1) * $unit-width;
+    $space-after: (1 - $column-position - $column-span) * $unit-width;
   }
 
   // Determine the float direction and its reverse.
@@ -101,7 +143,6 @@ $zen-reverse-all-floats: false !default;
   $rev: zen-direction-flip($dir);
 
   float: $dir;
-  $width: $column-span * $unit-width;
   @if $box-sizing == content-box {
     @if not comparable($width, $gutter-width) {
       $units-gutter: unit($gutter-width);
@@ -112,8 +153,8 @@ $zen-reverse-all-floats: false !default;
   }
   width: $width;
   margin: {
-    #{$dir}: ($column-position - 1) * $unit-width;
-    #{$rev}: (1 - $column-position - $column-span) * $unit-width;
+    #{$dir}: $space-before;
+    #{$rev}: $space-after;
   }
 
   // Auto-apply the unit base mixin.
@@ -229,10 +270,10 @@ $zen-reverse-all-floats: false !default;
   $auto-include-flow-item-base: $zen-auto-include-flow-item-base
 ) {
 
-  $columns: $column-count;
+  $columns: $columns;
   @if unit($grid-width) == "%" {
     @if $parent-column-count == false {
-      @warn "For responsive layouts with a percentage-based grid width, you must set the $column-count to the number of columns that the parent element spans.";
+      @warn "For responsive layouts with a percentage-based grid width, you must set the $columns to the number of columns that the parent element spans.";
     }
     @else {
       $columns: $parent-column-count;
@@ -300,6 +341,23 @@ $zen-reverse-all-floats: false !default;
     }
   }
   @return $half-gutter;
+}
+
+//
+// Returns the width of an asymetrical zen-grid-item.
+//
+@function zen-asymetric-grid-width (
+  $column-span,
+  $column-position,
+  $columns: $zen-column-count
+) {
+  $width: 0;
+  $i: 0;
+
+  @for $i from $column-position through ($column-position + $column-span - 1) {
+    $width: $width + nth($columns, $i);
+  }
+  @return $width;
 }
 
 // Returns the opposite direction, given "left" or "right".
