@@ -87,8 +87,8 @@ $zen-reverse-all-floats: false !default;
 ) {
 
   $width: 0;
-  $space-before: 0;
-  $space-after: 0;
+  $margin-before: 0;
+  $margin-after: 0;
 
   // If $columns is a list, add up the appropriate column widths.
   @if type-of($columns) == "list" {
@@ -98,19 +98,19 @@ $zen-reverse-all-floats: false !default;
       $column-position
     );
 
-    // Calculate the space before the grid-item.
+    // Calculate the margin before the grid-item.
     @if $column-position == 1 {
-      $space-before: 0;
+      $margin-before: 0;
     }
     @else {
-      $space-before: zen-asymetric-grid-width(
+      $margin-before: zen-asymetric-grid-width(
         $column-position - 1,
         1
       );
     }
 
-    // Calculate the space after the grid-item.
-    $space-after: 0 - $width - $space-before;
+    // Calculate the margin after the grid-item.
+    $margin-after: 0 - $width - $margin-before;
 
     // Display a warning if units are % and add up to more than 100%.
     @if unit($width) == "%" {
@@ -131,8 +131,8 @@ $zen-reverse-all-floats: false !default;
     }
 
     $width: $column-span * $unit-width;
-    $space-before: ($column-position - 1) * $unit-width;
-    $space-after: (1 - $column-position - $column-span) * $unit-width;
+    $margin-before: ($column-position - 1) * $unit-width;
+    $margin-after: (1 - $column-position - $column-span) * $unit-width;
   }
 
   // Determine the float direction and its reverse.
@@ -153,8 +153,8 @@ $zen-reverse-all-floats: false !default;
   }
   width: $width;
   margin: {
-    #{$dir}: $space-before;
-    #{$rev}: $space-after;
+    #{$dir}: $margin-before;
+    #{$rev}: $margin-after;
   }
 
   // Auto-apply the unit base mixin.
