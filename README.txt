@@ -16,21 +16,27 @@ to a 12 column grid.
 
   @import "zen";
 
-  $zen-column-count: 12;    // Set the total number of columns in the grid.
   $zen-gutter-width: 40px;  // Set the gutter size. A half-gutter is used on
                             // each side of each column.
 
   .container {
-    @include zen-grid-container;
+    @include zen-grid-container;  // Define the container for your grid items.
   }
-  .sidebar1 {
-    @include zen-grid-item(3, 1);  // Span 3 columns starting in 1st column
-  }
-  .content {
-    @include zen-grid-item(6, 4);  // Span 6 columns starting in 4th column
-  }
-  .sidebar2 {
-    @include zen-grid-item(3, 10); // Span 3 columns starting in 10th column
+
+  $zen-column-count: 12;  // Set the number of grid columns to use in this media
+                          // query. You'll likely want a different grid for
+                          // different screen sizes.
+
+  @media all and (min-width: 50em) {
+    .sidebar1 {
+      @include zen-grid-item(3, 1);  // Span 3 columns starting in 1st column
+    }
+    .content {
+      @include zen-grid-item(6, 4);  // Span 6 columns starting in 4th column
+    }
+    .sidebar2 {
+      @include zen-grid-item(3, 10); // Span 3 columns starting in 10th column
+    }
   }
 
 Within the .container element, the .sidebar1, .sidebar2 and .content elements
