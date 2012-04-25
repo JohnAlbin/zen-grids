@@ -7,6 +7,7 @@
 
 #test-zen-grid-item {
   /* Test zen-grid-item(6, 4) with 12 column grid and 20px gutter */
+  $zen-column-count: 12;
   @include zen-grid-item(6, 4);
 
   /* Test zen-grid-item(3, 3) with box-sizing: content-box, 5 column grid and 10% gutter */
