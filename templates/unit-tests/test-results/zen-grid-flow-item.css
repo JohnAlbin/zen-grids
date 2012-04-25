@@ -7,7 +7,7 @@
   /* Test zen-grid-flow-item(1) without setting $column-count */
   margin-left: -10px;
   margin-right: 10px;
-  width: 8.333%;
+  width: 100%;
   padding-left: 10px;
   padding-right: 10px;
   -moz-box-sizing: border-box;
