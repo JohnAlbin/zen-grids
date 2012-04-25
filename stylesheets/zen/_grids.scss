@@ -39,6 +39,9 @@ $zen-float-direction: left !default;
 // This is a helper variable for RTL layouts.
 $zen-reverse-all-floats: false !default;
 
+// Set this to true if grid containers need to allow overflowing content.
+$zen-clearfix-with-overflow: false !default;
+
 
 //
 // Zen Grids requires the clearfix mixin.
@@ -47,11 +50,34 @@ $zen-reverse-all-floats: false !default;
 
 
 //
+// Zen Grids supports two clearfix methods for the grid container. The default
+// sets overflow to hidden. If you have child elements that need to extend
+// beyond the grid container, you can set $zen-clearfix-with-overflow to true
+// for an overflow safe clearfix.
+//
+@mixin zen-clearfix ($has-overflow: $zen-clearfix-with-overflow) {
+  @if $has-overflow {
+    &:before,
+    &:after {
+      content: "";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+    *zoom: 1;
+  }
+  @else {
+   @include clearfix;
+  }
+}
+
+//
 // Apply this to the grid container element.
 //
 @mixin zen-grid-container () {
   position: relative;
-  @include clearfix;
+  @include zen-clearfix();
 }
 
 //
