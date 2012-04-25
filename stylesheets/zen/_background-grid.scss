@@ -53,6 +53,7 @@ $bg-grid-color: #ffdede !default;
   @for $i from 1 through $column-count {
     .bgcol-#{$i} {
       @include zen-grid-item(1, $i, $column-count: $column-count, $gutter-width: $gutter-width, $float-direction: $dir, $auto-include-item-base: false);
+      display: block;
       height: 100%;
       margin-bottom: -($line-height);
       background-color: $grid-color;
@@ -66,6 +67,7 @@ $bg-grid-color: #ffdede !default;
         @include zen-clear();
       }
       @include zen-grid-item(1, $i, $column-count: $column-count, $gutter-width: $gutter-width, $float-direction: $rev, $auto-include-item-base: false);
+      display: block;
     }
   }
   @for $i from ($column-count + 1) through 30 {
