@@ -261,8 +261,7 @@ $zen-reverse-all-floats: false !default;
   }
 
   // Calculate the item's width.
-  $unit-width: zen-unit-width($columns, $grid-width);
-  $width: $column-span * $unit-width;
+  $width: zen-grid-item-width($column-span, $columns, $grid-width);
   @if $box-sizing == content-box {
     @if not comparable($width, $gutter-width) {
       $units-gutter: unit($gutter-width);
@@ -313,6 +312,15 @@ $zen-reverse-all-floats: false !default;
     @warn "You may experience rounding errors as the grid width, #{$grid-width}, does not divide evenly into #{$column-count} columns.";
   }
   @return $unit-width;
+}
+
+// Calculates the width of a grid item that spans the specified number of columns.
+@function zen-grid-item-width (
+  $column-span,
+  $column-count: $zen-column-count,
+  $grid-width: $zen-grid-width
+) {
+  @return $column-span * zen-unit-width($column-count, $grid-width);
 }
 
 // Returns the opposite direction, given "left" or "right".
