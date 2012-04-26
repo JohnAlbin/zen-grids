@@ -15,7 +15,6 @@
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  overflow: visible;
   word-wrap: break-word;
   /* Test zen-grid-item(3, 3) with box-sizing: content-box, 5 column grid and 10% gutter */
   float: left;
@@ -25,7 +24,6 @@
   padding-left: 5%;
   padding-right: 5%;
   border: 0 !important;
-  overflow: visible;
   word-wrap: break-word;
   /* Turn off $zen-auto-include-item-base */
   /* Test zen-grid-item(3, 3) with 5 column grid and 40px gutter */

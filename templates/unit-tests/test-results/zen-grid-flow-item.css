@@ -14,7 +14,6 @@
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  overflow: visible;
   word-wrap: break-word;
   /* Test zen-grid-flow-item(1, 4) with 12 column grid and 20px gutter */
   margin-left: -10px;
@@ -26,7 +25,6 @@
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  overflow: visible;
   word-wrap: break-word;
   /* Test zen-grid-flow-item(1, 4) with 15px gutter */
   margin-left: -7px;
@@ -38,7 +36,6 @@
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  overflow: visible;
   word-wrap: break-word;
   /* Test zen-grid-flow-item(1, 4) with 15px gutter and $zen-float-direction: right */
   margin-right: -7px;
@@ -50,7 +47,6 @@
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  overflow: visible;
   word-wrap: break-word;
   /* Test zen-grid-flow-item(1, 4) with 15px gutter and $alpha-gutter: true */
   margin-left: 8px;
@@ -62,7 +58,6 @@
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  overflow: visible;
   word-wrap: break-word;
   /* Test zen-grid-flow-item(1, 4) with 15px gutter and $omega-gutter: false */
   margin-left: -7px;
@@ -74,7 +69,6 @@
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  overflow: visible;
   word-wrap: break-word;
   /* Test zen-grid-flow-item(1, 4) with 15px gutter, $zen-float-direction: right and $alpha-gutter: true */
   margin-right: 8px;
@@ -86,7 +80,6 @@
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  overflow: visible;
   word-wrap: break-word;
   /* Test zen-grid-flow-item(1, 4) with $zen-box-sizing: content-box and 10% gutter */
   margin-left: -5%;
@@ -95,7 +88,6 @@
   padding-left: 5%;
   padding-right: 5%;
   border: 0 !important;
-  overflow: visible;
   word-wrap: break-word;
   /* Test zen-grid-flow-item(1, 4) with $zen-auto-include-flow-item-base: false */
   margin-left: -10px;
