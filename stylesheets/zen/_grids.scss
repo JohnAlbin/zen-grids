@@ -44,7 +44,9 @@ $zen-reverse-all-floats: false !default;
 // Apply this to the grid container element.
 //
 @mixin zen-grid-container () {
-  position: relative;
+  @if ($legacy-support-for-ie6 or $legacy-support-for-ie7) {
+    *position: relative; // @TODO: This is a pre-IE8 line of code; don't remember why its needed.
+  }
   // We use the "micro clearfix", instead of Compass' clearfix or pie-clearfix.
   &:before,
   &:after {
