@@ -2,6 +2,7 @@ description "Unit tests for the Zen Grids system."
 
 stylesheet 'sass/function-zen-direction-flip.scss', :media => 'all', :to => 'function-zen-direction-flip.scss'
 stylesheet 'sass/function-zen-half-gutter.scss',    :media => 'all', :to => 'function-zen-half-gutter.scss'
+stylesheet 'sass/function-zen-unit-width.scss',     :media => 'all', :to => 'function-zen-unit-width.scss'
 stylesheet 'sass/zen-clear.scss',                   :media => 'all', :to => 'zen-clear.scss'
 stylesheet 'sass/zen-grid-container.scss',          :media => 'all', :to => 'zen-grid-container.scss'
 stylesheet 'sass/zen-grid-flow-item.scss',          :media => 'all', :to => 'zen-grid-flow-item.scss'
@@ -11,6 +12,7 @@ stylesheet 'sass/zen-nested-container.scss',        :media => 'all', :to => 'zen
 
 file 'test-results/function-zen-direction-flip.css'
 file 'test-results/function-zen-half-gutter.css'
+file 'test-results/function-zen-unit-width.css'
 file 'test-results/zen-clear.css'
 file 'test-results/zen-grid-container.css'
 file 'test-results/zen-grid-flow-item.css'
