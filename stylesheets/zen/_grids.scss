@@ -61,7 +61,7 @@ $zen-reverse-all-floats: false !default;
 
 //
 // Apply this to any grid item that is also a grid container element for a
-// nested grid.
+// nested grid. It must be applied after the zen-grid-item() mixin.
 //
 @mixin zen-nested-container () {
   @include zen-grid-container;
@@ -165,7 +165,7 @@ $zen-reverse-all-floats: false !default;
   @if $box-sizing == content-box {
     border: 0 !important;
   }
-  // Prevent overflowing content from breaking the layout.
+  // Prevent overflowing content from being hidden beneath other grid items.
   overflow: visible;
   word-wrap: break-word; // A very nice CSS3 property.
 
@@ -177,12 +177,11 @@ $zen-reverse-all-floats: false !default;
       *behavior: url($box-sizing-polyfill-path);
     }
     @if $legacy-support-for-ie6 {
-      _display: inline; // display inline or double your floated margin! [1]
-      _overflow: hidden; // in IE6, overflow auto is broken [2] and so is overflow visible [3]
-      _overflow-y: visible;
+      _display: inline; // Display inline or double your floated margin! [1]
+      _overflow: hidden; // Prevent overflowing content from breaking the layout.
+      _overflow-y: visible; // In IE6, overflow visible is broken [2]
       // 1. http://www.positioniseverything.net/explorer/doubled-margin.html
-      // 2. http://browservulsel.blogspot.com/2005/04/ie-overflow-auto-scrollbar-overlap.html
-      // 3. http://www.howtocreate.co.uk/wrongWithIE/?chapter=overflow%3Avisible%3B
+      // 2. http://www.howtocreate.co.uk/wrongWithIE/?chapter=overflow%3Avisible%3B
     }
   }
 }
