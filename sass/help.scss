@@ -68,7 +68,7 @@ $zen-auto-include-item-base: false;
     }
   }
 
-  #imports {
+  #import {
     @include zen-clear(both);
   }
 }
