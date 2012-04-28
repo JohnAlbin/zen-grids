@@ -1,4 +1,5 @@
 @import "base";
+@import "compass/typography/vertical_rhythm";
 // Aggregate all the stylesheets into one file.
 @import "html-elements.scss";
 @import "common.scss";
@@ -38,6 +39,22 @@ $zen-auto-include-item-base: false;
   text-align: center;
 }
 
+#help-toc {
+  ul {
+    padding-left: 0;
+    list-style-type: none;
+    li:before {
+      content: "★   ";
+      font-size: 50%;
+      position: relative;
+      top: -0.3em;
+    }
+    ul {
+      padding-left: zen-half-gutter();
+    }
+  }
+}
+
 @media all and (min-width: 540px) {
   #header {
     @include zen-grid-item(1, 1);
@@ -56,14 +73,23 @@ $zen-auto-include-item-base: false;
   }
 }
 
-#content h2 {
+#content h2,
+#comments h2 {
   margin: {
-    left: -1 * zen-half-gutter();
-    right: -1 * zen-half-gutter();
+    left: -(zen-half-gutter());
+    right: -(zen-half-gutter());
   }
   padding: (zen-half-gutter() - 5px) zen-half-gutter();
   background-color: #eee;
   @include border-radius(5px);
+}
+
+#comments {
+  #dsq-content #dsq-global-toolbar,
+  #disqus_thread {
+    @include adjust-leading-to(1);
+    margin: rhythm(1) 0;
+  }
 }
 
 #logo {
@@ -84,6 +110,7 @@ $zen-auto-include-item-base: false;
     position: absolute;
     width: 100%;
     top: 0;
+    left: 0;
     line-height: 3em;
     margin: 0;
 
@@ -95,23 +122,28 @@ $zen-auto-include-item-base: false;
     }
   }
 
-  #content h2,
-  #content h3,
-  #content h4 {
-    margin-top: $zen-gutter-width;
-  }
+  #content {
+    h2,
+    h3,
+    h4 {
+      margin-top: $zen-gutter-width;
+    }
 
-  #content h3 em {
-    font-weight: normal;
-    font-style: normal;
-    @include font-rem($base-font-size);
-  }
+    h3 em {
+      font-weight: normal;
+      font-style: normal;
+      @include font-rem($base-font-size);
+    }
 
-  #content article {
-    p,
-    pre,
-    ul {
-      margin-left: $zen-gutter-width;
+    article {
+      p,
+      pre,
+      ul {
+        margin-left: $zen-gutter-width;
+      }
+      ul {
+        padding-left: 0;
+      }
     }
   }
 }
