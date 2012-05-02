@@ -18,7 +18,7 @@
 // These variables are used by many mixins to add additional CSS to support
 // specific versions of IE or specific vendor prefixes.
 //
-// To turn off support for IE6 or IE7, set those variables to false.
+// To turn on support for IE6 or IE7, set those variables to true.
 //
 // Zen does not require special handling for IE8 or later. But Compass defines
 // more Legacy IE variables that you might find useful for your theme. See the
@@ -38,7 +38,6 @@ $legacy-support-for-ie7: true;
 
 $base-font-size:   16px; // The font size set on the root html element.
 $base-line-height: 24px; // This line-height determines the basic unit of vertical rhythm.
-$rem-base-font: $base-font-size;
 
 $h1-font-size: 2    * $base-font-size;
 $h2-font-size: 1.5  * $base-font-size;
@@ -46,6 +45,7 @@ $h3-font-size: 1.17 * $base-font-size;
 $h4-font-size: 1    * $base-font-size;
 $h5-font-size: 0.83 * $base-font-size;
 $h6-font-size: 0.75 * $base-font-size;
+$small-font-size: 0.75 * $base-font-size;
 
 // The following font family declarations are based on the Microsoft core web
 // fonts which are common fonts available on most computer systems. The DejaVu
@@ -73,7 +73,7 @@ $arial:           Arial, Helvetica, "Nimbus Sans L", sans-serif;
 $courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
 
 // Now create some variables for the font stacks we want to use on this site.
-$base-font-family: $times; // The font family set on the html element.
+$base-font-family: $georgia; // The font family set on the html element.
 $font-body:        $times;
 $font-monospace:   $courier;
 
@@ -86,15 +86,20 @@ $font-monospace:   $courier;
 $indent-amount: 30px;
 
 $color-link: #30672c;
+$color-green-bg: #335533;
 
+$tooltip-color: #234600;
+$tooltip-border-color: #ae6;
+$tooltip-bg-color: #e8ffe0;
 
 //
 // Zen Grids
 //
 
-$zen-column-count: 5;
+$zen-column-count: 1;
 $zen-gutter-width: 40px;
 $zen-auto-include-unit-base: false;
+$zen-auto-include-flow-unit-base: false;
 $box-sizing-polyfill-path: "/js/boxsizing.htc";
 
 
@@ -108,6 +113,7 @@ $box-sizing-polyfill-path: "/js/boxsizing.htc";
 @import "compass/css3";     // Use one CSS3 mixin instead of multiple vendor prefixes.
 @import "compass/typography/vertical_rhythm"; // Helps set up a vertical rhythm.
 @import "zen";              // Add the Zen Grids responsive layout mixins.
+@import "zen/background-grid";
 @import "rem";
 
 @import "custom";           // Import our custom mixins last.

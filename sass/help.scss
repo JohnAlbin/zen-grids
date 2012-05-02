@@ -1,5 +1,4 @@
 @import "base";
-@import "compass/typography/vertical_rhythm";
 // Aggregate all the stylesheets into one file.
 @import "normalize.scss";
 @import "pages.scss";
@@ -8,35 +7,27 @@
 $zen-column-count: 2;
 $zen-auto-include-item-base: false;
 
-#page {
-  margin: {
-    left: auto;
-    right: auto;
-  }
-  max-width: 800px;
-  @include zen-grid-container;
-}
 #header,
 #content>section,
 #comments,
 #main-menu,
 #footer {
   @include zen-grid-item-base;
-  margin: {
-    top: $zen-gutter-width;
-    bottom: $zen-gutter-width;
-  }
+  margin-top: rhythm(1);
 }
 #header {
-  margin: {
-    top: 0 !important;
-    bottom: 0;
-  }
+  margin-bottom: 0;
 }
 #header,
 #main-menu,
 #footer {
   text-align: center;
+}
+
+h1 {
+  @include adjust-font-size-to($h2-font-size, 1);
+  @include leader(1, $h2-font-size);
+  @include trailer(1, $h2-font-size);
 }
 
 #help-toc {
@@ -62,10 +53,7 @@ $zen-auto-include-item-base: false;
 
   #help-toc {
     @include zen-grid-item(1, 2);
-    margin-top: 10px !important;
-    h1 {
-      margin-top: 0;
-    }
+    margin-top: 0 !important;
   }
 
   #import {
@@ -75,13 +63,10 @@ $zen-auto-include-item-base: false;
 
 #content h2,
 #comments h2 {
-  margin: {
-    left: -(zen-half-gutter());
-    right: -(zen-half-gutter());
-  }
-  padding: (zen-half-gutter() - 5px) zen-half-gutter();
+  margin: rhythm(1) (-(zen-half-gutter()));
+  padding: 0 zen-half-gutter();
+  @include adjust-leading-to(2, $h2-font-size);
   background-color: #eee;
-  @include border-radius(5px);
 }
 
 #comments {
@@ -104,7 +89,7 @@ $zen-auto-include-item-base: false;
     padding-top: 3em;
   }
   #header {
-    margin-top: zen-half-gutter();
+    margin-top: rhythm(1);
   }
   #main-menu {
     position: absolute;
@@ -123,12 +108,6 @@ $zen-auto-include-item-base: false;
   }
 
   #content {
-    h2,
-    h3,
-    h4 {
-      margin-top: $zen-gutter-width;
-    }
-
     h3 em {
       font-weight: normal;
       font-style: normal;
@@ -140,10 +119,16 @@ $zen-auto-include-item-base: false;
       pre,
       ul {
         margin-left: $zen-gutter-width;
+        margin-right: $zen-gutter-width;
       }
       ul {
         padding-left: 0;
       }
     }
   }
+}
+
+#footer {
+  @include zen-clear(both);
+  @include zen-grid-item(2, 1);
 }

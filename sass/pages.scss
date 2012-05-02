@@ -1,7 +1,49 @@
 @import "base";
 
 
-// Skip link styling
+/*
+ * Background images
+ */
+html {
+  background-color: #fff;
+  background-image: url(../images/background-lattice.png);
+  background-repeat: repeat;
+  background-position: center bottom;
+}
+body {
+  margin: 0;
+  background-image: url(../images/background-jade.png);
+  background-repeat: repeat-x;
+  background-position: center top;
+  padding: image-height("background-jade.png") 0 0 zen-half-gutter();
+  @media all and (min-width: 540px) {
+    padding: {
+      left: 10%;
+      right: 10%;
+    }
+  }
+}
+
+.page {
+  @include zen-grid-container();
+  @include box-shadow();
+
+  position: relative;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  max-width: 960px;
+  background-color: #fff;
+  background-image: url(../images/background-mountains.jpg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+
+/*
+ * Skip link styling
+ */
 #skip-link {
   margin: 0;
 
@@ -11,32 +53,100 @@
     width: 100%;
     padding: 2px 0 3px 0;
     text-align: center;
-    background-color: #666;
+    background-color: $color-link;
     color: #fff;
-  }
-}
-
-@media all and (min-width: 321px) {
-  #skip-link a {
     @include element-focusable;
   }
 }
 
+/*
+ * Header
+ */
 #header {
   h1 {
     @include element-invisible;
   }
   h2 {
+    @include adjust-leading-to(1, $h2-font-size);
     font-weight: normal;
-    margin: $zen-gutter-width 0;
+    margin: rhythm(1, $h2-font-size) 0;
     text-align: center;
-
-    em {
-      display: block;
-    }
   }
 }
 
-#main-menu h2 {
-  @include element-invisible;
+#logo {
+  display: block;
+  max-width: 269px;
+  margin: 0 auto;
+  text-align: center;
+
+  img {
+    vertical-align: bottom;
+  }
 }
+
+#footer {
+  @extend .center;
+  color: #fff;
+  background-color: $color-green-bg;
+  background-image: url(../images/background-lattice.png);
+  background-repeat: repeat;
+  background-position: center bottom;
+  small {
+    display: block;
+    @include adjust-font-size-to($base-font-size);
+    @include leader(.5);
+    @include trailer(.5);
+  }
+  a:link,
+  a:visited {
+    color: #fff;
+    text-decoration: none;
+  }
+  a:hover,
+  a:active {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
+
+.more {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+
+/*
+ * Navigation bar
+ */
+#main-menu {
+  text-align: center;
+
+  h2 {
+    @include element-invisible;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+//@media all and (min-width: 321px) {
+  .page {
+    padding-top: rhythm(2);
+  }
+  #header {
+    margin-top: rhythm(1);
+  }
+  #main-menu {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    line-height: rhythm(2);
+    margin: 0;
+    background-color: #eee;
+  }
+//}

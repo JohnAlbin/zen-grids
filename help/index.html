@@ -24,13 +24,13 @@
 <a href="#main-menu">Jump to main menu</a>
 </p>
 
-<div id="page">
+<div class="page">
 
   <header id="header" role="banner">
-    <a href="/" title="Home" rel="home" id="logo"><img src="/images/zen-grids-logo.png" alt="Zen Grids" width="293" height="234"></a>
+    <a href="/" title="Home" rel="home" id="logo"><img src="/images/zen-grids-logo.png" alt="Zen Grids" width="269" height="216"></a>
     <hgroup>
       <h1>Zen Grids</h1>
-      <h2>A responsive grid system <em>built with the power of <a href="#aside2">Sass</a></em></h2>
+      <h2>A responsive grid system <em>built with the power of <a href="/#aside2">Sass</a></em></h2>
     </hgroup>
   </header>
 
@@ -89,9 +89,9 @@
     <article>
     <h4 id="zen-column-count"><code>$zen-column-count</code></h4>
     <p>
-    Specifies the number of columns in the grid. Defaults to 12 for no good reason. You should set this variable each time you want to use a different grid for a set of media queries.
+    Specifies the number of columns in the grid. Defaults to 1 as a hat tip to mobile first designs. You should set this variable each time you want to use a different grid for a set of media queries.
     </p>
-    <pre><code>$zen-column-count: 12 !default;</code></pre>
+    <pre><code>$zen-column-count: 1 !default;</code></pre>
     </article>
 
     <article>
@@ -217,7 +217,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <article>
     <h3 id="zen-grid-item-base">zen-grid-item-base()</h3>
     <p>
-    Apply this mixin to each content box in the layout to prevent overflowing content from breaking the layout.
+    Apply this mixin to each grid item in the layout to prevent overflowing content from breaking the layout.
     </p>
     <p>
     The mixin has the following optional parameters, but its better to use the <a href="#zen-gutter-width">$zen-gutter-width</a> and <a href="#zen-box-sizing">$zen-box-sizing</a> variables instead:
@@ -340,9 +340,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <h2>Main menu</h2>
     <p>
     <a href="/">Intro</a> ★
-<!--
-    <a href="/quick-demo.html">Quick Demo</a> ★
--->
+    <!-- <a href="/quick-demo.html">Quick Demo</a> ★ -->
     <a href="/help/">Reference</a>
     </p>
   </nav>
@@ -360,7 +358,7 @@ dsq.src = 'http://zengrids.disqus.com/embed.js';
   </section>
 
   <footer id="footer">
-    <small>© 2011-2012 <a href="http://john.albin.net/">John Albin Wilkins</a></small>
+    <small>© 2011-2012 <a href="http://john.albin.net/">John Albin Wilkins</a>. All rights reserved.  ★  <a href="https://github.com/JohnAlbin/compass-zen-grids/blob/master/LICENSE.txt">Code licensed under GPL</a>.  ★  Built by <a href="http://twitter.com/JohnAlbin">@JohnAlbin</a></small>
   </footer>
 
 </div>

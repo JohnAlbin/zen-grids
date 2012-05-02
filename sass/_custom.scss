@@ -1,6 +1,12 @@
 //
 // Custom sass mixins
 //
+// To use a mixin in this file, add this line to the top of your .scss file:
+//   @import "base";
+// Then to use a mixin for a particular rule, add this inside the ruleset's
+// curly brackets:
+//   @include mix-in-name;
+
 
 // element-invisible as defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
 @mixin element-invisible {
@@ -29,5 +35,45 @@
   &:active,
   &:focus {
     @include element-invisible-off;
+  }
+}
+
+@mixin show-query($size: 'mobile') {
+  @if $size == 'mobile' {
+    .mq-mobile {
+      display: inline;
+    }
+    .mq-tablet,
+    .mq-desktop,
+    .mq-large {
+      display: none;
+    }
+  } @else if $size == 'tablet' {
+    .mq-tablet {
+      display: inline;
+    }
+    .mq-mobile,
+    .mq-desktop,
+    .mq-large {
+      display: none;
+    }
+  } @else if $size == 'desktop' {
+    .mq-desktop {
+      display: inline;
+    }
+    .mq-mobile,
+    .mq-tablet,
+    .mq-large {
+      display: none;
+    }
+  } @else if $size == 'large' {
+    .mq-large {
+      display: inline;
+    }
+    .mq-mobile,
+    .mq-tablet,
+    .mq-desktop {
+      display: none;
+    }
   }
 }

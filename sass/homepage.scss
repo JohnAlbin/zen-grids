@@ -1,0 +1,309 @@
+@import "base";
+
+// Aggregate all the stylesheets into one file.
+@import "normalize.scss";
+@import "pages.scss";
+@import "tooltip.scss";
+
+
+#header,
+#tagline,
+//#features,
+#features li,
+#content,
+#news,
+#main-menu,
+#warning,
+#aside1,
+#aside2,
+#comments,
+#footer {
+  @include zen-grid-item-base();
+}
+
+@media all and (min-width: 810px) {
+  #content section,
+  .part1,
+  .part2,
+  #example {
+    @include zen-grid-item-base();
+  }
+}
+
+$zen-column-count: 6;
+$zen-gutter-width: 40px;
+
+/*
+.bg-grid {
+  @include -experimental-bg-grid();
+  position: absolute;
+  margin-top: -(rhythm(2));
+}
+.page {
+  background-color: inherit;
+}
+*/
+
+.page2 {
+  padding-top: 0;
+}
+
+#header {
+  @include zen-grid-item(6, 1);
+
+  @media all and (min-width: 540px) {
+    @include zen-grid-item(3, 4, right);
+  }
+  @media all and (min-width: 810px) {
+    h2 em {
+      display: block;
+    }
+  }
+}
+#tagline {
+  display: none;
+}
+@media all and (min-width: 540px) {
+  #tagline {
+    display: block;
+    @include zen-grid-item(3, 4);
+    position: relative;
+    margin-top: rhythm(1);
+
+    figure {
+      @include adjust-font-size-to( $h2-font-size );
+      font-weight: bold;
+
+      img {
+        vertical-align: bottom;
+      }
+      p {
+        margin: 0;
+      }
+      .one {
+        text-align: right;
+        color: $color-link;
+      }
+    }
+  }
+}
+#warning {
+  display: none;
+  @include zen-grid-item(4, 3);
+  @include zen-clear();
+}
+#features {
+  @include adjust-font-size-to($h3-font-size, 1);
+  border: {
+    top: 1px solid #333;
+    bottom: 1px solid #333;
+  }
+  padding: {
+    top: rhythm(1, $h3-font-size);
+    bottom: rhythm(1, $h3-font-size);
+  }
+  color: #fff;
+  font-family: $arial;
+  font-weight: bold;
+  background-color: $color-green-bg;
+  background-image: url(../images/background-lattice.png);
+  background-repeat: repeat;
+  background-position: center bottom;
+  overflow: hidden; // New block formatting context.
+  position: relative;
+  z-index: 1;
+
+  $offset: 100/80*10%;
+  margin-left: -($offset);
+  padding-left: $offset;
+  @media all and (min-width: 540px) {
+    margin-right: -($offset);
+    padding-right: $offset;
+  }
+  h2 {
+    @include element-invisible();
+  }
+  ul {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+  }
+  img {
+    vertical-align: bottom;
+  }
+  li {
+    @include zen-clear();
+    @include zen-grid-item(6, 1);
+  }
+  figure {
+    float: left;
+    margin-right: zen-half-gutter();
+    padding-bottom: zen-half-gutter();
+    max-width: 100px;
+  }
+  li:last-child figure {
+    padding-bottom: 0;
+  }
+  @media all and (min-width: 600px) {
+    li {
+      @include zen-clear(none);
+      text-align: center;
+    }
+    li:nth-child(3n+1) {
+      @include zen-grid-item(2, 1);
+    }
+    li:nth-child(3n+2) {
+      @include zen-grid-item(2, 3);
+    }
+    li:nth-child(3n+3) {
+      @include zen-grid-item(2, 5);
+    }
+    figure {
+      float: none;
+      margin-right: 0;
+      max-width: none;
+    }
+    li:last-child figure {
+      padding-bottom: zen-half-gutter();
+    }
+  }
+  @media all and (min-width: 1050px) {
+    li {
+      text-align: left;
+    }
+    figure {
+      float: left;
+      max-width: 100px;
+      margin-right: zen-half-gutter();
+      padding-bottom: 0;
+    }
+  }
+}
+#content {
+  @include zen-clear(both);
+  @include zen-grid-item(6, 1);
+
+  @media all and (min-width: 810px) {
+    @include zen-nested-container();
+    margin-bottom: rhythm(2);
+
+    section {
+      @include zen-clear();
+      @include zen-grid-item(4, 2);
+    }
+  }
+}
+.part1,
+.part2 {
+  margin: {
+    left: -(zen-half-gutter());
+    right: -(zen-half-gutter());
+  }
+  @media all and (min-width: 400px) {
+    margin: {
+      left: 0;
+      right: 0;
+    }
+  }
+}
+.part2 {
+  margin-top: -1px;
+}
+#aside1,
+#news,
+#aside2,
+#comments {
+  @include zen-clear();
+  @include zen-grid-item(6, 1);
+}
+@media all and (min-width: 540px) {
+  #news {
+    @include zen-grid-item(3, 1);
+  }
+  #aside2 {
+    @include zen-clear(none);
+    @include zen-grid-item(3, 4);
+  }
+}
+@media all and (min-width: 810px) {
+  .part1 {
+    @include zen-clear();
+    @include zen-grid-item(3, 1);
+  }
+  .part2 {
+    @include zen-clear(none);
+    @include zen-grid-item(3, 4);
+  }
+  #example {
+    @include zen-clear();
+    @include zen-grid-item(4, 2);
+  }
+  #aside1 {
+    @include zen-grid-item(2, 1);
+  }
+  #news {
+    @include zen-clear(none);
+    @include zen-grid-item(2, 3);
+    background-color: #eee;
+    @include border-radius(5px);
+  }
+  #aside2 {
+    @include zen-grid-item(2, 5);
+  }
+  #comments {
+    @include zen-grid-item(4, 2);
+  }
+}
+#footer {
+  @include zen-clear(both);
+  @include zen-grid-item(6, 1);
+}
+
+
+/*
+ * Example
+ */
+$zen-column-count: 7;
+$zen-gutter-width: 10px;
+
+#example {
+  position: relative;
+  padding: 0;
+
+  .container {
+    @include zen-grid-container;
+    padding: rhythm(1) 0 0 0;
+    position: relative;
+  }
+  .content,
+  .aside1,
+  .aside2,
+  .footer1,
+  .footer2 {
+    @include zen-grid-item-base;
+    margin: 0;
+  }
+  .aside1 {
+    @include zen-grid-item(2, 1);
+  }
+  .content {
+    @include zen-grid-item(4, 3);
+  }
+  .aside2 {
+    @include zen-grid-item(1, 7);
+  }
+  .footer1 {
+    @include zen-clear();
+    @include zen-grid-item(3, 5);
+  }
+  .footer2 {
+    @include zen-grid-item(4, 1);
+  }
+  .bg-grid {
+    @include -experimental-bg-grid();
+    position: absolute;
+    z-index: inherit;
+    margin: 0;
+  }
+}

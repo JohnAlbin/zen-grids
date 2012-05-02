@@ -8,12 +8,12 @@
   <meta charset="utf-8">
   <title>Zen Grids: a responsive grid system built with Compass and Sass</title>
 
-  <link rel="stylesheet" href="/css/styles.css" media="all">
+  <link rel="stylesheet" href="/css/homepage.css" media="all">
   <link rel="shortcut icon" href="/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon">
 
   <meta name="HandheldFriendly" content="true">
   <meta name="MobileOptimized" content="width">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="cleartype" content="on">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -24,53 +24,213 @@
 <a href="#main-menu">Jump to main menu</a>
 </p>
 
-<div id="page">
+<div class="page">
 
   <header id="header" role="banner">
-    <a href="/" title="Home" rel="home" id="logo"><img src="images/zen-grids-logo.png" alt="Zen Grids" width="293" height="234"></a>
+    <a href="/" title="Home" rel="home" id="logo"><img src="/images/zen-grids-logo.png" alt="Zen Grids" width="269" height="216"></a>
     <hgroup>
       <h1>Zen Grids</h1>
-      <h2>A responsive grid system <em>built with the power of <a href="http://sass-lang.com/">Sass</a></em></h2>
+      <h2>A responsive grid system <em>built with the power of <a href="#aside2">Sass</a></em></h2>
     </hgroup>
   </header>
-
-  <aside id="features">
-    <p>
-    Powerful ★
-    Simple ★
-    Rugged
-    </p>
-  </aside>
-
-  <article id="content" role="main">
-    <h2>Update: April 27</h2>
-
-    <p>Zen Grids 1.1 is out now!</p>
-
-    <p>Tutorials and demos are coming soon.</h2>
-
-    <p>You can install it with one command:<br>
-    <kbd>gem install zen-grids</kbd></p>
-
-    <p>And read the <a href="/help/">Zen Grids reference docs</a>.</p>
-
-    <p>Then, contribute, fix and discuss:<br>
-    <a href="https://github.com/JohnAlbin/compass-zen-grids">github.com/JohnAlbin/compass-zen-grids</a></p>
-  </article>
 
   <nav id="main-menu" role="navigation">
     <h2>Main menu</h2>
     <p>
     <a href="/">Intro</a> ★
-<!--
-    <a href="/quick-demo.html">Quick Demo</a> ★
--->
+    <!-- <a href="/quick-demo.html">Quick Demo</a> ★ -->
     <a href="/help/">Reference</a>
     </p>
   </nav>
 
+  <aside id="tagline">
+    <figure>
+      <p class="limitless">Limitless layouts…</p>
+      <img src="images/limitless-layouts.png" alt="" width="600" height="225" />
+      <p class="one">…one simple system</p>
+    </figure>
+    <!--
+    <p>
+    Powerful ★
+    Simple ★
+    Rugged
+    </p>-->
+  </aside>
+
+  <aside id="warning">
+    <h2>Warning:</h2>
+    <p>This page is <em>gratuitously</em> <strong>responsive</strong>. <a href="/demo.html">View the grid.</a></p>
+  </aside>
+
+</div>
+
+  <article id="features">
+    <h2>Features:</h2>
+    <ul>
+    <li><figure><img src="/images/catwalk.jpg" width="150" height="150"></figure> Design responsive, adaptive or fixed-width</li>
+    <li><figure><img src="/images/mathkittens.jpg" width="150" height="150"></figure> No more Math! Let Sass do the work.</li>
+    <li><figure><img src="/images/crazycat.jpg" width="150" height="150"></figure> Unburden your mind! Free your creativity!</li>
+    </ul>
+  </article>
+
+<div class="page page2">
+
+  <article id="content" role="main">
+    <section class="intro">
+
+    <h2>Writing CSS for web page layouts is hard.</h2>
+
+    <p>Writing your layout in Sass with Zen Grids is easy.</p>
+
+	<p>With the verboseness of properties and values like margin, padding, floats, and clears, <strong>CSS actually gets in the way of figuring out how to layout our content.</strong></p>
+
+	<p>That’s why our community created grid systems in the first place. Place a class into our HTML that matches a certain naming convention and the element gets laid out in our grid. Instead of dealing with a plethora of CSS properties, we dealt with class names. <em>Simplification, FTW.</em></p>
+
+	<p>But with Responsive Web Design, an HTML element may be positioned in 4 or 5 different ways depending on the media query. Do we splatter 4 or 5 different class names into each element in our markup?</p>
+
+    <figure>
+	<pre><code style="font-weight: normal">&lt;div class="grid_2 mq1_grid_6 mq2_grid_8 mq2_push_3 mq3_grid_7 mq3_pull_4"&gt;</code></pre>
+	</figure>
+
+	<p>Alternatively, do we add IDs to each element and then use JavaScript to dynamically change the grid class names depending on the viewport size?</p>
+
+	<p>Let’s face it. <em>Both of those solutions suck.</em></p>
+
+	<p>Fortunately, CSS preprocessors like Sass provide a solution. We can remove the class clutter from our markup, while simultaneously removing the CSS clutter from our stylesheets. In our markup, we replace the multiple classes with a single identifier for each element. And in our Sass stylesheets, we simply use a single line of Sass to layout each element in a media query. (Sass uses the same syntax as CSS, so it’s super easy to learn.)</p>
+
+	<p>Then we just let Sass be Sass; let it figure out all the complicated math and CSS properties. CSS preprocessors automatically transform our simplified stylesheets into the verbose, raw CSS needed by all browsers.</p>
+
+	<p>But simplification of our stylesheets does much more than just make our files look cleaner. <strong>By removing the clutter of complicated CSS from our minds, we lower our “cognitive load”, freeing our minds to try out amazing layouts.</strong> <em>That</em> is the best reason to use Sass for responsive layouts. And why you should try Zen Grids.</p>
+
+	<p>Be playful! Be awesome! Use a CSS preprocessor. Try Sass and Zen Grids.</p>
+
+    </section>
+    <section class="example-intro">
+
+    <h2>Using Zen Grids is easy!</h2>
+    <p>Let’s try a simple example. We’ll create a complete layout in less than 10 lines of code. In this minimal design, the first row is a content column with a sidebar on each side. And the second row is 2 footer columns. All aligned to a 7 column grid. Here’s the complete code:</p>
+    </section>
+
+    <pre class="part1"><code>
+
+@import <span id="ex-import" class="tooltip-target">"zen";<span class="tooltip down"><span class="pointer">//</span> <span class="text">Import Zen Grids with this statement.</span></span></span>
+
+
+
+$zen-column-count: <span class="tooltip-target">7; <span class="tooltip down"><span class="pointer">//</span> <span class="text">Set the total number of columns in the grid.</span></span></span>
+$zen-gutter-width: <span class="tooltip-target">10px; <span class="tooltip up"><span class="pointer">//</span> <span class="text">Set the gutter size. A half-gutter is used on each side of each column.</span></span></span>
+
+
+
+.container {
+ @include <span id="ex-container" class="tooltip-target">zen-grid-container; <span class="tooltip up"><span class="pointer">//</span> <span class="text">Apply this mixin to the container.</span></span></span>
+}
+
+.aside1 {
+ @include <span id="ex-apply" class="tooltip-target">zen-grid-item(2, 1); <span class="tooltip up"><span class="pointer">//</span> <span class="text">Apply this mixin for each grid item in the container.</span></span></span>
+}
+
+
+</code></pre><pre class="part2"><code>
+
+.content {
+ @include zen-grid-item(<span id="ex-grid-item" class="tooltip-target">4, 3); <span class="tooltip down"><span class="pointer">//</span> <span class="text">Make this grid item span 5 columns.</span></span> <span class="tooltip up"><span class="pointer">//</span> <span class="text">Position this grid item in the 3rd column.</span></span></span>
+}
+
+.aside2 {
+ @include zen-grid-item(1, 7);
+}
+
+.footer1 {
+ @include <span id="ex-clear" class="tooltip-target">zen-clear(); <span class="tooltip down"><span class="pointer">//</span> <span class="text">Apply this mixin to start a new row.</span></span></span>
+ @include zen-grid-item(3, 5);
+}
+.footer2 {
+ @include zen-grid-item(4, 1);
+}</code></pre>
+
+    <section class="example-congrats">
+
+    <p><strong><em>That’s it!</em></strong> 1 import statement, 2 variables, and 3 mixins. You’re done. And, here’s the results:</p>
+
+	</section>
+
+    <figure id="example">
+      <p class="bg-grid">
+      <span class="bgcol-1">1</span><span class="bgcol-2">2</span><span class="bgcol-3">3</span><span class="bgcol-4">4</span><span class="bgcol-5">5</span><span class="bgcol-6">6</span><span class="bgcol-7">7</span>
+      </p>
+      <div class="container">
+        <p class="content">
+          <strong>.content</strong> <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor…</em>
+        </p>
+        <p class="aside1">
+          <strong>.aside1</strong> <em>Lorem ipsum dolor sit amet</em>
+        </p>
+        <p class="aside2">
+          <strong>.aside2</strong> <em>Lipsum</em>
+        </p>
+        <p class="footer1">
+          <strong>.footer1</strong> <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor…</em>
+        </p>
+        <p class="footer2">
+          <strong>.footer2</strong> <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor…</em>
+        </p>
+      </div>
+    </figure>
+
+    <section class="example-outro">
+
+    <p>Congratulations, you’ve just learned all the basics of Zen Grids!</p>
+    <!--<p>Plus, within the <code>.container</code> element, the items in each row can be arranged in any HTML source order.</p>-->
+
+    </section>
+
+  </article>
+
+  <aside id="aside1">
+    <h2>Installation is easy!</h2>
+    <p>If you haven’t already installed Sass and Compass:<br>
+    <kbd>gem install sass<br>
+    gem install compass</kbd></p>
+    <p class="more"><a href="http://sass-lang.com/download.html">More help…</a></p>
+    <p>And installing Zen Grids is just as easy:<br>
+    <kbd>gem install zen-grids</kbd></p>
+    <p>That’s it. Seriously.</p>
+  </aside>
+
+  <aside id="news">
+    <h2>News</h2>
+    <p>Zen Grids 1.2 is out now!</p>
+    <p><strong>More tutorials and demos are coming soon</strong> on aligning flow items to the grid, RTL language support, box-sizing polyfill for IE7 and earlier, and optimizing the generated CSS.</p>
+    <p>For now, read the <a href="/help/">Zen Grids reference docs</a>.</p>
+    <p>Then, contribute, fix and discuss:<br>
+    <a href="https://github.com/JohnAlbin/compass-zen-grids">github.com/JohnAlbin/compass-zen-grids</a></p>
+  </aside>
+
+  <aside id="aside2">
+    <h2>What are Sass and Compass?</h2>
+    <p class="equation">Sass = CSS + Awesomeness</p>
+    <p>Sass is a super-set of CSS. <strong>Any valid CSS code is valid Sass.</strong> But Sass adds author-friendly capabilities such as nesting, variables, arithmetic and mixins. And Sass gets compiled into regular CSS so its 100% compatible with all browsers.</p>
+    <p>Compass is a library of reusable, pre-made Sass code. You can learn more at:</p>
+    <p class="center"><big><a href="http://sass-lang.com/">sass-lang.com</a></big><br>
+    and<br>
+    <big><a href="http://compass-style.org/">compass-style.org</a></big></p>
+  </aside>
+
+  <section id="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+(function() {
+var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+dsq.src = 'http://zengrids.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+  </section>
+
   <footer id="footer">
-    <small>© 2011-2012 <a href="http://john.albin.net/">John Albin Wilkins</a></small>
+    <small>© 2011-2012 <a href="http://john.albin.net/">John Albin Wilkins</a>. All rights reserved.  ★  <a href="https://github.com/JohnAlbin/compass-zen-grids/blob/master/LICENSE.txt">Code licensed under GPL</a>.  ★  Built by <a href="http://twitter.com/JohnAlbin">@JohnAlbin</a></small>
   </footer>
 
 </div>

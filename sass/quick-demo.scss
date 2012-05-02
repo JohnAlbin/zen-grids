@@ -1,0 +1,329 @@
+@import "base";
+@import "zen/background-grid";
+
+// Aggregate all the stylesheets into one file.
+@import "normalize.scss";
+
+// Set a different gutter width for our demo.
+$zen-gutter-width: 21px;
+
+
+/*
+ * Common styling
+ */
+body {
+  margin: 0;
+}
+
+pre {
+  margin: rhythm(1) 0 0 0;
+}
+
+.nobr {
+  white-space: nowrap;
+}
+
+#logo {
+  display: block;
+  max-width: 293px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#header {
+  h1 {
+    font-size: $h2-font-size;
+    @include adjust-leading-to(1, $h2-font-size);
+    font-weight: normal;
+    margin: 0 0 $zen-gutter-width 0;
+    text-align: center;
+  }
+}
+
+// Skip link styling
+#skip-link {
+  margin: 0;
+
+  a,
+  a:visited {
+    display: block;
+    width: 100%;
+    padding: 2px 0 3px 0;
+    text-align: center;
+    background-color: #666;
+    color: #fff;
+  }
+
+  @media all and (min-width: 32em) {
+    a {
+      @include element-focusable;
+    }
+  }
+}
+
+#footer {
+  margin-top: rhythm(1);
+
+  small {
+    display: block;
+    @include adjust-leading-to(1, 16px * .75);
+  }
+}
+
+/**
+ * Mobile first layout
+ */
+
+#page {
+  @include zen-grid-container();
+  padding: {
+    top: $base-line-height;
+    bottom: $base-line-height;
+  }
+}
+
+.bg-grid {
+  @include -experimental-bg-grid;
+  margin: {
+    top: -($base-line-height);
+    bottom: -($base-line-height);
+  }
+}
+
+#inspector,
+#header,
+#content,
+#aside1, #aside2, #aside3, #aside4, #aside5, #aside6, #aside7, #aside8, #aside9, #aside10, #aside11, #aside12,
+#main-menu,
+#footer {
+  @include zen-grid-item-base();
+}
+
+hgroup.so {
+  h2, h3 {
+    display: inline;
+  }
+}
+hgroup.so h3,
+p.so {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 75%;
+  font-weight: bold;
+  color: #c00;
+}
+
+#inspector {
+  @include zen-grid-item(1, 1);
+  color: #555;
+  font-weight: bold;
+  background-color: #fff;
+  padding: {
+    top: zen-half-gutter();
+    bottom: zen-half-gutter();
+  }
+  p {
+    display: inline;
+    margin: 0;
+  }
+  code {
+    color: #999;
+  }
+}
+#header {
+  @include zen-clear();
+  background-color: rgba(#000, .1);
+}
+
+@include show-query(mobile);
+
+/*
+ * Navigation bar
+ */
+@media all and (min-width: 32em) {
+  #page {
+    padding-top: rhythm(5);
+  }
+  .bg-grid {
+    margin-top: -(rhythm(5));
+  }
+/*
+  #header {
+    margin-top: rhythm(1);
+  }
+*/
+  #main-menu {
+    position: absolute;
+    width: 100%;
+    top: rhythm(1);
+    margin: 0;
+    text-align: center;
+
+    p, pre {
+      margin: 0;
+    }
+    .mq-mobile {
+      display: none;
+    }
+    .mq-desktop {
+      display: inline;
+    }
+  }
+}
+
+/**
+ * Tablet screens
+ */
+@media all and (min-width: 32em) { /* 512px / 16 */
+  // Override some variables.
+  $zen-column-count: 5;
+
+  @include show-query(tablet);
+
+  .bg-grid {
+    @include -experimental-bg-grid;
+  }
+
+  #header {
+    @include zen-grid-item(2, 2.5);
+  }
+  #content {
+    @include zen-clear();
+  }
+  #aside1 {
+  }
+  #aside2 {
+  }
+  #aside3 {
+  }
+  #aside4 {
+  }
+  #aside5 {
+  }
+  #aside6 {
+  }
+  #aside7 {
+  }
+  #aside8 {
+  }
+  #aside9 {
+  }
+  #aside10 {
+  }
+  #aside11 {
+  }
+  #aside12 {
+  }
+  #main-menu {
+  }
+  #footer {
+    @include zen-grid-item(5, 1);
+    @include zen-clear();
+  }
+
+}
+
+/**
+ * Desktop screens
+ */
+@media all and (min-width: 50em) { /* 800px / 16 */
+
+  // Override some variables.
+  $zen-column-count: 7;
+
+  @include show-query(desktop);
+
+  .bg-grid {
+    @include -experimental-bg-grid;
+  }
+
+  #header {
+    @include zen-grid-item(2, 3.5);
+  }
+  #content {
+    @include zen-clear();
+  }
+  #aside1 {
+  }
+  #aside2 {
+  }
+  #aside3 {
+  }
+  #aside4 {
+  }
+  #aside5 {
+  }
+  #aside6 {
+  }
+  #aside7 {
+  }
+  #aside8 {
+  }
+  #aside9 {
+  }
+  #aside10 {
+  }
+  #aside11 {
+  }
+  #aside12 {
+  }
+  #main-menu {
+  }
+  #footer {
+    @include zen-grid-item(4, 4);
+    @include zen-clear();
+  }
+
+}
+
+/**
+ * Desktop screens
+ */
+@media all and (min-width: 70em) { /* 800px / 16 */
+  // Override some variables.
+  $zen-column-count: 9;
+
+  @include show-query(large);
+
+  .bg-grid {
+    @include -experimental-bg-grid;
+  }
+
+  #header {
+    @include zen-grid-item(2, 4.5);
+  }
+  #content {
+    @include zen-clear();
+  }
+  #aside1 {
+  }
+  #aside2 {
+  }
+  #aside3 {
+  }
+  #aside4 {
+  }
+  #aside5 {
+  }
+  #aside6 {
+  }
+  #aside7 {
+  }
+  #aside8 {
+  }
+  #aside9 {
+  }
+  #aside10 {
+  }
+  #aside11 {
+  }
+  #aside12 {
+  }
+  #main-menu {
+  }
+  #footer {
+    @include zen-grid-item(5, 5);
+    @include zen-clear();
+  }
+
+}

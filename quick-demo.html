@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7" lang="en"><![endif]-->
+<!--[if lte IE 6]><html class="ie6 ie6-7 ie6-8" lang="en"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="ie7 ie6-7 ie6-8" lang="en"><![endif]-->
+<!--[if IE 8]><html class="ie8 ie6-8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Zen Grids: a responsive grid system built with Compass and Sass</title>
+
+  <link rel="stylesheet" href="/css/quick-demo.css" media="all">
+  <link rel="shortcut icon" href="/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon">
+
+  <meta name="HandheldFriendly" content="true">
+  <meta name="MobileOptimized" content="width">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="cleartype" content="on">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+</head>
+<body>
+
+<p id="skip-link">
+<a href="#main-menu">Jump to main menu</a>
+</p>
+
+<div class="page">
+
+  <p class="bg-grid">
+  <span class="bgcol-1">1</span><span class="bgcol-2">2</span><span class="bgcol-3">3</span><span class="bgcol-4">4</span><span class="bgcol-5">5</span><span class="bgcol-6">6</span><span class="bgcol-7">7</span><span class="bgcol-8">8</span><span class="bgcol-9">9</span><span class="bgcol-10">10</span><span class="bgcol-11">11</span><span class="bgcol-12">12</span><span class="bgcol-13">13</span><span class="bgcol-14">14</span><span class="bgcol-15">15</span><span class="bgcol-16">16</span><span class="bgcol-17">17</span><span class="bgcol-18">18</span><span class="bgcol-19">19</span><span class="bgcol-20">20</span><span class="bgcol-21">21</span><span class="bgcol-22">22</span><span class="bgcol-23">23</span><span class="bgcol-24">24</span><span class="bgcol-25">25</span><span class="bgcol-26">26</span><span class="bgcol-27">27</span><span class="bgcol-28">28</span><span class="bgcol-29">29</span><span class="bgcol-30">30</span>
+  <span class="bgcolrev-1">1</span><span class="bgcolrev-2">2</span><span class="bgcolrev-3">3</span><span class="bgcolrev-4">4</span><span class="bgcolrev-5">5</span><span class="bgcolrev-6">6</span><span class="bgcolrev-7">7</span><span class="bgcolrev-8">8</span><span class="bgcolrev-9">9</span><span class="bgcolrev-10">10</span><span class="bgcolrev-11">11</span><span class="bgcolrev-12">12</span><span class="bgcolrev-13">13</span><span class="bgcolrev-14">14</span><span class="bgcolrev-15">15</span><span class="bgcolrev-16">16</span><span class="bgcolrev-17">17</span><span class="bgcolrev-18">18</span><span class="bgcolrev-19">19</span><span class="bgcolrev-20">20</span><span class="bgcolrev-21">21</span><span class="bgcolrev-22">22</span><span class="bgcolrev-23">23</span><span class="bgcolrev-24">24</span><span class="bgcolrev-25">25</span><span class="bgcolrev-26">26</span><span class="bgcolrev-27">27</span><span class="bgcolrev-28">28</span><span class="bgcolrev-29">29</span><span class="bgcolrev-30">30</span>
+  </p>
+
+  <div class="corset-top">
+
+    <div id="inspector">
+      <p>media query in use:</p>
+      <p><code>@media
+      <span class="mq-mobile">"all" { /* mobile first */ }</span>
+      <span class="mq-tablet">"all" and (min-width: 32em) { }</span>
+      <span class="mq-desktop">"all" and (min-width: 50em) { }</span>
+      <span class="mq-large">"all" and (min-width: 70em) { }</span>
+      </code></p>
+    </div>
+
+    <header id="header" role="banner">
+      <p class="so">Source order: 1</p>
+      <a href="/" title="Home" rel="home" id="logo"><img src="/images/zen-grids-logo.png" alt="Zen Grids" width="269" height="216"></a>
+      <h1>A demonstration<br> of Zen Grids</h1>
+
+      <pre><code class="mq-mobile">@include <span class="nobr">zen-grid-item(1, 1)</span></code><code class="mq-tablet">@include <span class="nobr">zen-grid-item(2, 2.5)</span></code><code class="mq-desktop">@include <span class="nobr">zen-grid-item(2, 3.5)</span></code><code class="mq-large">@include <span class="nobr">zen-grid-item(2, 4.5)</span></code>;</pre>
+    </header>
+
+    <article id="content" role="main">
+      <hgroup class="so">
+      <h2>In CSS2 buxum exemplar</h2>
+      <h3>Source order: 2</h3>
+      </hgroup>
+
+      <p>Singulis buxum habet a content area (eg, text, imago, etc) et libitum circuitum Nullam, terminus, et margine areas; moles singulis area specificatur per proprietates definitur infra. In margine, terminus, et Nullam potest fractus in summo, ius, imo, et sinistram segmentis. Peripheria quattuor areas (contentus, Nullam, terminus, et margine) dicitur "margine", ita singulis buxum habet quattuor oras.</p>
+
+      <figure>
+        <img src="/images/zen-grids-logo.png" alt="Zen Grids" width="293" height="234">
+        <figcaption>
+        The logo for Zen Grids and the Sass applied to it.
+        </figcaption>
+      </figure>
+
+      <p>Contentus ore vel interius ore: De contentus ore ambit rectangulum a latitudo et altitudo buxum, quod saepe dependet in elementum scriptor redditur contentus. Quattuor contentus oras definire buxum scriptor contentus buxum.</p>
+
+      <p>Nullam ore: De Nullam ore ambit buxum Nullam. Si Nullam habet 0 latitudine, in Nullam ore est idem contentus ore. Quattuor Nullam oras definire buxum scriptor Nullam buxum.</p>
+
+      <p>Terminus ore: terminus ore ambit buxum scriptor terminus. Si terminus habet 0 latitudine, terminus ore est idem Nullam ore. Quattuor terminus oras definire buxum scriptor terminus buxum.</p>
+
+      <p>Margine ore vel exterius ore: margine ore ambit buxum margine. Si margine 0 latitudine, margine ore est idem terminus ore. Quattuor margine marginibus definire buxum scriptor margine buxum.</p>
+
+      <pre><code class="mq-mobile">@include <span class="nobr">zen-grid-item(1, 1)</span></code><code class="mq-tablet">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-desktop">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-large">@include <span class="nobr">zen-grid-item(,)</span></code>;</pre>
+    </article>
+
+    <aside id="aside1">
+      <hgroup class="so">
+      <h2>Some content</h2>
+      <h3>Source order: 3</h3>
+      </hgroup>
+
+      <p>Singulis buxum habet a content area (eg, text, imago, etc) et libitum circuitum Nullam, terminus, et margine areas; moles singulis area specificatur per proprietates definitur infra. In margine, terminus, et Nullam potest fractus in summo, ius, imo, et sinistram segmentis. Peripheria quattuor areas (contentus, Nullam, terminus, et margine) dicitur "margine", ita singulis buxum habet quattuor oras.</p>
+      <pre><code class="mq-mobile">@include <span class="nobr">zen-grid-item(1, 1)</span></code><code class="mq-tablet">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-desktop">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-large">@include <span class="nobr">zen-grid-item(,)</span></code>;</pre>
+    </aside>
+
+    <aside id="aside2">
+      <hgroup class="so">
+      <h2>Some content</h2>
+      <h3>Source order: 4</h3>
+      </hgroup>
+
+      <p>Singulis buxum habet a content area (eg, text, imago, etc) et libitum circuitum Nullam, terminus, et margine areas; moles singulis area specificatur per proprietates definitur infra. In margine, terminus, et Nullam potest fractus in summo, ius, imo, et sinistram segmentis. Peripheria quattuor areas (contentus, Nullam, terminus, et margine) dicitur "margine", ita singulis buxum habet quattuor oras.</p>
+      <pre><code class="mq-mobile">@include <span class="nobr">zen-grid-item(1, 1)</span></code><code class="mq-tablet">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-desktop">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-large">@include <span class="nobr">zen-grid-item(,)</span></code>;</pre>
+    </aside>
+
+    <aside id="aside3">
+      <hgroup class="so">
+      <h2>Some content</h2>
+      <h3>Source order: 5</h3>
+      </hgroup>
+
+      <p>Singulis buxum habet a content area (eg, text, imago, etc) et libitum circuitum Nullam, terminus, et margine areas; moles singulis area specificatur per proprietates definitur infra. In margine, terminus, et Nullam potest fractus in summo, ius, imo, et sinistram segmentis. Peripheria quattuor areas (contentus, Nullam, terminus, et margine) dicitur "margine", ita singulis buxum habet quattuor oras.</p>
+      <pre><code class="mq-mobile">@include <span class="nobr">zen-grid-item(1, 1)</span></code><code class="mq-tablet">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-desktop">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-large">@include <span class="nobr">zen-grid-item(,)</span></code>;</pre>
+    </aside>
+
+    <aside id="aside4">
+      <hgroup class="so">
+      <h2>Some content</h2>
+      <h3>Source order: 6</h3>
+      </hgroup>
+
+      <p>Singulis buxum habet a content area (eg, text, imago, etc) et libitum circuitum Nullam, terminus, et margine areas; moles singulis area specificatur per proprietates definitur infra. In margine, terminus, et Nullam potest fractus in summo, ius, imo, et sinistram segmentis. Peripheria quattuor areas (contentus, Nullam, terminus, et margine) dicitur "margine", ita singulis buxum habet quattuor oras.</p>
+      <pre><code class="mq-mobile">@include <span class="nobr">zen-grid-item(1, 1)</span></code><code class="mq-tablet">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-desktop">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-large">@include <span class="nobr">zen-grid-item(,)</span></code>;</pre>
+    </aside>
+
+    <aside id="aside5">
+      <hgroup class="so">
+      <h2>Some content</h2>
+      <h3>Source order: 7</h3>
+      </hgroup>
+
+      <p>Singulis buxum habet a content area (eg, text, imago, etc) et libitum circuitum Nullam, terminus, et margine areas; moles singulis area specificatur per proprietates definitur infra. In margine, terminus, et Nullam potest fractus in summo, ius, imo, et sinistram segmentis. Peripheria quattuor areas (contentus, Nullam, terminus, et margine) dicitur "margine", ita singulis buxum habet quattuor oras.</p>
+      <pre><code class="mq-mobile">@include <span class="nobr">zen-grid-item(1, 1)</span></code><code class="mq-tablet">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-desktop">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-large">@include <span class="nobr">zen-grid-item(,)</span></code>;</pre>
+    </aside>
+
+    <aside id="aside6">
+      <hgroup class="so">
+      <h2>Some content</h2>
+      <h3>Source order: 8</h3>
+      </hgroup>
+
+      <p>Singulis buxum habet a content area (eg, text, imago, etc) et libitum circuitum Nullam, terminus, et margine areas; moles singulis area specificatur per proprietates definitur infra. In margine, terminus, et Nullam potest fractus in summo, ius, imo, et sinistram segmentis. Peripheria quattuor areas (contentus, Nullam, terminus, et margine) dicitur "margine", ita singulis buxum habet quattuor oras.</p>
+      <pre><code class="mq-mobile">@include <span class="nobr">zen-grid-item(1, 1)</span></code><code class="mq-tablet">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-desktop">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-large">@include <span class="nobr">zen-grid-item(,)</span></code>;</pre>
+    </aside>
+
+    <aside id="aside7">
+      <hgroup class="so">
+      <h2>Some content</h2>
+      <h3>Source order: 9</h3>
+      </hgroup>
+
+      <p>Singulis buxum habet a content area (eg, text, imago, etc) et libitum circuitum Nullam, terminus, et margine areas; moles singulis area specificatur per proprietates definitur infra. In margine, terminus, et Nullam potest fractus in summo, ius, imo, et sinistram segmentis. Peripheria quattuor areas (contentus, Nullam, terminus, et margine) dicitur "margine", ita singulis buxum habet quattuor oras.</p>
+      <pre><code class="mq-mobile">@include <span class="nobr">zen-grid-item(1, 1)</span></code><code class="mq-tablet">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-desktop">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-large">@include <span class="nobr">zen-grid-item(,)</span></code>;</pre>
+    </aside>
+
+    <aside id="aside8">
+      <hgroup class="so">
+      <h2>Some content</h2>
+      <h3>Source order: 10</h3>
+      </hgroup>
+
+      <p>Singulis buxum habet a content area (eg, text, imago, etc) et libitum circuitum Nullam, terminus, et margine areas; moles singulis area specificatur per proprietates definitur infra. In margine, terminus, et Nullam potest fractus in summo, ius, imo, et sinistram segmentis. Peripheria quattuor areas (contentus, Nullam, terminus, et margine) dicitur "margine", ita singulis buxum habet quattuor oras.</p>
+      <pre><code class="mq-mobile">@include <span class="nobr">zen-grid-item(1, 1)</span></code><code class="mq-tablet">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-desktop">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-large">@include <span class="nobr">zen-grid-item(,)</span></code>;</pre>
+    </aside>
+
+    <aside id="aside9">
+      <hgroup class="so">
+      <h2>Some content</h2>
+      <h3>Source order: 11</h3>
+      </hgroup>
+
+      <p>Singulis buxum habet a content area (eg, text, imago, etc) et libitum circuitum Nullam, terminus, et margine areas; moles singulis area specificatur per proprietates definitur infra. In margine, terminus, et Nullam potest fractus in summo, ius, imo, et sinistram segmentis. Peripheria quattuor areas (contentus, Nullam, terminus, et margine) dicitur "margine", ita singulis buxum habet quattuor oras.</p>
+      <pre><code class="mq-mobile">@include <span class="nobr">zen-grid-item(1, 1)</span></code><code class="mq-tablet">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-desktop">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-large">@include <span class="nobr">zen-grid-item(,)</span></code>;</pre>
+    </aside>
+
+    <aside id="aside10">
+      <hgroup class="so">
+      <h2>Some content</h2>
+      <h3>Source order: 12</h3>
+      </hgroup>
+
+      <p>Singulis buxum habet a content area (eg, text, imago, etc) et libitum circuitum Nullam, terminus, et margine areas; moles singulis area specificatur per proprietates definitur infra. In margine, terminus, et Nullam potest fractus in summo, ius, imo, et sinistram segmentis. Peripheria quattuor areas (contentus, Nullam, terminus, et margine) dicitur "margine", ita singulis buxum habet quattuor oras.</p>
+      <pre><code class="mq-mobile">@include <span class="nobr">zen-grid-item(1, 1)</span></code><code class="mq-tablet">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-desktop">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-large">@include <span class="nobr">zen-grid-item(,)</span></code>;</pre>
+    </aside>
+
+    <aside id="aside12">
+      <hgroup class="so">
+      <h2>Some content</h2>
+      <h3>Source order: 13</h3>
+      </hgroup>
+
+      <p>Singulis buxum habet a content area (eg, text, imago, etc) et libitum circuitum Nullam, terminus, et margine areas; moles singulis area specificatur per proprietates definitur infra. In margine, terminus, et Nullam potest fractus in summo, ius, imo, et sinistram segmentis. Peripheria quattuor areas (contentus, Nullam, terminus, et margine) dicitur "margine", ita singulis buxum habet quattuor oras.</p>
+      <pre><code class="mq-mobile">@include <span class="nobr">zen-grid-item(1, 1)</span></code><code class="mq-tablet">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-desktop">@include <span class="nobr">zen-grid-item(,)</span></code><code class="mq-large">@include <span class="nobr">zen-grid-item(,)</span></code>;</pre>
+    </aside>
+
+    <nav id="main-menu" role="navigation">
+      <hgroup class="so">
+      <h2>Main menu</h2>
+      <h3>Source order: 14</h3>
+      </hgroup>
+      <p>
+      <a href="/">Intro</a> ★
+      <a href="/quick-demo.html">Quick Demo</a> ★
+      <a href="/help/">Reference</a>
+      </p>
+      <pre><code class="mq-mobile">position: static;</code><code class="mq-tablet mq-desktop mq-large">position: absolute;</code></pre>
+    </nav>
+
+    <footer id="footer">
+      <hgroup class="so">
+      <h2>Footer</h2>
+      <h3>Source order: 15</h3>
+      </hgroup>
+      <small>© 2011-2012 <a href="http://john.albin.net/">John Albin Wilkins</a></small>
+      <pre><code class="mq-mobile">@include <span class="nobr">zen-grid-item(1, 1)</span></code><code class="mq-tablet">@include <span class="nobr">zen-grid-item(5, 1);</span><br>@include <span class="nobr">zen-clear()</span></code><code class="mq-desktop">@include <span class="nobr">zen-grid-item(4, 4);</span><br>@include <span class="nobr">zen-clear()</span></code><code class="mq-large">@include <span class="nobr">zen-grid-item(5, 5);</span><br>@include <span class="nobr">zen-clear()</span></code>;</pre>
+    </footer>
+
+  </div>
+</div>
+
+</body>
+</html>
