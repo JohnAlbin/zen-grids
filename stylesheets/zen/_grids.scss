@@ -126,8 +126,10 @@ $zen-reverse-all-floats: false !default;
 }
 
 //
-// Apply this mixin to each content box in the layout to prevent overflowing
-// content from breaking the layout.
+// Applies a standard set of properites to all grid items in the layout.
+//
+// See the note about the $zen-auto-include-item-base and
+// $zen-auto-include-flow-item-base variables for when to use this mixin.
 //
 // The mixin has the following optional parameters, but its better to use the
 // $zen-gutter-width and $zen-box-sizing variables instead:
