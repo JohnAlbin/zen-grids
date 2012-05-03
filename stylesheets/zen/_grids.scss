@@ -201,6 +201,21 @@ $zen-reverse-all-floats: false !default;
 }
 
 //
+// Apply this to flow items that need to be floated.
+//
+@mixin zen-float (
+  $float-direction: $zen-float-direction,
+  $reverse-all-floats: $zen-reverse-all-floats
+) {
+  // Determine the float direction.
+  $dir: $float-direction;
+  @if $reverse-all-floats {
+    $dir: zen-direction-flip($dir);
+  }
+  float: $dir;
+}
+
+//
 // Apply this to an HTML item that is in the normal flow of a document to help
 // align it to the grid. Set the $column-span to the number of columns that the
 // HTML element should span. For responsive layouts with a percentage-based grid
