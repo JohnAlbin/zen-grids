@@ -66,7 +66,6 @@ $zen-reverse-all-floats: false !default;
 // nested grid. It must be applied after the zen-grid-item() mixin.
 //
 @mixin zen-nested-container () {
-  @include zen-grid-container;
   padding: {
     left: 0;
     right: 0;
