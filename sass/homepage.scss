@@ -178,6 +178,9 @@ $zen-gutter-width: 40px;
       margin-right: zen-half-gutter();
       padding-bottom: 0;
     }
+    li:last-child figure {
+      padding-bottom: 0;
+    }
   }
 }
 #content {
