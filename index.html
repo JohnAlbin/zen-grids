@@ -108,7 +108,26 @@
     <section class="example-intro">
 
     <h2>Using Zen Grids is easy!</h2>
-    <p>Let’s try a simple example. We’ll create a complete layout in less than 10 lines of code. In this minimal design, the first row is a content column with a sidebar on each side. And the second row is 2 footer columns. All aligned to a 7 column grid. Here’s the complete code:</p>
+    <p>Let’s try a simple example. We’ll create a complete layout in less than 10 lines of code. In this minimal design, the first row is a content column with a sidebar on each side. And the second row is 2 footer columns. All aligned to a 7 column grid.</p>
+    <p>First, here’s the example HTML. Zen Grids doesn’t require any special classes or markup. We could have used any markup we wanted.</p>
+    <pre><code>&lt;div class="container">
+  &lt;article class="content">
+    Tha main content. We like semantic HTML ordering.
+  &lt;/article>
+  &lt;aside class="aside1">
+    An aside.
+  &lt;/aside>
+  &lt;aside class="aside2">
+    Another aside.
+  &lt;/aside>
+  &lt;footer class="footer1">
+    A footer.
+  &lt;/footer>
+  &lt;footer class="footer2">
+    Another footer.
+  &lt;/footer>
+&lt;/div></code></pre>
+    <p>And here’s the complete Sass code:</p>
     </section>
 
     <pre class="part1"><code>
@@ -160,21 +179,21 @@ $zen-gutter-width: <span class="tooltip-target">10px; <span class="tooltip up"><
       <span class="bgcol-1">1</span><span class="bgcol-2">2</span><span class="bgcol-3">3</span><span class="bgcol-4">4</span><span class="bgcol-5">5</span><span class="bgcol-6">6</span><span class="bgcol-7">7</span>
       </p>
       <div class="container">
-        <p class="content">
+        <article class="content">
           <strong>.content</strong> <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor…</em>
-        </p>
-        <p class="aside1">
+        </article>
+        <aside class="aside1">
           <strong>.aside1</strong> <em>Lorem ipsum dolor sit amet</em>
-        </p>
-        <p class="aside2">
+        </aside>
+        <aside class="aside2">
           <strong>.aside2</strong> <em>Lipsum</em>
-        </p>
-        <p class="footer1">
+        </aside>
+        <footer class="footer1">
           <strong>.footer1</strong> <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor…</em>
-        </p>
-        <p class="footer2">
+        </footer>
+        <footer class="footer2">
           <strong>.footer2</strong> <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor…</em>
-        </p>
+        </footer>
       </div>
     </figure>
 
