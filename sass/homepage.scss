@@ -71,14 +71,14 @@ $zen-gutter-width: 40px;
     margin-top: rhythm(1);
 
     figure {
-      @include adjust-font-size-to( $h2-font-size );
+      @include adjust-font-size-to( $h2-font-size, 1 );
       font-weight: bold;
 
       img {
         vertical-align: bottom;
       }
       p {
-        margin: 0;
+        margin: rhythm(.5) 0;
       }
       .one {
         text-align: right;
