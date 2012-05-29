@@ -1,0 +1,129 @@
+@import "base";
+
+// Aggregate all the stylesheets into one file.
+@import "normalize";
+@import "pages";
+@import "susy";
+
+h2, h3 {
+  @include adjust-font-size-to($base-font-size);
+  @include leader(1);
+  margin-bottom: 0;
+}
+
+.page {
+  @include zen-grid-item-base();
+}
+
+$zen-column-count: 7;
+$zen-gutter-width: 0;
+$zen-auto-include-item-base: false;
+//$zen-box-sizing: content-box;
+
+.example {
+  width: 700px;
+  margin: rhythm(1) 0;
+  background-image: url(../images/background-rounding.gif);
+  background-position: left top;
+  background-repeat: repeat-y;
+  background-size: 100% 1px;
+}
+
+.container7 {
+  width: 700px;
+}
+.container7p1 {
+  width: 701px;
+}
+.container7p2 {
+  width: 702px;
+}
+.container7p3 {
+  width: 703px;
+}
+.container7p4 {
+  width: 704px;
+}
+.container7p5 {
+  width: 705px;
+}
+.container7p6 {
+  width: 706px;
+}
+
+.example aside {
+  @include zen-grid-item-base;
+  border: 1px solid black;
+  &:nth-child(2n) {
+    margin-top: 5px;
+  }
+
+  h3,
+  p {
+    display: inline;
+  }
+}
+
+.container {
+  @include zen-grid-container;
+}
+
+.traditional aside,
+.negative aside {
+  float: left;
+  width: (100% / 7);
+}
+
+.negative aside {
+  margin-right: -100%;
+}
+.negative .aside1 {
+  margin-left: 0;
+}
+.negative .aside2 {
+  margin-left: (100% / 7);
+}
+.negative .aside3 {
+  margin-left: (2 * 100% / 7);
+}
+.negative .aside4 {
+  margin-left: (3 * 100% / 7);
+}
+.negative .aside5 {
+  margin-left: (4 * 100% / 7);
+}
+.negative .aside6 {
+  margin-left: (5 * 100% / 7);
+}
+.negative  .aside7 {
+  margin-left: (6 * 100% / 7);
+}
+
+
+.zen-grids,
+.zen2 {
+  .aside1 {
+    @include zen-grid-item(1, 1);
+  }
+  .aside2 {
+    @include zen-grid-item(1, 2);
+  }
+  .aside3 {
+    @include zen-grid-item(1, 3);
+  }
+  .aside4 {
+    @include zen-grid-item(1, 4);
+  }
+  .aside5 {
+    @include zen-grid-item(1, 5);
+  }
+  .aside6 {
+    @include zen-grid-item(1, 6);
+  }
+  .aside7 {
+    @include zen-grid-item(1, 7);
+  }
+}
+.zen2 aside {
+  margin-right: -100% !important;
+}
