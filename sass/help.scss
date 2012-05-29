@@ -1,7 +1,7 @@
 @import "base";
 // Aggregate all the stylesheets into one file.
-@import "normalize.scss";
-@import "pages.scss";
+@import "normalize";
+@import "pages";
 
 
 $zen-column-count: 2;

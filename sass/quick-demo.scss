@@ -2,7 +2,7 @@
 @import "zen/background-grid";
 
 // Aggregate all the stylesheets into one file.
-@import "normalize.scss";
+@import "normalize";
 
 // Set a different gutter width for our demo.
 $zen-gutter-width: 21px;

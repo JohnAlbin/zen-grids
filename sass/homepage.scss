@@ -1,9 +1,9 @@
 @import "base";
 
 // Aggregate all the stylesheets into one file.
-@import "normalize.scss";
-@import "pages.scss";
-@import "tooltip.scss";
+@import "normalize";
+@import "pages";
+@import "tooltip";
 
 
 #header,
