@@ -160,9 +160,12 @@ $zen-reverse-all-floats: false !default;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
   }
-  // Prevent borders since they'll break the layout with content-box.
+  // Prevent left/right borders since they'll break the layout with content-box.
   @if $box-sizing == content-box {
-    border: 0 !important;
+    border: {
+      left: 0 !important;
+      right: 0 !important;
+    }
   }
   // Prevent overflowing content from being hidden beneath other grid items.
   word-wrap: break-word; // A very nice CSS3 property.
