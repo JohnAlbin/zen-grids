@@ -3,7 +3,6 @@
 // Aggregate all the stylesheets into one file.
 @import "normalize";
 @import "pages";
-@import "susy";
 
 h2, h3 {
   @include adjust-font-size-to($base-font-size);
@@ -18,7 +17,7 @@ h2, h3 {
 $zen-column-count: 7;
 $zen-gutter-width: 0;
 $zen-auto-include-item-base: false;
-//$zen-box-sizing: content-box;
+$zen-box-sizing: content-box;
 
 .example {
   width: 700px;
