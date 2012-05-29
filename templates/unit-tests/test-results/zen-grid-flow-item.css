@@ -119,7 +119,8 @@
   width: 15%;
   padding-left: 5%;
   padding-right: 5%;
-  border: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
   word-wrap: break-word;
   padding-left: 0;
   padding-right: 7.5%;

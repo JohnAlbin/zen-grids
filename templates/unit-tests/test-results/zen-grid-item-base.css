@@ -15,7 +15,8 @@
   /* Test zen-grid-item-base() with $zen-box-sizing: content-box */
   padding-left: 10px;
   padding-right: 10px;
-  border: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
   word-wrap: break-word;
   /* Test zen-grid-item-base() with $legacy-support-for-ie7: true */
   padding-left: 10px;
