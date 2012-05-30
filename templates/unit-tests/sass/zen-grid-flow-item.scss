@@ -9,7 +9,7 @@
   /* Test zen-grid-flow-item(1) without setting $column-count */
   @include zen-grid-flow-item(1);
 
-  /* Test zen-grid-flow-item(1, 4) with 12 column grid and 20px gutter */
+  /* Test zen-grid-flow-item(1, 4) with 20px gutter */
   @include zen-grid-flow-item(1, 4);
 
   /* Test zen-grid-flow-item(1, 4) with 15px gutter */
