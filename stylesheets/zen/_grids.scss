@@ -246,7 +246,7 @@ $zen-reverse-all-floats: false !default;
   $columns: $column-count;
   @if unit($grid-width) == "%" {
     @if $parent-column-count == false {
-      @warn "For responsive layouts with a percentage-based grid width, you must set the $column-count to the number of columns that the parent element spans.";
+      @warn "For responsive layouts with a percentage-based grid width, you must set the $parent-column-count to the number of columns that the parent element spans.";
     }
     @else {
       $columns: $parent-column-count;
