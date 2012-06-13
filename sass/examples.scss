@@ -1,0 +1,148 @@
+@import "zen";
+
+$color_a: #FCC;
+$color_b: #CFC;
+$color_c: #CCF;
+$color_d: #FFC;
+$color_e: #CFF;
+
+
+.block-a {
+  background: $color_a;
+}
+
+.block-b {
+  background: $color_b;
+}
+
+.block-c {
+  background: $color_c;
+}
+
+.block-d {
+  background: $color_d;
+}
+
+.block-e {
+  background: $color_e;
+}
+
+#examples article {
+  @include zen-grid-container; // Apply this mixin to the container.
+  $zen-column-count: 7; // Set the total number of columns in the grid.
+  $zen-gutter-width: 10px;
+
+  aside {
+    margin-top: 2em;
+    @include zen-clear(left);
+    @include zen-clear(right);
+  }
+  .block {
+    text-align: center;
+  }
+}
+
+#example-1 {
+  $zen-column-count: 7; // Set the total number of columns in the grid.
+  .block-a {
+    @include zen-grid-item(4, 1);
+  }
+
+  .block-b {
+    @include zen-grid-item(3, 1, right);
+  }
+
+  .block-c {
+    @include zen-clear(right);
+    @include zen-grid-item(3, 1, right);
+  }
+}
+
+#example-2 {
+  $zen-column-count: 3; // Set the total number of columns in the grid.
+  .block-a {
+    @include zen-grid-item(2, 1);
+  }
+
+  .block-b {
+    @include zen-grid-item(1, 1, right);
+  }
+
+  .block-c {
+    @include zen-clear(right);
+    @include zen-grid-item(1, 1, right);
+  }
+
+  .block-d {
+    @include zen-clear();
+    @include zen-grid-item(3, 1);
+  }
+}
+
+#example-3 {
+  $zen-column-count: 6; // Set the total number of columns in the grid.
+  .block-a {
+    @include zen-grid-item(3, 3);
+  }
+
+  .block-b {
+    @include zen-grid-item(2, 1);
+  }
+
+  .block-c {
+    @include zen-grid-item(1, 1, right);
+  }
+
+  .block-d {
+    @include zen-clear(right);
+    @include zen-grid-item(1, 1, right);
+  }
+}
+
+#example-4 {
+  $zen-column-count: 4; // Set the total number of columns in the grid.
+  .block-a {
+    @include zen-grid-item(2, 1, right);
+  }
+
+  .block-b {
+    @include zen-grid-item(1, 1);
+  }
+
+  .block-c {
+    @include zen-grid-item(1, 2);
+  }
+
+  .block-d {
+    @include zen-clear(left);
+    @include zen-grid-item(1, 1);
+  }
+
+  .block-e {
+    @include zen-grid-item(1, 2);
+  }
+}
+
+#example-5 {
+  $zen-column-count: 7; // Set the total number of columns in the grid.
+  .block-a {
+    @include zen-grid-item(3, 3, right);
+  }
+
+  .block-b {
+    @include zen-grid-item(2, 1);
+  }
+
+  .block-c {
+    @include zen-grid-item(2, 6);
+  }
+
+  .block-d {
+   @include zen-clear(left);
+   @include zen-grid-item(2, 1);
+  }
+
+  .block-e {
+    @include zen-grid-item(2, 6);
+  }
+}
