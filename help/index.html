@@ -345,9 +345,11 @@ $legacy-support-for-ie6: false !default;</code></pre>
 
     <article id="example-1">
     <h3><a href="#example-1">Example 1</a></h3>
-    <div class="block block-a">A<br>A</div>
-    <div class="block block-b">B</div>
-    <div class="block block-c">C</div>
+    <div class="example-container">
+      <div class="block block-a">A<br>A</div>
+      <div class="block block-b">B</div>
+      <div class="block block-c">C</div>
+    </div>
     <aside><pre><code>
 #example-1 {
 
@@ -371,12 +373,13 @@ $legacy-support-for-ie6: false !default;</code></pre>
 
     <article id="example-2">
     <h3><a href="#example-2">Example 2</a></h3>
-    <div class="block block-a">A<br>A<br>A</div>
-    <div class="block block-b">B</div>
-    <div class="block block-c">C<br>C</div>
-    <div class="block block-d">D</div>
+    <div class="example-container">
+      <div class="block block-a">A<br>A<br>A</div>
+      <div class="block block-b">B</div>
+      <div class="block block-c">C<br>C</div>
+      <div class="block block-d">D</div>
+    </div>
     <aside><pre><code>
-
 #example-2 {
 
   $zen-column-count: 3; // Set the total number of columns in the grid.
@@ -395,7 +398,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
   }
 
   .block-d {
-    @include zen-clear();
+    @include zen-clear(both);
     @include zen-grid-item(3, 1);
   }
 }
@@ -404,10 +407,12 @@ $legacy-support-for-ie6: false !default;</code></pre>
 
     <article id="example-3">
     <h3><a href="#example-3">Example 3</a></h3>
-    <div class="block block-a">A<br>A</div>
-    <div class="block block-b">B<br>B</div>
-    <div class="block block-c">C</div>
-    <div class="block block-d">D</div>
+    <div class="example-container">
+      <div class="block block-a">A<br>A</div>
+      <div class="block block-b">B<br>B</div>
+      <div class="block block-c">C</div>
+      <div class="block block-d">D</div>
+    </div>
     <aside><pre><code>
 #example-3 {
 
@@ -435,11 +440,13 @@ $legacy-support-for-ie6: false !default;</code></pre>
 
     <article id="example-4">
     <h3><a href="#example-4">Example 4</a></h3>
-    <div class="block block-a">A<br>A</div>
-    <div class="block block-b">B<br></div>
-    <div class="block block-c">C</div>
-    <div class="block block-d">D</div>
-    <div class="block block-e">E</div>
+    <div class="example-container">
+      <div class="block block-a">A<br>A</div>
+      <div class="block block-b">B<br></div>
+      <div class="block block-c">C</div>
+      <div class="block block-d">D</div>
+      <div class="block block-e">E</div>
+    </div>
     <aside><pre><code>
 #example-4 {
 
@@ -471,11 +478,13 @@ $legacy-support-for-ie6: false !default;</code></pre>
 
     <article id="example-5">
     <h3><a href="#example-5">Example 5</a></h3>
-    <div class="block block-a">A<br>A</div>
-    <div class="block block-b">B<br></div>
-    <div class="block block-c">C</div>
-    <div class="block block-d">D</div>
-    <div class="block block-e">E</div>
+    <div class="example-container">
+      <div class="block block-a">A<br>A</div>
+      <div class="block block-b">B<br></div>
+      <div class="block block-c">C</div>
+      <div class="block block-d">D</div>
+      <div class="block block-e">E</div>
+    </div>
     <aside><pre><code>
 #example-5 {
 

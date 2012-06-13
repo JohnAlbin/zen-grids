@@ -27,16 +27,12 @@ $color_e: #CFF;
   background: $color_e;
 }
 
-#examples article {
+.example-container {
   @include zen-grid-container; // Apply this mixin to the container.
   $zen-column-count: 7; // Set the total number of columns in the grid.
   $zen-gutter-width: 10px;
 
-  aside {
-    margin-top: 2em;
-    @include zen-clear(left);
-    @include zen-clear(right);
-  }
+
   .block {
     text-align: center;
   }
@@ -74,7 +70,7 @@ $color_e: #CFF;
   }
 
   .block-d {
-    @include zen-clear();
+    @include zen-clear(both);
     @include zen-grid-item(3, 1);
   }
 }
