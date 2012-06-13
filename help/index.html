@@ -66,6 +66,8 @@
       <li><a href="#zen-direction-flip">zen-direction-flip</a></li>
       </ul>
     </li>
+    <li><a href="#examples">Examples</a>
+    </li>
     </ul>
     </section>
 
@@ -333,6 +335,174 @@ $legacy-support-for-ie6: false !default;</code></pre>
     </article>
 
     </section>
+
+    <section id="examples">
+    <h2>Examples</h2>
+
+    <article id="example-1">
+    <h3><a href="#example-1">Example 1</a></h3>
+    <div class="block block-a">A<br>A</div>
+    <div class="block block-b">B</div>
+    <div class="block block-c">C</div>
+    <aside><pre><code>
+#example-1 {
+
+  $zen-column-count: 7; // Set the total number of columns in the grid.
+
+  .block-a {
+    @include zen-grid-item(4, 1);
+  }
+
+  .block-b {
+    @include zen-grid-item(3, 1, right);
+  }
+
+  .block-c {
+     @include zen-clear(right);
+    @include zen-grid-item(3, 1, right);
+  }
+}
+    </code></pre></aside>
+    </article>
+
+    <article id="example-2">
+    <h3><a href="#example-2">Example 2</a></h3>
+    <div class="block block-a">A<br>A<br>A</div>
+    <div class="block block-b">B</div>
+    <div class="block block-c">C<br>C</div>
+    <div class="block block-d">D</div>
+    <aside><pre><code>
+
+#example-2 {
+
+  $zen-column-count: 3; // Set the total number of columns in the grid.
+
+  .block-a {
+    @include zen-grid-item(2, 1);
+  }
+
+  .block-b {
+    @include zen-grid-item(1, 1, right);
+  }
+
+  .block-c {
+    @include zen-clear(right);
+    @include zen-grid-item(1, 1, right);
+  }
+
+  .block-d {
+    @include zen-clear();
+    @include zen-grid-item(3, 1);
+  }
+}
+    </code></pre></aside>
+    </article>
+
+    <article id="example-3">
+    <h3><a href="#example-3">Example 3</a></h3>
+    <div class="block block-a">A<br>A</div>
+    <div class="block block-b">B<br>B</div>
+    <div class="block block-c">C</div>
+    <div class="block block-d">D</div>
+    <aside><pre><code>
+#example-3 {
+
+  $zen-column-count: 6; // Set the total number of columns in the grid.
+
+  .block-a {
+    @include zen-grid-item(3, 3);
+  }
+
+  .block-b {
+    @include zen-grid-item(2, 1);
+  }
+
+  .block-c {
+    @include zen-grid-item(1, 1, right);
+  }
+
+  .block-d {
+    @include zen-clear(right);
+    @include zen-grid-item(1, 1, right);
+  }
+}
+    </code></pre></aside>
+    </article>
+
+    <article id="example-4">
+    <h3><a href="#example-4">Example 4</a></h3>
+    <div class="block block-a">A<br>A</div>
+    <div class="block block-b">B<br></div>
+    <div class="block block-c">C</div>
+    <div class="block block-d">D</div>
+    <div class="block block-e">E</div>
+    <aside><pre><code>
+#example-4 {
+
+  $zen-column-count: 4; // Set the total number of columns in the grid.
+
+  .block-a {
+    @include zen-grid-item(2, 1, right);
+  }
+
+  .block-b {
+    @include zen-grid-item(1, 1);
+  }
+
+  .block-c {
+    @include zen-grid-item(1, 2);
+  }
+
+  .block-d {
+    @include zen-clear(left);
+    @include zen-grid-item(1, 1);
+  }
+
+  .block-e {
+    @include zen-grid-item(1, 2);
+  }
+}
+    </code></pre></aside>
+    </article>
+
+    <article id="example-5">
+    <h3><a href="#example-5">Example 5</a></h3>
+    <div class="block block-a">A<br>A</div>
+    <div class="block block-b">B<br></div>
+    <div class="block block-c">C</div>
+    <div class="block block-d">D</div>
+    <div class="block block-e">E</div>
+    <aside><pre><code>
+#example-5 {
+
+  $zen-column-count: 7; // Set the total number of columns in the grid.
+
+  .block-a {
+    @include zen-grid-item(3, 3, right);
+  }
+
+  .block-b {
+    @include zen-grid-item(2, 1);
+  }
+
+  .block-c {
+    @include zen-grid-item(2, 6);
+  }
+
+  .block-d {
+   @include zen-clear(left);
+   @include zen-grid-item(2, 1);
+  }
+
+  .block-e {
+    @include zen-grid-item(2, 6);
+  }
+}
+    </code></pre></aside>
+    </article>
+
+    </section>
+
 
   </article>
 
