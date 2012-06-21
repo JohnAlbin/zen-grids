@@ -260,8 +260,7 @@ $zen-reverse-all-floats: false !default;
   $rev: zen-direction-flip($dir);
 
   // Calculate the item's width.
-  $width: zen-grid-item-width($column-span, $columns, $gutter-width, $grid-width, $box-sizing);
-  width: $width;
+  width: zen-grid-item-width($column-span, $columns, $gutter-width, $grid-width, $box-sizing);
 
   // Auto-apply the unit base mixin.
   @if $auto-include-flow-item-base {
