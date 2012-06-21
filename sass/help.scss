@@ -2,7 +2,6 @@
 // Aggregate all the stylesheets into one file.
 @import "normalize";
 @import "pages";
-@import "examples";
 
 
 $zen-column-count: 2;
@@ -132,4 +131,149 @@ h1 {
 #footer {
   @include zen-clear(both);
   @include zen-grid-item(2, 1);
+}
+
+//
+// Examples
+//
+
+.block-a {
+  background: $color-example-a;
+}
+
+.block-b {
+  background: $color-example-b;
+}
+
+.block-c {
+  background: $color-example-c;
+}
+
+.block-d {
+  background: $color-example-d;
+}
+
+.block-e {
+  background: $color-example-e;
+}
+
+.example-container {
+  @include trailer(1);
+  .block {
+    text-align: center;
+  }
+}
+
+#example-1 {
+  $zen-column-count: 7; // Set the total number of columns in the grid.
+  $zen-gutter-width: 10px;
+
+  .example-container {
+    @include zen-grid-container; // Apply this mixin to the container.
+  }
+  .block-a {
+    @include zen-grid-item(4, 1);
+  }
+  .block-b {
+    @include zen-grid-item(3, 1, right);
+  }
+  .block-c {
+    @include zen-clear(right);
+    @include zen-grid-item(3, 1, right);
+  }
+}
+
+#example-2 {
+  $zen-column-count: 3; // Set the total number of columns in the grid.
+  $zen-gutter-width: 10px;
+
+  .example-container {
+    @include zen-grid-container; // Apply this mixin to the container.
+  }
+  .block-a {
+    @include zen-grid-item(2, 1);
+  }
+  .block-b {
+    @include zen-grid-item(1, 1, right);
+  }
+  .block-c {
+    @include zen-clear(right);
+    @include zen-grid-item(1, 1, right);
+  }
+  .block-d {
+    @include zen-clear(both);
+    @include zen-grid-item(3, 1);
+  }
+}
+
+#example-3 {
+  $zen-column-count: 6; // Set the total number of columns in the grid.
+  $zen-gutter-width: 10px;
+
+  .example-container {
+    @include zen-grid-container; // Apply this mixin to the container.
+  }
+  .block-a {
+    @include zen-grid-item(3, 3);
+  }
+  .block-b {
+    @include zen-grid-item(2, 1);
+  }
+  .block-c {
+    @include zen-grid-item(1, 1, right);
+  }
+  .block-d {
+    @include zen-clear(right);
+    @include zen-grid-item(1, 1, right);
+  }
+}
+
+#example-4 {
+  $zen-column-count: 4; // Set the total number of columns in the grid.
+  $zen-gutter-width: 10px;
+
+  .example-container {
+    @include zen-grid-container; // Apply this mixin to the container.
+  }
+  .block-a {
+    @include zen-grid-item(2, 1, right);
+  }
+  .block-b {
+    @include zen-grid-item(1, 1);
+  }
+  .block-c {
+    @include zen-grid-item(1, 2);
+  }
+  .block-d {
+    @include zen-clear(left);
+    @include zen-grid-item(1, 1);
+  }
+  .block-e {
+    @include zen-grid-item(1, 2);
+  }
+}
+
+#example-5 {
+  $zen-column-count: 7; // Set the total number of columns in the grid.
+  $zen-gutter-width: 10px;
+
+  .example-container {
+    @include zen-grid-container; // Apply this mixin to the container.
+  }
+  .block-a {
+    @include zen-grid-item(3, 3, right);
+  }
+  .block-b {
+    @include zen-grid-item(2, 1);
+  }
+  .block-c {
+    @include zen-grid-item(2, 6);
+  }
+  .block-d {
+   @include zen-clear(left);
+   @include zen-grid-item(2, 1);
+  }
+  .block-e {
+    @include zen-grid-item(2, 6);
+  }
 }

@@ -350,25 +350,22 @@ $legacy-support-for-ie6: false !default;</code></pre>
       <div class="block block-b">B</div>
       <div class="block block-c">C</div>
     </div>
-    <aside><pre><code>
-#example-1 {
+    <pre><code>$zen-column-count: 7; // Set the total number of columns in the grid.
+$zen-gutter-width: 10px;
 
-  $zen-column-count: 7; // Set the total number of columns in the grid.
-
-  .block-a {
-    @include zen-grid-item(4, 1);
-  }
-
-  .block-b {
-    @include zen-grid-item(3, 1, right);
-  }
-
-  .block-c {
-     @include zen-clear(right);
-    @include zen-grid-item(3, 1, right);
-  }
+.example-container {
+  @include zen-grid-container; // Apply this mixin to the container.
 }
-    </code></pre></aside>
+.block-a {
+  @include zen-grid-item(4, 1);
+}
+.block-b {
+  @include zen-grid-item(3, 1, right);
+}
+.block-c {
+  @include zen-clear(right);
+  @include zen-grid-item(3, 1, right);
+}</code></pre>
     </article>
 
     <article id="example-2">
@@ -379,30 +376,26 @@ $legacy-support-for-ie6: false !default;</code></pre>
       <div class="block block-c">C<br>C</div>
       <div class="block block-d">D</div>
     </div>
-    <aside><pre><code>
-#example-2 {
+    <pre><code>$zen-column-count: 3; // Set the total number of columns in the grid.
+$zen-gutter-width: 10px;
 
-  $zen-column-count: 3; // Set the total number of columns in the grid.
-
-  .block-a {
-    @include zen-grid-item(2, 1);
-  }
-
-  .block-b {
-    @include zen-grid-item(1, 1, right);
-  }
-
-  .block-c {
-    @include zen-clear(right);
-    @include zen-grid-item(1, 1, right);
-  }
-
-  .block-d {
-    @include zen-clear(both);
-    @include zen-grid-item(3, 1);
-  }
+.example-container {
+  @include zen-grid-container; // Apply this mixin to the container.
 }
-    </code></pre></aside>
+.block-a {
+  @include zen-grid-item(2, 1);
+}
+.block-b {
+  @include zen-grid-item(1, 1, right);
+}
+.block-c {
+  @include zen-clear(right);
+  @include zen-grid-item(1, 1, right);
+}
+.block-d {
+  @include zen-clear(both);
+  @include zen-grid-item(3, 1);
+}</code></pre>
     </article>
 
     <article id="example-3">
@@ -413,29 +406,25 @@ $legacy-support-for-ie6: false !default;</code></pre>
       <div class="block block-c">C</div>
       <div class="block block-d">D</div>
     </div>
-    <aside><pre><code>
-#example-3 {
+    <pre><code>$zen-column-count: 6; // Set the total number of columns in the grid.
+$zen-gutter-width: 10px;
 
-  $zen-column-count: 6; // Set the total number of columns in the grid.
-
-  .block-a {
-    @include zen-grid-item(3, 3);
-  }
-
-  .block-b {
-    @include zen-grid-item(2, 1);
-  }
-
-  .block-c {
-    @include zen-grid-item(1, 1, right);
-  }
-
-  .block-d {
-    @include zen-clear(right);
-    @include zen-grid-item(1, 1, right);
-  }
+.example-container {
+  @include zen-grid-container; // Apply this mixin to the container.
 }
-    </code></pre></aside>
+.block-a {
+  @include zen-grid-item(3, 3);
+}
+.block-b {
+  @include zen-grid-item(2, 1);
+}
+.block-c {
+  @include zen-grid-item(1, 1, right);
+}
+.block-d {
+  @include zen-clear(right);
+  @include zen-grid-item(1, 1, right);
+}</code></pre>
     </article>
 
     <article id="example-4">
@@ -447,33 +436,29 @@ $legacy-support-for-ie6: false !default;</code></pre>
       <div class="block block-d">D</div>
       <div class="block block-e">E</div>
     </div>
-    <aside><pre><code>
-#example-4 {
+    <pre><code>
+$zen-column-count: 4; // Set the total number of columns in the grid.
+$zen-gutter-width: 10px;
 
-  $zen-column-count: 4; // Set the total number of columns in the grid.
-
-  .block-a {
-    @include zen-grid-item(2, 1, right);
-  }
-
-  .block-b {
-    @include zen-grid-item(1, 1);
-  }
-
-  .block-c {
-    @include zen-grid-item(1, 2);
-  }
-
-  .block-d {
-    @include zen-clear(left);
-    @include zen-grid-item(1, 1);
-  }
-
-  .block-e {
-    @include zen-grid-item(1, 2);
-  }
+.example-container {
+  @include zen-grid-container; // Apply this mixin to the container.
 }
-    </code></pre></aside>
+.block-a {
+  @include zen-grid-item(2, 1, right);
+}
+.block-b {
+  @include zen-grid-item(1, 1);
+}
+.block-c {
+  @include zen-grid-item(1, 2);
+}
+.block-d {
+  @include zen-clear(left);
+  @include zen-grid-item(1, 1);
+}
+.block-e {
+  @include zen-grid-item(1, 2);
+}</code></pre>
     </article>
 
     <article id="example-5">
@@ -485,33 +470,28 @@ $legacy-support-for-ie6: false !default;</code></pre>
       <div class="block block-d">D</div>
       <div class="block block-e">E</div>
     </div>
-    <aside><pre><code>
-#example-5 {
+    <pre><code>$zen-column-count: 7; // Set the total number of columns in the grid.
+$zen-gutter-width: 10px;
 
-  $zen-column-count: 7; // Set the total number of columns in the grid.
-
-  .block-a {
-    @include zen-grid-item(3, 3, right);
-  }
-
-  .block-b {
-    @include zen-grid-item(2, 1);
-  }
-
-  .block-c {
-    @include zen-grid-item(2, 6);
-  }
-
-  .block-d {
-   @include zen-clear(left);
-   @include zen-grid-item(2, 1);
-  }
-
-  .block-e {
-    @include zen-grid-item(2, 6);
-  }
+.example-container {
+  @include zen-grid-container; // Apply this mixin to the container.
 }
-    </code></pre></aside>
+.block-a {
+  @include zen-grid-item(3, 3, right);
+}
+.block-b {
+  @include zen-grid-item(2, 1);
+}
+.block-c {
+  @include zen-grid-item(2, 6);
+}
+.block-d {
+ @include zen-clear(left);
+ @include zen-grid-item(2, 1);
+}
+.block-e {
+  @include zen-grid-item(2, 6);
+}</code></pre>
     </article>
 
     </section>
