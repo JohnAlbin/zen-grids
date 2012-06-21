@@ -272,13 +272,13 @@ $zen-reverse-all-floats: false !default;
   @if $alpha-gutter {
     margin-#{$dir}: $gutter-width;
   }
-  $offset: ($columns - $column-span) * $gutter-width / $columns;
-  padding-#{$rev}: $offset;
+  $adjusted-gutter: ($columns - $column-span) * $gutter-width / $columns;
+  padding-#{$rev}: $adjusted-gutter;
   @if $omega-gutter {
-    margin-#{$rev}: $gutter-width - $offset;
+    margin-#{$rev}: $gutter-width - $adjusted-gutter;
   }
   @else {
-    margin-#{$rev}: -($offset);
+    margin-#{$rev}: -($adjusted-gutter);
   }
 }
 
