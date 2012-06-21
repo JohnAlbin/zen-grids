@@ -55,6 +55,7 @@
       <li><a href="#zen-grid-item">zen-grid-item</a></li>
       <li><a href="#zen-grid-item-base">zen-grid-item-base</a></li>
       <li><a href="#zen-clear">zen-clear</a></li>
+      <li><a href="#zen-float">zen-float</a></li>
       <li><a href="#zen-grid-flow-item">zen-grid-flow-item</a></li>
       </ul>
     </li>
@@ -99,7 +100,10 @@
     <article>
     <h4 id="zen-gutter-width"><code>$zen-gutter-width</code> <a href="#zen-gutter-width" title="permalink">#</a></h4>
     <p>
-    Specifies the width of the gutters; half of the gutter will be placed on each side of a grid item.
+    Specifies the width of the gutters; half of the gutter will be placed on each side of a grid item (as padding).
+    </p>
+    <p>
+    For a proper sense of aesthetics, we recommend this value be proportional to your base font by setting <code>$zen-gutter-width</code> equal to your base line height, <a href="http://compass-style.org/reference/compass/typography/vertical_rhythm/#const-base-line-height"><code>$base-line-height</code></a>.
     </p>
     <pre><code>$zen-gutter-width: 20px !default;</code></pre>
     </article>
@@ -108,7 +112,7 @@
     <h4 id="zen-auto-include-item-base"><code>$zen-auto-include-item-base<br>
     $zen-auto-include-flow-item-base</code> <a href="#zen-auto-include-item-base" title="permalink">#</a></h4>
     <p>
-    You can generate more efficient CSS if you set these to <code>false</code> and manually apply the <a href="#zen-grid-item-base">zen-grid-item-base()</a> mixin to all grid items (and flow items) from within a single ruleset.
+    You can generate more efficient CSS if you set these to <code>false</code> and manually apply the <a href="#zen-grid-item-base"><code>zen-grid-item-base()</code></a> mixin to all grid items (and flow items) from within a single ruleset.
     </p>
     <pre><code>$zen-auto-include-item-base: true !default;
 $zen-auto-include-flow-item-base: true !default;</code></pre>
@@ -119,12 +123,26 @@ $zen-auto-include-flow-item-base: true !default;</code></pre>
     <article>
     <h4 id="zen-grid-width"><code>$zen-grid-width</code> <a href="#zen-grid-width" title="permalink">#</a></h4>
     <p>
-    Specify the width of the entire grid. Defaults to 100% for a fluid responsive design, but you can change this to a pixel value if you need a fixed grid.
+    Specify the width of the entire grid. Defaults to <code>100%</code> for a fluid responsive design, but you can change this to any fixed value (using px or em, etc.) if you need a fixed grid.
     </p>
     <pre><code>$zen-grid-width: 100% !default;</code></pre>
     </article>
 
     <h3 id="vars-legacy">Legacy IE support variables <a href="#vars-legacy" title="permalink">#</a></h3>
+
+    <article>
+    <h4 id="zen-box-sizing"><code>$zen-box-sizing</code> <a href="#zen-box-sizing" title="permalink">#</a></h4>
+    <p>
+    Specify the CSS3 box-sizing method. The default, "border-box", is compatible with all modern browsers, including IE 8 and later.
+    </p>
+    <p>
+    To add IE6 and IE7 support, you’ll need to set <a href="#legacy-support-for-ie7"><code>$legacy-support-for-ie7</code></a> and <a href="#legacy-support-for-ie7"><code>$legacy-support-for-ie6</code></a> to true and then either use a polyfill (see <a href="#box-sizing-polyfill-path"><code>$box-sizing-polyfill-path</code></a>) or set <code>$zen-box-sizing</code> to "content-box".
+    </p>
+    <p>
+    Note: if <code>$zen-box-sizing</code> is set to "content-box", then <a href="#zen-gutter-width"><code>$zen-gutter-width</code></a> will need to use the same unit of measurement as the <a href="#zen-grid-width"><code>$zen-grid-width</code></a>.
+    </p>
+    <pre><code>$zen-box-sizing: border-box !default;</code></pre>
+    </article>
 
     <article>
     <h4 id="box-sizing-polyfill-path"><code>$box-sizing-polyfill-path</code> <a href="#box-sizing-polyfill-path" title="permalink">#</a></h4>
@@ -135,18 +153,10 @@ $zen-auto-include-flow-item-base: true !default;</code></pre>
     </article>
 
     <article>
-    <h4 id="zen-box-sizing"><code>$zen-box-sizing</code> <a href="#zen-box-sizing" title="permalink">#</a></h4>
-    <p>
-    Specify the CSS3 box-sizing method. The default, "border-box", is compatible with all modern browsers, including IE 8 and later. Use "content-box" for wider compatibility (Note: you'll also need to set <a href="#legacy-support-for-ie7">$legacy-support-for-ie7</a> and <a href="#legacy-support-for-ie7">$legacy-support-for-ie6</a> to true.)
-    </p>
-    <pre><code>$zen-box-sizing: border-box !default;</code></pre>
-    </article>
-
-    <article>
     <h4 id="legacy-support-for-ie7"><code>$legacy-support-for-ie7<br>
     $legacy-support-for-ie6</code> <a href="#legacy-support-for-ie7" title="permalink">#</a></h4>
     <p>
-    Toggles IE6/7 support. Since we're defaulting to <code>box-sizing: border-box</code>, these are off by default. If the <a href="#box-sizing-polyfill-path">$box-sizing-polyfill-path</a> variable is set, it will override these variables.
+    Toggles IE6/7 support. Since we’re defaulting to <code>box-sizing: border-box</code>, these are off by default. If the <a href="#box-sizing-polyfill-path">$box-sizing-polyfill-path</a> variable is set, it will override these variables by assuming they were meant to be true.
     </p>
     <pre><code>$legacy-support-for-ie7: false !default;
 $legacy-support-for-ie6: false !default;</code></pre>
@@ -157,7 +167,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <article>
     <h4 id="zen-float-direction"><code>$zen-float-direction</code> <a href="#zen-float-direction" title="permalink">#</a></h4>
     <p>
-    Specify the default floating direction for zen's mixins.
+    Specify the default floating direction for zen’s mixins. If you are only building RTL layouts (and not LTR layouts), you should set this to <code>right</code>.
     </p>
     <pre><code>$zen-float-direction: left !default;</code></pre>
     </article>
@@ -165,8 +175,17 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <article>
     <h4 id="zen-reverse-all-floats"><code>$zen-reverse-all-floats</code> <a href="#zen-reverse-all-floats" title="permalink">#</a></h4>
     <p>
-    This is a helper variable for RTL layouts.
+    Reverse the floating direction in all of zen’s mixins.
     </p>
+    <p>
+    If you are creating both LTR and RTL layouts, this helper variable can be used to automatically create one set of layouts based on the other set of layouts. For example:
+    </p>
+    <pre><code>$zen-reverse-all-floats: true;
+@import "an-LTR-layout";</code></pre>
+    <p>
+    In the above example, the existing LTR layout in the an-LTR-layout.scss file is used to create the corresponding RTL layout by first setting the <code>$zen-reverse-all-floats</code> variable to <code>true</code> and then importing the LTR layout file.
+    </p>
+
     <pre><code>$zen-reverse-all-floats: false !default;</code></pre>
     </article>
 
@@ -185,7 +204,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <article>
     <h3 id="zen-nested-container">zen-nested-container() <a href="#zen-nested-container" title="permalink">#</a></h3>
     <p>
-    Apply this to any grid item that is also a grid container element for a nested grid. This mixin ensures the container does not have a gutter since the nested grid items will have their own gutters.
+    Apply this to any grid item that is also a grid container element for a nested grid. It must be applied <em>after</em> the <a href="#zen-grid-item"><code>zen-grid-item()</code></a> mixin is applied. This mixin ensures the container does not have a gutter since the nested grid items will have their own gutters.
     </p>
     </article>
 
@@ -200,10 +219,10 @@ $legacy-support-for-ie6: false !default;</code></pre>
       $float-direction
       ) <a href="#zen-grid-item" title="permalink">#</a></h3>
     <p>
-    Apply this to each grid item. Set the $column-span to the number of columns that the grid item spans. And set the $column-position to the column number the grid item starts on.
+    Apply this to each grid item. Set the <code>$column-span</code> to the number of columns that the grid item spans. And set the <code>$column-position</code> to the column number the grid item starts on.
     </p>
     <p>
-    To make the grid item float from the right, set the $float-direction to right; it defaults to left (the value of <a href="#zen-float-direction">$zen-float-direction</a>.) For grid items that are floated right, the $column-position is counted from the right instead of from the left.
+    To make the grid item float from the right, set the <code>$float-direction</code> to <code>right</code>; it defaults to <code>left</code> (the value of <a href="#zen-float-direction"><code>$zen-float-direction</code></a>.) For grid items that are floated right, the <code>$column-position</code> is counted from the right instead of from the left.
     </p>
     <p>Additional optional parameters and their defaults:</p>
     <ul>
@@ -219,21 +238,36 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <article>
     <h3 id="zen-grid-item-base">zen-grid-item-base() <a href="#zen-grid-item-base" title="permalink">#</a></h3>
     <p>
-    Apply this mixin to each grid item in the layout to prevent overflowing content from breaking the layout.
+    Applies a standard set of properites to all grid items in the layout.
     </p>
     <p>
-    The mixin has the following optional parameters, but its better to use the <a href="#zen-gutter-width">$zen-gutter-width</a> and <a href="#zen-box-sizing">$zen-box-sizing</a> variables instead:
+    See the documentation for the <a href="#zen-auto-include-item-base"><code>$zen-auto-include-item-base</code> and <code>$zen-auto-include-flow-item-base</code> variables</a> for when to use this mixin.
     </p>
+    <p>Optional parameters and their defaults:</p>
     <ul>
-    <li><code>$gutter-width: $zen-gutter-width</code> Half of this value is applied as padding to the left and right sides of the item.</li>
-    <li><code>$box-sizing: $zen-box-sizing</code> The type of CSS3 box model each box should use. Can be set to content-box or border-box. Defaults to content-box, but border-box is way cooler. IE 6 and 7 don't support border-box.</li>
+    <li><code>$gutter-width: $zen-gutter-width</code></li>
+    <li><code>$box-sizing: $zen-box-sizing</code></li>
+    <li><code>$flow-direction: $zen-float-direction</code></li>
+    <li><code>$reverse-all-floats: $zen-reverse-all-floats</code></li>
     </ul>
     </article>
 
     <article>
     <h3 id="zen-clear">zen-clear() <a href="#zen-clear" title="permalink">#</a></h3>
     <p>
-    Apply this to content boxes that need to be cleared below other content boxes.
+    Apply this to grid items that need to be cleared below other grid items.
+    </p>
+    <p>Optional parameters and their defaults:</p>
+    <ul>
+    <li><code>$float-direction: $zen-float-direction</code></li>
+    <li><code>$reverse-all-floats: $zen-reverse-all-floats</code></li>
+    </ul>
+    </article>
+
+    <article>
+    <h3 id="zen-float">zen-float() <a href="#zen-float" title="permalink">#</a></h3>
+    <p>
+    Apply this to flow items that need to be floated.
     </p>
     <p>Optional parameters and their defaults:</p>
     <ul>
@@ -263,13 +297,13 @@ $legacy-support-for-ie6: false !default;</code></pre>
       $omega-gutter: [value]
       ) <a href="#zen-grid-flow-item" title="permalink">#</a></h3>
     <p>
-    Apply this to an HTML item that is in the normal flow of a document to help align it to the grid. Set the $column-span to the number of columns that the HTML element should span. For responsive layouts with a percentage-based grid width, set the $parent-column-count to the number of columns that the parent element spans; fixed-unit layouts using px, em, etc. do not need to specify this.
+    Apply this to an HTML item that is in the normal flow of a document to help align it to the grid. Set the <code>$column-span</code> to the number of columns that the HTML element should span. For responsive layouts with a percentage-based grid width, set the <code>$parent-column-count</code> to the number of columns that the parent element spans; fixed-unit layouts using px, em, etc. do not need to specify this.
     </p>
     <p>
-    Unlike the <a href="#zen-grid-item">zen-grid-item()</a> mixin, this mixin does not float the HTML item; it also does not have a half-gutter on each side. By default, it has no gutter in the "alpha position" (the left side) and a full gutter in the "omega position" (the right side.) You can turn on or off the alpha and omega gutters by setting the $alpha-gutter and $omega-gutter parameters to true or false.
+    Unlike the <a href="#zen-grid-item"><code>zen-grid-item()</code></a> mixin, this mixin does not float the HTML item; see the related <a href="#zen-float"><code>zen-float()</code></a> mixin. This mixin also does not have a half-gutter on each side. By default, it has no gutter in the "alpha position" (the left side) and a full gutter in the "omega position" (the right side.) You can turn on or off the alpha and omega gutters by setting the <code>$alpha-gutter</code> and <code>$omega-gutter</code> parameters to <code>true</code> or <code>false</code>.
     </p>
     <p>
-    Note: when the $flow-direction is set to right (for RTL languages), the alpha position is on the right and the omega position is on the left.
+    Note: when the <code>$flow-direction</code> is set to <code>right</code> (for RTL languages), the alpha position is on the right and the omega position is on the left.
     </p>
     <p>Additional optional parameters and their defaults:</p>
     <ul>
@@ -292,37 +326,49 @@ $legacy-support-for-ie6: false !default;</code></pre>
     </p>
 
     <article>
-    <h3 id="zen-half-gutter">zen-half-gutter(
-      $gutter-width
+    <h3 id="zen-half-gutter">zen-half-gutter()<br />
+      zen-half-gutter(
+      $gutter-side: [value]
       ) <a href="#zen-half-gutter" title="permalink">#</a></h3>
     <p>
-    Returns a half gutter width. The $gutter-width defaults to $zen-gutter-width.
+    Returns a half gutter width. The <code>$gutter-side</code> defaults to <a href="#zen-float-direction"><code>$zen-float-direction</code></a>.
     </p>
+    <p>
+    If the gutter width is in pixels and is an odd number, then <code>$gutter-size: left</code> will return half of the gutter rounded down to a whole pixel; <code>$gutter-size: right</code> will return half of the gutter rounded up to a whole pixel.
+    </p>
+    <p>Additional optional parameters and their defaults:</p>
+    <ul>
+    <li><code>$gutter-width: $zen-gutter-width</code></li>
+    <li><code>$flow-direction: $zen-float-direction</code></li>
+    </ul>
     </article>
 
     <article>
-    <h3 id="zen-unit-width">zen-unit-width()<br>
-      zen-unit-width(
-      $column-count,
-      $grid-width
-      ) <a href="#zen-unit-width" title="permalink">#</a></h3>
+    <h3 id="zen-unit-width">zen-unit-width() <a href="#zen-unit-width" title="permalink">#</a></h3>
     <p>
-    Returns the unit width of a column. The $column-count defaults to $zen-column-count and $grid-width defaults to $zen-grid-width.
+    Returns the unit width of a single column in the grid.
     </p>
+    <p>Additional optional parameters and their defaults:</p>
+    <ul>
+    <li><code>$column-count: $zen-column-count</code></li>
+    <li><code>$grid-width: $zen-grid-width</code></li>
+    </ul>
     </article>
 
     <article>
     <h3 id="zen-grid-item-width">zen-grid-item-width(
       $column-span
-      )<br>
-      zen-grid-item-width (
-      $column-span,
-      $column-count,
-      $grid-width
       ) <a href="#zen-grid-item-width" title="permalink">#</a></h3>
     <p>
     Calculates the width of a grid item that spans the specified number of columns. The $column-count defaults to $zen-column-count and $grid-width defaults to $zen-grid-width.
     </p>
+    <p>Additional optional parameters and their defaults:</p>
+    <ul>
+    <li><code>$column-count: $zen-column-count</code></li>
+    <li><code>$gutter-width: $zen-gutter-width</code></li>
+    <li><code>$grid-width: $zen-grid-width</code></li>
+    <li><code>$box-sizing: $zen-box-sizing</code></li>
+    </ul>
     </article>
 
     <article>
