@@ -8,7 +8,7 @@
   float: left;
   width: 50%;
   margin-left: 25%;
-  margin-right: -75%;
+  margin-right: -100%;
   padding-left: 10px;
   padding-right: 10px;
   -moz-box-sizing: border-box;
@@ -51,10 +51,10 @@
   float: left;
   width: 60%;
   margin-left: 30%;
-  margin-right: -90%;
+  margin-right: -100%;
   /* Test zen-grid-item(3, 3) with $zen-grid-width: 1000px, 5 column grid and 40px gutter */
   float: left;
   width: 600px;
   margin-left: 400px;
-  margin-right: -1000px;
+  margin-right: -100%;
 }

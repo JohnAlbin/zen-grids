@@ -109,7 +109,7 @@ $zen-reverse-all-floats: false !default;
   width: $width;
   margin: {
     #{$dir}: ($column-position - 1) * $unit-width;
-    #{$rev}: (1 - $column-position - $column-span) * $unit-width;
+    #{$rev}: -100%;
   }
 
   // Auto-apply the unit base mixin.
