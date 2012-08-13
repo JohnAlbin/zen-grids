@@ -288,6 +288,76 @@ $zen-reverse-all-floats: false !default;
   }
 }
 
+// Use this to define a row of grid items. It allows you to write something like
+//
+//   .some-container {
+//     @include zen-grid-container;
+//     @include zen-grid-row(-g- ".first" ".second", 1 7 4); // Assumes $zen-column-count: 12
+//     @include zen-grid-row("#third" "#fourth", 7 5);
+//     .first  { /* style... */ }
+//     .second { /* style... */ }
+//   }
+//   #third  { /* style... */ }
+//   #fourth { /* style... */ }
+//
+// instead of
+//
+//   .some-container {
+//     @include zen-grid-container;
+//     .first  { @include zen-grid-item(7, 2); /* style... */ }
+//     .second { @include zen-grid-item(4, 9); /* style... */ }
+//     #third  { @include zen-clear; @include zen-grid-item(7, 1); }
+//     #fourth { @include zen-grid-item(5, 8); }
+//   }
+//   #third  { /* style... */ }
+//   #fourth { /* style... */ }
+//
+// The former method generates a slightly less compact CSS, but that's a problem
+// for Sass to solve.
+//
+// Parameters:
+//
+//   $selectors  : a list of selectors.
+//   $col-widths : a list of column widths. The list must have the same length
+//                 as $selectors. The sum of the widths must be equal to
+//                 $zen-column-count.
+//   $clear      : the index of the selector to which zen-clear should be
+//                 applied. By default, this is 1 (i.e., the first item in
+//                 $selectors). A different value may be needed if the selectors
+//                 in the html appear in a different order compared to the order
+//                 in which they occur in $selectors. Use 0 to avoid clearing.
+//   $gap-string : the string to be used to denote gaps between columns.
+//                 This is "-g-" by default.
+//
+// The last parameter ($col) is (conceptually) a local variable and
+// should be ignored by the user (its value is re-set inside the mixin anyway).
+// It appears as a parameter to avoid accidental clashing with a $col variable
+// defined at a higher level. This trick is necessary because
+// Sass has no notion of a local variable. The only alternative I can think of
+// is giving such variables funny names (e.g., $-hkv-col), but that is less
+// safe and looks less elegant. Note that variables used in @for loops ($j in
+// this mixin) cause no problem in this sense.
+@mixin zen-grid-row($selectors, $col-widths, $clear: 1, $gap-string: -g-,
+  /* Local variables: */ $col: 1) {
+  @if length($selectors) != length($col-widths) {
+    @warn "The number of selectors does not match the number of column widths."
+  } @else if zen-sum($col-widths) != $zen-column-count {
+    @warn "The sum of column widths does not match the grid column count."
+  } @else {
+    // Re-initialize the local variable, just in case
+    // the user mistakenly passes a value for it.
+    $col: 1;
+    @for $j from 1 through length($selectors) {
+      @if nth($selectors, $j) != $gap-string {
+        #{nth($selectors, $j)} {
+          @if $j == $clear { @include zen-clear; }
+          @include zen-grid-item(nth($col-widths, $j), $col);
+        }
+      }
+      $col: $col + nth($col-widths, $j);
+    }
+  }
+}
 
 //
 // Helper functions for the Zen mixins.
@@ -359,4 +429,14 @@ $zen-reverse-all-floats: false !default;
   }
   @warn "Invalid direction passed to zen-direction-flip().";
   @return both;
+}
+
+// Compute the sum of the elements in a list.
+@function zen-sum($list,
+/* Local variables: */ $sum: 0) {
+  $sum: 0;
+  @for $i from 1 through length($list) {
+    $sum: $sum + nth($list, $i) ;
+  }
+  @return $sum;
 }
