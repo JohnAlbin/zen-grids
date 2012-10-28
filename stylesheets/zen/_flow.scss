@@ -1,0 +1,121 @@
+@include "zen/grids";
+
+//
+// Mixins for the Zen Grids system.
+//
+
+// @see http://zengrids.com/help/#zen-auto-include-item-base
+$zen-auto-include-flow-item-base  : true        !default;
+
+
+//
+// Apply this to an HTML item that is in the normal flow of a document to help
+// align it to the grid. @see http://zengrids.com/help/#zen-float
+//
+@mixin zen-grid-flow-item(
+  $column-span,
+  $parent-column-count          : false,
+  $alpha-gutter                 : false,
+  $omega-gutter                 : true,
+  $flow-direction               : $zen-float-direction,
+  $column-count                 : $zen-column-count,
+  $gutter-width                 : $zen-gutter-width,
+  $grid-width                   : $zen-grid-width,
+  $box-sizing                   : $zen-box-sizing,
+  $reverse-all-flows            : $zen-reverse-all-floats,
+  $auto-include-flow-item-base  : $zen-auto-include-flow-item-base
+) {
+
+  $columns: $column-count;
+  @if unit($grid-width) == "%" {
+    @if $parent-column-count == false {
+      @warn "For responsive layouts with a percentage-based grid width, you must set the $parent-column-count to the number of columns that the parent element spans.";
+    }
+    @else {
+      $columns: $parent-column-count;
+    }
+  }
+
+  $dir: $flow-direction;
+  @if $reverse-all-flows {
+    $dir: zen-direction-flip($dir);
+  }
+  $rev: zen-direction-flip($dir);
+
+  // Auto-apply the unit base mixin.
+  @if $auto-include-flow-item-base {
+    @include zen-grid-item-base($gutter-width, $box-sizing);
+  }
+
+  // Calculate the item's width.
+  $width: zen-grid-item-width($column-span, $columns, $gutter-width, $grid-width, $box-sizing);
+
+  @if unit($grid-width) == "%" {
+    // Our percentage $width is off if the parent has $gutter-width padding.
+    // Calculate an adjusted gutter to fix the width.
+    $adjusted-gutter: ($columns - $column-span) * $gutter-width / $columns;
+
+    width: $width;
+
+    // Ensure the HTML item either has a full gutter or no gutter on each side.
+    padding-#{$dir}: 0;
+    @if $alpha-gutter {
+      margin-#{$dir}: $gutter-width;
+    }
+    padding-#{$rev}: $adjusted-gutter;
+    @if $omega-gutter {
+      margin-#{$rev}: $gutter-width - $adjusted-gutter;
+    }
+    @else {
+      margin-#{$rev}: -($adjusted-gutter);
+    }
+  }
+  @else {
+    @if $alpha-gutter and $omega-gutter {
+      width: $width;
+      @if $gutter-width != 0 {
+        margin: {
+          #{$dir}: zen-half-gutter($gutter-width, left, $dir);
+          #{$rev}: zen-half-gutter($gutter-width, right, $dir);
+        }
+      }
+    }
+    @else if not $alpha-gutter and not $omega-gutter {
+      width: if($box-sizing == border-box, ($width - $gutter-width), $width);
+      @if $gutter-width != 0 {
+        padding: {
+          left: 0;
+          right: 0;
+        }
+      }
+    }
+    @else {
+      width: $width;
+      @if $omega-gutter {
+        padding-#{$dir}: 0;
+        padding-#{$rev}: $gutter-width;
+      }
+      @else {
+        padding-#{$dir}: $gutter-width;
+        padding-#{$rev}: 0;
+      }
+    }
+  }
+}
+
+//
+// Apply this to flow items that need to be floated.
+// @see http://zengrids.com/help/#zen-float
+//
+@mixin zen-float(
+  $float-direction      : $zen-float-direction,
+  $reverse-all-floats   : $zen-reverse-all-floats
+) {
+  // Determine the float direction.
+  $dir: $float-direction;
+  @if $reverse-all-floats {
+    $dir: zen-direction-flip($dir);
+  }
+  float: $dir;
+}
+
