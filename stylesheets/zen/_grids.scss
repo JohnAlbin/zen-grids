@@ -4,40 +4,40 @@
 
 
 // Specify the number of columns in the grid. @see http://zengrids.com/help/#zen-column-count
-$zen-column-count: 1 !default;
+$zen-column-count                 : 1           !default;
 
 // Specify the width of the gutters (as padding). @see http://zengrids.com/help/#zen-column-count
-$zen-gutter-width: 20px !default;
+$zen-gutter-width                 : 20px        !default;
 
 // @see http://zengrids.com/help/#zen-auto-include-item-base
-$zen-auto-include-item-base: true !default;
-$zen-auto-include-flow-item-base: true !default;
+$zen-auto-include-item-base       : true        !default;
+$zen-auto-include-flow-item-base  : true        !default;
 
 // Specify the width of the entire grid. @see http://zengrids.com/help/#zen-grid-width
-$zen-grid-width: 100% !default;
+$zen-grid-width                   : 100%        !default;
 
 // The box-sizing polyfill for IE6/7 requires an absolute path. @see http://zengrids.com/help/#box-sizing-polyfill-path
-$box-sizing-polyfill-path: "" !default;
+$box-sizing-polyfill-path         : ""          !default;
 
 // Specify the CSS3 box-sizing method. @see http://zengrids.com/help/#zen-box-sizing
-$zen-box-sizing: border-box !default;
+$zen-box-sizing                   : border-box  !default;
 
 // @see http://zengrids.com/help/#legacy-support-for-ie7
-$legacy-support-for-ie7: false !default;
-$legacy-support-for-ie6: false !default;
+$legacy-support-for-ie7           : false       !default;
+$legacy-support-for-ie6           : false       !default;
 
 // Specify the default floating direction for zen's mixins. @see http://zengrids.com/help/#zen-float-direction
-$zen-float-direction: left !default;
+$zen-float-direction              : left        !default;
 
 // Reverse the floating direction in all zen's mixins. @see http://zengrids.com/help/#zen-reverse-all-floats
-$zen-reverse-all-floats: false !default;
+$zen-reverse-all-floats           : false       !default;
 
 
 //
 // Apply this to the grid container element.
 // @see http://zengrids.com/help/#zen-grid-container
 //
-@mixin zen-grid-container () {
+@mixin zen-grid-container {
   @if ($legacy-support-for-ie6 or $legacy-support-for-ie7) {
     *position: relative; // @TODO: This is a pre-IE8 line of code; don't remember why its needed.
   }
@@ -59,7 +59,7 @@ $zen-reverse-all-floats: false !default;
 // Apply this to any grid item that is also a grid container element for a
 // nested grid. @see http://zengrids.com/help/#zen-nested-container
 //
-@mixin zen-nested-container () {
+@mixin zen-nested-container {
   padding: {
     left: 0;
     right: 0;
@@ -69,16 +69,16 @@ $zen-reverse-all-floats: false !default;
 //
 // Apply this to each grid item. @see http://zengrids.com/help/#zen-grid-item
 //
-@mixin zen-grid-item (
+@mixin zen-grid-item(
   $column-span,
   $column-position,
-  $float-direction: $zen-float-direction,
-  $column-count: $zen-column-count,
-  $gutter-width: $zen-gutter-width,
-  $grid-width: $zen-grid-width,
-  $box-sizing: $zen-box-sizing,
-  $reverse-all-floats: $zen-reverse-all-floats,
-  $auto-include-item-base: $zen-auto-include-item-base
+  $float-direction          : $zen-float-direction,
+  $column-count             : $zen-column-count,
+  $gutter-width             : $zen-gutter-width,
+  $grid-width               : $zen-grid-width,
+  $box-sizing               : $zen-box-sizing,
+  $reverse-all-floats       : $zen-reverse-all-floats,
+  $auto-include-item-base   : $zen-auto-include-item-base
 ) {
 
   // Calculate the unit width.
@@ -111,11 +111,11 @@ $zen-reverse-all-floats: false !default;
 // Applies a standard set of properites to all grid items in the layout.
 // @see http://zengrids.com/help/#zen-grid-item-base
 //
-@mixin zen-grid-item-base (
-  $gutter-width: $zen-gutter-width,
-  $box-sizing: $zen-box-sizing,
-  $flow-direction: $zen-float-direction,
-  $reverse-all-flows: $zen-reverse-all-floats
+@mixin zen-grid-item-base(
+  $gutter-width       : $zen-gutter-width,
+  $box-sizing         : $zen-box-sizing,
+  $flow-direction     : $zen-float-direction,
+  $reverse-all-flows  : $zen-reverse-all-floats
 ) {
 
   $dir: $flow-direction;
@@ -165,9 +165,9 @@ $zen-reverse-all-floats: false !default;
 // Apply this to grid items that need to be cleared below other grid items.
 // @see http://zengrids.com/help/#zen-clear
 //
-@mixin zen-clear (
-  $float-direction: $zen-float-direction,
-  $reverse-all-floats: $zen-reverse-all-floats
+@mixin zen-clear(
+  $float-direction      : $zen-float-direction,
+  $reverse-all-floats   : $zen-reverse-all-floats
 ) {
   // Determine the float direction.
   $dir: $float-direction;
@@ -181,9 +181,9 @@ $zen-reverse-all-floats: false !default;
 // Apply this to flow items that need to be floated.
 // @see http://zengrids.com/help/#zen-float
 //
-@mixin zen-float (
-  $float-direction: $zen-float-direction,
-  $reverse-all-floats: $zen-reverse-all-floats
+@mixin zen-float(
+  $float-direction      : $zen-float-direction,
+  $reverse-all-floats   : $zen-reverse-all-floats
 ) {
   // Determine the float direction.
   $dir: $float-direction;
@@ -197,18 +197,18 @@ $zen-reverse-all-floats: false !default;
 // Apply this to an HTML item that is in the normal flow of a document to help
 // align it to the grid. @see http://zengrids.com/help/#zen-float
 //
-@mixin zen-grid-flow-item (
+@mixin zen-grid-flow-item(
   $column-span,
-  $parent-column-count: false,
-  $alpha-gutter: false,
-  $omega-gutter: true,
-  $flow-direction: $zen-float-direction,
-  $column-count: $zen-column-count,
-  $gutter-width: $zen-gutter-width,
-  $grid-width: $zen-grid-width,
-  $box-sizing: $zen-box-sizing,
-  $reverse-all-flows: $zen-reverse-all-floats,
-  $auto-include-flow-item-base: $zen-auto-include-flow-item-base
+  $parent-column-count          : false,
+  $alpha-gutter                 : false,
+  $omega-gutter                 : true,
+  $flow-direction               : $zen-float-direction,
+  $column-count                 : $zen-column-count,
+  $gutter-width                 : $zen-gutter-width,
+  $grid-width                   : $zen-grid-width,
+  $box-sizing                   : $zen-box-sizing,
+  $reverse-all-flows            : $zen-reverse-all-floats,
+  $auto-include-flow-item-base  : $zen-auto-include-flow-item-base
 ) {
 
   $columns: $column-count;
@@ -295,9 +295,9 @@ $zen-reverse-all-floats: false !default;
 
 // Returns a half gutter width. @see http://zengrids.com/help/#zen-half-gutter
 @function zen-half-gutter(
-  $gutter-width: $zen-gutter-width,
-  $gutter-side: $zen-float-direction,
-  $flow-direction: $zen-float-direction
+  $gutter-width     : $zen-gutter-width,
+  $gutter-side      : $zen-float-direction,
+  $flow-direction   : $zen-float-direction
 ) {
   $half-gutter: $gutter-width / 2;
   // Special handling in case gutter has an odd number of pixels.
@@ -313,9 +313,9 @@ $zen-reverse-all-floats: false !default;
 }
 
 // Calculates the unit width of a column. @see http://zengrids.com/help/#zen-unit-width
-@function zen-unit-width (
-  $column-count: $zen-column-count,
-  $grid-width: $zen-grid-width
+@function zen-unit-width(
+  $column-count   : $zen-column-count,
+  $grid-width     : $zen-grid-width
 ) {
   $unit-width: $grid-width / $column-count;
   @if unit($unit-width) == "px" and floor($unit-width) != ceil($unit-width) {
@@ -326,12 +326,12 @@ $zen-reverse-all-floats: false !default;
 
 // Calculates the width of a grid item that spans the specified number of columns.
 // @see http://zengrids.com/help/#zen-grid-item-width
-@function zen-grid-item-width (
+@function zen-grid-item-width(
   $column-span,
-  $column-count: $zen-column-count,
-  $gutter-width: $zen-gutter-width,
-  $grid-width: $zen-grid-width,
-  $box-sizing: $zen-box-sizing
+  $column-count   : $zen-column-count,
+  $gutter-width   : $zen-gutter-width,
+  $grid-width     : $zen-grid-width,
+  $box-sizing     : $zen-box-sizing
 ) {
   $width: $column-span * zen-unit-width($column-count, $grid-width);
   @if $box-sizing == content-box {
@@ -347,7 +347,9 @@ $zen-reverse-all-floats: false !default;
 
 // Returns the opposite direction, given "left" or "right".
 // @see http://zengrids.com/help/#zen-direction-flip
-@function zen-direction-flip($dir) {
+@function zen-direction-flip(
+  $dir
+) {
   @if $dir == left {
     @return right;
   }
