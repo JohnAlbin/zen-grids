@@ -2,7 +2,6 @@
  * @file
  * Test zen-grid-flow-item()
  */
-/* line 8, ../sass/zen-grid-flow-item.scss */
 #test-zen-grid-flow-item {
   /* Test zen-grid-flow-item(1) without setting $column-count */
   padding-left: 10px;
