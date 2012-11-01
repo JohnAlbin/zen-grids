@@ -2,7 +2,6 @@
  * @file
  * Test zen-direction-flip()
  */
-/* line 8, ../sass/function-zen-direction-flip.scss */
 #test-zen-direction-flip {
   /* Test zen-direction-flip(left) */
   float: right;

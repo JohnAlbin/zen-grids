@@ -18,5 +18,6 @@ javascripts_dir = "js"
 environment = :development
 # output_style = :expanded or :nested or :compact or :compressed
 output_style = :expanded
+line_comments = false
 relative_assets = true
 sass_options = {}

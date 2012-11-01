@@ -2,7 +2,6 @@
  * @file
  * Test zen-unit-width()
  */
-/* line 8, ../sass/function-zen-unit-width.scss */
 #test-zen-unit-width {
   /* Test zen-unit-width() with default $zen-column-count: 1 */
   width: 100%;

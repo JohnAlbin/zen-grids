@@ -2,7 +2,6 @@
  * @file
  * Test zen-clear()
  */
-/* line 8, ../sass/zen-clear.scss */
 #test-zen-clear {
   /* Test zen-clear() */
   clear: left;

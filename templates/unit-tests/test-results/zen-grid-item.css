@@ -2,7 +2,6 @@
  * @file
  * Test zen-grid-item()
  */
-/* line 8, ../sass/zen-grid-item.scss */
 #test-zen-grid-item {
   /* Test zen-grid-item(6, 4) with 12 column grid and 20px gutter */
   float: left;

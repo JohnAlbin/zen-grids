@@ -2,7 +2,6 @@
  * @file
  * Test zen-half-gutter()
  */
-/* line 8, ../sass/function-zen-half-gutter.scss */
 #test-zen-half-gutter {
   /* Test zen-half-gutter() with default $zen-gutter-width: 20px */
   padding-left: 10px;
