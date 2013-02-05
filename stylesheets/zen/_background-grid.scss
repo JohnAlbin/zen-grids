@@ -1,3 +1,8 @@
+//
+// THIS MIXIN IS DEPRECATED. It has been completely re-written (and renamed)
+// in Zen Grids 2.0.
+//
+
 @import "zen/grids";
 
 // Specify the column background color.
@@ -18,6 +23,8 @@ $bg-grid-color: #ffdede !default;
   $grid-width: $zen-grid-width,
   $flow-direction: $zen-float-direction
 ) {
+
+  @warn "The -experimental-bg-grid() mixin has been DEPRECATED and will be removed in Zen Grids 2.0.";
 
   // Internal variables.
   $dir: $flow-direction;
