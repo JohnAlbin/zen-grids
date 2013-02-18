@@ -17,5 +17,6 @@ $zen-auto-include-item-base : false;
 // Import our modules.
 //
 @import "zen-grids";
+@import "zen-grids/background";
 @import "zen-grids/flow";
 @import "visually-hidden";
