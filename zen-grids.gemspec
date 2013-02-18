@@ -24,10 +24,12 @@ Gem::Specification.new do |s|
     stylesheets/_zen.scss
     stylesheets/zen/_background-grid.scss
     stylesheets/zen/_grids.scss
+    templates/project/_init.scss
+    templates/project/_layout.scss
+    templates/project/_modules.scss
+    templates/project/_visually-hidden.scss
     templates/project/example.html
     templates/project/manifest.rb
-    templates/project/common.scss
-    templates/project/layout.scss
     templates/project/styles.scss
     templates/unit-tests/manifest.rb
     templates/unit-tests/README.txt
