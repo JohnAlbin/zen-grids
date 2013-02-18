@@ -9,6 +9,12 @@
   max-width: 1100px;
 }
 
+/* Set the shared properties for all grid items. */
+%grid-item,
+.grid-item {
+  @include zen-grid-item-base();
+}
+
 #main {
   @include zen-grid-container();
 }
