@@ -6,9 +6,12 @@
  * right breakpoints to use for your site depend on your content.
  */
 
-.header,
-.main,
-.footer {
+.centered {
+  @include zen-grid-background();
+  padding: {
+    top: 1.5em;
+    bottom: 1.5em;
+  }
   margin: {
     left: auto;
     right: auto;
@@ -30,12 +33,12 @@
 /* Horizontal navigation bar */
 @media all and (min-width: 444px) {
   $zen-column-count: 1;
-  $navbar-height: 4em;
+  $navbar-height: 5em;
 
   .main {
     padding-top: $navbar-height;
   }
-  .menu {
+  .grid-item__menu {
     @include zen-grid-item(1, 1);
     margin-top: -$navbar-height;
     height: $navbar-height;
@@ -45,6 +48,9 @@
 @media all and (min-width: 444px) and (max-width: 665px) {
   $zen-column-count: 2;
 
+  .centered {
+    @include zen-grid-background();
+  }
   .grid-item__content {
     @include zen-grid-item(2, 1);
   }
@@ -60,6 +66,9 @@
 @media all and (min-width: 666px) and (max-width: 776px) {
   $zen-column-count: 3;
 
+  .centered {
+    @include zen-grid-background();
+  }
   .grid-item__content {
     @include zen-grid-item(2, 1);
   }
@@ -75,6 +84,9 @@
 @media all and (min-width: 777px) and (max-width: 998px) {
   $zen-column-count: 3;
 
+  .centered {
+    @include zen-grid-background();
+  }
   .grid-item__content {
     @include zen-grid-item(2, 1);
   }
@@ -90,6 +102,9 @@
 @media all and (min-width: 999px) {
   $zen-column-count: 5;
 
+  .centered {
+    @include zen-grid-background();
+  }
   .grid-item__content {
     @include zen-grid-item(3, 2);
   }
