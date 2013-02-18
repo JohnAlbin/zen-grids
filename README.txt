@@ -16,7 +16,7 @@ USAGE
 Here's a simple example: a content column with a sidebar on each side, aligned
 to a 12 column grid.
 
-  @import "zen";
+  @import "zen-grids";
 
   $zen-gutter-width: 40px;  // Set the gutter size. A half-gutter is used on
                             // each side of each column.
@@ -70,7 +70,7 @@ line:
 You can then start using Zen Grids in your Sass files. Just add this line to one
 of your .sass or .scss files and start creating!
 
-  @import "zen";
+  @import "zen-grids";
 
 
 REQUIREMENTS

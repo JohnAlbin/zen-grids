@@ -21,10 +21,10 @@ Gem::Specification.new do |s|
     LICENSE.txt
     README.txt
     lib/zen-grids.rb
-    stylesheets/_zen.scss
-    stylesheets/zen/_background.scss
-    stylesheets/zen/_flow.scss
-    stylesheets/zen/_grids.scss
+    stylesheets/_zen-grids.scss
+    stylesheets/zen-grids/_background.scss
+    stylesheets/zen-grids/_flow.scss
+    stylesheets/zen-grids/_grids.scss
     templates/project/_init.scss
     templates/project/_layout.scss
     templates/project/_modules.scss
