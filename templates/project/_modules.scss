@@ -45,16 +45,18 @@
   border: 1px solid #09f;
 }
 
-// Source-order meta info
-header h1,
-header h2 {
-  display: inline;
-}
-header p {
-  display: inline;
-  text-transform: uppercase;
-  font-size: 0.8em;
-  color: #c00;
+/* Source-order meta info */
+header {
+  h1,
+  h2 {
+    display: inline;
+  }
+  p {
+    display: inline;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: #c00;
+  }
 }
 
 .pull-quote {
