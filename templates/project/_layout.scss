@@ -1,3 +1,10 @@
+/**
+ * @file
+ * Layout styles.
+ *
+ * We use example breakpoints of 444px, 666px, 777px, 999px and 1111px. The
+ * right breakpoints to use for your site depend on your content.
+ */
 
 #header,
 #main,
@@ -6,7 +13,7 @@
     left: auto;
     right: auto;
   }
-  max-width: 1100px;
+  max-width: 1111px;
 }
 
 /* Set the shared properties for all grid items. */
@@ -31,9 +38,8 @@
   }
 }
 
-//
-// Horizontal navigation bar
-@media all and (min-width: 480px) {
+/* Horizontal navigation bar */
+@media all and (min-width: 444px) {
   $zen-column-count: 1;
   $navbar-height: 4em;
 
@@ -47,7 +53,7 @@
   }
 }
 
-@media all and (min-width: 480px) and (max-width: 639px) {
+@media all and (min-width: 444px) and (max-width: 665px) {
   $zen-column-count: 2;
 
   #content {
@@ -62,7 +68,7 @@
   }
 }
 
-@media all and (min-width: 640px) and (max-width: 799px) {
+@media all and (min-width: 666px) and (max-width: 776px) {
   $zen-column-count: 3;
 
   #content {
@@ -77,7 +83,7 @@
   }
 }
 
-@media all and (min-width: 800px) and (max-width: 959px) {
+@media all and (min-width: 777px) and (max-width: 998px) {
   $zen-column-count: 3;
 
   #content {
@@ -92,7 +98,7 @@
   }
 }
 
-@media all and (min-width: 960px) {
+@media all and (min-width: 999px) {
   $zen-column-count: 5;
 
   #content {

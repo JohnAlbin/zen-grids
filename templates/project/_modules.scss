@@ -13,7 +13,7 @@
     color: #fff;
 }
 /* The skip-link link will be completely hidden until a user tabs to the link. */
-@media all and (min-width: 480px) {
+@media all and (min-width: 444px) {
   #skip-link a {
     @include visually-focusable();
   }
