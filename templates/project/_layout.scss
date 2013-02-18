@@ -6,9 +6,9 @@
  * right breakpoints to use for your site depend on your content.
  */
 
-#header,
-#main,
-#footer {
+.header,
+.main,
+.footer {
   margin: {
     left: auto;
     right: auto;
@@ -22,7 +22,8 @@
   @include zen-grid-item-base();
 }
 
-#main {
+/* Set the container for our grid items. */
+.main {
   @include zen-grid-container();
 }
 
@@ -31,10 +32,10 @@
   $zen-column-count: 1;
   $navbar-height: 4em;
 
-  #main {
+  .main {
     padding-top: $navbar-height;
   }
-  #main-menu {
+  .menu {
     @include zen-grid-item(1, 1);
     margin-top: -$navbar-height;
     height: $navbar-height;
@@ -44,14 +45,14 @@
 @media all and (min-width: 444px) and (max-width: 665px) {
   $zen-column-count: 2;
 
-  #content {
+  .grid-item__content {
     @include zen-grid-item(2, 1);
   }
-  #aside1 {
-    @include zen-clear(); // Clear left-floated elements (#content)
+  .grid-item__aside1 {
+    @include zen-clear(); // Clear left-floated elements (.grid-item__content)
     @include zen-grid-item(1, 1);
   }
-  #aside2 {
+  .grid-item__aside2 {
     @include zen-grid-item(1, 2);
   }
 }
@@ -59,14 +60,14 @@
 @media all and (min-width: 666px) and (max-width: 776px) {
   $zen-column-count: 3;
 
-  #content {
+  .grid-item__content {
     @include zen-grid-item(2, 1);
   }
-  #aside1 {
+  .grid-item__aside1 {
     @include zen-grid-item(1, 1, right); // Position from the right
   }
-  #aside2 {
-    @include zen-clear(); // Clear left-floated elements (#content)
+  .grid-item__aside2 {
+    @include zen-clear(); // Clear left-floated elements (.grid-item__content)
     @include zen-grid-item(2, 1);
   }
 }
@@ -74,14 +75,14 @@
 @media all and (min-width: 777px) and (max-width: 998px) {
   $zen-column-count: 3;
 
-  #content {
+  .grid-item__content {
     @include zen-grid-item(2, 1);
   }
-  #aside1 {
+  .grid-item__aside1 {
     @include zen-grid-item(1, 1, right); // Position from the right
   }
-  #aside2 {
-    @include zen-clear(right); // Clear right-floated elements (#aside1)
+  .grid-item__aside2 {
+    @include zen-clear(right); // Clear right-floated elements (.grid-item__aside1)
     @include zen-grid-item(1, 1, right);
   }
 }
@@ -89,13 +90,13 @@
 @media all and (min-width: 999px) {
   $zen-column-count: 5;
 
-  #content {
+  .grid-item__content {
     @include zen-grid-item(3, 2);
   }
-  #aside1 {
+  .grid-item__aside1 {
     @include zen-grid-item(1, 1);
   }
-  #aside2 {
+  .grid-item__aside2 {
     @include zen-grid-item(1, 5);
   }
 }
