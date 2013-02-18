@@ -6,6 +6,7 @@ stylesheet 'sass/function-zen-half-gutter.scss',     :media => 'all', :to => 'fu
 stylesheet 'sass/function-zen-unit-width.scss',      :media => 'all', :to => 'function-zen-unit-width.scss'
 stylesheet 'sass/zen-clear.scss',                    :media => 'all', :to => 'zen-clear.scss'
 stylesheet 'sass/zen-float.scss',                    :media => 'all', :to => 'zen-float.scss'
+stylesheet 'sass/zen-grid-background.scss',          :media => 'all', :to => 'zen-grid-background.scss'
 stylesheet 'sass/zen-grid-container.scss',           :media => 'all', :to => 'zen-grid-container.scss'
 stylesheet 'sass/zen-grid-flow-item.scss',           :media => 'all', :to => 'zen-grid-flow-item.scss'
 stylesheet 'sass/zen-grid-item-base.scss',           :media => 'all', :to => 'zen-grid-item-base.scss'
