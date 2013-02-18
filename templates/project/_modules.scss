@@ -19,18 +19,14 @@
   }
 }
 
-// Set a consistent padding around all containers
+/* Set a consistent padding around all containers */
 #header,
-#content,
 #main-menu,
-#aside1,
-#aside2,
 #footer {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: zen-half-gutter();
+.header,
+.menu,
+.footer {
+  @extend %grid-item;
 }
 
 // Alternate border styling
