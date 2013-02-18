@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency('sass', ">= 3.1")
 
   s.files       = %w[
+    component.json
     LICENSE.txt
     README.txt
     lib/zen-grids.rb
