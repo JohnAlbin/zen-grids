@@ -26,18 +26,6 @@
   @include zen-grid-container();
 }
 
-#content aside {
-  font-weight: bold;
-  font-style: italic;
-  font-size: 1.2em;
-  @include zen-grid-flow-item(1, 3);
-  float: left;
-  margin: {
-    top: (1em/1.2);
-    bottom: (1em/1.2);
-  }
-}
-
 /* Horizontal navigation bar */
 @media all and (min-width: 444px) {
   $zen-column-count: 1;
