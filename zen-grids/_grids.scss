@@ -33,13 +33,20 @@ $zen-reverse-all-floats           : false       !default;
 
 
 //
-// Apply this to the grid container element.
+// Apply this to create a grid container element.
 // @see http://zengrids.com/help/#zen-grid-container
 //
-@mixin zen-grid-container {
+@mixin zen-grid-container(
+  $context          : 'none',
+  $gutter-width     : $zen-gutter-width,
+  $float-direction  : $zen-float-direction
+) {
+
+  // @TODO: This is a pre-IE8 line of code; don't remember why its needed.
   @if ($legacy-support-for-ie6 or $legacy-support-for-ie7) {
-    *position: relative; // @TODO: This is a pre-IE8 line of code; don't remember why its needed.
+    *position: relative;
   }
+
   // We use the "micro clearfix", instead of Compass' clearfix or pie-clearfix.
   &:before,
   &:after {
@@ -52,16 +59,21 @@ $zen-reverse-all-floats           : false       !default;
   @if ($legacy-support-for-ie6 or $legacy-support-for-ie7) {
     *zoom: 1;
   }
-}
 
-//
-// Apply this to any grid item that is also a grid container element for a
-// nested grid. @see http://zengrids.com/help/#zen-nested-container
-//
-@mixin zen-nested-container {
-  padding: {
-    left: 0;
-    right: 0;
+  // Un-do the gutter padding of the parent grid item.
+  @if $context == 'flow' {
+    margin: {
+      left: -(zen-half-gutter($gutter-width, left, $float-direction));
+      right: -(zen-half-gutter($gutter-width, right, $float-direction));
+    }
+  }
+
+  // Prevent any padding from messing up the alignment of the nested grid.
+  @if $context == 'grid-item' or $context == 'flow' {
+    padding: {
+      left: 0;
+      right: 0;
+    }
   }
 }
 

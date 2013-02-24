@@ -46,7 +46,6 @@ Gem::Specification.new do |s|
     templates/unit-tests/sass/zen-grid-flow-item.scss
     templates/unit-tests/sass/zen-grid-item-base.scss
     templates/unit-tests/sass/zen-grid-item.scss
-    templates/unit-tests/sass/zen-nested-container.scss
     templates/unit-tests/test-results/function-zen-direction-flip.css
     templates/unit-tests/test-results/function-zen-grid-item-width.css
     templates/unit-tests/test-results/function-zen-half-gutter.css
@@ -58,7 +57,6 @@ Gem::Specification.new do |s|
     templates/unit-tests/test-results/zen-grid-flow-item.css
     templates/unit-tests/test-results/zen-grid-item-base.css
     templates/unit-tests/test-results/zen-grid-item.css
-    templates/unit-tests/test-results/zen-nested-container.css
     zen-grids.gemspec
   ]
 end

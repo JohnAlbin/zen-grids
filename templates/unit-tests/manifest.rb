@@ -11,7 +11,6 @@ stylesheet 'sass/zen-grid-container.scss',           :media => 'all', :to => 'ze
 stylesheet 'sass/zen-grid-flow-item.scss',           :media => 'all', :to => 'zen-grid-flow-item.scss'
 stylesheet 'sass/zen-grid-item-base.scss',           :media => 'all', :to => 'zen-grid-item-base.scss'
 stylesheet 'sass/zen-grid-item.scss',                :media => 'all', :to => 'zen-grid-item.scss'
-stylesheet 'sass/zen-nested-container.scss',         :media => 'all', :to => 'zen-nested-container.scss'
 
 file 'test-results/function-zen-direction-flip.css'
 file 'test-results/function-zen-grid-item-width.css'
@@ -23,7 +22,6 @@ file 'test-results/zen-grid-container.css'
 file 'test-results/zen-grid-flow-item.css'
 file 'test-results/zen-grid-item-base.css'
 file 'test-results/zen-grid-item.css'
-file 'test-results/zen-nested-container.css'
 
 file 'README.txt'
 
