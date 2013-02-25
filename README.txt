@@ -22,7 +22,7 @@ to a 12 column grid.
                             // each side of each column.
 
   .container {
-    @include zen-grid-container;  // Define the container for your grid items.
+    @include zen-grid-container();  // Define the container for your grid items.
   }
 
   $zen-column-count: 12;  // Set the number of grid columns to use in this media
@@ -31,13 +31,13 @@ to a 12 column grid.
 
   @media all and (min-width: 50em) {
     .sidebar1 {
-      @include zen-grid-item(3, 1);  // Span 3 columns starting in 1st column
+      @include zen-grid-item(3, 1);   // Span 3 columns starting in 1st column.
     }
     .content {
-      @include zen-grid-item(6, 4);  // Span 6 columns starting in 4th column
+      @include zen-grid-item(6, 4);   // Span 6 columns starting in 4th column.
     }
     .sidebar2 {
-      @include zen-grid-item(3, 10); // Span 3 columns starting in 10th column
+      @include zen-grid-item(3, 10);  // Span 3 columns starting in 10th column.
     }
   }
 
@@ -76,8 +76,10 @@ of your .sass or .scss files and start creating!
 REQUIREMENTS
 ------------
 
-- Sass 3.1 or later
-- Compass 0.11 or later
+- Sass 3.2 or later
+
+For the zen/background module only:
+- Compass 0.12 or later
 
 
 LICENSE
