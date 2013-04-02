@@ -114,13 +114,13 @@ $box-sizing-polyfill-path: "/js/boxsizing.htc";
 // Partials to be shared with all .scss files.
 //
 
-@import "compass/support";  // Add Compass' IE and vendor prefix support variables.
+@import "compass/support";                    // Add Compass' IE and vendor prefix support variables.
 @import "compass/utilities/general/clearfix"; // Better than Drupal's clearfix.
-@import "compass/utilities/sprites"; // See http://compass-style.org/help/tutorials/spriting/
-@import "compass/css3";     // Use one CSS3 mixin instead of multiple vendor prefixes.
+@import "compass/utilities/sprites";          // See http://compass-style.org/help/tutorials/spriting/
+@import "compass/css3";                       // Use one CSS3 mixin instead of multiple vendor prefixes.
 @import "compass/typography/vertical_rhythm"; // Helps set up a vertical rhythm.
-@import "zen";              // Add the Zen Grids responsive layout mixins.
+@import "zen";                                // Add the Zen Grids responsive layout mixins.
 @import "zen/background-grid";
 @import "rem";
 
-@import "custom";           // Import our custom mixins last.
+@import "custom";                             // Import our custom mixins last.
