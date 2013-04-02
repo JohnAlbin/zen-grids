@@ -108,6 +108,7 @@ $zen-gutter-width: 40px;
 $zen-auto-include-unit-base: false;
 $zen-auto-include-flow-unit-base: false;
 $box-sizing-polyfill-path: "/js/boxsizing.htc";
+$zen-grid-numbers: top;
 
 
 //
@@ -120,7 +121,7 @@ $box-sizing-polyfill-path: "/js/boxsizing.htc";
 @import "compass/css3";                       // Use one CSS3 mixin instead of multiple vendor prefixes.
 @import "compass/typography/vertical_rhythm"; // Helps set up a vertical rhythm.
 @import "zen";                                // Add the Zen Grids responsive layout mixins.
-@import "zen/background-grid";
+@import "zen/background";
 @import "rem";
 
 @import "custom";                             // Import our custom mixins last.

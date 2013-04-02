@@ -1,5 +1,4 @@
 @import "init";
-@import "zen/background-grid";
 
 // Aggregate all the stylesheets into one file.
 @import "normalize";
@@ -76,17 +75,10 @@ pre {
 
 #page {
   @include zen-grid-container();
+  @include zen-grid-background();
   padding: {
     top: $base-line-height;
     bottom: $base-line-height;
-  }
-}
-
-.bg-grid {
-  @include -experimental-bg-grid;
-  margin: {
-    top: -($base-line-height);
-    bottom: -($base-line-height);
   }
 }
 
@@ -180,8 +172,8 @@ p.so {
 
   @include show-query(tablet);
 
-  .bg-grid {
-    @include -experimental-bg-grid;
+  #page {
+    @include zen-grid-background();
   }
 
   #header {
@@ -233,8 +225,8 @@ p.so {
 
   @include show-query(desktop);
 
-  .bg-grid {
-    @include -experimental-bg-grid;
+  #page {
+    @include zen-grid-background();
   }
 
   #header {
@@ -285,8 +277,8 @@ p.so {
 
   @include show-query(large);
 
-  .bg-grid {
-    @include -experimental-bg-grid;
+  #page {
+    @include zen-grid-background();
   }
 
   #header {

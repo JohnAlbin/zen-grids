@@ -33,17 +33,6 @@
 $zen-column-count: 6;
 $zen-gutter-width: 40px;
 
-/*
-.bg-grid {
-  @include -experimental-bg-grid();
-  position: absolute;
-  margin-top: -(rhythm(2));
-}
-.page {
-  background-color: inherit;
-}
-*/
-
 .page2 {
   padding-top: 0;
 }
@@ -276,6 +265,7 @@ $zen-gutter-width: 10px;
 
   .container {
     @include zen-grid-container;
+    @include zen-grid-background;
     padding: rhythm(1) 0 0 0;
     position: relative;
   }
@@ -302,11 +292,5 @@ $zen-gutter-width: 10px;
   }
   .footer2 {
     @include zen-grid-item(4, 1);
-  }
-  .bg-grid {
-    @include -experimental-bg-grid();
-    position: absolute;
-    z-index: inherit;
-    margin: 0;
   }
 }
