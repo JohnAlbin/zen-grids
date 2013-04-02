@@ -7,10 +7,11 @@ Gem::Specification.new do |s|
   s.description = %q{Zen Grids is an intuitive, flexible grid system that leverages the natural source order of your content to make it easier to create fluid responsive designs. With an easy-to-use Sass mixin set, the Zen Grids system can be applied to an infinite number of layouts, including responsive, adaptive, fluid and fixed-width layouts.}
 
   s.homepage    = 'http://zengrids.com'
+  s.license     = 'GPL-2'
   s.rubyforge_project =
 
-  s.version     = '1.3'
-  s.date        = '2013-02-18'
+  s.version     = '1.4'
+  s.date        = '2013-04-02'
 
   s.authors     = ['John Albin Wilkins']
   s.email       = 'virtually.johnalbin@gmail.com'
