@@ -32,7 +32,7 @@
 
 /* Horizontal navigation bar */
 @media all and (min-width: 444px) {
-  $zen-column-count: 1;
+  $zen-columns: 1;
   $navbar-height: 5em;
 
   .main {
@@ -46,7 +46,7 @@
 }
 
 @media all and (min-width: 444px) and (max-width: 665px) {
-  $zen-column-count: 2;
+  $zen-columns: 2;
 
   .centered {
     @include zen-grid-background();
@@ -64,7 +64,7 @@
 }
 
 @media all and (min-width: 666px) and (max-width: 776px) {
-  $zen-column-count: 3;
+  $zen-columns: 3;
 
   .centered {
     @include zen-grid-background();
@@ -82,7 +82,7 @@
 }
 
 @media all and (min-width: 777px) and (max-width: 998px) {
-  $zen-column-count: 3;
+  $zen-columns: 3;
 
   .centered {
     @include zen-grid-background();
@@ -100,7 +100,7 @@
 }
 
 @media all and (min-width: 999px) {
-  $zen-column-count: 5;
+  $zen-columns: 5;
 
   .centered {
     @include zen-grid-background();

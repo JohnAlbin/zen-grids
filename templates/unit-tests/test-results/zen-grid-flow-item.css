@@ -3,7 +3,7 @@
  * Test zen-grid-flow-item()
  */
 #test-zen-grid-flow-item {
-  /* Test zen-grid-flow-item(1) without setting $column-count */
+  /* Test zen-grid-flow-item(1) without setting $columns */
   padding-left: 10px;
   padding-right: 10px;
   -moz-box-sizing: border-box;

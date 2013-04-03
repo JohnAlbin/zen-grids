@@ -3,9 +3,9 @@
  * Test zen-unit-width()
  */
 #test-zen-unit-width {
-  /* Test zen-unit-width() with default $zen-column-count: 1 */
+  /* Test zen-unit-width() with default $zen-columns: 1 */
   width: 100%;
-  /* Test zen-unit-width() with $zen-column-count: 5 */
+  /* Test zen-unit-width() with $zen-columns: 5 */
   width: 20%;
   /* Test zen-unit-width(5) */
   width: 20%;

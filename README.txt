@@ -25,9 +25,9 @@ to a 12 column grid.
     @include zen-grid-container();  // Define the container for your grid items.
   }
 
-  $zen-column-count: 12;  // Set the number of grid columns to use in this media
-                          // query. You'll likely want a different grid for
-                          // different screen sizes.
+  $zen-columns: 12;  // Set the number of grid columns to use in this media
+                     // query. You'll likely want a different grid for
+                     // different screen sizes.
 
   @media all and (min-width: 50em) {
     .sidebar1 {

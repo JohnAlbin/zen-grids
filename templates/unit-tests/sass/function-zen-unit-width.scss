@@ -6,13 +6,13 @@
 @import "zen-grids";
 
 #test-zen-unit-width {
-  /* Test zen-unit-width() with default $zen-column-count: 1 */
+  /* Test zen-unit-width() with default $zen-columns: 1 */
   width: zen-unit-width();
 
-  /* Test zen-unit-width() with $zen-column-count: 5 */
-  $zen-column-count: 5;
+  /* Test zen-unit-width() with $zen-columns: 5 */
+  $zen-columns: 5;
   width: zen-unit-width();
-  $zen-column-count: 1;
+  $zen-columns: 1;
 
   /* Test zen-unit-width(5) */
   width: zen-unit-width(5);

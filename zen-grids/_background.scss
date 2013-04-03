@@ -77,7 +77,7 @@ $zen-grid-number-images   : ()                  !default;
 // @see http://zengrids.com/help/#zen-grid-background
 //
 @mixin zen-grid-background(
-  $column-count         : $zen-column-count,
+  $columns              : $zen-columns,
   $gutter-width         : $zen-gutter-width,
   $grid-width           : $zen-grid-width,
   $grid-color           : $zen-grid-color,
@@ -99,7 +99,7 @@ $zen-grid-number-images   : ()                  !default;
   $right-half-gradient  : ();
 
   // Calculate half of the unit width.
-  $half-unit-width      : zen-unit-width(2 * $column-count, $grid-width);
+  $half-unit-width      : zen-unit-width(2 * $columns, $grid-width);
 
   // Determine the float direction.
   $dir                  : $float-direction;
@@ -107,10 +107,10 @@ $zen-grid-number-images   : ()                  !default;
     $dir                : zen-direction-flip($dir);
   }
 
-  @for $count from 1 through $column-count {
+  @for $count from 1 through $columns {
     // First add the grid numbers to the background images list.
     $position: (2 * $count - 1) * $half-unit-width;
-    $reverse-count: $column-count + 1 - $count;
+    $reverse-count: $columns + 1 - $count;
 
     @if $dir == left {
       @if $grid-numbers == both or $grid-numbers == top {
@@ -144,7 +144,7 @@ $zen-grid-number-images   : ()                  !default;
     $right-half-gradient: append($right-half-gradient, transparent $stop, comma);
     $right-half-gradient: append($right-half-gradient, $grid-color $stop, comma);
 
-    @if $count < $column-count {
+    @if $count < $columns {
       $stop: (2 * $count) * $half-unit-width;
       $right-half-gradient: append($right-half-gradient, $grid-color $stop, comma);
       $right-half-gradient: append($right-half-gradient, transparent $stop, comma);

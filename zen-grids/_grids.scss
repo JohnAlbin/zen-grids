@@ -3,8 +3,8 @@
 //
 
 
-// Specify the number of columns in the grid. @see http://zengrids.com/help/#zen-column-count
-$zen-column-count                 : 1           !default;
+// Specify the number of columns in the grid. @see http://zengrids.com/help/#zen-columns
+$zen-columns                      : 1           !default;
 
 // Specify the width of the gutters (as padding). @see http://zengrids.com/help/#zen-gutter-width
 $zen-gutter-width                 : 20px        !default;
@@ -84,7 +84,7 @@ $zen-reverse-all-floats           : false       !default;
   $column-span,
   $column-position,
   $float-direction          : $zen-float-direction,
-  $column-count             : $zen-column-count,
+  $columns                  : $zen-columns,
   $gutter-width             : $zen-gutter-width,
   $grid-width               : $zen-grid-width,
   $box-sizing               : $zen-box-sizing,
@@ -93,10 +93,10 @@ $zen-reverse-all-floats           : false       !default;
 ) {
 
   // Calculate the unit width.
-  $unit-width: zen-unit-width($column-count, $grid-width);
+  $unit-width: zen-unit-width($columns, $grid-width);
 
   // Calculate the item's width.
-  $width: zen-grid-item-width($column-span, $column-count, $gutter-width, $grid-width, $box-sizing);
+  $width: zen-grid-item-width($column-span, $columns, $gutter-width, $grid-width, $box-sizing);
 
   // Determine the float direction and its reverse.
   $dir: $float-direction;
@@ -216,12 +216,12 @@ $zen-reverse-all-floats           : false       !default;
 
 // Calculates the unit width of a column. @see http://zengrids.com/help/#zen-unit-width
 @function zen-unit-width(
-  $column-count   : $zen-column-count,
+  $columns   : $zen-columns,
   $grid-width     : $zen-grid-width
 ) {
-  $unit-width: $grid-width / $column-count;
+  $unit-width: $grid-width / $columns;
   @if unit($unit-width) == "px" and floor($unit-width) != ceil($unit-width) {
-    @warn "You may experience rounding errors as the grid width, #{$grid-width}, does not divide evenly into #{$column-count} columns.";
+    @warn "You may experience rounding errors as the grid width, #{$grid-width}, does not divide evenly into #{$columns} columns.";
   }
   @return $unit-width;
 }
@@ -230,12 +230,12 @@ $zen-reverse-all-floats           : false       !default;
 // @see http://zengrids.com/help/#zen-grid-item-width
 @function zen-grid-item-width(
   $column-span,
-  $column-count   : $zen-column-count,
+  $columns        : $zen-columns,
   $gutter-width   : $zen-gutter-width,
   $grid-width     : $zen-grid-width,
   $box-sizing     : $zen-box-sizing
 ) {
-  $width: $column-span * zen-unit-width($column-count, $grid-width);
+  $width: $column-span * zen-unit-width($columns, $grid-width);
   @if $box-sizing == content-box {
     @if not comparable($width, $gutter-width) {
       $units-gutter: unit($gutter-width);
