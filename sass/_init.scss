@@ -120,8 +120,8 @@ $zen-grid-numbers: top;
 @import "compass/utilities/sprites";          // See http://compass-style.org/help/tutorials/spriting/
 @import "compass/css3";                       // Use one CSS3 mixin instead of multiple vendor prefixes.
 @import "compass/typography/vertical_rhythm"; // Helps set up a vertical rhythm.
-@import "zen";                                // Add the Zen Grids responsive layout mixins.
-@import "zen/background";
+@import "zen-grids";                          // Add the Zen Grids responsive layout mixins.
+@import "zen-grids/background";
 @import "rem";
 
 @import "custom";                             // Import our custom mixins last.

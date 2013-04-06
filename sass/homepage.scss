@@ -177,7 +177,7 @@ $zen-gutter-width: 40px;
   @include zen-grid-item(6, 1);
 
   @media all and (min-width: 810px) {
-    @include zen-nested-container();
+    @include zen-grid-container(grid-item);
     margin-bottom: rhythm(2);
 
     section {
