@@ -4,7 +4,7 @@
 @import "pages";
 
 
-$zen-column-count: 2;
+$zen-columns: 2;
 $zen-auto-include-item-base: false;
 
 #header,
@@ -165,7 +165,7 @@ h1 {
 }
 
 #example-1 {
-  $zen-column-count: 7; // Set the total number of columns in the grid.
+  $zen-columns: 7; // Set the total number of columns in the grid.
   $zen-gutter-width: 10px;
 
   .example-container {
@@ -184,7 +184,7 @@ h1 {
 }
 
 #example-2 {
-  $zen-column-count: 3; // Set the total number of columns in the grid.
+  $zen-columns: 3; // Set the total number of columns in the grid.
   $zen-gutter-width: 10px;
 
   .example-container {
@@ -207,7 +207,7 @@ h1 {
 }
 
 #example-3 {
-  $zen-column-count: 6; // Set the total number of columns in the grid.
+  $zen-columns: 6; // Set the total number of columns in the grid.
   $zen-gutter-width: 10px;
 
   .example-container {
@@ -229,7 +229,7 @@ h1 {
 }
 
 #example-4 {
-  $zen-column-count: 4; // Set the total number of columns in the grid.
+  $zen-columns: 4; // Set the total number of columns in the grid.
   $zen-gutter-width: 10px;
 
   .example-container {
@@ -254,7 +254,7 @@ h1 {
 }
 
 #example-5 {
-  $zen-column-count: 7; // Set the total number of columns in the grid.
+  $zen-columns: 7; // Set the total number of columns in the grid.
   $zen-gutter-width: 10px;
 
   .example-container {

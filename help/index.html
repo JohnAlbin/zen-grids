@@ -90,11 +90,11 @@
     <h3>Common variables <a href="#vars" title="permalink">#</a></h3>
 
     <article>
-    <h4 id="zen-column-count"><code>$zen-column-count</code> <a href="#zen-column-count" title="permalink">#</a></h4>
+    <h4 id="zen-columns"><code>$zen-columns</code> <a href="#zen-columns" title="permalink">#</a></h4>
     <p>
     Specifies the number of columns in the grid. Defaults to 1 as a hat tip to mobile first designs. You should set this variable each time you want to use a different grid for a set of media queries.
     </p>
-    <pre><code>$zen-column-count: 1 !default;</code></pre>
+    <pre><code>$zen-columns: 1 !default;</code></pre>
     </article>
 
     <article>
@@ -226,7 +226,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     </p>
     <p>Additional optional parameters and their defaults:</p>
     <ul>
-    <li><code>$column-count: $zen-column-count</code></li>
+    <li><code>$columns: $zen-columns</code></li>
     <li><code>$gutter-width: $zen-gutter-width</code></li>
     <li><code>$grid-width: $zen-grid-width</code></li>
     <li><code>$box-sizing: $zen-box-sizing</code></li>
@@ -279,11 +279,11 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <article>
     <h3 id="zen-grid-flow-item">zen-grid-flow-item(
       $column-span,
-      $parent-column-count
+      $parent-columns
       )<br>
       zen-grid-flow-item(
       $column-span,
-      $parent-column-count,
+      $parent-columns,
       $alpha-gutter,
       $omega-gutter
       )<br>
@@ -297,7 +297,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
       $omega-gutter: [value]
       ) <a href="#zen-grid-flow-item" title="permalink">#</a></h3>
     <p>
-    Apply this to an HTML item that is in the normal flow of a document to help align it to the grid. Set the <code>$column-span</code> to the number of columns that the HTML element should span. For responsive layouts with a percentage-based grid width, set the <code>$parent-column-count</code> to the number of columns that the parent element spans; fixed-unit layouts using px, em, etc. do not need to specify this.
+    Apply this to an HTML item that is in the normal flow of a document to help align it to the grid. Set the <code>$column-span</code> to the number of columns that the HTML element should span. For responsive layouts with a percentage-based grid width, set the <code>$parent-columns</code> to the number of columns that the parent element spans; fixed-unit layouts using px, em, etc. do not need to specify this.
     </p>
     <p>
     Unlike the <a href="#zen-grid-item"><code>zen-grid-item()</code></a> mixin, this mixin does not float the HTML item; see the related <a href="#zen-float"><code>zen-float()</code></a> mixin. This mixin also does not have a half-gutter on each side. By default, it has no gutter in the "alpha position" (the left side) and a full gutter in the "omega position" (the right side.) You can turn on or off the alpha and omega gutters by setting the <code>$alpha-gutter</code> and <code>$omega-gutter</code> parameters to <code>true</code> or <code>false</code>.
@@ -308,7 +308,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <p>Additional optional parameters and their defaults:</p>
     <ul>
     <li><code>$flow-direction: $zen-float-direction</code></li>
-    <li><code>$column-count: $zen-column-count</code></li>
+    <li><code>$columns: $zen-columns</code></li>
     <li><code>$gutter-width: $zen-gutter-width</code></li>
     <li><code>$grid-width: $zen-grid-width</code></li>
     <li><code>$box-sizing: $zen-box-sizing</code></li>
@@ -350,7 +350,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     </p>
     <p>Additional optional parameters and their defaults:</p>
     <ul>
-    <li><code>$column-count: $zen-column-count</code></li>
+    <li><code>$columns: $zen-columns</code></li>
     <li><code>$grid-width: $zen-grid-width</code></li>
     </ul>
     </article>
@@ -360,11 +360,11 @@ $legacy-support-for-ie6: false !default;</code></pre>
       $column-span
       ) <a href="#zen-grid-item-width" title="permalink">#</a></h3>
     <p>
-    Calculates the width of a grid item that spans the specified number of columns. The $column-count defaults to $zen-column-count and $grid-width defaults to $zen-grid-width.
+    Calculates the width of a grid item that spans the specified number of columns. The $columns defaults to $zen-columns and $grid-width defaults to $zen-grid-width.
     </p>
     <p>Additional optional parameters and their defaults:</p>
     <ul>
-    <li><code>$column-count: $zen-column-count</code></li>
+    <li><code>$columns: $zen-columns</code></li>
     <li><code>$gutter-width: $zen-gutter-width</code></li>
     <li><code>$grid-width: $zen-grid-width</code></li>
     <li><code>$box-sizing: $zen-box-sizing</code></li>
@@ -396,7 +396,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
       <div class="block block-b">B</div>
       <div class="block block-c">C</div>
     </div>
-    <pre><code>$zen-column-count: 7; // Set the total number of columns in the grid.
+    <pre><code>$zen-columns: 7; // Set the total number of columns in the grid.
 $zen-gutter-width: 10px;
 
 .example-container {
@@ -422,7 +422,7 @@ $zen-gutter-width: 10px;
       <div class="block block-c">C<br>&nbsp;</div>
       <div class="block block-d">D</div>
     </div>
-    <pre><code>$zen-column-count: 3; // Set the total number of columns in the grid.
+    <pre><code>$zen-columns: 3; // Set the total number of columns in the grid.
 $zen-gutter-width: 10px;
 
 .example-container {
@@ -452,7 +452,7 @@ $zen-gutter-width: 10px;
       <div class="block block-c">C</div>
       <div class="block block-d">D</div>
     </div>
-    <pre><code>$zen-column-count: 6; // Set the total number of columns in the grid.
+    <pre><code>$zen-columns: 6; // Set the total number of columns in the grid.
 $zen-gutter-width: 10px;
 
 .example-container {
@@ -483,7 +483,7 @@ $zen-gutter-width: 10px;
       <div class="block block-e">E</div>
     </div>
     <pre><code>
-$zen-column-count: 4; // Set the total number of columns in the grid.
+$zen-columns: 4; // Set the total number of columns in the grid.
 $zen-gutter-width: 10px;
 
 .example-container {
@@ -516,7 +516,7 @@ $zen-gutter-width: 10px;
       <div class="block block-d">D</div>
       <div class="block block-e">E</div>
     </div>
-    <pre><code>$zen-column-count: 7; // Set the total number of columns in the grid.
+    <pre><code>$zen-columns: 7; // Set the total number of columns in the grid.
 $zen-gutter-width: 10px;
 
 .example-container {

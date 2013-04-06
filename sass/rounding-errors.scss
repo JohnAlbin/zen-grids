@@ -14,7 +14,7 @@ h2, h3 {
   @include zen-grid-item-base();
 }
 
-$zen-column-count: 7;
+$zen-columns: 7;
 $zen-gutter-width: 0;
 $zen-auto-include-item-base: false;
 $zen-box-sizing: content-box;

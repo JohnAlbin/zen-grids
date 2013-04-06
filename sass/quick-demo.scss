@@ -168,7 +168,7 @@ p.so {
  */
 @media all and (min-width: 32em) { /* 512px / 16 */
   // Override some variables.
-  $zen-column-count: 5;
+  $zen-columns: 5;
 
   @include show-query(tablet);
 
@@ -221,7 +221,7 @@ p.so {
 @media all and (min-width: 50em) { /* 800px / 16 */
 
   // Override some variables.
-  $zen-column-count: 7;
+  $zen-columns: 7;
 
   @include show-query(desktop);
 
@@ -273,7 +273,7 @@ p.so {
  */
 @media all and (min-width: 70em) { /* 800px / 16 */
   // Override some variables.
-  $zen-column-count: 9;
+  $zen-columns: 9;
 
   @include show-query(large);
 
