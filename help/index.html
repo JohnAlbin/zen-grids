@@ -46,6 +46,7 @@
       <li><a href="#vars-adaptive">Adaptive design variable</a></li>
       <li><a href="#vars-legacy">Legacy IE support variables</a></li>
       <li><a href="#vars-rtl">RTL language variables</a></li>
+      <li><a href="#vars-background">Background grid variables</a></li>
       </ul>
     </li>
     <li><a href="#mixins">Mix-ins</a>
@@ -57,6 +58,7 @@
       <li><a href="#zen-clear">zen-clear</a></li>
       <li><a href="#zen-float">zen-float</a></li>
       <li><a href="#zen-grid-flow-item">zen-grid-flow-item</a></li>
+      <li><a href="#zen-grid-background">zen-grid-background</a></li>
       </ul>
     </li>
     <li><a href="#functions">Functions</a>
@@ -189,6 +191,35 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <pre><code>$zen-reverse-all-floats: false !default;</code></pre>
     </article>
 
+    <h3 id="vars-background">Background grid variables <a href="#vars-background" title="permalink">#</a></h3>
+
+    <article>
+    <h4 id="zen-grid-color"><code>$zen-grid-color</code> <a href="#zen-grid-color" title="permalink">#</a></h4>
+    <p>
+    Specify the default color used in the background grid image produced by the <a href="#zen-grid-background">zen-grid-background()</a> mixin.
+    </p>
+    <pre><code>$zen-grid-color: #ffdede !default;</code></pre>
+    </article>
+
+    <article>
+    <h4 id="zen-grid-numbers"><code>$zen-grid-numbers</code> <a href="#zen-grid-numbers" title="permalink">#</a></h4>
+    <p>
+    Specify how to place the column numbers in the background grid image. Normally, column numbers are displayed across the top of the background grid image and then displayed in reverse order along the bottom of the background grid image. Can be set to: <code>both</code>, <code>top</code>, or <code>none</code>.
+    </p>
+    <pre><code>$zen-grid-numbers: both !default;</code></pre>
+    </article>
+
+    <article>
+    <h4 id="zen-grid-number-images"><code>$zen-grid-number-images</code> <a href="#zen-grid-number-images" title="permalink">#</a></h4>
+    <p>
+    Specify the set of images used for the numbering of the columns in the background grid image.
+    </p>
+    <p>
+    The default value of the $zen-grid-number-images variable is a list of the numbers 1 through 25, each rendered as an image and encoded as a data URI. Users who are crazy enough to use a 26-column grid or larger are free to extend this set.
+    </p>
+    <pre><code>$zen-grid-number-images: (url('data:image/png;base64, …), …) !default;</code></pre>
+    </article>
+
     </section>
 
     <section id="mixins">
@@ -314,6 +345,34 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <li><code>$box-sizing: $zen-box-sizing</code></li>
     <li><code>$reverse-all-flows: $zen-reverse-all-floats</code></li>
     <li><code>$auto-include-flow-item-base: $zen-auto-include-flow-item-base</code></li>
+    </ul>
+    </article>
+
+    <article>
+    <h3 id="zen-grid-background">zen-grid-background()<br>
+      zen-grid-background(
+      $grid-color: [value],
+      $grid-numbers: [value]
+      ) <a href="#zen-grid-background" title="permalink">#</a></h3>
+    <p>
+    Add a background grid image to an element’s background. During site development, it’s often useful to have a background image that shows the columns of the grid.
+    </p>
+    <p>
+    Since the mixins of Zen Grids use the <code>$column-position</code> for placement of grid items, the background grid image produced by this mixin numbers all of the columns. The <code>$grid-numbers</code> parameter specifies how to place the column numbers in the background grid image. By default, column numbers are displayed across the top of the background grid image and then displayed in reverse order along the bottom of the background grid image. <code>$grid-numbers</code> can be set to: <code>both</code> (the default), <code>top</code> (don’t display the bottom numbrs), or <code>none</code> (don’t display any column numbers.)
+    </p>
+    <p>
+    Note: when the <code>$float-direction</code> is set to <code>right</code> (for RTL languages), the column numbers are displayed right-to-left along the top and left-to-right along the bottom.
+    </p>
+    <p>
+    The easiest way to align this background grid image to the actual grid is to apply this mixin to the same element that <a href="#zen-grid-container"><code>zen-grid-container()</code></a> is applied to.
+    </p>
+    <p>Additional optional parameters and their defaults:</p>
+    <ul>
+    <li><code>$columns: $zen-columns</code></li>
+    <li><code>$gutter-width: $zen-gutter-width</code></li>
+    <li><code>$grid-width: $zen-grid-width</code></li>
+    <li><code>$float-direction: $zen-float-direction</code></li>
+    <li><code>$reverse-all-floats: $zen-reverse-all-floats</code></li>
     </ul>
     </article>
 
