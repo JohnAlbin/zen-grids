@@ -1,8 +1,9 @@
-@import "grids";
+//
+// "Flow" module for the Zen Grids system.
+//
 
-//
-// Mixins for the Zen Grids system.
-//
+
+@import "grids";
 
 // @see http://zengrids.com/help/#zen-auto-include-item-base
 $zen-auto-include-flow-item-base  : true        !default;

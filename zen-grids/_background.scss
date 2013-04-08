@@ -1,6 +1,10 @@
+//
+// "Background grid image" module for the Zen Grids system.
+//
+
+
 @import "grids";
 @import "compass/css3/images";
-
 
 // Specify the color of the background grid.
 $zen-grid-color           : #ffdede             !default;
@@ -69,7 +73,7 @@ $zen-grid-number-images   : ()                  !default;
 
 
 //
-// Add a grid to an element's background.
+// Add a background grid image to an element's background.
 // @see http://zengrids.com/help/#zen-grid-background
 //
 @mixin zen-grid-background(
