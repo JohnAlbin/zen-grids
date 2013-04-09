@@ -37,7 +37,7 @@ $zen-reverse-all-floats           : false       !default;
 // @see http://zengrids.com/help/#zen-grid-container
 //
 @mixin zen-grid-container(
-  $context          : 'none',
+  $context          : none,
   $gutter-width     : $zen-gutter-width,
   $float-direction  : $zen-float-direction
 ) {
@@ -61,7 +61,7 @@ $zen-reverse-all-floats           : false       !default;
   }
 
   // Un-do the gutter padding of the parent grid item.
-  @if $context == 'flow' {
+  @if $context == flow {
     margin: {
       left: -(zen-half-gutter($gutter-width, left, $float-direction));
       right: -(zen-half-gutter($gutter-width, right, $float-direction));
@@ -69,7 +69,7 @@ $zen-reverse-all-floats           : false       !default;
   }
 
   // Prevent any padding from messing up the alignment of the nested grid.
-  @if $context == 'grid-item' or $context == 'flow' {
+  @if $context == grid-item or $context == flow {
     padding: {
       left: 0;
       right: 0;

@@ -27,11 +27,11 @@
 }
 
 #test-zen-grid-container-4 {
-  /* Test zen-grid-container() with $context = 'grid-item' */
-  @include zen-grid-container('grid-item');
+  /* Test zen-grid-container() with $context = grid-item */
+  @include zen-grid-container(grid-item);
 }
 
 #test-zen-grid-container-5 {
-  /* Test zen-grid-container() with $context = 'flow' */
-  @include zen-grid-container('flow');
+  /* Test zen-grid-container() with $context = flow */
+  @include zen-grid-container(flow);
 }
