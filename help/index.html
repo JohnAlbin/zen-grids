@@ -59,7 +59,6 @@
     <li><a href="#mixins">Mix-ins</a>
       <ul>
       <li><a href="#zen-grid-container">zen-grid-container</a></li>
-      <li><a href="#zen-nested-container">zen-nested-container</a></li>
       <li><a href="#zen-grid-item">zen-grid-item</a></li>
       <li><a href="#zen-grid-item-base">zen-grid-item-base</a></li>
       <li><a href="#zen-clear">zen-clear</a></li>
@@ -233,17 +232,27 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <h2>Mix-ins <a href="#mixins" title="permalink">#</a></h2>
 
     <article>
-    <h3 id="zen-grid-container">zen-grid-container() <a href="#zen-grid-container" title="permalink">#</a></h3>
+    <h3 id="zen-grid-container">zen-grid-container()<br>
+    zen-grid-container(
+    $context: [value]
+    ) <a href="#zen-grid-container" title="permalink">#</a></h3>
     <p>
     Apply this to the grid container element.
     </p>
-    </article>
-
-    <article>
-    <h3 id="zen-nested-container">zen-nested-container() <a href="#zen-nested-container" title="permalink">#</a></h3>
     <p>
-    Apply this to any grid item that is also a grid container element for a nested grid. It must be applied <em>after</em> the <a href="#zen-grid-item"><code>zen-grid-item()</code></a> mixin is applied. This mixin ensures the container does not have a gutter since the nested grid items will have their own gutters.
+    If this grid is nested inside another grid, the <code>$context</code> parameter can be used to align the nested grid with the parent grid. <code>$context</code> can be set to <code>none</code> (the default), <code>grid-item</code>, or <code>flow</code>.
     </p>
+    <p>
+    If the nested grid’s container is a child element of the parent grid’s grid item, set <code>$context: flow</code>.
+    </p>
+    <p>
+    Otherwise, if the nested grid’s container is the same element as the parent grid’s grid item, set <code>$context: grid-item</code> and apply this mixin <em>after</em> the <a href="#zen-grid-item"><code>zen-grid-item()</code></a> mixin is applied for the parent grid. This mixin removes any gutters on the container since the nested grid will have its own gutters.
+    </p>
+    <p>Additional optional parameters and their defaults:</p>
+    <ul>
+    <li><code>$gutter-width: $zen-gutter-width</code></li>
+    <li><code>$float-direction: $zen-float-direction</code></li>
+    </ul>
     </article>
 
     <article>
