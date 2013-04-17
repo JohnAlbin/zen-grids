@@ -20,7 +20,7 @@ $zen-auto-include-flow-item-base  : true        !default;
   $omega-gutter                 : true,
   $flow-direction               : $zen-float-direction,
   $columns                      : $zen-columns,
-  $gutter-width                 : $zen-gutter-width,
+  $gutters                      : $zen-gutters,
   $grid-width                   : $zen-grid-width,
   $box-sizing                   : $zen-box-sizing,
   $reverse-all-flows            : $zen-reverse-all-floats,
@@ -44,27 +44,27 @@ $zen-auto-include-flow-item-base  : true        !default;
 
   // Auto-apply the unit base mixin.
   @if $auto-include-flow-item-base {
-    @include zen-grid-item-base($gutter-width, $box-sizing);
+    @include zen-grid-item-base($gutters, $box-sizing);
   }
 
   // Calculate the item's width.
-  $width: zen-grid-item-width($column-span, $columns, $gutter-width, $grid-width, $box-sizing);
+  $width: zen-grid-item-width($column-span, $columns, $gutters, $grid-width, $box-sizing);
 
   @if unit($grid-width) == "%" {
-    // Our percentage $width is off if the parent has $gutter-width padding.
+    // Our percentage $width is off if the parent has $gutters padding.
     // Calculate an adjusted gutter to fix the width.
-    $adjusted-gutter: ($columns - $column-span) * $gutter-width / $columns;
+    $adjusted-gutter: ($columns - $column-span) * $gutters / $columns;
 
     width: $width;
 
     // Ensure the HTML item either has a full gutter or no gutter on each side.
     padding-#{$dir}: 0;
     @if $alpha-gutter {
-      margin-#{$dir}: $gutter-width;
+      margin-#{$dir}: $gutters;
     }
     padding-#{$rev}: $adjusted-gutter;
     @if $omega-gutter {
-      margin-#{$rev}: $gutter-width - $adjusted-gutter;
+      margin-#{$rev}: $gutters - $adjusted-gutter;
     }
     @else {
       margin-#{$rev}: -($adjusted-gutter);
@@ -73,16 +73,16 @@ $zen-auto-include-flow-item-base  : true        !default;
   @else {
     @if $alpha-gutter and $omega-gutter {
       width: $width;
-      @if $gutter-width != 0 {
+      @if $gutters != 0 {
         margin: {
-          #{$dir}: zen-half-gutter($gutter-width, left, $dir);
-          #{$rev}: zen-half-gutter($gutter-width, right, $dir);
+          #{$dir}: zen-half-gutter($gutters, left, $dir);
+          #{$rev}: zen-half-gutter($gutters, right, $dir);
         }
       }
     }
     @else if not $alpha-gutter and not $omega-gutter {
-      width: if($box-sizing == border-box, ($width - $gutter-width), $width);
-      @if $gutter-width != 0 {
+      width: if($box-sizing == border-box, ($width - $gutters), $width);
+      @if $gutters != 0 {
         padding: {
           left: 0;
           right: 0;
@@ -93,10 +93,10 @@ $zen-auto-include-flow-item-base  : true        !default;
       width: $width;
       @if $omega-gutter {
         padding-#{$dir}: 0;
-        padding-#{$rev}: $gutter-width;
+        padding-#{$rev}: $gutters;
       }
       @else {
-        padding-#{$dir}: $gutter-width;
+        padding-#{$dir}: $gutters;
         padding-#{$rev}: 0;
       }
     }

@@ -78,7 +78,7 @@ $zen-grid-number-images   : ()                  !default;
 //
 @mixin zen-grid-background(
   $columns              : $zen-columns,
-  $gutter-width         : $zen-gutter-width,
+  $gutters              : $zen-gutters,
   $grid-width           : $zen-grid-width,
   $grid-color           : $zen-grid-color,
   $grid-numbers         : $zen-grid-numbers,
@@ -152,8 +152,8 @@ $zen-grid-number-images   : ()                  !default;
   }
 
   // Last, add the gradient halves to the background images list.
-  $bg-images  : append($bg-images, linear-gradient(left, $left-half-gradient) zen-half-gutter($gutter-width) top no-repeat, comma);
-  $bg-images  : append($bg-images, linear-gradient(left, $right-half-gradient) (-(zen-half-gutter($gutter-width))) top no-repeat, comma);
+  $bg-images  : append($bg-images, linear-gradient(left, $left-half-gradient) zen-half-gutter($gutters) top no-repeat, comma);
+  $bg-images  : append($bg-images, linear-gradient(left, $right-half-gradient) (-(zen-half-gutter($gutters))) top no-repeat, comma);
 
   // Apply the full list of background images.
   @include background($bg-images);

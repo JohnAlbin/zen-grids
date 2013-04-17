@@ -17,6 +17,6 @@
   width: 400px;
   /* Test zen-grid-item-width(2, 5, $grid-width: 1000px, $box-sizing: content-box) */
   width: 380px;
-  /* Test zen-grid-item-width(2, 5, $gutter-width: 10px, $grid-width: 1000px, $box-sizing: content-box) */
+  /* Test zen-grid-item-width(2, 5, $gutters: 10px, $grid-width: 1000px, $box-sizing: content-box) */
   width: 390px;
 }

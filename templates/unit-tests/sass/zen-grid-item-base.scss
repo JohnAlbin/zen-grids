@@ -33,22 +33,22 @@
   $box-sizing-polyfill-path: "";
   $legacy-support-for-ie6: false;
 
-  /* Test zen-grid-item-base() with $zen-gutter-width: 15px */
-  $zen-gutter-width: 15px;
+  /* Test zen-grid-item-base() with $zen-gutters: 15px */
+  $zen-gutters: 15px;
   @include zen-grid-item-base();
-  $zen-gutter-width: 20px;
+  $zen-gutters: 20px;
 
-  /* Test zen-grid-item-base() with $zen-gutter-width: 15px and $zen-float-direction: right */
-  $zen-gutter-width: 15px;
+  /* Test zen-grid-item-base() with $zen-gutters: 15px and $zen-float-direction: right */
+  $zen-gutters: 15px;
   $zen-float-direction: right;
   @include zen-grid-item-base();
-  $zen-gutter-width: 20px;
+  $zen-gutters: 20px;
   $zen-float-direction: left;
 
-  /* Test zen-grid-item-base() with $zen-gutter-width: 15px and $zen-reverse-all-floats: true */
-  $zen-gutter-width: 15px;
+  /* Test zen-grid-item-base() with $zen-gutters: 15px and $zen-reverse-all-floats: true */
+  $zen-gutters: 15px;
   $zen-reverse-all-floats: true;
   @include zen-grid-item-base();
-  $zen-gutter-width: 20px;
+  $zen-gutters: 20px;
   $zen-reverse-all-floats: false;
 }

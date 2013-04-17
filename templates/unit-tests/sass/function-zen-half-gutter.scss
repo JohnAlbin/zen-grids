@@ -6,11 +6,11 @@
 @import "zen-grids";
 
 #test-zen-half-gutter {
-  /* Test zen-half-gutter() with default $zen-gutter-width: 20px */
+  /* Test zen-half-gutter() with default $zen-gutters: 20px */
   padding-left: zen-half-gutter();
 
-  /* Test zen-half-gutter() with $zen-gutter-width: 30px */
-  $zen-gutter-width: 30px;
+  /* Test zen-half-gutter() with $zen-gutters: 30px */
+  $zen-gutters: 30px;
   padding-left: zen-half-gutter();
 
   /* Test zen-half-gutter(10em) */

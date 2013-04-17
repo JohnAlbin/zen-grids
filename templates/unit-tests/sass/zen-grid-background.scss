@@ -21,46 +21,46 @@
 
   /* Test zen-grid-background(), 5 column grid, 10% gutter and black grid color */
   $zen-columns: 5;
-  $zen-gutter-width: 10%;
+  $zen-gutters: 10%;
   $zen-grid-color: #000;
   @include zen-grid-background();
   $zen-columns: 1;
-  $zen-gutter-width: 20px;
+  $zen-gutters: 20px;
   $zen-grid-color: rgba(#ffdede, 0.8);
 
   /* Test zen-grid-background() with 5 column grid and 40px gutter */
   $zen-columns: 5;
-  $zen-gutter-width: 40px;
+  $zen-gutters: 40px;
   @include zen-grid-background();
   $zen-columns: 1;
-  $zen-gutter-width: 20px;
+  $zen-gutters: 20px;
 
   /* Test zen-grid-background(), 5 column grid and 10% gutter and $zen-reverse-all-floats */
   $zen-columns: 5;
-  $zen-gutter-width: 10%;
+  $zen-gutters: 10%;
   $zen-reverse-all-floats: true;
   @include zen-grid-background();
   $zen-columns: 1;
-  $zen-gutter-width: 20px;
+  $zen-gutters: 20px;
   $zen-reverse-all-floats: false;
 
   /* Test zen-grid-background() with 5 column grid and 40px gutter and $zen-reverse-all-floats */
   $zen-columns: 5;
-  $zen-gutter-width: 40px;
+  $zen-gutters: 40px;
   $zen-reverse-all-floats: true;
   @include zen-grid-background();
   $zen-columns: 1;
-  $zen-gutter-width: 20px;
+  $zen-gutters: 20px;
   $zen-reverse-all-floats: false;
 
   /* Test zen-grid-background() with $zen-grid-width: 1000px, 5 column grid and 40px gutter */
   $zen-grid-width: 1000px;
   $zen-columns: 5;
-  $zen-gutter-width: 40px;
+  $zen-gutters: 40px;
   @include zen-grid-background();
   $zen-grid-width: 100%;
   $zen-columns: 1;
-  $zen-gutter-width: 20px;
+  $zen-gutters: 20px;
 
   /* Test zen-grid-background() with all 24 grid numbers */
   $zen-columns: 24;

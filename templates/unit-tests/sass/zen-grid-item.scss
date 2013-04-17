@@ -13,11 +13,11 @@
 
   /* Test zen-grid-item(3, 3) with box-sizing: content-box, 5 column grid and 10% gutter */
   $zen-columns: 5;
-  $zen-gutter-width: 10%;
+  $zen-gutters: 10%;
   $zen-box-sizing: content-box;
   @include zen-grid-item(3, 3);
   $zen-columns: 1;
-  $zen-gutter-width: 20px;
+  $zen-gutters: 20px;
   $zen-box-sizing: border-box;
 
   /* Turn off $zen-auto-include-item-base */
@@ -25,49 +25,49 @@
 
   /* Test zen-grid-item(3, 3) with 5 column grid and 40px gutter */
   $zen-columns: 5;
-  $zen-gutter-width: 40px;
+  $zen-gutters: 40px;
   @include zen-grid-item(3, 3);
   $zen-columns: 1;
-  $zen-gutter-width: 20px;
+  $zen-gutters: 20px;
 
   /* Test zen-grid-item(3, 3, right) with 5 column grid and 40px gutter */
   $zen-columns: 5;
-  $zen-gutter-width: 40px;
+  $zen-gutters: 40px;
   @include zen-grid-item(3, 3, right);
   $zen-columns: 1;
-  $zen-gutter-width: 20px;
+  $zen-gutters: 20px;
 
   /* Test zen-grid-item(3, 3) with 5 column grid and 40px gutter and $zen-reverse-all-floats */
   $zen-columns: 5;
-  $zen-gutter-width: 40px;
+  $zen-gutters: 40px;
   $zen-reverse-all-floats: true;
   @include zen-grid-item(3, 3);
   $zen-columns: 1;
-  $zen-gutter-width: 20px;
+  $zen-gutters: 20px;
   $zen-reverse-all-floats: false;
 
   /* Test zen-grid-item(3, 3, right) with 5 column grid and 40px gutter and $zen-reverse-all-floats */
   $zen-columns: 5;
-  $zen-gutter-width: 40px;
+  $zen-gutters: 40px;
   $zen-reverse-all-floats: true;
   @include zen-grid-item(3, 3, right);
   $zen-columns: 1;
-  $zen-gutter-width: 20px;
+  $zen-gutters: 20px;
   $zen-reverse-all-floats: false;
 
   /* Test zen-grid-item(3, 2.5) with 5 column grid and 40px gutter */
   $zen-columns: 5;
-  $zen-gutter-width: 40px;
+  $zen-gutters: 40px;
   @include zen-grid-item(3, 2.5);
   $zen-columns: 1;
-  $zen-gutter-width: 20px;
+  $zen-gutters: 20px;
 
   /* Test zen-grid-item(3, 3) with $zen-grid-width: 1000px, 5 column grid and 40px gutter */
   $zen-grid-width: 1000px;
   $zen-columns: 5;
-  $zen-gutter-width: 40px;
+  $zen-gutters: 40px;
   @include zen-grid-item(3, 3);
   $zen-grid-width: 100%;
   $zen-columns: 1;
-  $zen-gutter-width: 20px;
+  $zen-gutters: 20px;
 }

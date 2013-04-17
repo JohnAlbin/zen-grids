@@ -46,7 +46,7 @@
   _display: inline;
   _overflow: hidden;
   _overflow-y: visible;
-  /* Test zen-grid-item-base() with $zen-gutter-width: 15px */
+  /* Test zen-grid-item-base() with $zen-gutters: 15px */
   padding-left: 7px;
   padding-right: 8px;
   -moz-box-sizing: border-box;
@@ -54,7 +54,7 @@
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
-  /* Test zen-grid-item-base() with $zen-gutter-width: 15px and $zen-float-direction: right */
+  /* Test zen-grid-item-base() with $zen-gutters: 15px and $zen-float-direction: right */
   padding-left: 8px;
   padding-right: 7px;
   -moz-box-sizing: border-box;
@@ -62,7 +62,7 @@
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
-  /* Test zen-grid-item-base() with $zen-gutter-width: 15px and $zen-reverse-all-floats: true */
+  /* Test zen-grid-item-base() with $zen-gutters: 15px and $zen-reverse-all-floats: true */
   padding-left: 8px;
   padding-right: 7px;
   -moz-box-sizing: border-box;

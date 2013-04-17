@@ -18,8 +18,8 @@ to a 12 column grid.
 
   @import "zen-grids";
 
-  $zen-gutter-width: 40px;  // Set the gutter size. A half-gutter is used on
-                            // each side of each column.
+  $zen-gutters: 40px;  // Set the gutter size. A half-gutter is used on
+                       // each side of each column.
 
   .container {
     @include zen-grid-container();  // Define the container for your grid items.
