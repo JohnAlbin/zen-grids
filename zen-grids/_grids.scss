@@ -176,19 +176,18 @@ $zen-reverse-all-floats           : false       !default;
 }
 
 //
-// Apply this to grid items that need to be cleared below other grid items.
+// Apply this to a grid item so that it starts a new row.
 // @see http://zengrids.com/help/#zen-clear
 //
 @mixin zen-clear(
-  $float-direction      : $zen-float-direction,
+  $direction            : $zen-float-direction,
   $reverse-all-floats   : $zen-reverse-all-floats
 ) {
-  // Determine the float direction.
-  $dir: $float-direction;
+  // Determine the clearing direction.
   @if $reverse-all-floats {
-    $dir: zen-direction-flip($dir);
+    $direction: zen-direction-flip($direction);
   }
-  clear: $dir;
+  clear: $direction;
 }
 
 
