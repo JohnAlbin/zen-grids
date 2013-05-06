@@ -31,7 +31,7 @@
 }
 
 $zen-columns: 6;
-$zen-gutter-width: 40px;
+$zen-gutters: 40px;
 
 .page2 {
   padding-top: 0;
@@ -257,7 +257,7 @@ $zen-gutter-width: 40px;
  * Example
  */
 $zen-columns: 7;
-$zen-gutter-width: 10px;
+$zen-gutters: 10px;
 
 #example {
   position: relative;

@@ -118,8 +118,8 @@ h1 {
       p,
       pre,
       ul {
-        margin-left: $zen-gutter-width;
-        margin-right: $zen-gutter-width;
+        margin-left: $zen-gutters;
+        margin-right: $zen-gutters;
       }
       ul {
         padding-left: 0;
@@ -166,7 +166,7 @@ h1 {
 
 #example-1 {
   $zen-columns: 7; // Set the total number of columns in the grid.
-  $zen-gutter-width: 10px;
+  $zen-gutters: 10px;
 
   .example-container {
     @include zen-grid-container; // Apply this mixin to the container.
@@ -185,7 +185,7 @@ h1 {
 
 #example-2 {
   $zen-columns: 3; // Set the total number of columns in the grid.
-  $zen-gutter-width: 10px;
+  $zen-gutters: 10px;
 
   .example-container {
     @include zen-grid-container; // Apply this mixin to the container.
@@ -208,7 +208,7 @@ h1 {
 
 #example-3 {
   $zen-columns: 6; // Set the total number of columns in the grid.
-  $zen-gutter-width: 10px;
+  $zen-gutters: 10px;
 
   .example-container {
     @include zen-grid-container; // Apply this mixin to the container.
@@ -230,7 +230,7 @@ h1 {
 
 #example-4 {
   $zen-columns: 4; // Set the total number of columns in the grid.
-  $zen-gutter-width: 10px;
+  $zen-gutters: 10px;
 
   .example-container {
     @include zen-grid-container; // Apply this mixin to the container.
@@ -255,7 +255,7 @@ h1 {
 
 #example-5 {
   $zen-columns: 7; // Set the total number of columns in the grid.
-  $zen-gutter-width: 10px;
+  $zen-gutters: 10px;
 
   .example-container {
     @include zen-grid-container; // Apply this mixin to the container.

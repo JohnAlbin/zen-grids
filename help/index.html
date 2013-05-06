@@ -106,14 +106,14 @@
     </article>
 
     <article>
-    <h4 id="zen-gutter-width"><code>$zen-gutter-width</code> <a href="#zen-gutter-width" title="permalink">#</a></h4>
+    <h4 id="zen-gutters"><code>$zen-gutters</code> <a href="#zen-gutters" title="permalink">#</a></h4>
     <p>
     Specifies the width of the gutters; half of the gutter will be placed on each side of a grid item (as padding).
     </p>
     <p>
-    For a proper sense of aesthetics, we recommend this value be proportional to your base font by setting <code>$zen-gutter-width</code> equal to your base line height, <a href="http://compass-style.org/reference/compass/typography/vertical_rhythm/#const-base-line-height"><code>$base-line-height</code></a>.
+    For a proper sense of aesthetics, we recommend this value be proportional to your base font by setting <code>$zen-gutters</code> equal to your base line height, <a href="http://compass-style.org/reference/compass/typography/vertical_rhythm/#const-base-line-height"><code>$base-line-height</code></a>.
     </p>
-    <pre><code>$zen-gutter-width: 20px !default;</code></pre>
+    <pre><code>$zen-gutters: 20px !default;</code></pre>
     </article>
 
     <article>
@@ -147,7 +147,7 @@ $zen-auto-include-flow-item-base: true !default;</code></pre>
     To add IE6 and IE7 support, you’ll need to set <a href="#legacy-support-for-ie7"><code>$legacy-support-for-ie7</code></a> and <a href="#legacy-support-for-ie7"><code>$legacy-support-for-ie6</code></a> to true and then either use a polyfill (see <a href="#box-sizing-polyfill-path"><code>$box-sizing-polyfill-path</code></a>) or set <code>$zen-box-sizing</code> to "content-box".
     </p>
     <p>
-    Note: if <code>$zen-box-sizing</code> is set to "content-box", then <a href="#zen-gutter-width"><code>$zen-gutter-width</code></a> will need to use the same unit of measurement as the <a href="#zen-grid-width"><code>$zen-grid-width</code></a>.
+    Note: if <code>$zen-box-sizing</code> is set to "content-box", then <a href="#zen-gutters"><code>$zen-gutters</code></a> will need to use the same unit of measurement as the <a href="#zen-grid-width"><code>$zen-grid-width</code></a>.
     </p>
     <pre><code>$zen-box-sizing: border-box !default;</code></pre>
     </article>
@@ -250,7 +250,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     </p>
     <p>Additional optional parameters and their defaults:</p>
     <ul>
-    <li><code>$gutter-width: $zen-gutter-width</code></li>
+    <li><code>$gutters: $zen-gutters</code></li>
     <li><code>$float-direction: $zen-float-direction</code></li>
     </ul>
     </article>
@@ -274,7 +274,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <p>Additional optional parameters and their defaults:</p>
     <ul>
     <li><code>$columns: $zen-columns</code></li>
-    <li><code>$gutter-width: $zen-gutter-width</code></li>
+    <li><code>$gutters: $zen-gutters</code></li>
     <li><code>$grid-width: $zen-grid-width</code></li>
     <li><code>$box-sizing: $zen-box-sizing</code></li>
     <li><code>$reverse-all-floats: $zen-reverse-all-floats</code></li>
@@ -292,7 +292,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     </p>
     <p>Optional parameters and their defaults:</p>
     <ul>
-    <li><code>$gutter-width: $zen-gutter-width</code></li>
+    <li><code>$gutters: $zen-gutters</code></li>
     <li><code>$box-sizing: $zen-box-sizing</code></li>
     <li><code>$flow-direction: $zen-float-direction</code></li>
     <li><code>$reverse-all-floats: $zen-reverse-all-floats</code></li>
@@ -356,7 +356,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <ul>
     <li><code>$flow-direction: $zen-float-direction</code></li>
     <li><code>$columns: $zen-columns</code></li>
-    <li><code>$gutter-width: $zen-gutter-width</code></li>
+    <li><code>$gutters: $zen-gutters</code></li>
     <li><code>$grid-width: $zen-grid-width</code></li>
     <li><code>$box-sizing: $zen-box-sizing</code></li>
     <li><code>$reverse-all-flows: $zen-reverse-all-floats</code></li>
@@ -385,7 +385,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <p>Additional optional parameters and their defaults:</p>
     <ul>
     <li><code>$columns: $zen-columns</code></li>
-    <li><code>$gutter-width: $zen-gutter-width</code></li>
+    <li><code>$gutters: $zen-gutters</code></li>
     <li><code>$grid-width: $zen-grid-width</code></li>
     <li><code>$float-direction: $zen-float-direction</code></li>
     <li><code>$reverse-all-floats: $zen-reverse-all-floats</code></li>
@@ -413,7 +413,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     </p>
     <p>Additional optional parameters and their defaults:</p>
     <ul>
-    <li><code>$gutter-width: $zen-gutter-width</code></li>
+    <li><code>$gutters: $zen-gutters</code></li>
     <li><code>$flow-direction: $zen-float-direction</code></li>
     </ul>
     </article>
@@ -440,7 +440,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <p>Additional optional parameters and their defaults:</p>
     <ul>
     <li><code>$columns: $zen-columns</code></li>
-    <li><code>$gutter-width: $zen-gutter-width</code></li>
+    <li><code>$gutters: $zen-gutters</code></li>
     <li><code>$grid-width: $zen-grid-width</code></li>
     <li><code>$box-sizing: $zen-box-sizing</code></li>
     </ul>
@@ -472,7 +472,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
       <div class="block block-c">C</div>
     </div>
     <pre><code>$zen-columns: 7; // Set the total number of columns in the grid.
-$zen-gutter-width: 10px;
+$zen-gutters: 10px;
 
 .example-container {
   @include zen-grid-container; // Apply this mixin to the container.
@@ -498,7 +498,7 @@ $zen-gutter-width: 10px;
       <div class="block block-d">D</div>
     </div>
     <pre><code>$zen-columns: 3; // Set the total number of columns in the grid.
-$zen-gutter-width: 10px;
+$zen-gutters: 10px;
 
 .example-container {
   @include zen-grid-container; // Apply this mixin to the container.
@@ -528,7 +528,7 @@ $zen-gutter-width: 10px;
       <div class="block block-d">D</div>
     </div>
     <pre><code>$zen-columns: 6; // Set the total number of columns in the grid.
-$zen-gutter-width: 10px;
+$zen-gutters: 10px;
 
 .example-container {
   @include zen-grid-container; // Apply this mixin to the container.
@@ -559,7 +559,7 @@ $zen-gutter-width: 10px;
     </div>
     <pre><code>
 $zen-columns: 4; // Set the total number of columns in the grid.
-$zen-gutter-width: 10px;
+$zen-gutters: 10px;
 
 .example-container {
   @include zen-grid-container; // Apply this mixin to the container.
@@ -592,7 +592,7 @@ $zen-gutter-width: 10px;
       <div class="block block-e">E</div>
     </div>
     <pre><code>$zen-columns: 7; // Set the total number of columns in the grid.
-$zen-gutter-width: 10px;
+$zen-gutters: 10px;
 
 .example-container {
   @include zen-grid-container; // Apply this mixin to the container.

@@ -4,7 +4,7 @@
 @import "normalize";
 
 // Set a different gutter width for our demo.
-$zen-gutter-width: 21px;
+$zen-gutters: 21px;
 
 
 /*
@@ -34,7 +34,7 @@ pre {
     font-size: $h2-font-size;
     @include adjust-leading-to(1, $h2-font-size);
     font-weight: normal;
-    margin: 0 0 $zen-gutter-width 0;
+    margin: 0 0 $zen-gutters 0;
     text-align: center;
   }
 }
