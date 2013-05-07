@@ -173,11 +173,11 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <h3 id="vars-rtl">RTL language variables <a href="#vars-rtl" title="permalink">#</a></h3>
 
     <article>
-    <h4 id="zen-float-direction"><code>$zen-float-direction</code> <a href="#zen-float-direction" title="permalink">#</a></h4>
+    <h4 id="zen-direction"><code>$zen-direction</code> <a href="#zen-direction" title="permalink">#</a></h4>
     <p>
     Specify the default floating direction for zen’s mixins. If you are only building RTL layouts (and not LTR layouts), you should set this to <code>right</code>.
     </p>
-    <pre><code>$zen-float-direction: left !default;</code></pre>
+    <pre><code>$zen-direction: left !default;</code></pre>
     </article>
 
     <article>
@@ -251,7 +251,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <p>Additional optional parameters and their defaults:</p>
     <ul>
     <li><code>$gutters: $zen-gutters</code></li>
-    <li><code>$float-direction: $zen-float-direction</code></li>
+    <li><code>$direction: $zen-direction</code></li>
     </ul>
     </article>
 
@@ -263,13 +263,13 @@ $legacy-support-for-ie6: false !default;</code></pre>
       zen-grid-item(
       $column-span,
       $column-position,
-      $float-direction
+      $direction
       ) <a href="#zen-grid-item" title="permalink">#</a></h3>
     <p>
     Apply this to each grid item. Set the <code>$column-span</code> to the number of columns that the grid item spans. And set the <code>$column-position</code> to the column number the grid item starts on.
     </p>
     <p>
-    To make the grid item float from the right, set the <code>$float-direction</code> to <code>right</code>; it defaults to <code>left</code> (the value of <a href="#zen-float-direction"><code>$zen-float-direction</code></a>.) For grid items that are floated right, the <code>$column-position</code> is counted from the right instead of from the left.
+    To make the grid item float from the right, set the <code>$direction</code> to <code>right</code>; it defaults to <code>left</code> (the value of <a href="#zen-direction"><code>$zen-direction</code></a>.) For grid items that are floated right, the <code>$column-position</code> is counted from the right instead of from the left.
     </p>
     <p>Additional optional parameters and their defaults:</p>
     <ul>
@@ -294,7 +294,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <ul>
     <li><code>$gutters: $zen-gutters</code></li>
     <li><code>$box-sizing: $zen-box-sizing</code></li>
-    <li><code>$flow-direction: $zen-float-direction</code></li>
+    <li><code>$direction: $zen-direction</code></li>
     <li><code>$reverse-all-floats: $zen-reverse-all-floats</code></li>
     </ul>
     </article>
@@ -306,7 +306,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     </p>
     <p>Optional parameters and their defaults:</p>
     <ul>
-    <li><code>$float-direction: $zen-float-direction</code></li>
+    <li><code>$direction: $zen-direction</code></li>
     <li><code>$reverse-all-floats: $zen-reverse-all-floats</code></li>
     </ul>
     </article>
@@ -318,7 +318,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     </p>
     <p>Optional parameters and their defaults:</p>
     <ul>
-    <li><code>$float-direction: $zen-float-direction</code></li>
+    <li><code>$direction: $zen-direction</code></li>
     <li><code>$reverse-all-floats: $zen-reverse-all-floats</code></li>
     </ul>
     </article>
@@ -350,11 +350,11 @@ $legacy-support-for-ie6: false !default;</code></pre>
     Unlike the <a href="#zen-grid-item"><code>zen-grid-item()</code></a> mixin, this mixin does not float the HTML item; see the related <a href="#zen-float"><code>zen-float()</code></a> mixin. This mixin also does not have a half-gutter on each side. By default, it has no gutter in the "alpha position" (the left side) and a full gutter in the "omega position" (the right side.) You can turn on or off the alpha and omega gutters by setting the <code>$alpha-gutter</code> and <code>$omega-gutter</code> parameters to <code>true</code> or <code>false</code>.
     </p>
     <p>
-    Note: when the <code>$flow-direction</code> is set to <code>right</code> (for RTL languages), the alpha position is on the right and the omega position is on the left.
+    Note: when the <code>$direction</code> is set to <code>right</code> (for RTL languages), the alpha position is on the right and the omega position is on the left.
     </p>
     <p>Additional optional parameters and their defaults:</p>
     <ul>
-    <li><code>$flow-direction: $zen-float-direction</code></li>
+    <li><code>$direction: $zen-direction</code></li>
     <li><code>$columns: $zen-columns</code></li>
     <li><code>$gutters: $zen-gutters</code></li>
     <li><code>$grid-width: $zen-grid-width</code></li>
@@ -377,7 +377,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     Since the mixins of Zen Grids use the <code>$column-position</code> for placement of grid items, the background grid image produced by this mixin numbers all of the columns. The <code>$grid-numbers</code> parameter specifies how to place the column numbers in the background grid image. By default, column numbers are displayed across the top of the background grid image and then displayed in reverse order along the bottom of the background grid image. <code>$grid-numbers</code> can be set to: <code>both</code> (the default), <code>top</code> (don’t display the bottom numbrs), or <code>none</code> (don’t display any column numbers.)
     </p>
     <p>
-    Note: when the <code>$float-direction</code> is set to <code>right</code> (for RTL languages), the column numbers are displayed right-to-left along the top and left-to-right along the bottom.
+    Note: when the <code>$direction</code> is set to <code>right</code> (for RTL languages), the column numbers are displayed right-to-left along the top and left-to-right along the bottom.
     </p>
     <p>
     The easiest way to align this background grid image to the actual grid is to apply this mixin to the same element that <a href="#zen-grid-container"><code>zen-grid-container()</code></a> is applied to.
@@ -387,7 +387,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <li><code>$columns: $zen-columns</code></li>
     <li><code>$gutters: $zen-gutters</code></li>
     <li><code>$grid-width: $zen-grid-width</code></li>
-    <li><code>$float-direction: $zen-float-direction</code></li>
+    <li><code>$direction: $zen-direction</code></li>
     <li><code>$reverse-all-floats: $zen-reverse-all-floats</code></li>
     </ul>
     </article>
@@ -406,7 +406,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
       $gutter-side: [value]
       ) <a href="#zen-half-gutter" title="permalink">#</a></h3>
     <p>
-    Returns a half gutter width. The <code>$gutter-side</code> defaults to <a href="#zen-float-direction"><code>$zen-float-direction</code></a>.
+    Returns a half gutter width. The <code>$gutter-side</code> defaults to <a href="#zen-direction"><code>$zen-direction</code></a>.
     </p>
     <p>
     If the gutter width is in pixels and is an odd number, then <code>$gutter-side: left</code> will return half of the gutter rounded down to a whole pixel; <code>$gutter-side: right</code> will return half of the gutter rounded up to a whole pixel.
@@ -414,7 +414,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <p>Additional optional parameters and their defaults:</p>
     <ul>
     <li><code>$gutters: $zen-gutters</code></li>
-    <li><code>$flow-direction: $zen-float-direction</code></li>
+    <li><code>$direction: $zen-direction</code></li>
     </ul>
     </article>
 
