@@ -181,20 +181,20 @@ $legacy-support-for-ie6: false !default;</code></pre>
     </article>
 
     <article>
-    <h4 id="zen-reverse-all-floats"><code>$zen-reverse-all-floats</code> <a href="#zen-reverse-all-floats" title="permalink">#</a></h4>
+    <h4 id="zen-switch-direction"><code>$zen-switch-direction</code> <a href="#zen-switch-direction" title="permalink">#</a></h4>
     <p>
     Reverse the floating direction in all of zen’s mixins.
     </p>
     <p>
     If you are creating both LTR and RTL layouts, this helper variable can be used to automatically create one set of layouts based on the other set of layouts. For example:
     </p>
-    <pre><code>$zen-reverse-all-floats: true;
+    <pre><code>$zen-switch-direction: true;
 @import "an-LTR-layout";</code></pre>
     <p>
-    In the above example, the existing LTR layout in the an-LTR-layout.scss file is used to create the corresponding RTL layout by first setting the <code>$zen-reverse-all-floats</code> variable to <code>true</code> and then importing the LTR layout file.
+    In the above example, the existing LTR layout in the an-LTR-layout.scss file is used to create the corresponding RTL layout by first setting the <code>$zen-switch-direction</code> variable to <code>true</code> and then importing the LTR layout file.
     </p>
 
-    <pre><code>$zen-reverse-all-floats: false !default;</code></pre>
+    <pre><code>$zen-switch-direction: false !default;</code></pre>
     </article>
 
     <h3 id="vars-background">Background grid variables <a href="#vars-background" title="permalink">#</a></h3>
@@ -277,7 +277,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <li><code>$gutters: $zen-gutters</code></li>
     <li><code>$grid-width: $zen-grid-width</code></li>
     <li><code>$box-sizing: $zen-box-sizing</code></li>
-    <li><code>$reverse-all-floats: $zen-reverse-all-floats</code></li>
+    <li><code>$switch-direction: $zen-switch-direction</code></li>
     <li><code>$auto-include-item-base: $zen-auto-include-item-base</code></li>
     </ul>
     </article>
@@ -295,7 +295,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <li><code>$gutters: $zen-gutters</code></li>
     <li><code>$box-sizing: $zen-box-sizing</code></li>
     <li><code>$direction: $zen-direction</code></li>
-    <li><code>$reverse-all-floats: $zen-reverse-all-floats</code></li>
+    <li><code>$switch-direction: $zen-switch-direction</code></li>
     </ul>
     </article>
 
@@ -307,7 +307,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <p>Optional parameters and their defaults:</p>
     <ul>
     <li><code>$direction: $zen-direction</code></li>
-    <li><code>$reverse-all-floats: $zen-reverse-all-floats</code></li>
+    <li><code>$switch-direction: $zen-switch-direction</code></li>
     </ul>
     </article>
 
@@ -319,7 +319,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <p>Optional parameters and their defaults:</p>
     <ul>
     <li><code>$direction: $zen-direction</code></li>
-    <li><code>$reverse-all-floats: $zen-reverse-all-floats</code></li>
+    <li><code>$switch-direction: $zen-switch-direction</code></li>
     </ul>
     </article>
 
@@ -359,7 +359,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <li><code>$gutters: $zen-gutters</code></li>
     <li><code>$grid-width: $zen-grid-width</code></li>
     <li><code>$box-sizing: $zen-box-sizing</code></li>
-    <li><code>$reverse-all-flows: $zen-reverse-all-floats</code></li>
+    <li><code>$switch-direction: $zen-switch-direction</code></li>
     <li><code>$auto-include-flow-item-base: $zen-auto-include-flow-item-base</code></li>
     </ul>
     </article>
@@ -388,7 +388,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <li><code>$gutters: $zen-gutters</code></li>
     <li><code>$grid-width: $zen-grid-width</code></li>
     <li><code>$direction: $zen-direction</code></li>
-    <li><code>$reverse-all-floats: $zen-reverse-all-floats</code></li>
+    <li><code>$switch-direction: $zen-switch-direction</code></li>
     </ul>
     </article>
 
