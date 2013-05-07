@@ -85,7 +85,7 @@
     <p>
     This partial can be imported using:
     </p>
-    <pre><code>@import "zen"</code></pre>
+    <pre><code>@import "zen-grids"</code></pre>
     </section>
 
     <section id="vars">
@@ -314,6 +314,10 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <article>
     <h3 id="zen-float">zen-float() <a href="#zen-float" title="permalink">#</a></h3>
     <p>
+    To use this mixin, you must first import the flow module with:
+    <code>@import "zen-grids/flow";</code>
+    </p>
+    <p>
     Apply this to flow items that need to be floated.
     </p>
     <p>Optional parameters and their defaults:</p>
@@ -344,6 +348,10 @@ $legacy-support-for-ie6: false !default;</code></pre>
       $omega-gutter: [value]
       ) <a href="#zen-grid-flow-item" title="permalink">#</a></h3>
     <p>
+    To use this mixin, you must first import the flow module with:
+    <code>@import "zen-grids/flow";</code>
+    </p>
+    <p>
     Apply this to an HTML item that is in the normal flow of a document to help align it to the grid. Set the <code>$column-span</code> to the number of columns that the HTML element should span. For responsive layouts with a percentage-based grid width, set the <code>$parent-columns</code> to the number of columns that the parent element spans; fixed-unit layouts using px, em, etc. do not need to specify this.
     </p>
     <p>
@@ -370,6 +378,10 @@ $legacy-support-for-ie6: false !default;</code></pre>
       $grid-color: [value],
       $grid-numbers: [value]
       ) <a href="#zen-grid-background" title="permalink">#</a></h3>
+    <p>
+    To use this mixin, you must first import the background module with:
+    <code>@import "zen-grids/background";</code>
+    </p>
     <p>
     Add a background grid image to an element’s background. During site development, it’s often useful to have a background image that shows the columns of the grid.
     </p>
