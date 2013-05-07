@@ -82,7 +82,7 @@ $zen-grid-number-images   : ()                  !default;
   $grid-width           : $zen-grid-width,
   $grid-color           : $zen-grid-color,
   $grid-numbers         : $zen-grid-numbers,
-  $float-direction      : $zen-float-direction,
+  $direction            : $zen-direction,
   $reverse-all-floats   : $zen-reverse-all-floats
 ) {
 
@@ -102,7 +102,7 @@ $zen-grid-number-images   : ()                  !default;
   $half-unit-width      : zen-unit-width(2 * $columns, $grid-width);
 
   // Determine the float direction.
-  $dir                  : $float-direction;
+  $dir                  : $direction;
   @if $reverse-all-floats {
     $dir                : zen-direction-flip($dir);
   }

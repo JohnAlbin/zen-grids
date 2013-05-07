@@ -38,12 +38,12 @@
   $zen-columns: 1;
   $zen-grid-width: 100%;
 
-  /* Test zen-grid-flow-item(1, 4) with 15px gutter and $zen-float-direction: right */
+  /* Test zen-grid-flow-item(1, 4) with 15px gutter and $zen-direction: right */
   $zen-gutters: 15px;
-  $zen-float-direction: right;
+  $zen-direction: right;
   @include zen-grid-flow-item(1, 4);
   $zen-gutters: 20px;
-  $zen-float-direction: left;
+  $zen-direction: left;
 
   /* Test zen-grid-flow-item(1, 4) with 15px gutter and $alpha-gutter: true */
   $zen-gutters: 15px;
@@ -61,12 +61,12 @@
   /* Test zen-grid-flow-item(3, 4) with 20px gutter and $omega-gutter: false */
   @include zen-grid-flow-item(3, 4, $omega-gutter: false);
 
-  /* Test zen-grid-flow-item(1, 4) with 15px gutter, $zen-float-direction: right and $alpha-gutter: true */
+  /* Test zen-grid-flow-item(1, 4) with 15px gutter, $zen-direction: right and $alpha-gutter: true */
   $zen-gutters: 15px;
-  $zen-float-direction: right;
+  $zen-direction: right;
   @include zen-grid-flow-item(1, 4, $alpha-gutter: true);
   $zen-gutters: 20px;
-  $zen-float-direction: left;
+  $zen-direction: left;
 
   /* Test zen-grid-flow-item(1, 4) with $zen-box-sizing: content-box and 10% gutter */
   $zen-gutters: 10%;

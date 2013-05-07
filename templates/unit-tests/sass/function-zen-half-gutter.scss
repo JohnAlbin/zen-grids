@@ -28,10 +28,10 @@
   /* Test zen-half-gutter(11px, right) */
   padding-left: zen-half-gutter(11px, right);
 
-  /* Test zen-half-gutter(11px) with $zen-float-direction: right */
-  $zen-float-direction: right;
+  /* Test zen-half-gutter(11px) with $zen-direction: right */
+  $zen-direction: right;
   padding-left: zen-half-gutter(11px);
 
-  /* Test zen-half-gutter(11px, left) with $zen-float-direction: right */
+  /* Test zen-half-gutter(11px, left) with $zen-direction: right */
   padding-left: zen-half-gutter(11px, left);
 }

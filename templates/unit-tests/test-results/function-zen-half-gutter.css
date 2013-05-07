@@ -17,8 +17,8 @@
   padding-left: 5px;
   /* Test zen-half-gutter(11px, right) */
   padding-left: 6px;
-  /* Test zen-half-gutter(11px) with $zen-float-direction: right */
+  /* Test zen-half-gutter(11px) with $zen-direction: right */
   padding-left: 5px;
-  /* Test zen-half-gutter(11px, left) with $zen-float-direction: right */
+  /* Test zen-half-gutter(11px, left) with $zen-direction: right */
   padding-left: 6px;
 }

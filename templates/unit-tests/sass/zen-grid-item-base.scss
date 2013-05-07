@@ -38,12 +38,12 @@
   @include zen-grid-item-base();
   $zen-gutters: 20px;
 
-  /* Test zen-grid-item-base() with $zen-gutters: 15px and $zen-float-direction: right */
+  /* Test zen-grid-item-base() with $zen-gutters: 15px and $zen-direction: right */
   $zen-gutters: 15px;
-  $zen-float-direction: right;
+  $zen-direction: right;
   @include zen-grid-item-base();
   $zen-gutters: 20px;
-  $zen-float-direction: left;
+  $zen-direction: left;
 
   /* Test zen-grid-item-base() with $zen-gutters: 15px and $zen-reverse-all-floats: true */
   $zen-gutters: 15px;

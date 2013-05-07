@@ -18,7 +18,7 @@ $zen-auto-include-flow-item-base  : true        !default;
   $parent-columns               : false,
   $alpha-gutter                 : false,
   $omega-gutter                 : true,
-  $flow-direction               : $zen-float-direction,
+  $direction                    : $zen-direction,
   $columns                      : $zen-columns,
   $gutters                      : $zen-gutters,
   $grid-width                   : $zen-grid-width,
@@ -36,7 +36,7 @@ $zen-auto-include-flow-item-base  : true        !default;
     }
   }
 
-  $dir: $flow-direction;
+  $dir: $direction;
   @if $reverse-all-flows {
     $dir: zen-direction-flip($dir);
   }
@@ -108,11 +108,11 @@ $zen-auto-include-flow-item-base  : true        !default;
 // @see http://zengrids.com/help/#zen-float
 //
 @mixin zen-float(
-  $float-direction      : $zen-float-direction,
+  $direction            : $zen-direction,
   $reverse-all-floats   : $zen-reverse-all-floats
 ) {
   // Determine the float direction.
-  $dir: $float-direction;
+  $dir: $direction;
   @if $reverse-all-floats {
     $dir: zen-direction-flip($dir);
   }

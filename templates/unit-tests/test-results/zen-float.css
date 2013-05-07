@@ -5,7 +5,7 @@
 #test-zen-float {
   /* Test zen-float() */
   float: left;
-  /* Test zen-float() with $zen-float-direction: right */
+  /* Test zen-float() with $zen-direction: right */
   float: right;
   /* Test zen-float(left) */
   float: left;

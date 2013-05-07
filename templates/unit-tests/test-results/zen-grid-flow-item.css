@@ -72,7 +72,7 @@
   width: 180px;
   padding-left: 0;
   padding-right: 0;
-  /* Test zen-grid-flow-item(1, 4) with 15px gutter and $zen-float-direction: right */
+  /* Test zen-grid-flow-item(1, 4) with 15px gutter and $zen-direction: right */
   padding-left: 8px;
   padding-right: 7px;
   -moz-box-sizing: border-box;
@@ -134,7 +134,7 @@
   padding-left: 0;
   padding-right: 5px;
   margin-right: -5px;
-  /* Test zen-grid-flow-item(1, 4) with 15px gutter, $zen-float-direction: right and $alpha-gutter: true */
+  /* Test zen-grid-flow-item(1, 4) with 15px gutter, $zen-direction: right and $alpha-gutter: true */
   padding-left: 8px;
   padding-right: 7px;
   -moz-box-sizing: border-box;

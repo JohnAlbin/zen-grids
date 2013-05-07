@@ -5,7 +5,7 @@
 #test-zen-clear {
   /* Test zen-clear() */
   clear: left;
-  /* Test zen-clear() with $zen-float-direction: right */
+  /* Test zen-clear() with $zen-direction: right */
   clear: right;
   /* Test zen-clear(left) */
   clear: left;

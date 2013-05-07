@@ -9,10 +9,10 @@
   /* Test zen-float() */
   @include zen-float();
 
-  /* Test zen-float() with $zen-float-direction: right */
-  $zen-float-direction: right;
+  /* Test zen-float() with $zen-direction: right */
+  $zen-direction: right;
   @include zen-float();
-  $zen-float-direction: left;
+  $zen-direction: left;
 
   /* Test zen-float(left) */
   @include zen-float(left);

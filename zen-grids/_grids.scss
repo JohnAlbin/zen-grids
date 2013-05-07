@@ -25,8 +25,8 @@ $zen-box-sizing                   : border-box  !default;
 $legacy-support-for-ie7           : false       !default;
 $legacy-support-for-ie6           : false       !default;
 
-// Specify the default floating direction for zen's mixins. @see http://zengrids.com/help/#zen-float-direction
-$zen-float-direction              : left        !default;
+// Specify the default floating direction for zen's mixins. @see http://zengrids.com/help/#zen-direction
+$zen-direction                    : left        !default;
 
 // Reverse the floating direction in all zen's mixins. @see http://zengrids.com/help/#zen-reverse-all-floats
 $zen-reverse-all-floats           : false       !default;
@@ -39,7 +39,7 @@ $zen-reverse-all-floats           : false       !default;
 @mixin zen-grid-container(
   $context          : none,
   $gutters          : $zen-gutters,
-  $float-direction  : $zen-float-direction
+  $direction        : $zen-direction
 ) {
 
   // @TODO: This is a pre-IE8 line of code; don't remember why its needed.
@@ -63,8 +63,8 @@ $zen-reverse-all-floats           : false       !default;
   // Un-do the gutter padding of the parent grid item.
   @if $context == flow {
     margin: {
-      left: -(zen-half-gutter($gutters, left, $float-direction));
-      right: -(zen-half-gutter($gutters, right, $float-direction));
+      left: -(zen-half-gutter($gutters, left, $direction));
+      right: -(zen-half-gutter($gutters, right, $direction));
     }
   }
 
@@ -83,7 +83,7 @@ $zen-reverse-all-floats           : false       !default;
 @mixin zen-grid-item(
   $column-span,
   $column-position,
-  $float-direction          : $zen-float-direction,
+  $direction                : $zen-direction,
   $columns                  : $zen-columns,
   $gutters                  : $zen-gutters,
   $grid-width               : $zen-grid-width,
@@ -99,7 +99,7 @@ $zen-reverse-all-floats           : false       !default;
   $width: zen-grid-item-width($column-span, $columns, $gutters, $grid-width, $box-sizing);
 
   // Determine the float direction and its reverse.
-  $dir: $float-direction;
+  $dir: $direction;
   @if $reverse-all-floats {
     $dir: zen-direction-flip($dir);
   }
@@ -128,11 +128,11 @@ $zen-reverse-all-floats           : false       !default;
 @mixin zen-grid-item-base(
   $gutters            : $zen-gutters,
   $box-sizing         : $zen-box-sizing,
-  $flow-direction     : $zen-float-direction,
+  $direction          : $zen-direction,
   $reverse-all-flows  : $zen-reverse-all-floats
 ) {
 
-  $dir: $flow-direction;
+  $dir: $direction;
   @if $reverse-all-flows {
     $dir: zen-direction-flip($dir);
   }
@@ -180,7 +180,7 @@ $zen-reverse-all-floats           : false       !default;
 // @see http://zengrids.com/help/#zen-clear
 //
 @mixin zen-clear(
-  $direction            : $zen-float-direction,
+  $direction            : $zen-direction,
   $reverse-all-floats   : $zen-reverse-all-floats
 ) {
   // Determine the clearing direction.
@@ -198,13 +198,13 @@ $zen-reverse-all-floats           : false       !default;
 // Returns a half gutter width. @see http://zengrids.com/help/#zen-half-gutter
 @function zen-half-gutter(
   $gutters          : $zen-gutters,
-  $gutter-side      : $zen-float-direction,
-  $flow-direction   : $zen-float-direction
+  $gutter-side      : $zen-direction,
+  $direction        : $zen-direction
 ) {
   $half-gutter: $gutters / 2;
   // Special handling in case gutter has an odd number of pixels.
   @if unit($gutters) == "px" {
-    @if $gutter-side == $flow-direction {
+    @if $gutter-side == $direction {
       @return floor($half-gutter);
     }
     @else {
