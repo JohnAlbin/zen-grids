@@ -61,7 +61,7 @@
       <li><a href="#zen-grid-container">zen-grid-container</a></li>
       <li><a href="#zen-grid-item">zen-grid-item</a></li>
       <li><a href="#zen-grid-item-base">zen-grid-item-base</a></li>
-      <li><a href="#zen-clear">zen-clear</a></li>
+      <li><a href="#zen-new-row">zen-new-row</a></li>
       <li><a href="#zen-grid-flow-item">zen-grid-flow-item</a></li>
       <li><a href="#zen-float">zen-float</a></li>
       <li><a href="#zen-grid-background">zen-grid-background</a></li>
@@ -337,7 +337,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     </article>
 
     <article>
-    <h3 id="zen-clear">zen-clear() <a href="#zen-clear" title="permalink">#</a></h3>
+    <h3 id="zen-new-row">zen-new-row() <a href="#zen-new-row" title="permalink">#</a></h3>
     <p>
     Apply this to grid items that need to be cleared below other grid items.
     </p>
@@ -533,7 +533,7 @@ $zen-gutters: 10px;
   @include zen-grid-item(3, 1, right);
 }
 .block-c {
-  @include zen-clear(right);
+  @include zen-new-row(right);
   @include zen-grid-item(3, 1, right);
 }</code></pre>
     </article>
@@ -559,11 +559,11 @@ $zen-gutters: 10px;
   @include zen-grid-item(1, 1, right);
 }
 .block-c {
-  @include zen-clear(right);
+  @include zen-new-row(right);
   @include zen-grid-item(1, 1, right);
 }
 .block-d {
-  @include zen-clear(both);
+  @include zen-new-row(both);
   @include zen-grid-item(3, 1);
 }</code></pre>
     </article>
@@ -592,7 +592,7 @@ $zen-gutters: 10px;
   @include zen-grid-item(1, 1, right);
 }
 .block-d {
-  @include zen-clear(right);
+  @include zen-new-row(right);
   @include zen-grid-item(1, 1, right);
 }</code></pre>
     </article>
@@ -623,7 +623,7 @@ $zen-gutters: 10px;
   @include zen-grid-item(1, 2);
 }
 .block-d {
-  @include zen-clear(left);
+  @include zen-new-row(left);
   @include zen-grid-item(1, 1);
 }
 .block-e {
@@ -656,7 +656,7 @@ $zen-gutters: 10px;
   @include zen-grid-item(2, 6);
 }
 .block-d {
- @include zen-clear(left);
+ @include zen-new-row(left);
  @include zen-grid-item(2, 1);
 }
 .block-e {

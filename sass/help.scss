@@ -57,7 +57,7 @@ h1 {
   }
 
   .layout__start {
-    @include zen-clear(both);
+    @include zen-new-row(both);
   }
 }
 
@@ -129,7 +129,7 @@ h1 {
 }
 
 #footer {
-  @include zen-clear(both);
+  @include zen-new-row(both);
   @include zen-grid-item(2, 1);
 }
 
@@ -178,7 +178,7 @@ h1 {
     @include zen-grid-item(3, 1, right);
   }
   .block-c {
-    @include zen-clear(right);
+    @include zen-new-row(right);
     @include zen-grid-item(3, 1, right);
   }
 }
@@ -197,11 +197,11 @@ h1 {
     @include zen-grid-item(1, 1, right);
   }
   .block-c {
-    @include zen-clear(right);
+    @include zen-new-row(right);
     @include zen-grid-item(1, 1, right);
   }
   .block-d {
-    @include zen-clear(both);
+    @include zen-new-row(both);
     @include zen-grid-item(3, 1);
   }
 }
@@ -223,7 +223,7 @@ h1 {
     @include zen-grid-item(1, 1, right);
   }
   .block-d {
-    @include zen-clear(right);
+    @include zen-new-row(right);
     @include zen-grid-item(1, 1, right);
   }
 }
@@ -245,7 +245,7 @@ h1 {
     @include zen-grid-item(1, 2);
   }
   .block-d {
-    @include zen-clear(left);
+    @include zen-new-row(left);
     @include zen-grid-item(1, 1);
   }
   .block-e {
@@ -270,7 +270,7 @@ h1 {
     @include zen-grid-item(2, 6);
   }
   .block-d {
-   @include zen-clear(left);
+   @include zen-new-row(left);
    @include zen-grid-item(2, 1);
   }
   .block-e {

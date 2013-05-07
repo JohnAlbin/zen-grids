@@ -123,7 +123,7 @@ p.so {
   }
 }
 #header {
-  @include zen-clear();
+  @include zen-new-row();
   background-color: rgba(#000, .1);
 }
 
@@ -180,7 +180,7 @@ p.so {
     @include zen-grid-item(2, 2.5);
   }
   #content {
-    @include zen-clear();
+    @include zen-new-row();
   }
   #aside1 {
   }
@@ -210,7 +210,7 @@ p.so {
   }
   #footer {
     @include zen-grid-item(5, 1);
-    @include zen-clear();
+    @include zen-new-row();
   }
 
 }
@@ -233,7 +233,7 @@ p.so {
     @include zen-grid-item(2, 3.5);
   }
   #content {
-    @include zen-clear();
+    @include zen-new-row();
   }
   #aside1 {
   }
@@ -263,7 +263,7 @@ p.so {
   }
   #footer {
     @include zen-grid-item(4, 4);
-    @include zen-clear();
+    @include zen-new-row();
   }
 
 }
@@ -285,7 +285,7 @@ p.so {
     @include zen-grid-item(2, 4.5);
   }
   #content {
-    @include zen-clear();
+    @include zen-new-row();
   }
   #aside1 {
   }
@@ -315,7 +315,7 @@ p.so {
   }
   #footer {
     @include zen-grid-item(5, 5);
-    @include zen-clear();
+    @include zen-new-row();
   }
 
 }

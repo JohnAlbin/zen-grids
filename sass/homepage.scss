@@ -79,7 +79,7 @@ $zen-gutters: 40px;
 #warning {
   display: none;
   @include zen-grid-item(4, 3);
-  @include zen-clear();
+  @include zen-new-row();
 }
 #features {
   @include adjust-font-size-to($h3-font-size, 1);
@@ -122,7 +122,7 @@ $zen-gutters: 40px;
     vertical-align: bottom;
   }
   li {
-    @include zen-clear();
+    @include zen-new-row();
     @include zen-grid-item(6, 1);
   }
   figure {
@@ -136,7 +136,7 @@ $zen-gutters: 40px;
   }
   @media all and (min-width: 600px) {
     li {
-      @include zen-clear(none);
+      @include zen-new-row(none);
       text-align: center;
     }
     li:nth-child(3n+1) {
@@ -173,7 +173,7 @@ $zen-gutters: 40px;
   }
 }
 #content {
-  @include zen-clear(both);
+  @include zen-new-row(both);
   @include zen-grid-item(6, 1);
 
   @media all and (min-width: 810px) {
@@ -181,7 +181,7 @@ $zen-gutters: 40px;
     margin-bottom: rhythm(2);
 
     section {
-      @include zen-clear();
+      @include zen-new-row();
       @include zen-grid-item(4, 2);
     }
   }
@@ -206,7 +206,7 @@ $zen-gutters: 40px;
 #news,
 #aside2,
 #comments {
-  @include zen-clear();
+  @include zen-new-row();
   @include zen-grid-item(6, 1);
 }
 @media all and (min-width: 540px) {
@@ -214,28 +214,28 @@ $zen-gutters: 40px;
     @include zen-grid-item(3, 1);
   }
   #aside2 {
-    @include zen-clear(none);
+    @include zen-new-row(none);
     @include zen-grid-item(3, 4);
   }
 }
 @media all and (min-width: 810px) {
   .part1 {
-    @include zen-clear();
+    @include zen-new-row();
     @include zen-grid-item(3, 1);
   }
   .part2 {
-    @include zen-clear(none);
+    @include zen-new-row(none);
     @include zen-grid-item(3, 4);
   }
   #example {
-    @include zen-clear();
+    @include zen-new-row();
     @include zen-grid-item(4, 2);
   }
   #aside1 {
     @include zen-grid-item(2, 1);
   }
   #news {
-    @include zen-clear(none);
+    @include zen-new-row(none);
     @include zen-grid-item(2, 3);
     background-color: #eee;
     @include border-radius(5px);
@@ -248,7 +248,7 @@ $zen-gutters: 40px;
   }
 }
 #footer {
-  @include zen-clear(both);
+  @include zen-new-row(both);
   @include zen-grid-item(6, 1);
 }
 
@@ -287,7 +287,7 @@ $zen-gutters: 10px;
     @include zen-grid-item(1, 7);
   }
   .footer1 {
-    @include zen-clear();
+    @include zen-new-row();
     @include zen-grid-item(3, 5);
   }
   .footer2 {
