@@ -101,9 +101,9 @@ $zen-switch-direction             : false       !default;
   // Determine the float direction and its reverse.
   $dir: $direction;
   @if $switch-direction {
-    $dir: zen-direction-flip($dir);
+    $dir: zen-direction-switch($dir);
   }
-  $rev: zen-direction-flip($dir);
+  $rev: zen-direction-switch($dir);
 
   float: $dir;
   width: $width;
@@ -134,7 +134,7 @@ $zen-switch-direction             : false       !default;
 
   $dir: $direction;
   @if $switch-direction {
-    $dir: zen-direction-flip($dir);
+    $dir: zen-direction-switch($dir);
   }
 
   padding: {
@@ -185,7 +185,7 @@ $zen-switch-direction             : false       !default;
 ) {
   // Determine the clearing direction.
   @if $switch-direction {
-    $direction: zen-direction-flip($direction);
+    $direction: zen-direction-switch($clear);
   }
   clear: $direction;
 }
@@ -248,8 +248,8 @@ $zen-switch-direction             : false       !default;
 }
 
 // Returns the opposite direction, given "left" or "right".
-// @see http://zengrids.com/help/#zen-direction-flip
-@function zen-direction-flip(
+// @see http://zengrids.com/help/#zen-direction-switch
+@function zen-direction-switch(
   $dir
 ) {
   @if $dir == left {
@@ -261,6 +261,6 @@ $zen-switch-direction             : false       !default;
   @else if $dir == none or $dir == both {
     @return $dir;
   }
-  @warn "Invalid direction passed to zen-direction-flip().";
+  @warn "Invalid direction passed to zen-direction-switch().";
   @return both;
 }

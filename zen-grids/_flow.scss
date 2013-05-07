@@ -38,9 +38,9 @@ $zen-auto-include-flow-item-base  : true        !default;
 
   $dir: $direction;
   @if $switch-direction {
-    $dir: zen-direction-flip($dir);
+    $dir: zen-direction-switch($dir);
   }
-  $rev: zen-direction-flip($dir);
+  $rev: zen-direction-switch($dir);
 
   // Auto-apply the unit base mixin.
   @if $auto-include-flow-item-base {
@@ -114,7 +114,7 @@ $zen-auto-include-flow-item-base  : true        !default;
   // Determine the float direction.
   $dir: $direction;
   @if $switch-direction {
-    $dir: zen-direction-flip($dir);
+    $dir: zen-direction-switch($dir);
   }
   float: $dir;
 }

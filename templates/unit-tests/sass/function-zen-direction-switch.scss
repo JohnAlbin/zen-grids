@@ -1,0 +1,23 @@
+/**
+ * @file
+ * Test zen-direction-switch()
+ */
+
+@import "zen-grids";
+
+#test-zen-direction-switch {
+  /* Test zen-direction-switch(left) */
+  float: zen-direction-switch(left);
+
+  /* Test zen-direction-switch(right) */
+  float: zen-direction-switch(right);
+
+  /* Test zen-direction-switch(both) */
+  float: zen-direction-switch(both);
+
+  /* Test zen-direction-switch(none) */
+  float: zen-direction-switch(none);
+
+  /* Test zen-direction-switch(invalid) */
+  float: zen-direction-switch(invalid);
+}

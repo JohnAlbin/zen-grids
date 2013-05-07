@@ -104,7 +104,7 @@ $zen-grid-number-images   : ()                  !default;
   // Determine the float direction.
   $dir                  : $direction;
   @if $switch-direction {
-    $dir                : zen-direction-flip($dir);
+    $dir                : zen-direction-switch($dir);
   }
 
   @for $count from 1 through $columns {
