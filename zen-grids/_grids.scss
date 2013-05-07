@@ -177,17 +177,17 @@ $zen-switch-direction             : false       !default;
 
 //
 // Apply this to a grid item so that it starts a new row.
-// @see http://zengrids.com/help/#zen-clear
+// @see http://zengrids.com/help/#zen-new-row
 //
-@mixin zen-clear(
-  $direction            : $zen-direction,
-  $switch-direction     : $zen-switch-direction
+@mixin zen-new-row(
+  $clear              : $zen-direction,
+  $switch-direction   : $zen-switch-direction
 ) {
   // Determine the clearing direction.
   @if $switch-direction {
-    $direction: zen-direction-switch($clear);
+    $clear: zen-direction-switch($clear);
   }
-  clear: $direction;
+  clear: $clear;
 }
 
 

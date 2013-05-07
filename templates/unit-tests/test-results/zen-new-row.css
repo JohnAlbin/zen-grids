@@ -1,0 +1,16 @@
+/**
+ * @file
+ * Test zen-new-row()
+ */
+#test-zen-new-row {
+  /* Test zen-new-row() */
+  clear: left;
+  /* Test zen-new-row() with $zen-direction: right */
+  clear: right;
+  /* Test zen-new-row(left) */
+  clear: left;
+  /* Test zen-new-row(left, $switch-direction: TRUE) */
+  clear: right;
+  /* Test zen-new-row(left) with: $zen-switch-direction: TRUE; */
+  clear: right;
+}

@@ -55,7 +55,7 @@
     @include zen-grid-item(2, 1);
   }
   .grid-item__aside1 {
-    @include zen-clear(); // Clear left-floated elements (.grid-item__content)
+    @include zen-new-row(); // Clear left-floated elements (.grid-item__content)
     @include zen-grid-item(1, 1);
   }
   .grid-item__aside2 {
@@ -76,7 +76,7 @@
     @include zen-grid-item(1, 1, right); // Position from the right
   }
   .grid-item__aside2 {
-    @include zen-clear(); // Clear left-floated elements (.grid-item__content)
+    @include zen-new-row(); // Clear left-floated elements (.grid-item__content)
     @include zen-grid-item(2, 1);
   }
 }
@@ -94,7 +94,7 @@
     @include zen-grid-item(1, 1, right); // Position from the right
   }
   .grid-item__aside2 {
-    @include zen-clear(right); // Clear right-floated elements (.grid-item__aside1)
+    @include zen-new-row(right); // Clear right-floated elements (.grid-item__aside1)
     @include zen-grid-item(1, 1, right);
   }
 }

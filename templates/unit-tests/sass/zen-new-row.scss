@@ -1,0 +1,26 @@
+/**
+ * @file
+ * Test zen-new-row()
+ */
+
+@import "zen-grids";
+
+#test-zen-new-row {
+  /* Test zen-new-row() */
+  @include zen-new-row();
+
+  /* Test zen-new-row() with $zen-direction: right */
+  $zen-direction: right;
+  @include zen-new-row();
+  $zen-direction: left;
+
+  /* Test zen-new-row(left) */
+  @include zen-new-row(left);
+
+  /* Test zen-new-row(left, $switch-direction: TRUE) */
+  @include zen-new-row(left, $switch-direction: TRUE);
+
+  /* Test zen-new-row(left) with: $zen-switch-direction: TRUE; */
+  $zen-switch-direction: TRUE;
+  @include zen-new-row(left);
+}
