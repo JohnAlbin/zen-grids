@@ -45,10 +45,10 @@
   $zen-gutters: 20px;
   $zen-direction: left;
 
-  /* Test zen-grid-item-base() with $zen-gutters: 15px and $zen-reverse-all-floats: true */
+  /* Test zen-grid-item-base() with $zen-gutters: 15px and $zen-switch-direction: true */
   $zen-gutters: 15px;
-  $zen-reverse-all-floats: true;
+  $zen-switch-direction: true;
   @include zen-grid-item-base();
   $zen-gutters: 20px;
-  $zen-reverse-all-floats: false;
+  $zen-switch-direction: false;
 }

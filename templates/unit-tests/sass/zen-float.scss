@@ -17,10 +17,10 @@
   /* Test zen-float(left) */
   @include zen-float(left);
 
-  /* Test zen-float(left, $reverse-all-floats: TRUE) */
-  @include zen-float(left, $reverse-all-floats: TRUE);
+  /* Test zen-float(left, $switch-direction: TRUE) */
+  @include zen-float(left, $switch-direction: TRUE);
 
-  /* Test zen-float(left) with: $zen-reverse-all-floats: TRUE; */
-  $zen-reverse-all-floats: TRUE;
+  /* Test zen-float(left) with: $zen-switch-direction: TRUE; */
+  $zen-switch-direction: TRUE;
   @include zen-float(left);
 }

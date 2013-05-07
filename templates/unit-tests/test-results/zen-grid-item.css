@@ -36,12 +36,12 @@
   width: 60%;
   margin-right: 40%;
   margin-left: -100%;
-  /* Test zen-grid-item(3, 3) with 5 column grid and 40px gutter and $zen-reverse-all-floats */
+  /* Test zen-grid-item(3, 3) with 5 column grid and 40px gutter and $zen-switch-direction */
   float: right;
   width: 60%;
   margin-right: 40%;
   margin-left: -100%;
-  /* Test zen-grid-item(3, 3, right) with 5 column grid and 40px gutter and $zen-reverse-all-floats */
+  /* Test zen-grid-item(3, 3, right) with 5 column grid and 40px gutter and $zen-switch-direction */
   float: left;
   width: 60%;
   margin-left: 40%;

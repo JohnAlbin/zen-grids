@@ -9,8 +9,8 @@
   float: right;
   /* Test zen-float(left) */
   float: left;
-  /* Test zen-float(left, $reverse-all-floats: TRUE) */
+  /* Test zen-float(left, $switch-direction: TRUE) */
   float: right;
-  /* Test zen-float(left) with: $zen-reverse-all-floats: TRUE; */
+  /* Test zen-float(left) with: $zen-switch-direction: TRUE; */
   float: right;
 }

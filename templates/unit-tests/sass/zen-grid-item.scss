@@ -37,23 +37,23 @@
   $zen-columns: 1;
   $zen-gutters: 20px;
 
-  /* Test zen-grid-item(3, 3) with 5 column grid and 40px gutter and $zen-reverse-all-floats */
+  /* Test zen-grid-item(3, 3) with 5 column grid and 40px gutter and $zen-switch-direction */
   $zen-columns: 5;
   $zen-gutters: 40px;
-  $zen-reverse-all-floats: true;
+  $zen-switch-direction: true;
   @include zen-grid-item(3, 3);
   $zen-columns: 1;
   $zen-gutters: 20px;
-  $zen-reverse-all-floats: false;
+  $zen-switch-direction: false;
 
-  /* Test zen-grid-item(3, 3, right) with 5 column grid and 40px gutter and $zen-reverse-all-floats */
+  /* Test zen-grid-item(3, 3, right) with 5 column grid and 40px gutter and $zen-switch-direction */
   $zen-columns: 5;
   $zen-gutters: 40px;
-  $zen-reverse-all-floats: true;
+  $zen-switch-direction: true;
   @include zen-grid-item(3, 3, right);
   $zen-columns: 1;
   $zen-gutters: 20px;
-  $zen-reverse-all-floats: false;
+  $zen-switch-direction: false;
 
   /* Test zen-grid-item(3, 2.5) with 5 column grid and 40px gutter */
   $zen-columns: 5;

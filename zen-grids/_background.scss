@@ -83,7 +83,7 @@ $zen-grid-number-images   : ()                  !default;
   $grid-color           : $zen-grid-color,
   $grid-numbers         : $zen-grid-numbers,
   $direction            : $zen-direction,
-  $reverse-all-floats   : $zen-reverse-all-floats
+  $switch-direction     : $zen-switch-direction
 ) {
 
   // The CSS3 Gradient syntax doesn't allow for calc() to be used in color
@@ -103,7 +103,7 @@ $zen-grid-number-images   : ()                  !default;
 
   // Determine the float direction.
   $dir                  : $direction;
-  @if $reverse-all-floats {
+  @if $switch-direction {
     $dir                : zen-direction-flip($dir);
   }
 

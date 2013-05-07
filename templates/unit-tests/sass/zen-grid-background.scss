@@ -35,23 +35,23 @@
   $zen-columns: 1;
   $zen-gutters: 20px;
 
-  /* Test zen-grid-background(), 5 column grid and 10% gutter and $zen-reverse-all-floats */
+  /* Test zen-grid-background(), 5 column grid and 10% gutter and $zen-switch-direction */
   $zen-columns: 5;
   $zen-gutters: 10%;
-  $zen-reverse-all-floats: true;
+  $zen-switch-direction: true;
   @include zen-grid-background();
   $zen-columns: 1;
   $zen-gutters: 20px;
-  $zen-reverse-all-floats: false;
+  $zen-switch-direction: false;
 
-  /* Test zen-grid-background() with 5 column grid and 40px gutter and $zen-reverse-all-floats */
+  /* Test zen-grid-background() with 5 column grid and 40px gutter and $zen-switch-direction */
   $zen-columns: 5;
   $zen-gutters: 40px;
-  $zen-reverse-all-floats: true;
+  $zen-switch-direction: true;
   @include zen-grid-background();
   $zen-columns: 1;
   $zen-gutters: 20px;
-  $zen-reverse-all-floats: false;
+  $zen-switch-direction: false;
 
   /* Test zen-grid-background() with $zen-grid-width: 1000px, 5 column grid and 40px gutter */
   $zen-grid-width: 1000px;
