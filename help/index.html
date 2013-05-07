@@ -46,7 +46,7 @@
     </p>
 
     <ul>
-    <li><a href="#import">Importing</a></li>
+    <li><a href="#intro">Introduction</a></li>
     <li><a href="#vars">Configurable variables</a>
       <ul>
       <li><a href="#vars">Common variables</a></li>
@@ -80,12 +80,49 @@
     </ul>
     </section>
 
-    <section id="import">
-    <h2>Importing <a href="#import" title="permalink">#</a></h2>
+    <section class="layout__start" id="intro">
+    <h2>Introduction <a href="#intro" title="permalink">#</a></h2>
     <p>
-    This partial can be imported using:
+    The Zen Grids system is organized in a handful of modules that can be
+    imported as needed. The basic functionality is contained in the “grids”
+    module and can be imported using:
     </p>
-    <pre><code>@import "zen-grids"</code></pre>
+    <pre><code>@import "zen-grids";</code></pre>
+    <h3 id="background-module">The “background” module <a href="#background-module" title="permalink">#</a></h3>
+    <p>
+    During development, it is often useful for the layout designer to see the
+    grid columns as the grid items are arranged on the page. The “background”
+    module can provide a background image for use during grid development. It
+    can be imported using:
+    </p>
+    <pre><code>@import "zen-grids/background";</code></pre>
+    <h3 id="flow-module">The “flow” module <a href="#flow-module" title="permalink">#</a></h3>
+    <p>
+    To understand this module, it is important to understand the CSS defintion
+    of “normal flow”. According to CSS, all content is part of the <a href="http://www.w3.org/TR/CSS2/visuren.html#positioning-scheme">normal
+    <em>flow</em></a> by default. For example, paragraph text and images are part of
+    the normal flow.
+    </p>
+    <p>
+    Positioned elements (floats, absolute positioning, etc.) are not part of the
+    normal flow. Zen Grid’s grid items are also positioned elements and,
+    therefore, are no longer part of the normal flow.
+    </p>
+    <p>
+    Often, a layout designer will make one of Zen Grid’s grid items span
+    multiple columns. The elements within that grid item are part of the normal
+    flow and span the same number of columns as their grid item container. The
+    layout designer may wish to have an element in the normal flow align to one
+    or more of the columns within the grid item. For example, if a grid item
+    spans 3 columns, the layout designer may want to have all of the images
+    within it to align to the first column inside that grid item and have other
+    flow items wrap around those images.
+    </p>
+    <p>
+    The “flow” module contains helper mixins to help align normal flow items
+    within a grid item. It can be imported using:
+    </p>
+    <pre><code>@import "zen-grids/flow";</code></pre>
     </section>
 
     <section id="vars">
