@@ -264,7 +264,7 @@ $zen-gutters: 10px;
   padding: 0;
 
   .container {
-    @include zen-grid-container;
+    @include zen-grid-container();
     @include zen-grid-background;
     padding: rhythm(1) 0 0 0;
     position: relative;

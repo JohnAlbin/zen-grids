@@ -169,7 +169,7 @@ h1 {
   $zen-gutters: 10px;
 
   .example-container {
-    @include zen-grid-container; // Apply this mixin to the container.
+    @include zen-grid-container(); // Apply this mixin to the container.
   }
   .block-a {
     @include zen-grid-item(4, 1);
@@ -188,7 +188,7 @@ h1 {
   $zen-gutters: 10px;
 
   .example-container {
-    @include zen-grid-container; // Apply this mixin to the container.
+    @include zen-grid-container(); // Apply this mixin to the container.
   }
   .block-a {
     @include zen-grid-item(2, 1);
@@ -211,7 +211,7 @@ h1 {
   $zen-gutters: 10px;
 
   .example-container {
-    @include zen-grid-container; // Apply this mixin to the container.
+    @include zen-grid-container(); // Apply this mixin to the container.
   }
   .block-a {
     @include zen-grid-item(3, 3);
@@ -233,7 +233,7 @@ h1 {
   $zen-gutters: 10px;
 
   .example-container {
-    @include zen-grid-container; // Apply this mixin to the container.
+    @include zen-grid-container(); // Apply this mixin to the container.
   }
   .block-a {
     @include zen-grid-item(2, 1, right);
@@ -258,7 +258,7 @@ h1 {
   $zen-gutters: 10px;
 
   .example-container {
-    @include zen-grid-container; // Apply this mixin to the container.
+    @include zen-grid-container(); // Apply this mixin to the container.
   }
   .block-a {
     @include zen-grid-item(3, 3, right);

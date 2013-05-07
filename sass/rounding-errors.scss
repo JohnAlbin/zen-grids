@@ -64,7 +64,7 @@ $zen-box-sizing: content-box;
 }
 
 .container {
-  @include zen-grid-container;
+  @include zen-grid-container();
 }
 
 .traditional aside,
