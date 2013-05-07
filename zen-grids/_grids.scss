@@ -9,8 +9,8 @@ $zen-columns                      : 1           !default;
 // Specify the width of the gutters (as padding). @see http://zengrids.com/help/#zen-gutters
 $zen-gutters                      : 20px        !default;
 
-// @see http://zengrids.com/help/#zen-auto-include-item-base
-$zen-auto-include-item-base       : true        !default;
+// @see http://zengrids.com/help/#zen-auto-include-grid-item-base
+$zen-auto-include-grid-item-base  : true        !default;
 
 // Specify the width of the entire grid. @see http://zengrids.com/help/#zen-grid-width
 $zen-grid-width                   : 100%        !default;
@@ -83,13 +83,13 @@ $zen-switch-direction             : false       !default;
 @mixin zen-grid-item(
   $column-span,
   $column-position,
-  $direction                : $zen-direction,
-  $columns                  : $zen-columns,
-  $gutters                  : $zen-gutters,
-  $grid-width               : $zen-grid-width,
-  $box-sizing               : $zen-box-sizing,
-  $switch-direction         : $zen-switch-direction,
-  $auto-include-item-base   : $zen-auto-include-item-base
+  $direction                    : $zen-direction,
+  $columns                      : $zen-columns,
+  $gutters                      : $zen-gutters,
+  $grid-width                   : $zen-grid-width,
+  $box-sizing                   : $zen-box-sizing,
+  $switch-direction             : $zen-switch-direction,
+  $auto-include-grid-item-base  : $zen-auto-include-grid-item-base
 ) {
 
   // Calculate the unit width.
@@ -116,7 +116,7 @@ $zen-switch-direction             : false       !default;
   }
 
   // Auto-apply the unit base mixin.
-  @if $auto-include-item-base {
+  @if $auto-include-grid-item-base {
     @include zen-grid-item-base($gutters, $box-sizing);
   }
 }

@@ -5,13 +5,13 @@
 //
 
 // Legacy browser variables for Compass.
-$legacy-support-for-ie6     : false;
-$legacy-support-for-ie7     : false;
+$legacy-support-for-ie6           : false;
+$legacy-support-for-ie7           : false;
 
 // Set up Zen Grids.
-$zen-columns                : 1;
-$zen-gutters                : 20px;
-$zen-auto-include-item-base : false;
+$zen-columns                      : 1;
+$zen-gutters                      : 20px;
+$zen-auto-include-grid-item-base  : false;
 
 //
 // Import our modules.

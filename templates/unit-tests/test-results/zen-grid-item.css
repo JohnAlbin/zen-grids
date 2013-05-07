@@ -25,7 +25,7 @@
   border-left: 0 !important;
   border-right: 0 !important;
   word-wrap: break-word;
-  /* Turn off $zen-auto-include-item-base */
+  /* Turn off $zen-auto-include-grid-item-base */
   /* Test zen-grid-item(3, 3) with 5 column grid and 40px gutter */
   float: left;
   width: 60%;
