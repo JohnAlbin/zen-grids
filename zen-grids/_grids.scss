@@ -42,6 +42,7 @@ $zen-switch-direction             : false       !default;
 @mixin zen-grid-container(
   $context          : none,
   $gutters          : $zen-gutters,
+  $gutter-method    : $zen-gutter-method,
   $direction        : $zen-direction
 ) {
 
@@ -64,7 +65,7 @@ $zen-switch-direction             : false       !default;
   }
 
   // Un-do the gutter padding of the parent grid item.
-  @if $context == flow {
+  @if $context == flow and $gutter-method == padding {
     margin: {
       left: -(zen-half-gutter($gutters, left, $direction));
       right: -(zen-half-gutter($gutters, right, $direction));

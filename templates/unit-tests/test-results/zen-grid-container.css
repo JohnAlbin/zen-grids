@@ -40,7 +40,7 @@
 }
 
 #test-zen-grid-container-4 {
-  /* Test zen-grid-container() with $context = grid-item */
+  /* Test zen-grid-container() with $context: grid-item */
   padding-left: 0;
   padding-right: 0;
 }
@@ -53,7 +53,7 @@
 }
 
 #test-zen-grid-container-5 {
-  /* Test zen-grid-container() with $context = flow */
+  /* Test zen-grid-container() with $context: flow */
   margin-left: -10px;
   margin-right: -10px;
   padding-left: 0;
@@ -64,5 +64,16 @@
   display: table;
 }
 #test-zen-grid-container-5:after {
+  clear: both;
+}
+
+#test-zen-grid-container-6 {
+  /* Test zen-grid-container() with $zen-gutter-method: margin */
+}
+#test-zen-grid-container-6:before, #test-zen-grid-container-6:after {
+  content: "";
+  display: table;
+}
+#test-zen-grid-container-6:after {
   clear: both;
 }
