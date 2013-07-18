@@ -156,7 +156,7 @@ $zen-switch-direction             : false       !default;
     }
   }
   // Prevent overflowing content from being hidden beneath other grid items.
-  word-wrap: break-word; // A very nice CSS3 property.
+  word-wrap: break-word;
 
   @if ($legacy-support-for-ie6 or $legacy-support-for-ie7) {
     @if $box-sizing == border-box and $box-sizing-polyfill-path == "" {
@@ -166,11 +166,14 @@ $zen-switch-direction             : false       !default;
       *behavior: url($box-sizing-polyfill-path);
     }
     @if $legacy-support-for-ie6 {
-      _display: inline; // Display inline or double your floated margin! [1]
-      _overflow: hidden; // Prevent overflowing content from breaking the layout.
-      _overflow-y: visible; // In IE6, overflow visible is broken [2]
-      // 1. http://www.positioniseverything.net/explorer/doubled-margin.html
-      // 2. http://www.howtocreate.co.uk/wrongWithIE/?chapter=overflow%3Avisible%3B
+      // Display inline or double your floated margin!
+      // @see http://www.positioniseverything.net/explorer/doubled-margin.html
+      _display: inline;
+      // Prevent overflowing content from breaking the layout.
+      _overflow: hidden;
+      // In IE6, overflow visible is broken.
+      // @see http://www.howtocreate.co.uk/wrongWithIE/?chapter=overflow%3Avisible%3B
+      _overflow-y: visible;
     }
   }
 }
