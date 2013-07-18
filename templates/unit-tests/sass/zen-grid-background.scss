@@ -11,6 +11,17 @@
   @include zen-grid-background();
   $zen-grid-numbers: both;
 
+  /* Test zen-grid-background() with margin gutter method, 5 column grid and 5% gutter */
+  $zen-columns: 5;
+  $zen-gutters: 5%;
+  $zen-gutter-method: margin;
+  $zen-grid-numbers: top;
+  @include zen-grid-background();
+  $zen-columns: 1;
+  $zen-gutters: 20px;
+  $zen-gutter-method: padding;
+  $zen-grid-numbers: both;
+
   // Turn off numbers for all other tests.
   $zen-grid-numbers: none;
 

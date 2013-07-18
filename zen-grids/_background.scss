@@ -79,6 +79,7 @@ $zen-grid-number-images   : ()                  !default;
 @mixin zen-grid-background(
   $columns              : $zen-columns,
   $gutters              : $zen-gutters,
+  $gutter-method        : $zen-gutter-method,
   $grid-width           : $zen-grid-width,
   $grid-color           : $zen-grid-color,
   $grid-numbers         : $zen-grid-numbers,
@@ -95,11 +96,13 @@ $zen-grid-number-images   : ()                  !default;
   // width and just let the two sets of gradients overlap in the middle. Easy.
 
   $bg-images            : ();
+  $gradient             : ();
   $left-half-gradient   : ();
   $right-half-gradient  : ();
 
   // Calculate half of the unit width.
-  $half-unit-width      : zen-unit-width(2 * $columns, $grid-width: $grid-width);
+  $unit-width           : zen-unit-width($columns, $gutters, $gutter-method, $grid-width);
+  $half-unit-width      : $unit-width / 2;
 
   // Determine the float direction.
   $dir                  : $direction;
@@ -110,6 +113,9 @@ $zen-grid-number-images   : ()                  !default;
   @for $count from 1 through $columns {
     // First add the grid numbers to the background images list.
     $position: (2 * $count - 1) * $half-unit-width;
+    @if $gutter-method == margin {
+      $position: $position + ($count - 1) * $gutters;
+    }
     $reverse-count: $columns + 1 - $count;
 
     @if $dir == left {
@@ -129,31 +135,50 @@ $zen-grid-number-images   : ()                  !default;
       }
     }
 
-    // Next, build the color stops for the left halves of the column gradients.
-    @if $count > 1 {
-      $stop: (2 * $count - 2) * $half-unit-width;
-      $left-half-gradient: append($left-half-gradient, transparent $stop, comma);
-      $left-half-gradient: append($left-half-gradient, $grid-color $stop, comma);
+    @if $gutter-method == margin {
+      // Next, build the color stops for the column gradients.
+      @if $count < $columns {
+        $stop: $count * $unit-width + ($count - 1) * $gutters;
+        $gradient: append($gradient, $grid-color $stop, comma);
+        $gradient: append($gradient, transparent $stop, comma);
+
+        $stop: $stop + $gutters;
+        $gradient: append($gradient, transparent $stop, comma);
+        $gradient: append($gradient, $grid-color $stop, comma);
+      }
     }
+    @else {
+      // Next, build the color stops for the left halves of the column gradients.
+      @if $count > 1 {
+        $stop: (2 * $count - 2) * $half-unit-width;
+        $left-half-gradient: append($left-half-gradient, transparent $stop, comma);
+        $left-half-gradient: append($left-half-gradient, $grid-color $stop, comma);
+      }
 
-    $stop: (2 * $count - 1) * $half-unit-width;
-    $left-half-gradient: append($left-half-gradient, $grid-color $stop, comma);
-    $left-half-gradient: append($left-half-gradient, transparent $stop, comma);
+      $stop: (2 * $count - 1) * $half-unit-width;
+      $left-half-gradient: append($left-half-gradient, $grid-color $stop, comma);
+      $left-half-gradient: append($left-half-gradient, transparent $stop, comma);
 
-    // Next, build the color stops for the right halves of the column gradients.
-    $right-half-gradient: append($right-half-gradient, transparent $stop, comma);
-    $right-half-gradient: append($right-half-gradient, $grid-color $stop, comma);
-
-    @if $count < $columns {
-      $stop: (2 * $count) * $half-unit-width;
-      $right-half-gradient: append($right-half-gradient, $grid-color $stop, comma);
+      // Next, build the color stops for the right halves of the column gradients.
       $right-half-gradient: append($right-half-gradient, transparent $stop, comma);
+      $right-half-gradient: append($right-half-gradient, $grid-color $stop, comma);
+
+      @if $count < $columns {
+        $stop: (2 * $count) * $half-unit-width;
+        $right-half-gradient: append($right-half-gradient, $grid-color $stop, comma);
+        $right-half-gradient: append($right-half-gradient, transparent $stop, comma);
+      }
     }
   }
 
-  // Last, add the gradient halves to the background images list.
-  $bg-images  : append($bg-images, linear-gradient(left, $left-half-gradient) zen-half-gutter($gutters) top no-repeat, comma);
-  $bg-images  : append($bg-images, linear-gradient(left, $right-half-gradient) (-(zen-half-gutter($gutters))) top no-repeat, comma);
+  // Last, add the gradient (or gradient halves) to the background images list.
+  @if $gutter-method == margin {
+    $bg-images  : append($bg-images, linear-gradient(left, $gradient) left top no-repeat, comma);
+  }
+  @else {
+    $bg-images  : append($bg-images, linear-gradient(left, $left-half-gradient) zen-half-gutter($gutters) top no-repeat, comma);
+    $bg-images  : append($bg-images, linear-gradient(left, $right-half-gradient) (-(zen-half-gutter($gutters))) top no-repeat, comma);
+  }
 
   // Apply the full list of background images.
   @include background($bg-images);
