@@ -217,6 +217,21 @@ $zen-switch-direction             : false       !default;
   @return $half-gutter;
 }
 
+// Warns if the gutter and grid width units are not comparable.
+@function zen-compare-units(
+  $feature,
+  $gutters        : $zen-gutters,
+  $grid-width     : $zen-grid-width
+) {
+  @if not comparable($gutters, $grid-width) {
+    $units-gutter: unit($gutters);
+    $units-grid: unit($grid-width);
+    @warn "The layout cannot be calculated correctly; when using #{$feature}, the units of the gutter (#{$units-gutter} must match the units of the grid width (#{$units-grid}).";
+    @return false;
+  }
+  @return true;
+}
+
 // Calculates the unit width of a column. @see http://zengrids.com/help/#zen-unit-width
 @function zen-unit-width(
   $columns   : $zen-columns,
@@ -240,11 +255,7 @@ $zen-switch-direction             : false       !default;
 ) {
   $width: $column-span * zen-unit-width($columns, $grid-width);
   @if $box-sizing == content-box {
-    @if not comparable($width, $gutters) {
-      $units-gutter: unit($gutters);
-      $units-grid: unit($grid-width);
-      @warn "The layout cannot be calculated correctly; when using box-sizing: content-box, the units of the gutter (#{$units-gutter} must match the units of the grid width (#{$units-grid}).";
-    }
+    $test: zen-compare-units('box-sizing: content-box', $gutters, $grid-width);
     $width: $width - $gutters;
   }
   @return $width;
