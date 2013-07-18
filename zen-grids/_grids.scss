@@ -9,6 +9,9 @@ $zen-columns                      : 1           !default;
 // Specify the width of the gutters (as padding). @see http://zengrids.com/help/#zen-gutters
 $zen-gutters                      : 20px        !default;
 
+// Specify the gutter method. Can be padding or margin.
+$zen-gutter-method                : padding     !default;
+
 // @see http://zengrids.com/help/#zen-auto-include-grid-item-base
 $zen-auto-include-grid-item-base  : true        !default;
 
@@ -93,7 +96,7 @@ $zen-switch-direction             : false       !default;
 ) {
 
   // Calculate the unit width.
-  $unit-width: zen-unit-width($columns, $grid-width);
+  $unit-width: zen-unit-width($columns, $grid-width: $grid-width);
 
   // Calculate the item's width.
   $width: zen-grid-item-width($column-span, $columns, $gutters, $grid-width, $box-sizing);
@@ -234,12 +237,27 @@ $zen-switch-direction             : false       !default;
 
 // Calculates the unit width of a column. @see http://zengrids.com/help/#zen-unit-width
 @function zen-unit-width(
-  $columns   : $zen-columns,
+  $columns        : $zen-columns,
+  $gutters        : $zen-gutters,
+  $gutter-method  : $zen-gutter-method,
   $grid-width     : $zen-grid-width
 ) {
-  $unit-width: $grid-width / $columns;
+  $unit-width: 0;
+  @if $gutter-method == margin {
+    $test: zen-compare-units('gutter-method: margin', $gutters, $grid-width);
+    $unit-width: ($grid-width - ($columns - 1) * $gutters) / $columns;
+  }
+  @else {
+    $unit-width: $grid-width / $columns;
+  }
   @if unit($unit-width) == "px" and floor($unit-width) != ceil($unit-width) {
-    @warn "You may experience rounding errors as the grid width, #{$grid-width}, does not divide evenly into #{$columns} columns.";
+    @if $gutter-method == margin {
+      $num_gutters: $columns - 1;
+      @warn "You may experience rounding errors as the grid width, #{$grid-width}, does not divide evenly into #{$columns} columns with #{$num_gutters} of #{$gutters} gutters.";
+    }
+    @else {
+      @warn "You may experience rounding errors as the grid width, #{$grid-width}, does not divide evenly into #{$columns} columns.";
+    }
   }
   @return $unit-width;
 }
@@ -253,7 +271,7 @@ $zen-switch-direction             : false       !default;
   $grid-width     : $zen-grid-width,
   $box-sizing     : $zen-box-sizing
 ) {
-  $width: $column-span * zen-unit-width($columns, $grid-width);
+  $width: $column-span * zen-unit-width($columns, $grid-width: $grid-width);
   @if $box-sizing == content-box {
     $test: zen-compare-units('box-sizing: content-box', $gutters, $grid-width);
     $width: $width - $gutters;

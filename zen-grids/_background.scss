@@ -99,7 +99,7 @@ $zen-grid-number-images   : ()                  !default;
   $right-half-gradient  : ();
 
   // Calculate half of the unit width.
-  $half-unit-width      : zen-unit-width(2 * $columns, $grid-width);
+  $half-unit-width      : zen-unit-width(2 * $columns, $grid-width: $grid-width);
 
   // Determine the float direction.
   $dir                  : $direction;
