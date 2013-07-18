@@ -48,7 +48,7 @@ $zen-auto-include-flow-item-base  : true        !default;
   }
 
   // Calculate the item's width.
-  $width: zen-grid-item-width($column-span, $columns, $gutters, $grid-width, $box-sizing);
+  $width: zen-grid-item-width($column-span, $columns, $gutters, $grid-width: $grid-width, $box-sizing: $box-sizing);
 
   @if unit($grid-width) == "%" {
     // Our percentage $width is off if the parent has $gutters padding.

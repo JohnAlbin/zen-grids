@@ -100,7 +100,7 @@ $zen-switch-direction             : false       !default;
   $unit-width: zen-unit-width($columns, $grid-width: $grid-width);
 
   // Calculate the item's width.
-  $width: zen-grid-item-width($column-span, $columns, $gutters, $grid-width, $box-sizing);
+  $width: zen-grid-item-width($column-span, $columns, $gutters, $gutter-method, $grid-width, $box-sizing);
 
   // Determine the float direction and its reverse.
   $dir: $direction;
@@ -278,11 +278,18 @@ $zen-switch-direction             : false       !default;
   $column-span,
   $columns        : $zen-columns,
   $gutters        : $zen-gutters,
+  $gutter-method  : $zen-gutter-method,
   $grid-width     : $zen-grid-width,
   $box-sizing     : $zen-box-sizing
 ) {
-  $width: $column-span * zen-unit-width($columns, $grid-width: $grid-width);
-  @if $box-sizing == content-box {
+  $width: $column-span * zen-unit-width($columns, $gutters, $gutter-method, $grid-width);
+
+  // Add the margin gutters internal to the spanning grid item.
+  @if $gutter-method == margin {
+    $width: $width + (floor($column-span) - 1) * $gutters;
+  }
+  // For the original box model, remove the padding from the width.
+  @elseif $box-sizing == content-box {
     $test: zen-compare-units('box-sizing: content-box', $gutters, $grid-width);
     $width: $width - $gutters;
   }
