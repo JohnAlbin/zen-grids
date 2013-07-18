@@ -90,6 +90,7 @@ $zen-switch-direction             : false       !default;
   $direction                    : $zen-direction,
   $columns                      : $zen-columns,
   $gutters                      : $zen-gutters,
+  $gutter-method                : $zen-gutter-method,
   $grid-width                   : $zen-grid-width,
   $box-sizing                   : $zen-box-sizing,
   $switch-direction             : $zen-switch-direction,
@@ -97,10 +98,16 @@ $zen-switch-direction             : false       !default;
 ) {
 
   // Calculate the unit width.
-  $unit-width: zen-unit-width($columns, $grid-width: $grid-width);
+  $unit-width: zen-unit-width($columns, $gutters, $gutter-method, $grid-width);
 
   // Calculate the item's width.
   $width: zen-grid-item-width($column-span, $columns, $gutters, $gutter-method, $grid-width, $box-sizing);
+
+  // Calculate the margin from the container's edge.
+  $margin: ($column-position - 1) * $unit-width;
+  @if $gutter-method == margin {
+    $margin: $margin + (floor($column-position) - 1) * $gutters;
+  }
 
   // Determine the float direction and its reverse.
   $dir: $direction;
@@ -112,7 +119,7 @@ $zen-switch-direction             : false       !default;
   float: $dir;
   width: $width;
   margin: {
-    #{$dir}: ($column-position - 1) * $unit-width;
+    #{$dir}: $margin;
     #{$rev}: -100%;
   }
   @if ($legacy-support-for-ie6 or $legacy-support-for-ie7) {
@@ -121,7 +128,7 @@ $zen-switch-direction             : false       !default;
 
   // Auto-apply the unit base mixin.
   @if $auto-include-grid-item-base {
-    @include zen-grid-item-base($gutters, $box-sizing: $box-sizing);
+    @include zen-grid-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction);
   }
 }
 

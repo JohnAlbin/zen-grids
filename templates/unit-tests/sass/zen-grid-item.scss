@@ -70,4 +70,22 @@
   $zen-grid-width: 100%;
   $zen-columns: 1;
   $zen-gutters: 20px;
+
+  /* Test zen-grid-item(3, 3) with $zen-gutter-method: margin, 5 column grid and 5% gutter */
+  $zen-gutter-method: margin;
+  $zen-columns: 5;
+  $zen-gutters: 5%;
+  @include zen-grid-item(3, 3);
+  $zen-gutter-method: padding;
+  $zen-columns: 1;
+  $zen-gutters: 20px;
+
+  /* Test zen-grid-item(3, 2.5) with $zen-gutter-method: margin, 5 column grid and 5% gutter */
+  $zen-gutter-method: margin;
+  $zen-columns: 5;
+  $zen-gutters: 5%;
+  @include zen-grid-item(3, 2.5);
+  $zen-gutter-method: padding;
+  $zen-columns: 1;
+  $zen-gutters: 20px;
 }
