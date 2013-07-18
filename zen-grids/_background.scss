@@ -116,12 +116,12 @@ $zen-grid-number-images   : ()                  !default;
       @if $grid-numbers == both or $grid-numbers == top {
         $bg-images  : append($bg-images, nth($zen-grid-number-images, $count) $position top no-repeat, comma);
       }
-      @if $grid-numbers == both {
+      @if $grid-numbers == both or $grid-numbers == bottom {
         $bg-images  : append($bg-images, nth($zen-grid-number-images, $reverse-count) $position bottom no-repeat, comma);
       }
     }
     @else {
-      @if $grid-numbers == both {
+      @if $grid-numbers == both or $grid-numbers == bottom {
         $bg-images  : append($bg-images, nth($zen-grid-number-images, $count) $position bottom no-repeat, comma);
       }
       @if $grid-numbers == both or $grid-numbers == top {
