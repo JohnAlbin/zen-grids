@@ -160,7 +160,7 @@ $zen-switch-direction             : false       !default;
 
   @if ($legacy-support-for-ie6 or $legacy-support-for-ie7) {
     @if $box-sizing == border-box and $box-sizing-polyfill-path == "" {
-      @warn "IE legacy support is on, but $box-sizing is set to #{$box-sizing} and the $box-sizing-polyfill-path is empty.";
+      @warn "Setting $box-sizing to #{$box-sizing} will fail for legacy IE browsers because the $box-sizing-polyfill-path is empty.";
     }
     @if $box-sizing-polyfill-path != "" {
       *behavior: url($box-sizing-polyfill-path);
@@ -240,7 +240,7 @@ $zen-switch-direction             : false       !default;
     @if not comparable($width, $gutters) {
       $units-gutter: unit($gutters);
       $units-grid: unit($grid-width);
-      @warn "The layout cannot be calculated correctly; when using box-sizing: content-box, the units of the gutter (#{$units-gutter} did not match the units of the grid width (#{$units-grid}).";
+      @warn "The layout cannot be calculated correctly; when using box-sizing: content-box, the units of the gutter (#{$units-gutter} must match the units of the grid width (#{$units-grid}).";
     }
     $width: $width - $gutters;
   }
