@@ -121,7 +121,7 @@ $zen-switch-direction             : false       !default;
 
   // Auto-apply the unit base mixin.
   @if $auto-include-grid-item-base {
-    @include zen-grid-item-base($gutters, $box-sizing);
+    @include zen-grid-item-base($gutters, $box-sizing: $box-sizing);
   }
 }
 
@@ -131,6 +131,7 @@ $zen-switch-direction             : false       !default;
 //
 @mixin zen-grid-item-base(
   $gutters            : $zen-gutters,
+  $gutter-method      : $zen-gutter-method,
   $box-sizing         : $zen-box-sizing,
   $direction          : $zen-direction,
   $switch-direction   : $zen-switch-direction
@@ -141,9 +142,11 @@ $zen-switch-direction             : false       !default;
     $dir: zen-direction-switch($dir);
   }
 
-  padding: {
-    left: zen-half-gutter($gutters, left, $dir);
-    right: zen-half-gutter($gutters, right, $dir);
+  @if $gutter-method == padding {
+    padding: {
+      left: zen-half-gutter($gutters, left, $dir);
+      right: zen-half-gutter($gutters, right, $dir);
+    }
   }
   // Specify the border-box properties.
   @if $box-sizing == border-box {
@@ -157,6 +160,12 @@ $zen-switch-direction             : false       !default;
     border: {
       left: 0 !important;
       right: 0 !important;
+    }
+    @if $gutter-method == margin {
+      padding: {
+        left: 0 !important;
+        right: 0 !important;
+      }
     }
   }
   // Prevent overflowing content from being hidden beneath other grid items.

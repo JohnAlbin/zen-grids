@@ -44,7 +44,7 @@ $zen-auto-include-flow-item-base  : true        !default;
 
   // Auto-apply the unit base mixin.
   @if $auto-include-flow-item-base {
-    @include zen-grid-item-base($gutters, $box-sizing);
+    @include zen-grid-item-base($gutters, $box-sizing: $box-sizing);
   }
 
   // Calculate the item's width.
