@@ -21,41 +21,73 @@ $zen-auto-include-flow-item-base  : true        !default;
   $direction                    : $zen-direction,
   $columns                      : $zen-columns,
   $gutters                      : $zen-gutters,
+  $gutter-method                : $zen-gutter-method,
   $grid-width                   : $zen-grid-width,
   $box-sizing                   : $zen-box-sizing,
   $switch-direction             : $zen-switch-direction,
   $auto-include-flow-item-base  : $zen-auto-include-flow-item-base
 ) {
 
+  // Save the columns and gutters from the parent context.
+  $main-columns: $columns;
+  $main-gutters: $gutters;
+  $main-grid-width: $grid-width;
+
+  // Find the parent context for fluid layouts.
   @if unit($grid-width) == "%" {
-    @if $parent-column-span == false {
-      @warn "For responsive layouts with a percentage-based grid width, you must set the $parent-column-span to the number of columns that the parent element spans.";
-    }
-    @else {
+    // The number of columns the parent element spans is our new column count.
+    @if $parent-column-span != false {
       $columns: $parent-column-span;
     }
+    @else {
+      // If we don't know the number of columns the parent element spans, then
+      // warn the user and force the flow item to span 100% of the parent.
+      @warn "For responsive layouts with a percentage-based grid width, you must set the $parent-column-span to the number of columns that the parent element spans.";
+      $column-span: $columns;
+    }
+    // We want our inner grid to span the entire width of the parent.
+    $grid-width: 100%;
   }
 
+  // Determine the flow direction and its reverse.
   $dir: $direction;
   @if $switch-direction {
     $dir: zen-direction-switch($dir);
   }
   $rev: zen-direction-switch($dir);
 
+  // Calculate the new gutters when the layout and gutters are both fluid.
+  @if unit($grid-width) == "%" and unit($gutters) == "%" {
+    // Calculate the parent's width.
+    $parent-width: zen-grid-item-width($parent-column-span, $main-columns, $main-gutters, $gutter-method, $main-grid-width, $box-sizing);
+    // Calculate the new gutters.
+    $gutters: $main-gutters * ($grid-width / $parent-width);
+  }
+
   // Auto-apply the unit base mixin.
   @if $auto-include-flow-item-base {
-    @include zen-grid-item-base($gutters, $box-sizing: $box-sizing);
+    @include zen-grid-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction);
   }
 
   // Calculate the item's width.
-  $width: zen-grid-item-width($column-span, $columns, $gutters, $grid-width: $grid-width, $box-sizing: $box-sizing);
+  $width: zen-grid-item-width($column-span, $columns, $gutters, $gutter-method, $grid-width, $box-sizing);
+  @if $gutter-method == padding and unit($grid-width) != "%" and not $alpha-gutter and not $omega-gutter and $box-sizing == border-box {
+    $width: $width - $gutters;
+  }
+  width: $width;
 
-  @if unit($grid-width) == "%" {
-    // Our percentage $width is off if the parent has $gutters padding.
+  @if $gutter-method == margin {
+    @if $alpha-gutter {
+      margin-#{$dir}: $gutters;
+    }
+    @if $omega-gutter {
+      margin-#{$rev}: $gutters;
+    }
+  }
+  @else if unit($grid-width) == "%" {
+    // Our percentage $width is off since the parent has $main-gutters padding.
     // Calculate an adjusted gutter to fix the width.
     $adjusted-gutter: ($columns - $column-span) * $gutters / $columns;
-
-    width: $width;
 
     // Ensure the HTML item either has a full gutter or no gutter on each side.
     padding-#{$dir}: 0;
@@ -72,7 +104,6 @@ $zen-auto-include-flow-item-base  : true        !default;
   }
   @else {
     @if $alpha-gutter and $omega-gutter {
-      width: $width;
       @if $gutters != 0 {
         margin: {
           #{$dir}: zen-half-gutter($gutters, left, $dir);
@@ -81,7 +112,6 @@ $zen-auto-include-flow-item-base  : true        !default;
       }
     }
     @else if not $alpha-gutter and not $omega-gutter {
-      width: if($box-sizing == border-box, ($width - $gutters), $width);
       @if $gutters != 0 {
         padding: {
           left: 0;
@@ -89,16 +119,13 @@ $zen-auto-include-flow-item-base  : true        !default;
         }
       }
     }
+    @else if $omega-gutter {
+      padding-#{$dir}: 0;
+      padding-#{$rev}: $gutters;
+    }
     @else {
-      width: $width;
-      @if $omega-gutter {
-        padding-#{$dir}: 0;
-        padding-#{$rev}: $gutters;
-      }
-      @else {
-        padding-#{$dir}: $gutters;
-        padding-#{$rev}: 0;
-      }
+      padding-#{$dir}: $gutters;
+      padding-#{$rev}: 0;
     }
   }
 }
