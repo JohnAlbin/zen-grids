@@ -27,11 +27,18 @@
 }
 
 #test-zen-grid-container-4 {
-  /* Test zen-grid-container() with $context = grid-item */
+  /* Test zen-grid-container() with $context: grid-item */
   @include zen-grid-container(grid-item);
 }
 
 #test-zen-grid-container-5 {
-  /* Test zen-grid-container() with $context = flow */
+  /* Test zen-grid-container() with $context: flow */
   @include zen-grid-container(flow);
+}
+
+#test-zen-grid-container-6 {
+  /* Test zen-grid-container() with $zen-gutter-method: margin */
+  $zen-gutter-method: margin;
+  @include zen-grid-container();
+  $zen-gutter-method: padding;
 }

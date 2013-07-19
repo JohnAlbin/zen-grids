@@ -56,4 +56,14 @@
   width: 600px;
   margin-left: 400px;
   margin-right: -100%;
+  /* Test zen-grid-item(3, 3) with $zen-gutter-method: margin, 5 column grid and 5% gutter */
+  float: left;
+  width: 58%;
+  margin-left: 42%;
+  margin-right: -100%;
+  /* Test zen-grid-item(3, 2.5) with $zen-gutter-method: margin, 5 column grid and 5% gutter */
+  float: left;
+  width: 58%;
+  margin-left: 29%;
+  margin-right: -100%;
 }

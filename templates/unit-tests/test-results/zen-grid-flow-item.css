@@ -3,7 +3,7 @@
  * Test zen-grid-flow-item()
  */
 #test-zen-grid-flow-item {
-  /* Test zen-grid-flow-item(1) without setting $columns */
+  /* Test zen-grid-flow-item(1) without setting $parent-column-span */
   padding-left: 10px;
   padding-right: 10px;
   -moz-box-sizing: border-box;
@@ -148,15 +148,15 @@
   padding-left: 11.25px;
   margin-left: 3.75px;
   /* Test zen-grid-flow-item(1, 4) with $zen-box-sizing: content-box and 10% gutter */
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 7.14286%;
+  padding-right: 7.14286%;
   border-left: 0 !important;
   border-right: 0 !important;
   word-wrap: break-word;
-  width: 15%;
+  width: 10.71429%;
   padding-left: 0;
-  padding-right: 7.5%;
-  margin-right: 2.5%;
+  padding-right: 10.71429%;
+  margin-right: 3.57143%;
   /* Test zen-grid-flow-item(1, 4) with $zen-auto-include-flow-item-base: false */
   width: 25%;
   padding-left: 0;

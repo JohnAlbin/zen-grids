@@ -28,5 +28,17 @@
   $zen-grid-width: 100%;
 
   /* Test zen-unit-width(5, 100px) */
-  width: zen-unit-width(5, 100px);
+  width: zen-unit-width(5, $grid-width: 100px);
+
+  /* Test zen-unit-width() with $zen-columns: 3, $zen-gutter-method: margin, and $zen-gutters: 5% */
+  $zen-columns: 3;
+  $zen-gutter-method: margin;
+  $zen-gutters: 5%;
+  width: zen-unit-width();
+  $zen-columns: 1;
+  $zen-gutter-method: padding;
+  $zen-gutters: 20px;
+
+  /* Test zen-unit-width(3, 5px, margin, 100px) */
+  width: zen-unit-width(3, 5px, margin, 100px);
 }

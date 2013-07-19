@@ -35,4 +35,10 @@
 
   /* Test zen-grid-item-width(2, 5, $gutters: 10px, $grid-width: 1000px, $box-sizing: content-box) */
   width: zen-grid-item-width(2, 5, $gutters: 10px, $grid-width: 1000px, $box-sizing: content-box);
+
+  /* Test zen-grid-item-width(3, 5, $gutters: 10%, $gutter-method: margin) */
+  width: zen-grid-item-width(3, 5, $gutters: 10%, $gutter-method: margin);
+
+  /* Test zen-grid-item-width(3.5, 5, $gutters: 10%, $gutter-method: margin) */
+  width: zen-grid-item-width(3.5, 5, $gutters: 10%, $gutter-method: margin);
 }

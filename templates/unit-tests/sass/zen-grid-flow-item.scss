@@ -6,7 +6,10 @@
 @import "zen-grids/flow";
 
 #test-zen-grid-flow-item {
-  /* Test zen-grid-flow-item(1) without setting $columns */
+  // We will use a 5 column grid for all tests.
+  $zen-columns: 5;
+
+  /* Test zen-grid-flow-item(1) without setting $parent-column-span */
   @include zen-grid-flow-item(1);
 
   /* Test zen-grid-flow-item(1, 4) with 20px gutter */
@@ -18,24 +21,18 @@
   $zen-gutters: 20px;
 
   /* Test zen-grid-flow-item(1) with 5 columns, 20px gutter and $zen-grid-width: 1000px */
-  $zen-columns: 5;
   $zen-grid-width: 1000px;
   @include zen-grid-flow-item(1);
-  $zen-columns: 1;
   $zen-grid-width: 100%;
 
   /* Test zen-grid-flow-item(1) with 5 columns, 20px gutter, $zen-grid-width: 1000px, $alpha-gutter: true and $omega-gutter: false */
-  $zen-columns: 5;
   $zen-grid-width: 1000px;
   @include zen-grid-flow-item(1, $alpha-gutter: true, $omega-gutter: false);
-  $zen-columns: 1;
   $zen-grid-width: 100%;
 
   /* Test zen-grid-flow-item(1) with 5 columns, 20px gutter, $zen-grid-width: 1000px and $omega-gutter: false */
-  $zen-columns: 5;
   $zen-grid-width: 1000px;
   @include zen-grid-flow-item(1, $omega-gutter: false);
-  $zen-columns: 1;
   $zen-grid-width: 100%;
 
   /* Test zen-grid-flow-item(1, 4) with 15px gutter and $zen-direction: right */

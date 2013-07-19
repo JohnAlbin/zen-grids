@@ -51,4 +51,9 @@
   @include zen-grid-item-base();
   $zen-gutters: 20px;
   $zen-switch-direction: false;
+
+  /* Test zen-grid-item-base() with $zen-gutter-method: margin */
+  $zen-gutter-method: margin;
+  @include zen-grid-item-base();
+  $zen-gutter-method: padding;
 }
