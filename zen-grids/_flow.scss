@@ -15,7 +15,7 @@ $zen-auto-include-flow-item-base  : true        !default;
 //
 @mixin zen-grid-flow-item(
   $column-span,
-  $parent-columns               : false,
+  $parent-column-span           : false,
   $alpha-gutter                 : false,
   $omega-gutter                 : true,
   $direction                    : $zen-direction,
@@ -28,11 +28,11 @@ $zen-auto-include-flow-item-base  : true        !default;
 ) {
 
   @if unit($grid-width) == "%" {
-    @if $parent-columns == false {
-      @warn "For responsive layouts with a percentage-based grid width, you must set the $parent-columns to the number of columns that the parent element spans.";
+    @if $parent-column-span == false {
+      @warn "For responsive layouts with a percentage-based grid width, you must set the $parent-column-span to the number of columns that the parent element spans.";
     }
     @else {
-      $columns: $parent-columns;
+      $columns: $parent-column-span;
     }
   }
 
