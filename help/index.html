@@ -351,11 +351,11 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <article>
     <h3 id="zen-grid-flow-item">zen-grid-flow-item(
       $column-span,
-      $parent-columns
+      $parent-column-span
       )<br>
       zen-grid-flow-item(
       $column-span,
-      $parent-columns,
+      $parent-column-span,
       $alpha-gutter,
       $omega-gutter
       )<br>
@@ -373,7 +373,7 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <code>@import "zen-grids/flow";</code>
     </p>
     <p>
-    Apply this to an HTML item that is in the normal flow of a document to help align it to the grid. Set the <code>$column-span</code> to the number of columns that the HTML element should span. For responsive layouts with a percentage-based grid width, set the <code>$parent-columns</code> to the number of columns that the parent element spans; fixed-unit layouts using px, em, etc. do not need to specify this.
+    Apply this to an HTML item that is in the normal flow of a document to help align it to the grid. Set the <code>$column-span</code> to the number of columns that the HTML element should span. For responsive layouts with a percentage-based grid width, set the <code>$parent-column-span</code> to the number of columns that the parent element spans; fixed-unit layouts using px, em, etc. do not need to specify this.
     </p>
     <p>
     Unlike the <a href="#zen-grid-item"><code>zen-grid-item()</code></a> mixin, this mixin does not float the HTML item; see the related <a href="#zen-float"><code>zen-float()</code></a> mixin. This mixin also does not have a half-gutter on each side. By default, it has no gutter in the "alpha position" (the left side) and a full gutter in the "omega position" (the right side.) You can turn on or off the alpha and omega gutters by setting the <code>$alpha-gutter</code> and <code>$omega-gutter</code> parameters to <code>true</code> or <code>false</code>.
