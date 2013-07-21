@@ -194,7 +194,6 @@ h1 {
 }
 
 @include zen-layout($columns: 3, $gutters: 5%, $auto-include-grid-item-base: true) {
-  $zen-grid-color: rgba(#ffdede, 0.5);
   .ex-gutter-method__container {
     outline: 1px solid #000;
     margin: rhythm() auto;
