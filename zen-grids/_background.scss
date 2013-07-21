@@ -87,14 +87,6 @@ $zen-grid-number-images   : ()                  !default;
   $switch-direction     : $zen-switch-direction
 ) {
 
-  // The CSS3 Gradient syntax doesn't allow for calc() to be used in color
-  // stops, so we can't express the columns as 20% + 10px. Instead we are going
-  // to divide all our columns in half and into 2 groups: one group for the left
-  // halves of the columns and one group for the right halves. Then we'll use
-  // background position to shift the left halves over to the right by a half
-  // gutter width and shift the right halves over to the left by a half gutter
-  // width and just let the two sets of gradients overlap in the middle. Easy.
-
   $bg-images            : ();
   $gradient             : ();
   $left-half-gradient   : ();
@@ -135,8 +127,9 @@ $zen-grid-number-images   : ()                  !default;
       }
     }
 
+    // Next, build the color stops for the column gradients.
     @if $gutter-method == margin {
-      // Next, build the color stops for the column gradients.
+      // If the gutter method is "margin", calculating the color stops is easy.
       @if $count < $columns {
         $stop: $count * $unit-width + ($count - 1) * $gutters;
         $gradient: append($gradient, $grid-color $stop, comma);
@@ -147,8 +140,29 @@ $zen-grid-number-images   : ()                  !default;
         $gradient: append($gradient, $grid-color $stop, comma);
       }
     }
+    @else if comparable($gutters, $grid-width) {
+      // If the gutter and grid width have the same units, calculating the color
+      // stops is easy.
+      $stop: ($count - 1) * $unit-width + zen-half-gutter($gutters);
+      $gradient: append($gradient, transparent $stop, comma);
+      $gradient: append($gradient, $grid-color $stop, comma);
+
+      $stop: $count * $unit-width - zen-half-gutter($gutters);
+      $gradient: append($gradient, $grid-color $stop, comma);
+      $gradient: append($gradient, transparent $stop, comma);
+    }
     @else {
-      // Next, build the color stops for the left halves of the column gradients.
+      // If the gutter and grid width have different units, things are tricky.
+      // The CSS3 Gradient syntax doesn't allow for calc() to be used in color
+      // stops, so we can't express the columns as 20% + 10px. Instead we are
+      // going to divide all our columns in half and into 2 groups: one group
+      // for the left halves of the columns and one group for the right halves.
+      // Then we'll use background position to shift the left halves over to the
+      // right by a half gutter width and shift the right halves over to the
+      // left by a half gutter width and just let the two sets of gradients
+      // overlap in the middle. Easy.
+
+      // Build the color stops for the left halves of the column gradients.
       @if $count > 1 {
         $stop: (2 * $count - 2) * $half-unit-width;
         $left-half-gradient: append($left-half-gradient, transparent $stop, comma);
@@ -159,7 +173,7 @@ $zen-grid-number-images   : ()                  !default;
       $left-half-gradient: append($left-half-gradient, $grid-color $stop, comma);
       $left-half-gradient: append($left-half-gradient, transparent $stop, comma);
 
-      // Next, build the color stops for the right halves of the column gradients.
+      // Build the color stops for the right halves of the column gradients.
       $right-half-gradient: append($right-half-gradient, transparent $stop, comma);
       $right-half-gradient: append($right-half-gradient, $grid-color $stop, comma);
 
@@ -172,7 +186,7 @@ $zen-grid-number-images   : ()                  !default;
   }
 
   // Last, add the gradient (or gradient halves) to the background images list.
-  @if $gutter-method == margin {
+  @if $gutter-method == margin or comparable($gutters, $grid-width) {
     $bg-images  : append($bg-images, linear-gradient(left, $gradient) left top no-repeat, comma);
   }
   @else {
