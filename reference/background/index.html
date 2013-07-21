@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7" lang="en"><![endif]-->
+<!--[if lte IE 6]><html class="ie6 ie6-7 ie6-8" lang="en"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="ie7 ie6-7 ie6-8" lang="en"><![endif]-->
+<!--[if IE 8]><html class="ie8 ie6-8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Zen Grids Reference: background module</title>
+
+  <link rel="stylesheet" href="/css/help.css" media="all">
+  <link rel="shortcut icon" href="/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon">
+
+  <meta name="HandheldFriendly" content="true">
+  <meta name="MobileOptimized" content="width">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="cleartype" content="on">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+</head>
+<body>
+
+<p id="skip-link">
+<a href="#main-menu">Jump to main menu</a>
+</p>
+
+<div class="page">
+
+  <header id="header" role="banner">
+    <a href="/" title="Home" rel="home" id="logo"><img src="/images/zen-grids-logo.png" alt="Zen Grids" width="269" height="216"></a>
+    <hgroup>
+      <h1>Zen Grids</h1>
+      <h2>A responsive grid system <em>built with the power of <a href="/#aside2">Sass</a></em></h2>
+    </hgroup>
+  </header>
+
+  <article id="content" role="main">
+    <section id="help-toc">
+    <h1>Reference documentation</h1>
+
+    <p>
+    This documentation is for the pre-release, next version of Zen Grids. The API for Zen Grids 2.x is currently unstable since it is still an alpha release.
+    </p>
+    <p>
+    For the stable Zen Grids 1.x documentation, see <a href="http://zengrids.com/help/">zengrids.com</a>.
+    </p>
+
+    <ul>
+    <li><a href="/help/#overview">Overview</a></li>
+    <li><a href="/reference/grids/">The default “grids” module</a></li>
+    <li><a href="/reference/background/">The “background” module</a>
+      <ul>
+      <li><a href="/reference/background/#vars">Configurable variables</a>
+        <ul>
+        <li><a href="/reference/background/#vars">Background grid variables</a></li>
+        </ul>
+      </li>
+      <li><a href="/reference/background/#mixins">Mix-ins</a>
+        <ul>
+        <li><a href="/reference/background/#zen-grid-background">zen-grid-background</a></li>
+        </ul>
+      </li>
+      </ul>
+    </li>
+    <li><a href="/reference/flow/">The “flow” module</a></li>
+    <li><a href="/help/examples/">Examples</a></li>
+    </ul>
+    </section>
+
+    <section class="layout__start" id="vars">
+    <h2>Background Module: Configurable Variables <a href="#vars" title="permalink">#</a></h2>
+
+    <p>
+    Compass’ reference website has documentation about <a href="http://compass-style.org/help/tutorials/configurable-variables/">working with configurable variables</a>.
+    </p>
+
+    <h3 id="vars-background">Background grid variables <a href="#vars-background" title="permalink">#</a></h3>
+
+    <article>
+    <h4 id="zen-grid-color"><code>$zen-grid-color</code> <a href="#zen-grid-color" title="permalink">#</a></h4>
+    <p>
+    Specify the default color used in the background grid image produced by the <a href="#zen-grid-background">zen-grid-background()</a> mixin.
+    </p>
+    <pre><code>$zen-grid-color: #ffdede !default;</code></pre>
+    </article>
+
+    <article>
+    <h4 id="zen-grid-numbers"><code>$zen-grid-numbers</code> <a href="#zen-grid-numbers" title="permalink">#</a></h4>
+    <p>
+    Specify how to place the column numbers in the background grid image. Normally, column numbers are displayed across the top of the background grid image and then displayed in reverse order along the bottom of the background grid image. Can be set to: <code>both</code>, <code>top</code>, or <code>none</code>.
+    </p>
+    <pre><code>$zen-grid-numbers: both !default;</code></pre>
+    </article>
+
+    <article>
+    <h4 id="zen-grid-number-images"><code>$zen-grid-number-images</code> <a href="#zen-grid-number-images" title="permalink">#</a></h4>
+    <p>
+    Specify the set of images used for the numbering of the columns in the background grid image.
+    </p>
+    <p>
+    The default value of the $zen-grid-number-images variable is a list of the numbers 1 through 25, each rendered as an image and encoded as a data URI. Users who are crazy enough to use a 26-column grid or larger are free to extend this set.
+    </p>
+    <pre><code>$zen-grid-number-images: (url('data:image/png;base64, …), …) !default;</code></pre>
+    </article>
+
+    </section>
+
+    <section id="mixins">
+    <h2>Background Module: Mix-ins <a href="#mixins" title="permalink">#</a></h2>
+
+    <article>
+    <h3 id="zen-grid-background">zen-grid-background()<br>
+      zen-grid-background(
+      $grid-color: [value],
+      $grid-numbers: [value]
+      ) <a href="#zen-grid-background" title="permalink">#</a></h3>
+    <p>
+    To use this mixin, you must first import the background module with:
+    <code>@import "zen-grids/background";</code>
+    </p>
+    <p>
+    Add a background grid image to an element’s background. During site development, it’s often useful to have a background image that shows the columns of the grid.
+    </p>
+    <p>
+    Since the mixins of Zen Grids use the <code>$column-position</code> for placement of grid items, the background grid image produced by this mixin numbers all of the columns. The <code>$grid-numbers</code> parameter specifies how to place the column numbers in the background grid image. By default, column numbers are displayed across the top of the background grid image and then displayed in reverse order along the bottom of the background grid image. <code>$grid-numbers</code> can be set to: <code>both</code> (the default), <code>top</code> (don’t display the bottom numbers), <code>bottom</code> (don’t display the top numbers), or <code>none</code> (don’t display any column numbers.)
+    </p>
+    <p>
+    Note: when the <code>$direction</code> is set to <code>right</code> (for RTL languages), the column numbers are displayed right-to-left along the top and left-to-right along the bottom.
+    </p>
+    <p>
+    The easiest way to align this background grid image to the actual grid is to apply this mixin to the same element that <a href="/reference/grids/#zen-grid-container"><code>zen-grid-container()</code></a> is applied to.
+    </p>
+    <p>Additional optional parameters and their defaults:</p>
+    <ul>
+    <li><code>$columns: $zen-columns</code></li>
+    <li><code>$gutters: $zen-gutters</code></li>
+    <li><code>$grid-width: $zen-grid-width</code></li>
+    <li><code>$direction: $zen-direction</code></li>
+    <li><code>$switch-direction: $zen-switch-direction</code></li>
+    </ul>
+    </article>
+
+    </section>
+
+  </article>
+
+  <nav id="main-menu" role="navigation">
+    <h2>Main menu</h2>
+    <p>
+    <a href="/">Intro</a> ★
+    <!-- <a href="/quick-demo.html">Quick Demo</a> ★ -->
+    <a href="/help/">Reference</a>
+    </p>
+  </nav>
+
+  <footer id="footer">
+    <small>© 2011-2013 <a href="http://john.albin.net/">John Albin Wilkins</a>. All rights reserved.  ★  <a href="https://github.com/JohnAlbin/zen-grids/blob/master/LICENSE.txt">Code licensed under GPL</a>.  ★  Built by <a href="http://twitter.com/JohnAlbin">@JohnAlbin</a></small>
+  </footer>
+
+</div>
+
+</body>
+</html>

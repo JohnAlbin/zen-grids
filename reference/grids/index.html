@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7" lang="en"><![endif]-->
+<!--[if lte IE 6]><html class="ie6 ie6-7 ie6-8" lang="en"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="ie7 ie6-7 ie6-8" lang="en"><![endif]-->
+<!--[if IE 8]><html class="ie8 ie6-8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Zen Grids Reference: grids module</title>
+
+  <link rel="stylesheet" href="/css/help.css" media="all">
+  <link rel="shortcut icon" href="/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon">
+
+  <meta name="HandheldFriendly" content="true">
+  <meta name="MobileOptimized" content="width">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="cleartype" content="on">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+</head>
+<body>
+
+<p id="skip-link">
+<a href="#main-menu">Jump to main menu</a>
+</p>
+
+<div class="page">
+
+  <header id="header" role="banner">
+    <a href="/" title="Home" rel="home" id="logo"><img src="/images/zen-grids-logo.png" alt="Zen Grids" width="269" height="216"></a>
+    <hgroup>
+      <h1>Zen Grids</h1>
+      <h2>A responsive grid system <em>built with the power of <a href="/#aside2">Sass</a></em></h2>
+    </hgroup>
+  </header>
+
+  <article id="content" role="main">
+    <section id="help-toc">
+    <h1>Reference documentation</h1>
+
+    <p>
+    This documentation is for the pre-release, next version of Zen Grids. The API for Zen Grids 2.x is currently unstable since it is still an alpha release.
+    </p>
+    <p>
+    For the stable Zen Grids 1.x documentation, see <a href="http://zengrids.com/help/">zengrids.com</a>.
+    </p>
+
+    <ul>
+    <li><a href="/help/#overview">Overview</a></li>
+    <li><a href="/reference/grids/">The default “grids” module</a>
+      <ul>
+      <li><a href="/reference/grids/#vars">Configurable variables</a>
+        <ul>
+        <li><a href="/reference/grids/#vars">Common variables</a></li>
+        <li><a href="/reference/grids/#vars-adaptive">Adaptive or fixed design variable</a></li>
+        <li><a href="/reference/grids/#vars-legacy">Legacy IE support variables</a></li>
+        <li><a href="/reference/grids/#vars-rtl">RTL language variables</a></li>
+        </ul>
+      </li>
+      <li><a href="/reference/grids/#mixins">Mix-ins</a>
+        <ul>
+        <li><a href="/reference/grids/#zen-grid-container">zen-grid-container</a></li>
+        <li><a href="/reference/grids/#zen-grid-item">zen-grid-item</a></li>
+        <li><a href="/reference/grids/#zen-grid-item-base">zen-grid-item-base</a></li>
+        <li><a href="/reference/grids/#zen-new-row">zen-new-row</a></li>
+        </ul>
+      </li>
+      <li><a href="/reference/grids/#functions">Functions</a>
+        <ul>
+        <li><a href="/reference/grids/#zen-half-gutter">zen-half-gutter</a></li>
+        <li><a href="/reference/grids/#zen-unit-width">zen-unit-width</a></li>
+        <li><a href="/reference/grids/#zen-grid-item-width">zen-grid-item-width</a></li>
+        <li><a href="/reference/grids/#zen-direction-switch">zen-direction-switch</a></li>
+        </ul>
+      </li>
+      </ul>
+    </li>
+    <li><a href="/reference/background/">The “background” module</a></li>
+    <li><a href="/reference/flow/">The “flow” module</a></li>
+    <li><a href="/help/examples/">Examples</a></li>
+    </ul>
+    </section>
+
+    <section class="layout__start" id="vars">
+    <h2>Grids Module: Configurable Variables <a href="#vars" title="permalink">#</a></h2>
+
+    <p>
+    Compass’ reference website has documentation about <a href="http://compass-style.org/help/tutorials/configurable-variables/">working with configurable variables</a>.
+    </p>
+
+    <h3>Common variables <a href="#vars" title="permalink">#</a></h3>
+
+    <article>
+    <h4 id="zen-columns"><code>$zen-columns</code> <a href="#zen-columns" title="permalink">#</a></h4>
+    <p>
+    Specifies the number of columns in the grid. Defaults to 1 as a hat tip to mobile first designs. You should set this variable each time you want to use a different grid for a set of media queries.
+    </p>
+    <pre><code>$zen-columns: 1 !default;</code></pre>
+    </article>
+
+    <article>
+    <h4 id="zen-gutters"><code>$zen-gutters</code> <a href="#zen-gutters" title="permalink">#</a></h4>
+    <p>
+    Specifies the width of each gutter, the horizontal space between two adjacent grid items.
+    </p>
+    <p>
+    For a sense of aesthetics, we suggest this value could be proportional to your base font by setting <code>$zen-gutters</code> equal to a multiple of your base line height, <a href="http://compass-style.org/reference/compass/typography/vertical_rhythm/#const-base-line-height"><code>$base-line-height</code></a>.
+    </p>
+    <p>
+    If the <a href="#zen-gutter-method"><code>$zen-gutter-method</code> is set to <code>margin</code>, the unit of measurement of the gutters should be the same as the unit of measurement of the <a href="#zen-grid-width"><code>$zen-grid-width</code></a>, e.g. if <code>$zen-grid-width: 100%</code>, then <code>$zen-gutters</code> should also be measured in <code>%</code>.
+    </p>
+    <pre><code>$zen-gutters: 20px !default;</code></pre>
+    </article>
+
+    <article>
+    <h4 id="zen-gutter-method"><code>$zen-gutter-method</code> <a href="#zen-gutter-method" title="permalink">#</a></h4>
+    <p>
+    Specifies the style of the gutters used for the grid, can be set to <code>padding</code> (the default) or <code>margin</code>.
+    </p>
+    <p>
+    If the “padding” gutter method is chosen, half of the gutter will be placed on each side of a grid item (as padding). This means there will be a full gutter between the content of adjacent grid items and half of a gutter on each edge of the grid.
+    </p>
+    <figure class="ex-gutter-method ex-gutter-method-padding">
+      <div class="ex-gutter-method__container">
+        <div class="ex-gutter-method__content ex-gutter-method__content-1">
+          <p>
+            A grid item.
+          </p>
+        </div>
+        <div class="ex-gutter-method__content ex-gutter-method__content-2">
+          <p>
+            A grid item.
+          </p>
+        </div>
+        <div class="ex-gutter-method__content ex-gutter-method__content-3">
+          <p>
+            A grid item.
+          </p>
+        </div>
+      </div>
+    </figure>
+    <p>
+    If the “margin” gutter method is chosen, a full gutter will be placed between each grid item (as margin), but no gutter will be placed on each edge of the grid.
+    </p>
+    <figure class="ex-gutter-method ex-gutter-method-margin">
+      <div class="ex-gutter-method__container">
+        <div class="ex-gutter-method__content ex-gutter-method__content-1">
+          <p>
+            A grid item.
+          </p>
+        </div>
+        <div class="ex-gutter-method__content ex-gutter-method__content-2">
+          <p>
+            A grid item.
+          </p>
+        </div>
+        <div class="ex-gutter-method__content ex-gutter-method__content-3">
+          <p>
+            A grid item.
+          </p>
+        </div>
+      </div>
+    </figure>
+    <pre><code>$zen-gutter-method: padding !default;</code></pre>
+    </article>
+
+    <article>
+    <h4 id="zen-auto-include-grid-item-base"><code>$zen-auto-include-grid-item-base</code> <a href="#zen-auto-include-grid-item-base" title="permalink">#</a></h4>
+    <p>
+    You can generate more efficient CSS if you set this to <code>false</code> and manually apply the <a href="#zen-grid-item-base"><code>zen-grid-item-base()</code></a> mixin to all grid items (and flow items) from within a single ruleset.
+    </p>
+    <pre><code>$zen-auto-include-grid-item-base: true !default;</code></pre>
+    </article>
+
+    <h3 id="vars-adaptive">Adaptive or fixed design variable <a href="#vars-adaptive" title="permalink">#</a></h3>
+
+    <article>
+    <h4 id="zen-grid-width"><code>$zen-grid-width</code> <a href="#zen-grid-width" title="permalink">#</a></h4>
+    <p>
+    Specify the width of the entire grid. Defaults to <code>100%</code> for a fluid responsive design, but you can change this to any fixed value (using px or em, etc.) if you need a fixed grid.
+    </p>
+    <pre><code>$zen-grid-width: 100% !default;</code></pre>
+    </article>
+
+    <h3 id="vars-legacy">Legacy IE support variables <a href="#vars-legacy" title="permalink">#</a></h3>
+
+    <article>
+    <h4 id="box-sizing-polyfill-path"><code>$box-sizing-polyfill-path</code> <a href="#box-sizing-polyfill-path" title="permalink">#</a></h4>
+    <p>
+    The box-sizing polyfill for IE 6/7 requires an absolute path to the boxsizing.htc file. See <a href="https://github.com/Schepp/box-sizing-polyfill">https://github.com/Schepp/box-sizing-polyfill</a>
+    </p>
+    <pre><code>$box-sizing-polyfill-path: "" !default;</code></pre>
+    </article>
+
+    <article>
+    <h4 id="legacy-support-for-ie7"><code>$legacy-support-for-ie7<br>
+    $legacy-support-for-ie6</code> <a href="#legacy-support-for-ie7" title="permalink">#</a></h4>
+    <p>
+    Toggles IE6/7 support. Since we’re defaulting to <code>box-sizing: border-box</code>, these are off by default. If the <a href="#box-sizing-polyfill-path">$box-sizing-polyfill-path</a> variable is set, it will override these variables by assuming they were meant to be <code>true</code>.
+    </p>
+    <pre><code>$legacy-support-for-ie7: false !default;
+$legacy-support-for-ie6: false !default;</code></pre>
+    </article>
+
+    <article>
+    <h4 id="zen-box-sizing"><code>$zen-box-sizing</code> <a href="#zen-box-sizing" title="permalink">#</a></h4>
+    <p>
+    Specify the CSS3 box-sizing method. The default, "border-box", is compatible with all modern browsers, including IE 8 and later.
+    </p>
+    <p>
+    To add IE6 and IE7 support, you’ll need to set <a href="#legacy-support-for-ie7"><code>$legacy-support-for-ie7</code></a> and <a href="#legacy-support-for-ie7"><code>$legacy-support-for-ie6</code></a> to <code>true</code> and then either use a polyfill (see <a href="#box-sizing-polyfill-path"><code>$box-sizing-polyfill-path</code></a>) or set <code>$zen-box-sizing</code> to "content-box".
+    </p>
+    <p>
+    Note: if <code>$zen-box-sizing</code> is set to "content-box", then <a href="#zen-gutters"><code>$zen-gutters</code></a> will need to use the same unit of measurement as the <a href="#zen-grid-width"><code>$zen-grid-width</code></a>.
+    </p>
+    <pre><code>$zen-box-sizing: border-box !default;</code></pre>
+    </article>
+
+    <h3 id="vars-rtl">RTL language variables <a href="#vars-rtl" title="permalink">#</a></h3>
+
+    <article>
+    <h4 id="zen-direction"><code>$zen-direction</code> <a href="#zen-direction" title="permalink">#</a></h4>
+    <p>
+    Specify the default floating direction for zen’s mixins. If you are only building RTL layouts (and not LTR layouts), you should set this to <code>right</code>.
+    </p>
+    <pre><code>$zen-direction: left !default;</code></pre>
+    </article>
+
+    <article>
+    <h4 id="zen-switch-direction"><code>$zen-switch-direction</code> <a href="#zen-switch-direction" title="permalink">#</a></h4>
+    <p>
+    Reverse the floating direction in all of zen’s mixins.
+    </p>
+    <p>
+    If you are creating both LTR and RTL layouts, this helper variable can be used to automatically create one set of layouts based on the other set of layouts. For example:
+    </p>
+    <pre><code>$zen-switch-direction: true;
+@import "an-LTR-layout";</code></pre>
+    <p>
+    In the above example, the existing LTR layout in the an-LTR-layout.scss file is used to create the corresponding RTL layout by first setting the <code>$zen-switch-direction</code> variable to <code>true</code> and then importing the LTR layout file.
+    </p>
+
+    <pre><code>$zen-switch-direction: false !default;</code></pre>
+    </article>
+
+    </section>
+
+    <section id="mixins">
+    <h2>Grids Module: Mix-ins <a href="#mixins" title="permalink">#</a></h2>
+
+    <article>
+    <h3 id="zen-grid-container">zen-grid-container()<br>
+    zen-grid-container(
+    $context: [value]
+    ) <a href="#zen-grid-container" title="permalink">#</a></h3>
+    <p>
+    Apply this to the grid container element.
+    </p>
+    <p>
+    If this grid is nested inside another grid, the <code>$context</code> parameter can be used to align the nested grid with the parent grid. <code>$context</code> can be set to <code>none</code> (the default), <code>grid-item</code>, or <code>flow</code>.
+    </p>
+    <p>
+    If the nested grid’s container is a child element of the parent grid’s grid item, set <code>$context: flow</code>.
+    </p>
+    <p>
+    Otherwise, if the nested grid’s container is the same element as the parent grid’s grid item, set <code>$context: grid-item</code> and apply this mixin <em>after</em> the <a href="#zen-grid-item"><code>zen-grid-item()</code></a> mixin is applied for the parent grid. This mixin removes any gutters on the container since the nested grid will have its own gutters.
+    </p>
+    <p>Additional optional parameters and their defaults:</p>
+    <ul>
+    <li><code>$gutters: $zen-gutters</code></li>
+    <li><code>$direction: $zen-direction</code></li>
+    </ul>
+    </article>
+
+    <article>
+    <h3 id="zen-grid-item">zen-grid-item(
+      $column-span,
+      $column-position
+      )<br>
+      zen-grid-item(
+      $column-span,
+      $column-position,
+      $direction
+      ) <a href="#zen-grid-item" title="permalink">#</a></h3>
+    <p>
+    Apply this to each grid item. Set the <code>$column-span</code> to the number of columns that the grid item spans. And set the <code>$column-position</code> to the column number the grid item starts on.
+    </p>
+    <p>
+    To make the grid item float from the right, set the <code>$direction</code> to <code>right</code>; it defaults to <code>left</code> (the value of <a href="#zen-direction"><code>$zen-direction</code></a>.) For grid items that are floated right, the <code>$column-position</code> is counted from the right instead of from the left.
+    </p>
+    <p>Additional optional parameters and their defaults:</p>
+    <ul>
+    <li><code>$columns: $zen-columns</code></li>
+    <li><code>$gutters: $zen-gutters</code></li>
+    <li><code>$grid-width: $zen-grid-width</code></li>
+    <li><code>$box-sizing: $zen-box-sizing</code></li>
+    <li><code>$switch-direction: $zen-switch-direction</code></li>
+    <li><code>$auto-include-grid-item-base: $zen-auto-include-grid-item-base</code></li>
+    </ul>
+    </article>
+
+    <article>
+    <h3 id="zen-grid-item-base">zen-grid-item-base() <a href="#zen-grid-item-base" title="permalink">#</a></h3>
+    <p>
+    Applies a standard set of properties to all grid items in the layout.
+    </p>
+    <p>
+    See the documentation for the <a href="#zen-auto-include-grid-item-base"><code>$zen-auto-include-grid-item-base</code></a> and <a href="/reference/flow/#zen-auto-include-flow-item-base"><code>$zen-auto-include-flow-item-base</code></a> variables for when to use this mixin.
+    </p>
+    <p>Optional parameters and their defaults:</p>
+    <ul>
+    <li><code>$gutters: $zen-gutters</code></li>
+    <li><code>$box-sizing: $zen-box-sizing</code></li>
+    <li><code>$direction: $zen-direction</code></li>
+    <li><code>$switch-direction: $zen-switch-direction</code></li>
+    </ul>
+    </article>
+
+    <article>
+    <h3 id="zen-new-row">zen-new-row() <a href="#zen-new-row" title="permalink">#</a></h3>
+    <p>
+    Apply this to grid items that need to be cleared below other grid items.
+    </p>
+    <p>Optional parameters and their defaults:</p>
+    <ul>
+    <li><code>$direction: $zen-direction</code></li>
+    <li><code>$switch-direction: $zen-switch-direction</code></li>
+    </ul>
+    </article>
+
+    </section>
+
+    <section id="functions">
+    <h2>Grids Module: Functions <a href="#functions" title="permalink">#</a></h2>
+    <p>
+    Helper functions for the Zen mixins.
+    </p>
+
+    <article>
+    <h3 id="zen-half-gutter">zen-half-gutter()<br />
+      zen-half-gutter(
+      $gutter-side: [value]
+      ) <a href="#zen-half-gutter" title="permalink">#</a></h3>
+    <p>
+    Returns a half gutter width. The <code>$gutter-side</code> defaults to <a href="#zen-direction"><code>$zen-direction</code></a>.
+    </p>
+    <p>
+    If the gutter width is in pixels and is an odd number, then <code>$gutter-side: left</code> will return half of the gutter rounded down to a whole pixel; <code>$gutter-side: right</code> will return half of the gutter rounded up to a whole pixel.
+    </p>
+    <p>Additional optional parameters and their defaults:</p>
+    <ul>
+    <li><code>$gutters: $zen-gutters</code></li>
+    <li><code>$direction: $zen-direction</code></li>
+    </ul>
+    </article>
+
+    <article>
+    <h3 id="zen-unit-width">zen-unit-width() <a href="#zen-unit-width" title="permalink">#</a></h3>
+    <p>
+    Returns the unit width of a single column in the grid.
+    </p>
+    <p>Additional optional parameters and their defaults:</p>
+    <ul>
+    <li><code>$columns: $zen-columns</code></li>
+    <li><code>$grid-width: $zen-grid-width</code></li>
+    </ul>
+    </article>
+
+    <article>
+    <h3 id="zen-grid-item-width">zen-grid-item-width(
+      $column-span
+      ) <a href="#zen-grid-item-width" title="permalink">#</a></h3>
+    <p>
+    Calculates the width of a grid item that spans the specified number of columns. The $columns defaults to $zen-columns and $grid-width defaults to $zen-grid-width.
+    </p>
+    <p>Additional optional parameters and their defaults:</p>
+    <ul>
+    <li><code>$columns: $zen-columns</code></li>
+    <li><code>$gutters: $zen-gutters</code></li>
+    <li><code>$grid-width: $zen-grid-width</code></li>
+    <li><code>$box-sizing: $zen-box-sizing</code></li>
+    </ul>
+    </article>
+
+    <article>
+    <h3 id="zen-direction-switch">zen-direction-switch(
+      $dir
+      ) <a href="#zen-direction-switch" title="permalink">#</a></h3>
+    <p>
+    Returns the opposite direction, given "left" or "right".
+    </p>
+    </article>
+
+    </section>
+
+  </article>
+
+  <nav id="main-menu" role="navigation">
+    <h2>Main menu</h2>
+    <p>
+    <a href="/">Intro</a> ★
+    <!-- <a href="/quick-demo.html">Quick Demo</a> ★ -->
+    <a href="/help/">Reference</a>
+    </p>
+  </nav>
+
+  <footer id="footer">
+    <small>© 2011-2013 <a href="http://john.albin.net/">John Albin Wilkins</a>. All rights reserved.  ★  <a href="https://github.com/JohnAlbin/zen-grids/blob/master/LICENSE.txt">Code licensed under GPL</a>.  ★  Built by <a href="http://twitter.com/JohnAlbin">@JohnAlbin</a></small>
+  </footer>
+
+</div>
+
+</body>
+</html>

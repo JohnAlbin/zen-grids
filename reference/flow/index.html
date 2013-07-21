@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7" lang="en"><![endif]-->
+<!--[if lte IE 6]><html class="ie6 ie6-7 ie6-8" lang="en"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="ie7 ie6-7 ie6-8" lang="en"><![endif]-->
+<!--[if IE 8]><html class="ie8 ie6-8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Zen Grids Reference: flow module</title>
+
+  <link rel="stylesheet" href="/css/help.css" media="all">
+  <link rel="shortcut icon" href="/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon">
+
+  <meta name="HandheldFriendly" content="true">
+  <meta name="MobileOptimized" content="width">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="cleartype" content="on">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+</head>
+<body>
+
+<p id="skip-link">
+<a href="#main-menu">Jump to main menu</a>
+</p>
+
+<div class="page">
+
+  <header id="header" role="banner">
+    <a href="/" title="Home" rel="home" id="logo"><img src="/images/zen-grids-logo.png" alt="Zen Grids" width="269" height="216"></a>
+    <hgroup>
+      <h1>Zen Grids</h1>
+      <h2>A responsive grid system <em>built with the power of <a href="/#aside2">Sass</a></em></h2>
+    </hgroup>
+  </header>
+
+  <article id="content" role="main">
+    <section id="help-toc">
+    <h1>Reference documentation</h1>
+
+    <p>
+    This documentation is for the pre-release, next version of Zen Grids. The API for Zen Grids 2.x is currently unstable since it is still an alpha release.
+    </p>
+    <p>
+    For the stable Zen Grids 1.x documentation, see <a href="http://zengrids.com/help/">zengrids.com</a>.
+    </p>
+
+    <ul>
+    <li><a href="/help/#overview">Overview</a></li>
+    <li><a href="/reference/grids/">The default “grids” module</a></li>
+    <li><a href="/reference/background/">The “background” module</a></li>
+    <li><a href="/reference/flow/">The “flow” module</a>
+      <ul>
+      <li><a href="/reference/flow/#vars">Configurable variables</a>
+        <ul>
+        <li><a href="/reference/flow/#vars">flow variables</a></li>
+        </ul>
+      </li>
+      <li><a href="/reference/flow/#mixins">Mix-ins</a>
+        <ul>
+        <li><a href="/reference/flow/#zen-grid-flow-item">zen-grid-flow-item</a></li>
+        <li><a href="/reference/flow/#zen-float">zen-float</a></li>
+        </ul>
+      </li>
+      </ul>
+    </li>
+    <li><a href="/help/examples/">Examples</a></li>
+    </ul>
+    </section>
+
+    <section class="layout__start" id="vars">
+    <h2>Flow Module: Configurable Variables <a href="#vars" title="permalink">#</a></h2>
+
+    <p>
+    Compass’ reference website has documentation about <a href="http://compass-style.org/help/tutorials/configurable-variables/">working with configurable variables</a>.
+    </p>
+
+    <h3>Common variables <a href="#vars" title="permalink">#</a></h3>
+
+    <article>
+    <h4 id="zen-auto-include-flow-item-base"><code>$zen-auto-include-flow-item-base</code> <a href="#zen-auto-include-flow-item-base" title="permalink">#</a></h4>
+    <p>
+    This variable works the same as <a href="/reference/grids/#zen-auto-include-grid-item-base"><code>$zen-auto-include-grid-item-base</code></a>, except for flow items instead of grid items. You can generate more efficient CSS if you set this to <code>false</code> and manually apply the <a href="/reference/grids/#zen-grid-item-base"><code>zen-grid-item-base()</code></a> mixin to all flow items from within a single ruleset.
+    </p>
+    <pre><code>$zen-auto-include-flow-item-base: true !default;</code></pre>
+    </article>
+
+    </section>
+
+    <section id="mixins">
+    <h2>Flow Module: Mix-ins <a href="#mixins" title="permalink">#</a></h2>
+
+    <article>
+    <h3 id="zen-grid-flow-item">zen-grid-flow-item(
+      $column-span,
+      $parent-column-span
+      )<br>
+      zen-grid-flow-item(
+      $column-span,
+      $parent-column-span,
+      $alpha-gutter,
+      $omega-gutter
+      )<br>
+      <em>or for fixed length (em, px, etc.) layouts:</em><br>
+      zen-grid-flow-item(
+      $column-span
+      )<br>
+      zen-grid-flow-item(
+      $column-span,
+      $alpha-gutter: [value],
+      $omega-gutter: [value]
+      ) <a href="#zen-grid-flow-item" title="permalink">#</a></h3>
+    <p>
+    To use this mixin, you must first import the flow module with:
+    <code>@import "zen-grids/flow";</code>
+    </p>
+    <p>
+    Apply this to an HTML item that is in the normal flow of a document to help align it to the grid. Set the <code>$column-span</code> to the number of columns that the HTML element should span. For responsive layouts with a percentage-based grid width, set the <code>$parent-column-span</code> to the number of columns that the parent element spans; fixed-unit layouts using px, em, etc. do not need to specify this.
+    </p>
+    <p>
+    Unlike the <a href="/reference/grids/#zen-grid-item"><code>zen-grid-item()</code></a> mixin, this mixin does not float the HTML item; see the related <a href="#zen-float"><code>zen-float()</code></a> mixin. This mixin also does not have a half-gutter on each side. By default, it has no gutter in the "alpha position" (the left side) and a full gutter in the "omega position" (the right side.) You can turn on or off the alpha and omega gutters by setting the <code>$alpha-gutter</code> and <code>$omega-gutter</code> parameters to <code>true</code> or <code>false</code>.
+    </p>
+    <p>
+    Note: when the <code>$direction</code> is set to <code>right</code> (for RTL languages), the alpha position is on the right and the omega position is on the left.
+    </p>
+    <p>Additional optional parameters and their defaults:</p>
+    <ul>
+    <li><code>$direction: $zen-direction</code></li>
+    <li><code>$columns: $zen-columns</code></li>
+    <li><code>$gutters: $zen-gutters</code></li>
+    <li><code>$grid-width: $zen-grid-width</code></li>
+    <li><code>$box-sizing: $zen-box-sizing</code></li>
+    <li><code>$switch-direction: $zen-switch-direction</code></li>
+    <li><code>$auto-include-flow-item-base: $zen-auto-include-flow-item-base</code></li>
+    </ul>
+    </article>
+
+    <article>
+    <h3 id="zen-float">zen-float() <a href="#zen-float" title="permalink">#</a></h3>
+    <p>
+    To use this mixin, you must first import the flow module with:
+    <code>@import "zen-grids/flow";</code>
+    </p>
+    <p>
+    Apply this to flow items that need to be floated.
+    </p>
+    <p>Optional parameters and their defaults:</p>
+    <ul>
+    <li><code>$direction: $zen-direction</code></li>
+    <li><code>$switch-direction: $zen-switch-direction</code></li>
+    </ul>
+    </article>
+
+    <article>
+    <h3 id="example">Example usage <a href="#example" title="permalink">#</a></h3>
+    <p>
+    In this example layout, we have positioned two grid items (using the <code>zen-grid-item()</code> mixin); one spanning 4 columns and one spanning 1 column. Both grid items have a dotted border. We've also placed a solid red border around the first paragraph in the left grid item. It is in the normal flow along with the second paragraph.
+    </p>
+    <figure class="example-flow">
+      <div class="example-flow__container">
+        <div class="example-flow__content">
+          <p class="example-flow__none">
+            The 1st para&shy;graph in the grid item.
+          </p>
+          <p>
+            The 2nd para&shy;graph in the grid item. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. Lorem ipsum dolor.
+          </p>
+        </div>
+        <div class="example-flow__aside">
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+    </figure>
+    <p>
+    Now we’ve applied <code>@include zen-grid-flow-item(2, 4);</code> to the first paragraph. It now aligns to the first two columns of the grid item. We must tell the mixin that the parent grid item spans 4 items so that the width of the flow item is calculated properly. Note that the first paragraph is <em>still</em> in the normal flow along with the second paragraph.
+    </p>
+    <figure class="example-flow">
+      <div class="example-flow__container">
+        <div class="example-flow__content">
+          <p class="example-flow__flow">
+            The 1st para&shy;graph in the grid item.
+          </p>
+          <p>
+            The 2nd para&shy;graph in the grid item. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. Lorem ipsum dolor.
+          </p>
+        </div>
+        <div class="example-flow__aside">
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+    </figure>
+    <p>
+    Now, in addition to the <code>@include zen-grid-flow-item(2, 4);</code>, we’ve also applied <code>@include zen-float();</code> to the first paragraph. The first paragraph now floats to the left and allows other normal flow items (like the second paragraph) to wrap around it.
+    </p>
+    <figure class="example-flow">
+      <div class="example-flow__container">
+        <div class="example-flow__content">
+          <p class="example-flow__float">
+            The 1st para&shy;graph in the grid item.
+          </p>
+          <p>
+            The 2nd para&shy;graph in the grid item. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. Lorem ipsum dolor.
+          </p>
+        </div>
+        <div class="example-flow__aside">
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+    </figure>
+    </article>
+
+    </section>
+
+  </article>
+
+  <nav id="main-menu" role="navigation">
+    <h2>Main menu</h2>
+    <p>
+    <a href="/">Intro</a> ★
+    <!-- <a href="/quick-demo.html">Quick Demo</a> ★ -->
+    <a href="/help/">Reference</a>
+    </p>
+  </nav>
+
+  <footer id="footer">
+    <small>© 2011-2013 <a href="http://john.albin.net/">John Albin Wilkins</a>. All rights reserved.  ★  <a href="https://github.com/JohnAlbin/zen-grids/blob/master/LICENSE.txt">Code licensed under GPL</a>.  ★  Built by <a href="http://twitter.com/JohnAlbin">@JohnAlbin</a></small>
+  </footer>
+
+</div>
+
+</body>
+</html>
