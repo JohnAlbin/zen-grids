@@ -54,7 +54,7 @@
 
   .text {
     position: absolute;
-    right: -6em;
+    right: -8.5em;
     width: 250px;
     padding: 3px 7px;
     font-size: 16px;
@@ -75,10 +75,10 @@
 
 #ex-import {
   .tooltip {
-    left: 15px;
+    left: 45px;
   }
   .text {
-    right: -11em;
+    right: -9em;
   }
 }
 
@@ -88,21 +88,13 @@
   }
 }
 
-#ex-container {
-  .tooltip {
-    left: 50px;
-  }
-  .text {
-    right: -8em;
-  }
-}
-
+#ex-container,
 #ex-apply {
   .tooltip {
     left: 50px;
   }
   .text {
-    right: -8em;
+    right: -8.2em;
   }
 }
 

@@ -256,41 +256,41 @@ $zen-gutters: 40px;
 /*
  * Example
  */
-$zen-columns: 7;
-$zen-gutters: 10px;
+@include zen-layout( $columns: 7, $gutters: 10px ) {
 
-#example {
-  position: relative;
-  padding: 0;
-
-  .container {
-    @include zen-grid-container();
-    @include zen-grid-background;
-    padding: rhythm(1) 0 0 0;
+  #example {
     position: relative;
-  }
-  .content,
-  .aside1,
-  .aside2,
-  .footer1,
-  .footer2 {
-    @include zen-grid-item-base;
-    margin: 0;
-  }
-  .aside1 {
-    @include zen-grid-item(2, 1);
-  }
-  .content {
-    @include zen-grid-item(4, 3);
-  }
-  .aside2 {
-    @include zen-grid-item(1, 7);
-  }
-  .footer1 {
-    @include zen-new-row();
-    @include zen-grid-item(3, 5);
-  }
-  .footer2 {
-    @include zen-grid-item(4, 1);
+    padding: 0;
+
+    .container {
+      @include zen-grid-container();
+      @include zen-grid-background;
+      padding: rhythm(1) 0 0 0;
+      position: relative;
+    }
+    .content,
+    .aside1,
+    .aside2,
+    .footer1,
+    .footer2 {
+      @include zen-grid-item-base;
+      margin: 0;
+    }
+    .aside1 {
+      @include zen-grid-item(2, 1);
+    }
+    .content {
+      @include zen-grid-item(4, 3);
+    }
+    .aside2 {
+      @include zen-grid-item(1, 7);
+    }
+    .footer1 {
+      @include zen-new-row();
+      @include zen-grid-item(3, 5);
+    }
+    .footer2 {
+      @include zen-grid-item(4, 1);
+    }
   }
 }
