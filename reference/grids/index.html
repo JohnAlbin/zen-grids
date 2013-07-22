@@ -161,6 +161,9 @@
         </div>
       </div>
     </figure>
+    <p>
+    Note: that the ”margin” gutter method requires that the gutters and the width of the grid have the same unit of measurement, e.g. both be measured in <code>%</code> or both in <code>px</code>. This means that a fluid, responsive layout using the “margin” gutter method will have gutters that are <code>%</code>-based. This is why the default gutter method is “padding”; the grid can be <code>%</code>-based, while the gutters remain a fixed measurement (like <code>20px</code> or <code>5 em</code>) at all viewport sizes.
+    </p>
     <pre><code>$zen-gutter-method: padding !default;</code></pre>
     </article>
 
