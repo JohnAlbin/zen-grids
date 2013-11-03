@@ -3,41 +3,41 @@
 //
 
 
-// Specify the number of columns in the grid. @see http://zengrids.com/help/#zen-columns
+// Specify the number of columns in the grid. @see http://next.zengrids.com/reference/grids/#zen-columns
 $zen-columns                      : 1           !default;
 
-// Specify the width of the gutters (as padding). @see http://zengrids.com/help/#zen-gutters
+// Specify the width of the gutters (as padding). @see http://next.zengrids.com/reference/grids/#zen-gutters
 $zen-gutters                      : 20px        !default;
 
 // Specify the gutter method. Can be padding or margin.
 $zen-gutter-method                : padding     !default;
 
-// @see http://zengrids.com/help/#zen-auto-include-grid-item-base
+// @see http://next.zengrids.com/reference/grids/#zen-auto-include-grid-item-base
 $zen-auto-include-grid-item-base  : true        !default;
 
-// Specify the width of the entire grid. @see http://zengrids.com/help/#zen-grid-width
+// Specify the width of the entire grid. @see http://next.zengrids.com/reference/grids/#zen-grid-width
 $zen-grid-width                   : 100%        !default;
 
-// The box-sizing polyfill for IE6/7 requires an absolute path. @see http://zengrids.com/help/#box-sizing-polyfill-path
+// The box-sizing polyfill for IE6/7 requires an absolute path. @see http://next.zengrids.com/reference/grids/#box-sizing-polyfill-path
 $box-sizing-polyfill-path         : ""          !default;
 
-// Specify the CSS3 box-sizing method. @see http://zengrids.com/help/#zen-box-sizing
+// Specify the CSS3 box-sizing method. @see http://next.zengrids.com/reference/grids/#zen-box-sizing
 $zen-box-sizing                   : border-box  !default;
 
-// @see http://zengrids.com/help/#legacy-support-for-ie7
+// @see http://next.zengrids.com/reference/grids/#legacy-support-for-ie7
 $legacy-support-for-ie7           : false       !default;
 $legacy-support-for-ie6           : false       !default;
 
-// Specify the default floating direction for zen's mixins. @see http://zengrids.com/help/#zen-direction
+// Specify the default floating direction for zen's mixins. @see http://next.zengrids.com/reference/grids/#zen-direction
 $zen-direction                    : left        !default;
 
-// Reverse the floating direction in all zen's mixins. @see http://zengrids.com/help/#zen-switch-direction
+// Reverse the floating direction in all zen's mixins. @see http://next.zengrids.com/reference/grids/#zen-switch-direction
 $zen-switch-direction             : false       !default;
 
 
 //
 // Apply this to create a grid container element.
-// @see http://zengrids.com/help/#zen-grid-container
+// @see http://next.zengrids.com/reference/grids/#zen-grid-container
 //
 @mixin zen-grid-container(
   $context          : none,
@@ -82,7 +82,7 @@ $zen-switch-direction             : false       !default;
 }
 
 //
-// Apply this to each grid item. @see http://zengrids.com/help/#zen-grid-item
+// Apply this to each grid item. @see http://next.zengrids.com/reference/grids/#zen-grid-item
 //
 @mixin zen-grid-item(
   $column-span,
@@ -134,7 +134,7 @@ $zen-switch-direction             : false       !default;
 
 //
 // Applies a standard set of properites to all grid items in the layout.
-// @see http://zengrids.com/help/#zen-grid-item-base
+// @see http://next.zengrids.com/reference/grids/#zen-grid-item-base
 //
 @mixin zen-grid-item-base(
   $gutters            : $zen-gutters,
@@ -200,7 +200,7 @@ $zen-switch-direction             : false       !default;
 
 //
 // Apply this to a grid item so that it starts a new row.
-// @see http://zengrids.com/help/#zen-new-row
+// @see http://next.zengrids.com/reference/grids/#zen-new-row
 //
 @mixin zen-new-row(
   $clear              : $zen-direction,
@@ -218,7 +218,7 @@ $zen-switch-direction             : false       !default;
 // Helper functions for the Zen mixins.
 //
 
-// Returns a half gutter width. @see http://zengrids.com/help/#zen-half-gutter
+// Returns a half gutter width. @see http://next.zengrids.com/reference/grids/#zen-half-gutter
 @function zen-half-gutter(
   $gutters          : $zen-gutters,
   $gutter-side      : $zen-direction,
@@ -252,7 +252,7 @@ $zen-switch-direction             : false       !default;
   @return true;
 }
 
-// Calculates the unit width of a column. @see http://zengrids.com/help/#zen-unit-width
+// Calculates the unit width of a column. @see http://next.zengrids.com/reference/grids/#zen-unit-width
 @function zen-unit-width(
   $columns        : $zen-columns,
   $gutters        : $zen-gutters,
@@ -280,7 +280,7 @@ $zen-switch-direction             : false       !default;
 }
 
 // Calculates the width of a grid item that spans the specified number of columns.
-// @see http://zengrids.com/help/#zen-grid-item-width
+// @see http://next.zengrids.com/reference/grids/#zen-grid-item-width
 @function zen-grid-item-width(
   $column-span,
   $columns        : $zen-columns,
@@ -304,7 +304,7 @@ $zen-switch-direction             : false       !default;
 }
 
 // Returns the opposite direction, given "left" or "right".
-// @see http://zengrids.com/help/#zen-direction-switch
+// @see http://next.zengrids.com/reference/grids/#zen-direction-switch
 @function zen-direction-switch(
   $dir
 ) {

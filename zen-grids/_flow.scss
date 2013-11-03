@@ -5,13 +5,13 @@
 
 @import "grids";
 
-// @see http://zengrids.com/help/#zen-auto-include-grid-item-base
+// @see http://next.zengrids.com/reference/flow/#zen-auto-include-grid-item-base
 $zen-auto-include-flow-item-base  : true        !default;
 
 
 //
 // Apply this to an HTML item that is in the normal flow of a document to help
-// align it to the grid. @see http://zengrids.com/help/#zen-float
+// align it to the grid. @see http://next.zengrids.com/reference/flow/#zen-float
 //
 @mixin zen-grid-flow-item(
   $column-span,
@@ -132,7 +132,7 @@ $zen-auto-include-flow-item-base  : true        !default;
 
 //
 // Apply this to flow items that need to be floated.
-// @see http://zengrids.com/help/#zen-float
+// @see http://next.zengrids.com/reference/flow/#zen-float
 //
 @mixin zen-float(
   $direction          : $zen-direction,

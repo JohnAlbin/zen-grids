@@ -7,7 +7,7 @@ designs. With an easy-to-use Sass mixin set, the Zen Grids system can be applied
 to an infinite number of layouts, including responsive, adaptive, fluid and
 fixed-width layouts.
 
-More information can be found at http://zengrids.com
+More information can be found at http://next.zengrids.com
 
 
 USAGE
