@@ -219,6 +219,20 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <pre><code>$zen-box-sizing: border-box !default;</code></pre>
     </article>
 
+    <article>
+    <h4 id="zen-auto-include-box-sizing"><code>$zen-auto-include-box-sizing</code> <a href="#zen-auto-include-box-sizing" title="permalink">#</a></h4>
+    <p>
+    Some developers use a universal selector to apply CSS’s “border-box” box sizing to all elements. Paul Irish describes this method in more detail in his blog post “<a href="http://www.paulirish.com/2012/box-sizing-border-box-ftw/">* { Box-sizing: Border-box } FTW</a>”.
+    </p>
+    <p>
+    If border-box is applied to all elements with a ruleset similar to <code>* { box-sizing: border-box; }</code> (don’t forget the vendor prefixes!), you can prevent Zen Grids from outputting redundant box-sizing rules by setting <code>$zen-auto-include-box-sizing</code> to <code>false</code>.
+    </p>
+    <p>
+    Note: if <code>$zen-box-sizing</code> is set to "content-box", setting <code>$zen-auto-include-box-sizing: false;</code> will break your layout.
+    </p>
+    <pre><code>$zen-auto-include-box-sizing: true !default;</code></pre>
+    </article>
+
     <h3 id="vars-rtl">RTL language variables <a href="#vars-rtl" title="permalink">#</a></h3>
 
     <article>
