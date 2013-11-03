@@ -14,6 +14,11 @@
   @include zen-grid-item-base();
   $zen-box-sizing: border-box;
 
+  /* Test zen-grid-item-base() with $zen-auto-include-box-sizing: false */
+  $zen-auto-include-box-sizing: false;
+  @include zen-grid-item-base();
+  $zen-auto-include-box-sizing: true;
+
   /* Test zen-grid-item-base() with $legacy-support-for-ie7: true */
   $legacy-support-for-ie7: true;
   @include zen-grid-item-base();

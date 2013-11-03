@@ -24,6 +24,9 @@ $box-sizing-polyfill-path         : ""          !default;
 // Specify the CSS3 box-sizing method. @see http://next.zengrids.com/reference/grids/#zen-box-sizing
 $zen-box-sizing                   : border-box  !default;
 
+// @see http://next.zengrids.com/reference/grids/#zen-auto-include-box-sizing
+$zen-auto-include-box-sizing      : true        !default;
+
 // @see http://next.zengrids.com/reference/grids/#legacy-support-for-ie7
 $legacy-support-for-ie7           : false       !default;
 $legacy-support-for-ie6           : false       !default;
@@ -94,7 +97,8 @@ $zen-switch-direction             : false       !default;
   $grid-width                   : $zen-grid-width,
   $box-sizing                   : $zen-box-sizing,
   $switch-direction             : $zen-switch-direction,
-  $auto-include-grid-item-base  : $zen-auto-include-grid-item-base
+  $auto-include-grid-item-base  : $zen-auto-include-grid-item-base,
+  $auto-include-box-sizing      : $zen-auto-include-box-sizing
 ) {
 
   // Calculate the unit width.
@@ -128,7 +132,7 @@ $zen-switch-direction             : false       !default;
 
   // Auto-apply the unit base mixin.
   @if $auto-include-grid-item-base {
-    @include zen-grid-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction);
+    @include zen-grid-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction, $auto-include-box-sizing);
   }
 }
 
@@ -137,11 +141,12 @@ $zen-switch-direction             : false       !default;
 // @see http://next.zengrids.com/reference/grids/#zen-grid-item-base
 //
 @mixin zen-grid-item-base(
-  $gutters            : $zen-gutters,
-  $gutter-method      : $zen-gutter-method,
-  $box-sizing         : $zen-box-sizing,
-  $direction          : $zen-direction,
-  $switch-direction   : $zen-switch-direction
+  $gutters                  : $zen-gutters,
+  $gutter-method            : $zen-gutter-method,
+  $box-sizing               : $zen-box-sizing,
+  $direction                : $zen-direction,
+  $switch-direction         : $zen-switch-direction,
+  $auto-include-box-sizing  : $zen-auto-include-box-sizing
 ) {
 
   $dir: $direction;
@@ -156,7 +161,7 @@ $zen-switch-direction             : false       !default;
     }
   }
   // Specify the border-box properties.
-  @if $box-sizing == border-box {
+  @if $zen-auto-include-box-sizing and $box-sizing == border-box {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;

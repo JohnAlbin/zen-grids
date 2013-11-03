@@ -25,6 +25,7 @@ $zen-auto-include-flow-item-base  : true        !default;
   $grid-width                   : $zen-grid-width,
   $box-sizing                   : $zen-box-sizing,
   $switch-direction             : $zen-switch-direction,
+  $auto-include-box-sizing      : $zen-auto-include-box-sizing,
   $auto-include-flow-item-base  : $zen-auto-include-flow-item-base
 ) {
 
@@ -66,7 +67,7 @@ $zen-auto-include-flow-item-base  : true        !default;
 
   // Auto-apply the unit base mixin.
   @if $auto-include-flow-item-base {
-    @include zen-grid-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction);
+    @include zen-grid-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction, $auto-include-box-sizing);
   }
 
   // Calculate the item's width.

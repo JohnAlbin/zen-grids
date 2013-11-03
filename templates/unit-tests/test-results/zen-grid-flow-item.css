@@ -162,4 +162,12 @@
   padding-left: 0;
   padding-right: 15px;
   margin-right: 5px;
+  /* Test zen-grid-flow-item(1, 4) with $zen-auto-include-box-sizing: false */
+  padding-left: 10px;
+  padding-right: 10px;
+  word-wrap: break-word;
+  width: 25%;
+  padding-left: 0;
+  padding-right: 15px;
+  margin-right: 5px;
 }

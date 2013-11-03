@@ -17,6 +17,10 @@
   border-left: 0 !important;
   border-right: 0 !important;
   word-wrap: break-word;
+  /* Test zen-grid-item-base() with $zen-auto-include-box-sizing: false */
+  padding-left: 10px;
+  padding-right: 10px;
+  word-wrap: break-word;
   /* Test zen-grid-item-base() with $legacy-support-for-ie7: true */
   padding-left: 10px;
   padding-right: 10px;

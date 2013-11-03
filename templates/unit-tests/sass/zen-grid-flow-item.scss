@@ -75,4 +75,10 @@
   /* Test zen-grid-flow-item(1, 4) with $zen-auto-include-flow-item-base: false */
   $zen-auto-include-flow-item-base: false;
   @include zen-grid-flow-item(1, 4);
+  $zen-auto-include-flow-item-base: true;
+
+  /* Test zen-grid-flow-item(1, 4) with $zen-auto-include-box-sizing: false */
+  $zen-auto-include-box-sizing: false;
+  @include zen-grid-flow-item(1, 4);
+  $zen-auto-include-box-sizing: true;
 }

@@ -11,6 +11,13 @@
   @include zen-grid-item(6, 4);
   $zen-columns: 1;
 
+  /* Test zen-grid-item(6, 4) with 12 column grid and 20px gutter and $zen-auto-include-box-sizing: false */
+  $zen-columns: 12;
+  $zen-auto-include-box-sizing: false;
+  @include zen-grid-item(6, 4);
+  $zen-columns: 1;
+  $zen-auto-include-box-sizing: true;
+
   /* Test zen-grid-item(3, 3) with box-sizing: content-box, 5 column grid and 10% gutter */
   $zen-columns: 5;
   $zen-gutters: 10%;

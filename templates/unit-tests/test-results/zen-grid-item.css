@@ -15,6 +15,14 @@
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
+  /* Test zen-grid-item(6, 4) with 12 column grid and 20px gutter and $zen-auto-include-box-sizing: false */
+  float: left;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: -100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  word-wrap: break-word;
   /* Test zen-grid-item(3, 3) with box-sizing: content-box, 5 column grid and 10% gutter */
   float: left;
   width: 50%;
