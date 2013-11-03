@@ -67,7 +67,14 @@ $zen-auto-include-flow-item-base  : true        !default;
 
   // Auto-apply the unit base mixin.
   @if $auto-include-flow-item-base {
-    @include zen-grid-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction, $auto-include-box-sizing);
+    // Since we are setting padding later, supress extraneous padding
+    // declarations in the base by setting $gutter-method to none.
+    @if $gutter-method == padding {
+      @include zen-grid-item-base($gutters, 'none', $box-sizing, $direction, $switch-direction, $auto-include-box-sizing);
+    }
+    @else {
+      @include zen-grid-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction, $auto-include-box-sizing);
+    }
   }
 
   // Calculate the item's width.
