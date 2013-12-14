@@ -30,10 +30,10 @@ $zen-auto-include-box-sizing      : true        !default;
 $legacy-support-for-ie7           : false       !default;
 $legacy-support-for-ie6           : false       !default;
 
-// Specify the default floating direction for zen's mixins. @see http://next.zengrids.com/reference/grids/#zen-direction
+// Specify the default floating direction for zen grids' mixins. @see http://next.zengrids.com/reference/grids/#zen-direction
 $zen-direction                    : left        !default;
 
-// Reverse the floating direction in all zen's mixins. @see http://next.zengrids.com/reference/grids/#zen-switch-direction
+// Reverse the floating direction in all zen grids' mixins. @see http://next.zengrids.com/reference/grids/#zen-switch-direction
 $zen-switch-direction             : false       !default;
 
 //
