@@ -47,13 +47,11 @@ $zen-auto-include-flow-item-base  : true        !default;
 // Variables used by the background module.
 //
 
-// Specify the color of the background grid.
+// Specify the color of the background grid. @see http://next.zengrids.com/reference/background/#zen-grid-color
 $zen-grid-color                   : #ffdede     !default;
 
-// Specify which set of numbers to display with the background grid. Can be set
-// to: both, top, or none.
+// Specify how to place the column numbers in the background grid image. @see http://next.zengrids.com/reference/background/#zen-grid-numbers
 $zen-grid-numbers                 : both        !default;
 
-// Create an image set of 25 numbers for the grid using data URIs. Users who are
-// crazy enough to use a 26-column grid or larger are free to extend this set.
+// Specify an image set to number the columns of the background grid. @see http://next.zengrids.com/reference/background/#zen-grid-number-images
 $zen-grid-number-images           : ()          !default;
