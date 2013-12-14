@@ -42,3 +42,18 @@ $zen-switch-direction             : false       !default;
 
 // @see http://next.zengrids.com/reference/flow/#zen-auto-include-grid-item-base
 $zen-auto-include-flow-item-base  : true        !default;
+
+//
+// Variables used by the background module.
+//
+
+// Specify the color of the background grid.
+$zen-grid-color                   : #ffdede     !default;
+
+// Specify which set of numbers to display with the background grid. Can be set
+// to: both, top, or none.
+$zen-grid-numbers                 : both        !default;
+
+// Create an image set of 25 numbers for the grid using data URIs. Users who are
+// crazy enough to use a 26-column grid or larger are free to extend this set.
+$zen-grid-number-images           : ()          !default;
