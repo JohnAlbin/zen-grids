@@ -35,3 +35,10 @@ $zen-direction                    : left        !default;
 
 // Reverse the floating direction in all zen's mixins. @see http://next.zengrids.com/reference/grids/#zen-switch-direction
 $zen-switch-direction             : false       !default;
+
+//
+// Variables used by the flow module.
+//
+
+// @see http://next.zengrids.com/reference/flow/#zen-auto-include-grid-item-base
+$zen-auto-include-flow-item-base  : true        !default;
