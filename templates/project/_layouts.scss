@@ -6,23 +6,27 @@
  * right breakpoints to use for your site depend on your content.
  */
 
-.centered {
+.l-basic {
   @include zen-grid-background();
+  // Center the layout and ensure it doesn't grow too wide.
   margin: {
-    left: auto;
+    left:  auto;
     right: auto;
   }
   max-width: 1111px;
 }
 
 /* Set the shared properties for all grid items. */
-%grid-item,
-.grid-item {
+.l-basic__main,
+.l-basic__menu,
+.l-basic__content,
+.l-basic__aside1,
+.l-basic__aside2 {
   @include zen-grid-item-base();
 }
 
 /* Set the container for our grid items. */
-.main {
+.l-basic__main {
   @include zen-grid-container();
 }
 
@@ -31,10 +35,10 @@
   $zen-columns: 1;
   $navbar-height: 5em;
 
-  .main {
+  .l-basic__main {
     padding-top: $navbar-height;
   }
-  .grid-item__menu {
+  .l-basic__menu {
     @include zen-grid-item(1, 1);
     margin-top: -$navbar-height;
     height: $navbar-height;
@@ -44,17 +48,17 @@
 @media all and (min-width: 444px) and (max-width: 665px) {
   $zen-columns: 2;
 
-  .centered {
+  .l-basic {
     @include zen-grid-background();
   }
-  .grid-item__content {
+  .l-basic__content {
     @include zen-grid-item(2, 1);
   }
-  .grid-item__aside1 {
-    @include zen-new-row(); // Clear left-floated elements (.grid-item__content)
+  .l-basic__aside1 {
+    @include zen-new-row(); // Clear left-floated elements (.l-basic__content)
     @include zen-grid-item(1, 1);
   }
-  .grid-item__aside2 {
+  .l-basic__aside2 {
     @include zen-grid-item(1, 2);
   }
 }
@@ -62,17 +66,17 @@
 @media all and (min-width: 666px) and (max-width: 776px) {
   $zen-columns: 3;
 
-  .centered {
+  .l-basic {
     @include zen-grid-background();
   }
-  .grid-item__content {
+  .l-basic__content {
     @include zen-grid-item(2, 1);
   }
-  .grid-item__aside1 {
+  .l-basic__aside1 {
     @include zen-grid-item(1, 1, right); // Position from the right
   }
-  .grid-item__aside2 {
-    @include zen-new-row(); // Clear left-floated elements (.grid-item__content)
+  .l-basic__aside2 {
+    @include zen-new-row(); // Clear left-floated elements (.l-basic__content)
     @include zen-grid-item(2, 1);
   }
 }
@@ -80,17 +84,17 @@
 @media all and (min-width: 777px) and (max-width: 998px) {
   $zen-columns: 3;
 
-  .centered {
+  .l-basic {
     @include zen-grid-background();
   }
-  .grid-item__content {
+  .l-basic__content {
     @include zen-grid-item(2, 1);
   }
-  .grid-item__aside1 {
+  .l-basic__aside1 {
     @include zen-grid-item(1, 1, right); // Position from the right
   }
-  .grid-item__aside2 {
-    @include zen-new-row(right); // Clear right-floated elements (.grid-item__aside1)
+  .l-basic__aside2 {
+    @include zen-new-row(right); // Clear right-floated elements (.l-basic__aside1)
     @include zen-grid-item(1, 1, right);
   }
 }
@@ -98,16 +102,16 @@
 @media all and (min-width: 999px) {
   $zen-columns: 5;
 
-  .centered {
+  .l-basic {
     @include zen-grid-background();
   }
-  .grid-item__content {
+  .l-basic__content {
     @include zen-grid-item(3, 2);
   }
-  .grid-item__aside1 {
+  .l-basic__aside1 {
     @include zen-grid-item(1, 1);
   }
-  .grid-item__aside2 {
+  .l-basic__aside2 {
     @include zen-grid-item(1, 5);
   }
 }
