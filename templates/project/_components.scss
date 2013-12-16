@@ -31,7 +31,7 @@
 }
 .grid-item,
 .footer {
-  padding-top: 1.5em;
+  padding-top: $vertical-rhythm;
 }
 
 /* Source-order meta info */
@@ -49,18 +49,15 @@ header {
 }
 
 .pull-quote {
-  $font-size: 1.2em;
-
   @include zen-float();
   @include zen-flow-item-width(1, 2);
   @media all and (min-width: 999px) {
     @include zen-flow-item-width(1, 3);
   }
   margin: {
-    top: 1em*(1.5em/$font-size);
+    top: $vertical-rhythm;
   }
-  font-size: $font-size;
-  line-height: 1em*(1.5em/$font-size);
+  font-size: 1.2em;
   font-weight: bold;
   font-style: italic;
 }
