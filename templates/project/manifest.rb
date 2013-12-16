@@ -1,8 +1,8 @@
 description "The Zen Grids system."
 
 stylesheet  '_init.scss',             :media => 'all'
-stylesheet  '_layout.scss',           :media => 'all'
-stylesheet  '_modules.scss',          :media => 'all'
+stylesheet  '_layouts.scss',          :media => 'all'
+stylesheet  '_components.scss',       :media => 'all'
 stylesheet  '_visually-hidden.scss',  :media => 'all'
 stylesheet  'styles.scss',            :media => 'all'
 
