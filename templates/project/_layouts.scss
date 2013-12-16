@@ -8,10 +8,6 @@
 
 .centered {
   @include zen-grid-background();
-  padding: {
-    top: 1.5em;
-    bottom: 1.5em;
-  }
   margin: {
     left: auto;
     right: auto;

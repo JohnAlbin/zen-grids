@@ -8,6 +8,13 @@ html {
   line-height: $base-line-height;
 }
 
+body {
+  padding: {
+    top:   $vertical-rhythm;
+    right: $vertical-rhythm;
+  }
+}
+
 p {
   margin: {
     top:    $vertical-rhythm;
