@@ -37,17 +37,17 @@
 }
 
 /* Source-order meta info */
-header {
-  h1,
-  h2 {
-    display: inline;
-  }
-  p {
-    display: inline;
-    text-transform: uppercase;
-    font-size: 0.8em;
-    color: #c00;
-  }
+.meta {
+  margin: 0;
+}
+.meta__heading {
+  display: inline;
+}
+.meta__data {
+  display: inline;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  color: #c00;
 }
 
 /* Pull-quotes */
