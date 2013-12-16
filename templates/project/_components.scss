@@ -8,19 +8,21 @@
 .skip-link {
   margin: 0;
 }
-.skip-link__link,
-.skip-link__link:visited {
+.skip-link__link {
   display: block;
   width: 100%;
   padding: 2px 0 3px 0;
   text-align: center;
-  background-color: #666;
-  color: #fff;
-}
-/* The skip-link link will be completely hidden until a user tabs to the link. */
-@media all and (min-width: 444px) {
-  .skip-link__link {
+
+  /* The skip-link link will be completely hidden until a user tabs to the link. */
+  @media all and (min-width: 444px) {
     @include visually-focusable();
+  }
+
+  &,
+  &:visited {
+    color: #fff;
+    background-color: #666;
   }
 }
 
