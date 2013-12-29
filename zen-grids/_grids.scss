@@ -175,8 +175,6 @@ $zen-switch-direction             : false       !default;
       }
     }
   }
-  // Prevent overflowing content from being hidden beneath other grid items.
-  word-wrap: break-word;
 
   @if ($legacy-support-for-ie6 or $legacy-support-for-ie7) {
     @if $box-sizing == border-box and $box-sizing-polyfill-path == "" {
@@ -195,6 +193,8 @@ $zen-switch-direction             : false       !default;
       // @see http://www.howtocreate.co.uk/wrongWithIE/?chapter=overflow%3Avisible%3B
       _overflow-y: visible;
     }
+    // Prevent overflowing content from being hidden beneath other grid items.
+    *word-wrap: break-word;
   }
 }
 
