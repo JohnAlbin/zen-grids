@@ -1,28 +1,25 @@
 {
-    "name"          : "zen-grids",
-    "version"       : "2.0.0.beta.1",
-    "location"      : "JohnAlbin/zen-grids",
-    "description"   : "Zen Grids is an intuitive, flexible grid system to create responsive, adaptive, fluid and fixed-width layouts.",
-    "keywords"      : "Sass, Compass, grids, rwd",
-
-    "main"          : [
-        "_zen-grids.scss",
-        "zen-grids/_background.scss",
-        "zen-grids/_flow.scss",
-        "zen-grids/_grids.scss"
-    ],
-
-    "ignore"        : [
-        "lib",
-        "templates",
-        "zen-grids.gemspec"
-    ],
-
-    "licenses"      : {
-        "type"      : "GPLv2",
-        "url"       : "http://www.gnu.org/licenses/gpl-2.0.html"
-    }
-
-    "authors"       : ["John Albin Wilkins"],
-    "homepage"      : "http://zengrids.com/"
+  "name"        : "zen-grids",
+  "version"     : "2.0.0-beta.1",
+  "homepage"    : "http://zengrids.com",
+  "authors"     : ["John Albin Wilkins"],
+  "description" : "Zen Grids is an intuitive, flexible grid system to create responsive, adaptive, fluid and fixed-width layouts.",
+  "main"        : [
+    "_zen-grids.scss",
+    "zen-grids/_background.scss",
+    "zen-grids/_flow.scss",
+    "zen-grids/_grids.scss"
+  ],
+  "keywords"    : [
+    "Sass",
+    "Compass",
+    "grids",
+    "rwd"
+  ],
+  "license"     : "GPLv2",
+  "ignore"      : [
+    "lib",
+    "templates",
+    "zen-grids.gemspec"
+  ]
 }
