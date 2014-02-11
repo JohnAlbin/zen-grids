@@ -1,6 +1,6 @@
 # First, require any additional compass plugins installed on your system.
 require 'zen-grids'
-# require 'breakpoint'
+require 'breakpoint'
 
 
 # Toggle this between :development and :production when deploying the CSS to the
