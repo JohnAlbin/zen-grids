@@ -95,7 +95,7 @@ $zen-gutters: 40px;
   font-family: $arial;
   font-weight: bold;
   background-color: $color-green-bg;
-  background-image: url(../images/background-lattice.png);
+  background-image: image-url("background-lattice.png");
   background-repeat: repeat;
   background-position: center bottom;
   overflow: hidden; // New block formatting context.
