@@ -68,7 +68,7 @@ $box-sizing-polyfill-path: "/scripts/polyfills/boxsizing.htc";
 
 Zen grids is distributed as a Ruby Gem. On your computer, simply run:
 
-```bash
+```sh
 sudo gem install zen-grids
 ```
 
