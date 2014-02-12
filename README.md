@@ -1,5 +1,8 @@
-ABOUT zen-grids
----------------
+# zen-grids
+
+## About
+
+----------
 
 Zen Grids is an intuitive, flexible grid system that leverages the natural
 source order of your content to make it easier to create fluid responsive
@@ -10,8 +13,9 @@ fixed-width layouts.
 More information can be found at http://next.zengrids.com
 
 
-USAGE
------
+## Usage
+
+----------
 
 Here's a simple example: a content column with a sidebar on each side, aligned
 to a 12 column grid.
@@ -54,8 +58,9 @@ Zen Grids has built-in support for the Box-sizing Polyfill which adds
     $box-sizing-polyfill-path: "/scripts/polyfills/boxsizing.htc";
 
 
-INSTALLATION
-------------
+## INSTALLATION
+
+----------
 
 Zen grids is distributed as a Ruby Gem. On your computer, simply run:
 
@@ -73,8 +78,9 @@ of your .sass or .scss files and start creating!
   @import "zen-grids";
 
 
-REQUIREMENTS
-------------
+## REQUIREMENTS
+
+----------
 
 - Sass 3.2 or later
 
@@ -82,7 +88,8 @@ For the zen-grids/background module only:
 - Compass 0.12 or later
 
 
-LICENSE
--------
+## LICENSE
+
+----------
 
 Available under the GPL v2 license. See LICENSE.txt.
