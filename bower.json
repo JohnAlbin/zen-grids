@@ -2,7 +2,7 @@
   "name"        : "zen-grids",
   "version"     : "2.0.0-beta.1",
   "homepage"    : "http://zengrids.com",
-  "authors"     : ["John Albin Wilkins"],
+  "author"      : ["John Albin Wilkins"],
   "description" : "Zen Grids is an intuitive, flexible grid system to create responsive, adaptive, fluid and fixed-width layouts.",
   "main"        : [
     "_zen-grids.scss",
@@ -18,8 +18,9 @@
   ],
   "license"     : "GPLv2",
   "ignore"      : [
+    "zen-grids.gemspec",
+    "sache.json",
     "lib",
-    "templates",
-    "zen-grids.gemspec"
+    "templates"
   ]
 }
