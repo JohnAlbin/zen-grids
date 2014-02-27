@@ -34,30 +34,6 @@ Gem::Specification.new do |s|
     templates/project/example.html
     templates/project/manifest.rb
     templates/project/styles.scss
-    templates/unit-tests/manifest.rb
-    templates/unit-tests/README.txt
-    templates/unit-tests/sass/function-zen-direction-switch.scss
-    templates/unit-tests/sass/function-zen-grid-item-width.scss
-    templates/unit-tests/sass/function-zen-half-gutter.scss
-    templates/unit-tests/sass/function-zen-unit-width.scss
-    templates/unit-tests/sass/zen-new-row.scss
-    templates/unit-tests/sass/zen-float.scss
-    templates/unit-tests/sass/zen-grid-background.scss
-    templates/unit-tests/sass/zen-grid-container.scss
-    templates/unit-tests/sass/zen-grid-flow-item.scss
-    templates/unit-tests/sass/zen-grid-item-base.scss
-    templates/unit-tests/sass/zen-grid-item.scss
-    templates/unit-tests/test-results/function-zen-direction-switch.css
-    templates/unit-tests/test-results/function-zen-grid-item-width.css
-    templates/unit-tests/test-results/function-zen-half-gutter.css
-    templates/unit-tests/test-results/function-zen-unit-width.css
-    templates/unit-tests/test-results/zen-new-row.css
-    templates/unit-tests/test-results/zen-float.css
-    templates/unit-tests/test-results/zen-grid-background.css
-    templates/unit-tests/test-results/zen-grid-container.css
-    templates/unit-tests/test-results/zen-grid-flow-item.css
-    templates/unit-tests/test-results/zen-grid-item-base.css
-    templates/unit-tests/test-results/zen-grid-item.css
     zen-grids.gemspec
   ]
 end
