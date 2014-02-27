@@ -1,4 +1,4 @@
-## ABOUT zen-grids
+# About Zen Grids
 
 Zen Grids is an intuitive, flexible grid system that leverages the natural source order of your content to make it easier to create fluid responsive designs. With an easy-to-use Sass mixin set, the Zen Grids system can be applied to an infinite number of layouts, including responsive, adaptive, fluid and fixed-width layouts.
 
@@ -9,7 +9,7 @@ More information can be found at http://next.zengrids.com
 
 Here's a simple example: a content column with a sidebar on each side, aligned to a 12 column grid.
 
-```
+```scss
   @import "zen-grids";
 
   $zen-gutters: 40px;  // Set the gutter size. A half-gutter is used on
@@ -36,13 +36,13 @@ Here's a simple example: a content column with a sidebar on each side, aligned t
   }
 ```
 
-Within the .container element, the .sidebar1, .sidebar2 and .content elements can be in any order.
+Within the `.container` element, the `.sidebar1`, `.sidebar2` and `.content` elements can be in any order.
 
 Zen Grids has built-in support for the Box-sizing Polyfill which adds `box-sizing: border-box` support to IE7 and earlier.
 
 * Download the polyfill at https://github.com/Schepp/box-sizing-polyfill
-* Place the boxsizing.htc file in your website.
-* Set Zen Grids' $box-sizing-polyfill-path variable to the absolute path to the boxsizing.htc file on your website. For example: `$box-sizing-polyfill-path: "/scripts/polyfills/boxsizing.htc";`
+* Place the `boxsizing.htc` file in your website.
+* Set Zen Grids' `$box-sizing-polyfill-path` variable to the absolute path to the boxsizing.htc file on your website. For example: `$box-sizing-polyfill-path: "/scripts/polyfills/boxsizing.htc";`
 
 
 ## INSTALLATION
@@ -62,10 +62,10 @@ You can then start using Zen Grids in your Sass files. Just add this line to one
 
 ## REQUIREMENTS
 
-* Sass 3.2 or later
+* Sass 3.3.0-rc.1 or later
 
 For the zen-grids/background module only:
-* Compass 0.12 or later
+* Compass 1.0.0.alpha.13 or later
 
 
 ## LICENSE
