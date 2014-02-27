@@ -12,18 +12,18 @@
 
 #test-zen-grid-container-2 {
   /* Test zen-grid-container() with $legacy-support-for-ie7: true */
-  $legacy-support-for-ie7: true;
+  $legacy-support-for-ie7: true !global;
   @include zen-grid-container();
-  $legacy-support-for-ie7: false;
+  $legacy-support-for-ie7: false !global;
 }
 
 #test-zen-grid-container-3 {
   /* Test zen-grid-container() with $legacy-support-for-ie6: true */
-  $legacy-support-for-ie6: true;
-  $legacy-support-for-ie7: true;
+  $legacy-support-for-ie6: true !global;
+  $legacy-support-for-ie7: true !global;
   @include zen-grid-container();
-  $legacy-support-for-ie6: false;
-  $legacy-support-for-ie7: false;
+  $legacy-support-for-ie6: false !global;
+  $legacy-support-for-ie7: false !global;
 }
 
 #test-zen-grid-container-4 {
@@ -38,7 +38,7 @@
 
 #test-zen-grid-container-6 {
   /* Test zen-grid-container() with $zen-gutter-method: margin */
-  $zen-gutter-method: margin;
+  $zen-gutter-method: margin !global;
   @include zen-grid-container();
-  $zen-gutter-method: padding;
+  $zen-gutter-method: padding !global;
 }

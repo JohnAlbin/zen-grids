@@ -7,74 +7,74 @@
 
 #test-zen-grid-background {
   /* Test zen-grid-background() with 1 column grid and 20px gutter */
-  $zen-grid-numbers: top;
+  $zen-grid-numbers: top !global;
   @include zen-grid-background();
-  $zen-grid-numbers: both;
+  $zen-grid-numbers: both !global;
 
   /* Test zen-grid-background() with margin gutter method, 5 column grid and 5% gutter */
-  $zen-columns: 5;
-  $zen-gutters: 5%;
-  $zen-gutter-method: margin;
-  $zen-grid-numbers: top;
+  $zen-columns: 5 !global;
+  $zen-gutters: 5% !global;
+  $zen-gutter-method: margin !global;
+  $zen-grid-numbers: top !global;
   @include zen-grid-background();
-  $zen-columns: 1;
-  $zen-gutters: 20px;
-  $zen-gutter-method: padding;
-  $zen-grid-numbers: both;
+  $zen-columns: 1 !global;
+  $zen-gutters: 20px !global;
+  $zen-gutter-method: padding !global;
+  $zen-grid-numbers: both !global;
 
   // Turn off numbers for all other tests.
-  $zen-grid-numbers: none;
+  $zen-grid-numbers: none !global;
 
   /* Test zen-grid-background() with 12 column grid and 20px gutter */
-  $zen-columns: 12;
+  $zen-columns: 12 !global;
   @include zen-grid-background();
-  $zen-columns: 1;
+  $zen-columns: 1 !global;
 
   /* Test zen-grid-background(), 5 column grid, 10% gutter and black grid color */
-  $zen-columns: 5;
-  $zen-gutters: 10%;
-  $zen-grid-color: #000;
+  $zen-columns: 5 !global;
+  $zen-gutters: 10% !global;
+  $zen-grid-color: #000 !global;
   @include zen-grid-background();
-  $zen-columns: 1;
-  $zen-gutters: 20px;
-  $zen-grid-color: rgba(#ffdede, 0.8);
+  $zen-columns: 1 !global;
+  $zen-gutters: 20px !global;
+  $zen-grid-color: rgba(#ffdede, 0.8) !global;
 
   /* Test zen-grid-background() with 5 column grid and 40px gutter */
-  $zen-columns: 5;
-  $zen-gutters: 40px;
+  $zen-columns: 5 !global;
+  $zen-gutters: 40px !global;
   @include zen-grid-background();
-  $zen-columns: 1;
-  $zen-gutters: 20px;
+  $zen-columns: 1 !global;
+  $zen-gutters: 20px !global;
 
   /* Test zen-grid-background(), 5 column grid and 10% gutter and $zen-switch-direction */
-  $zen-columns: 5;
-  $zen-gutters: 10%;
-  $zen-switch-direction: true;
+  $zen-columns: 5 !global;
+  $zen-gutters: 10% !global;
+  $zen-switch-direction: true !global;
   @include zen-grid-background();
-  $zen-columns: 1;
-  $zen-gutters: 20px;
-  $zen-switch-direction: false;
+  $zen-columns: 1 !global;
+  $zen-gutters: 20px !global;
+  $zen-switch-direction: false !global;
 
   /* Test zen-grid-background() with 5 column grid and 40px gutter and $zen-switch-direction */
-  $zen-columns: 5;
-  $zen-gutters: 40px;
-  $zen-switch-direction: true;
+  $zen-columns: 5 !global;
+  $zen-gutters: 40px !global;
+  $zen-switch-direction: true !global;
   @include zen-grid-background();
-  $zen-columns: 1;
-  $zen-gutters: 20px;
-  $zen-switch-direction: false;
+  $zen-columns: 1 !global;
+  $zen-gutters: 20px !global;
+  $zen-switch-direction: false !global;
 
   /* Test zen-grid-background() with $zen-grid-width: 1000px, 5 column grid and 40px gutter */
-  $zen-grid-width: 1000px;
-  $zen-columns: 5;
-  $zen-gutters: 40px;
+  $zen-grid-width: 1000px !global;
+  $zen-columns: 5 !global;
+  $zen-gutters: 40px !global;
   @include zen-grid-background();
-  $zen-grid-width: 100%;
-  $zen-columns: 1;
-  $zen-gutters: 20px;
+  $zen-grid-width: 100% !global;
+  $zen-columns: 1 !global;
+  $zen-gutters: 20px !global;
 
   /* Test zen-grid-background() with all 24 grid numbers */
-  $zen-columns: 24;
+  $zen-columns: 24 !global;
   @include zen-grid-background();
-  $zen-columns: 1;
+  $zen-columns: 1 !global;
 }

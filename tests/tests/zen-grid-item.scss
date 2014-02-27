@@ -7,92 +7,92 @@
 
 #test-zen-grid-item {
   /* Test zen-grid-item(6, 4) with 12 column grid and 20px gutter */
-  $zen-columns: 12;
+  $zen-columns: 12 !global;
   @include zen-grid-item(6, 4);
-  $zen-columns: 1;
+  $zen-columns: 1 !global;
 
   /* Test zen-grid-item(6, 4) with 12 column grid and 20px gutter and $zen-auto-include-box-sizing: false */
-  $zen-columns: 12;
-  $zen-auto-include-box-sizing: false;
+  $zen-columns: 12 !global;
+  $zen-auto-include-box-sizing: false !global;
   @include zen-grid-item(6, 4);
-  $zen-columns: 1;
-  $zen-auto-include-box-sizing: true;
+  $zen-columns: 1 !global;
+  $zen-auto-include-box-sizing: true !global;
 
   /* Test zen-grid-item(3, 3) with box-sizing: content-box, 5 column grid and 10% gutter */
-  $zen-columns: 5;
-  $zen-gutters: 10%;
-  $zen-box-sizing: content-box;
+  $zen-columns: 5 !global;
+  $zen-gutters: 10% !global;
+  $zen-box-sizing: content-box !global;
   @include zen-grid-item(3, 3);
-  $zen-columns: 1;
-  $zen-gutters: 20px;
-  $zen-box-sizing: border-box;
+  $zen-columns: 1 !global;
+  $zen-gutters: 20px !global;
+  $zen-box-sizing: border-box !global;
 
   /* Turn off $zen-auto-include-grid-item-base */
-  $zen-auto-include-grid-item-base: false;
+  $zen-auto-include-grid-item-base: false !global;
 
   /* Test zen-grid-item(3, 3) with 5 column grid and 40px gutter */
-  $zen-columns: 5;
-  $zen-gutters: 40px;
+  $zen-columns: 5 !global;
+  $zen-gutters: 40px !global;
   @include zen-grid-item(3, 3);
-  $zen-columns: 1;
-  $zen-gutters: 20px;
+  $zen-columns: 1 !global;
+  $zen-gutters: 20px !global;
 
   /* Test zen-grid-item(3, 3, right) with 5 column grid and 40px gutter */
-  $zen-columns: 5;
-  $zen-gutters: 40px;
+  $zen-columns: 5 !global;
+  $zen-gutters: 40px !global;
   @include zen-grid-item(3, 3, right);
-  $zen-columns: 1;
-  $zen-gutters: 20px;
+  $zen-columns: 1 !global;
+  $zen-gutters: 20px !global;
 
   /* Test zen-grid-item(3, 3) with 5 column grid and 40px gutter and $zen-switch-direction */
-  $zen-columns: 5;
-  $zen-gutters: 40px;
-  $zen-switch-direction: true;
+  $zen-columns: 5 !global;
+  $zen-gutters: 40px !global;
+  $zen-switch-direction: true !global;
   @include zen-grid-item(3, 3);
-  $zen-columns: 1;
-  $zen-gutters: 20px;
-  $zen-switch-direction: false;
+  $zen-columns: 1 !global;
+  $zen-gutters: 20px !global;
+  $zen-switch-direction: false !global;
 
   /* Test zen-grid-item(3, 3, right) with 5 column grid and 40px gutter and $zen-switch-direction */
-  $zen-columns: 5;
-  $zen-gutters: 40px;
-  $zen-switch-direction: true;
+  $zen-columns: 5 !global;
+  $zen-gutters: 40px !global;
+  $zen-switch-direction: true !global;
   @include zen-grid-item(3, 3, right);
-  $zen-columns: 1;
-  $zen-gutters: 20px;
-  $zen-switch-direction: false;
+  $zen-columns: 1 !global;
+  $zen-gutters: 20px !global;
+  $zen-switch-direction: false !global;
 
   /* Test zen-grid-item(3, 2.5) with 5 column grid and 40px gutter */
-  $zen-columns: 5;
-  $zen-gutters: 40px;
+  $zen-columns: 5 !global;
+  $zen-gutters: 40px !global;
   @include zen-grid-item(3, 2.5);
-  $zen-columns: 1;
-  $zen-gutters: 20px;
+  $zen-columns: 1 !global;
+  $zen-gutters: 20px !global;
 
   /* Test zen-grid-item(3, 3) with $zen-grid-width: 1000px, 5 column grid and 40px gutter */
-  $zen-grid-width: 1000px;
-  $zen-columns: 5;
-  $zen-gutters: 40px;
+  $zen-grid-width: 1000px !global;
+  $zen-columns: 5 !global;
+  $zen-gutters: 40px !global;
   @include zen-grid-item(3, 3);
-  $zen-grid-width: 100%;
-  $zen-columns: 1;
-  $zen-gutters: 20px;
+  $zen-grid-width: 100% !global;
+  $zen-columns: 1 !global;
+  $zen-gutters: 20px !global;
 
   /* Test zen-grid-item(3, 3) with $zen-gutter-method: margin, 5 column grid and 5% gutter */
-  $zen-gutter-method: margin;
-  $zen-columns: 5;
-  $zen-gutters: 5%;
+  $zen-gutter-method: margin !global;
+  $zen-columns: 5 !global;
+  $zen-gutters: 5% !global;
   @include zen-grid-item(3, 3);
-  $zen-gutter-method: padding;
-  $zen-columns: 1;
-  $zen-gutters: 20px;
+  $zen-gutter-method: padding !global;
+  $zen-columns: 1 !global;
+  $zen-gutters: 20px !global;
 
   /* Test zen-grid-item(3, 2.5) with $zen-gutter-method: margin, 5 column grid and 5% gutter */
-  $zen-gutter-method: margin;
-  $zen-columns: 5;
-  $zen-gutters: 5%;
+  $zen-gutter-method: margin !global;
+  $zen-columns: 5 !global;
+  $zen-gutters: 5% !global;
   @include zen-grid-item(3, 2.5);
-  $zen-gutter-method: padding;
-  $zen-columns: 1;
-  $zen-gutters: 20px;
+  $zen-gutter-method: padding !global;
+  $zen-columns: 1 !global;
+  $zen-gutters: 20px !global;
 }

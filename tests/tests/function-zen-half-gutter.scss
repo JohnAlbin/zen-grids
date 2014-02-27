@@ -10,7 +10,7 @@
   padding-left: zen-half-gutter();
 
   /* Test zen-half-gutter() with $zen-gutters: 30px */
-  $zen-gutters: 30px;
+  $zen-gutters: 30px !global;
   padding-left: zen-half-gutter();
 
   /* Test zen-half-gutter(10em) */
@@ -29,7 +29,7 @@
   padding-left: zen-half-gutter(11px, right);
 
   /* Test zen-half-gutter(11px) with $zen-direction: right */
-  $zen-direction: right;
+  $zen-direction: right !global;
   padding-left: zen-half-gutter(11px);
 
   /* Test zen-half-gutter(11px, left) with $zen-direction: right */

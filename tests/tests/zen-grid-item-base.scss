@@ -10,55 +10,55 @@
   @include zen-grid-item-base();
 
   /* Test zen-grid-item-base() with $zen-box-sizing: content-box */
-  $zen-box-sizing: content-box;
+  $zen-box-sizing: content-box !global;
   @include zen-grid-item-base();
-  $zen-box-sizing: border-box;
+  $zen-box-sizing: border-box !global;
 
   /* Test zen-grid-item-base() with $zen-auto-include-box-sizing: false */
-  $zen-auto-include-box-sizing: false;
+  $zen-auto-include-box-sizing: false !global;
   @include zen-grid-item-base();
-  $zen-auto-include-box-sizing: true;
+  $zen-auto-include-box-sizing: true !global;
 
   /* Test zen-grid-item-base() with $legacy-support-for-ie7: true */
-  $legacy-support-for-ie7: true;
+  $legacy-support-for-ie7: true !global;
   @include zen-grid-item-base();
-  $legacy-support-for-ie7: false;
+  $legacy-support-for-ie7: false !global;
 
   /* Test zen-grid-item-base() with $box-sizing-polyfill-path: "/boxsizing.htc" and $legacy-support-for-ie7: true */
-  $box-sizing-polyfill-path: "/boxsizing.htc";
-  $legacy-support-for-ie7: true;
+  $box-sizing-polyfill-path: "/boxsizing.htc" !global;
+  $legacy-support-for-ie7: true !global;
   @include zen-grid-item-base();
-  $box-sizing-polyfill-path: "";
-  $legacy-support-for-ie7: false;
+  $box-sizing-polyfill-path: "" !global;
+  $legacy-support-for-ie7: false !global;
 
   /* Test zen-grid-item-base() with $box-sizing-polyfill-path: "/boxsizing.htc" and $legacy-support-for-ie6: true */
-  $box-sizing-polyfill-path: "/boxsizing.htc";
-  $legacy-support-for-ie6: true;
+  $box-sizing-polyfill-path: "/boxsizing.htc" !global;
+  $legacy-support-for-ie6: true !global;
   @include zen-grid-item-base();
-  $box-sizing-polyfill-path: "";
-  $legacy-support-for-ie6: false;
+  $box-sizing-polyfill-path: "" !global;
+  $legacy-support-for-ie6: false !global;
 
   /* Test zen-grid-item-base() with $zen-gutters: 15px */
-  $zen-gutters: 15px;
+  $zen-gutters: 15px !global;
   @include zen-grid-item-base();
-  $zen-gutters: 20px;
+  $zen-gutters: 20px !global;
 
   /* Test zen-grid-item-base() with $zen-gutters: 15px and $zen-direction: right */
-  $zen-gutters: 15px;
-  $zen-direction: right;
+  $zen-gutters: 15px !global;
+  $zen-direction: right !global;
   @include zen-grid-item-base();
-  $zen-gutters: 20px;
-  $zen-direction: left;
+  $zen-gutters: 20px !global;
+  $zen-direction: left !global;
 
   /* Test zen-grid-item-base() with $zen-gutters: 15px and $zen-switch-direction: true */
-  $zen-gutters: 15px;
-  $zen-switch-direction: true;
+  $zen-gutters: 15px !global;
+  $zen-switch-direction: true !global;
   @include zen-grid-item-base();
-  $zen-gutters: 20px;
-  $zen-switch-direction: false;
+  $zen-gutters: 20px !global;
+  $zen-switch-direction: false !global;
 
   /* Test zen-grid-item-base() with $zen-gutter-method: margin */
-  $zen-gutter-method: margin;
+  $zen-gutter-method: margin !global;
   @include zen-grid-item-base();
-  $zen-gutter-method: padding;
+  $zen-gutter-method: padding !global;
 }

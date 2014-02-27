@@ -10,17 +10,14 @@
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  word-wrap: break-word;
   /* Test zen-grid-item-base() with $zen-box-sizing: content-box */
   padding-left: 10px;
   padding-right: 10px;
   border-left: 0 !important;
   border-right: 0 !important;
-  word-wrap: break-word;
   /* Test zen-grid-item-base() with $zen-auto-include-box-sizing: false */
   padding-left: 10px;
   padding-right: 10px;
-  word-wrap: break-word;
   /* Test zen-grid-item-base() with $legacy-support-for-ie7: true */
   padding-left: 10px;
   padding-right: 10px;
@@ -28,7 +25,7 @@
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  word-wrap: break-word;
+  *word-wrap: break-word;
   /* Test zen-grid-item-base() with $box-sizing-polyfill-path: "/boxsizing.htc" and $legacy-support-for-ie7: true */
   padding-left: 10px;
   padding-right: 10px;
@@ -36,8 +33,8 @@
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  word-wrap: break-word;
   *behavior: url("/boxsizing.htc");
+  *word-wrap: break-word;
   /* Test zen-grid-item-base() with $box-sizing-polyfill-path: "/boxsizing.htc" and $legacy-support-for-ie6: true */
   padding-left: 10px;
   padding-right: 10px;
@@ -45,11 +42,11 @@
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  word-wrap: break-word;
   *behavior: url("/boxsizing.htc");
   _display: inline;
   _overflow: hidden;
   _overflow-y: visible;
+  *word-wrap: break-word;
   /* Test zen-grid-item-base() with $zen-gutters: 15px */
   padding-left: 7px;
   padding-right: 8px;
@@ -57,7 +54,6 @@
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  word-wrap: break-word;
   /* Test zen-grid-item-base() with $zen-gutters: 15px and $zen-direction: right */
   padding-left: 8px;
   padding-right: 7px;
@@ -65,7 +61,6 @@
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  word-wrap: break-word;
   /* Test zen-grid-item-base() with $zen-gutters: 15px and $zen-switch-direction: true */
   padding-left: 8px;
   padding-right: 7px;
@@ -73,11 +68,9 @@
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  word-wrap: break-word;
   /* Test zen-grid-item-base() with $zen-gutter-method: margin */
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  word-wrap: break-word;
 }

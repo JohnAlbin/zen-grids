@@ -10,9 +10,9 @@
   @include zen-float();
 
   /* Test zen-float() with $zen-direction: right */
-  $zen-direction: right;
+  $zen-direction: right !global;
   @include zen-float();
-  $zen-direction: left;
+  $zen-direction: left !global;
 
   /* Test zen-float(left) */
   @include zen-float(left);
@@ -21,6 +21,6 @@
   @include zen-float(left, $switch-direction: TRUE);
 
   /* Test zen-float(left) with: $zen-switch-direction: TRUE; */
-  $zen-switch-direction: TRUE;
+  $zen-switch-direction: TRUE !global;
   @include zen-float(left);
 }
