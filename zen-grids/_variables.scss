@@ -26,9 +26,14 @@ $zen-box-sizing                   : border-box  !default;
 // @see http://next.zengrids.com/reference/grids/#zen-auto-include-box-sizing
 $zen-auto-include-box-sizing      : true        !default;
 
-// @see http://next.zengrids.com/reference/grids/#legacy-support-for-ie7
-$legacy-support-for-ie7           : false       !default;
-$legacy-support-for-ie6           : false       !default;
+// @see http://next.zengrids.com/reference/grids/#browser-minimum-versions
+$browser-minimum-versions: (
+  'chrome':  null,
+  'firefox': null,
+  'ie':      null,
+  'safari':  null,
+  'opera':   null
+) !default;
 
 // Specify the default floating direction for zen grids' mixins. @see http://next.zengrids.com/reference/grids/#zen-direction
 $zen-direction                    : left        !default;

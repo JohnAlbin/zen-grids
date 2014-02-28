@@ -4,9 +4,14 @@
 // generated CSS in this project. To use it, simply: @import "init";
 //
 
-// Legacy browser variables for Compass.
-$legacy-support-for-ie6           : false;
-$legacy-support-for-ie7           : false;
+// Supported browsers variable for Compass.
+$browser-minimum-versions: (
+  'chrome':  null,
+  'firefox': null,
+  'ie':      null,
+  'safari':  null,
+  'opera':   null
+);
 
 // Set up Zen Grids.
 $zen-columns                      : 1;

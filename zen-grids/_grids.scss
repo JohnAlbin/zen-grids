@@ -19,7 +19,7 @@
 ) {
 
   // @TODO: This is a pre-IE8 line of code; don't remember why its needed.
-  @if ($legacy-support-for-ie6 or $legacy-support-for-ie7) {
+  @if zen-support-for(ie, 7) {
     *position: relative;
   }
 
@@ -32,7 +32,7 @@
   &:after {
     clear: both;
   }
-  @if ($legacy-support-for-ie6 or $legacy-support-for-ie7) {
+  @if zen-support-for(ie, 7) {
     *zoom: 1;
   }
 
@@ -95,7 +95,7 @@
     #{$dir}: $margin;
     #{$rev}: -100%;
   }
-  @if ($legacy-support-for-ie6 or $legacy-support-for-ie7) {
+  @if zen-support-for(ie, 7) {
     *margin-#{$rev}: -99.9%;
   }
 
@@ -150,14 +150,14 @@
     }
   }
 
-  @if ($legacy-support-for-ie6 or $legacy-support-for-ie7) {
+  @if zen-support-for(ie, 7) {
     @if $box-sizing == border-box and $box-sizing-polyfill-path == "" {
       @warn "Setting $box-sizing to #{$box-sizing} will fail for legacy IE browsers because the $box-sizing-polyfill-path is empty.";
     }
     @if $box-sizing-polyfill-path != "" {
       *behavior: url($box-sizing-polyfill-path);
     }
-    @if $legacy-support-for-ie6 {
+    @if zen-support-for(ie, 6) {
       // Display inline or double your floated margin!
       // @see http://www.positioniseverything.net/explorer/doubled-margin.html
       _display: inline;

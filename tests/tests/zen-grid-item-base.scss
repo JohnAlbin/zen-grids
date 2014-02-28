@@ -19,24 +19,24 @@
   @include zen-grid-item-base();
   $zen-auto-include-box-sizing: true !global;
 
-  /* Test zen-grid-item-base() with $legacy-support-for-ie7: true */
-  $legacy-support-for-ie7: true !global;
+  /* Test zen-grid-item-base() with IE 7 support */
+  $browser-minimum-versions: ('ie': 7) !global;
   @include zen-grid-item-base();
-  $legacy-support-for-ie7: false !global;
+  $browser-minimum-versions: ('ie': null) !global;
 
-  /* Test zen-grid-item-base() with $box-sizing-polyfill-path: "/boxsizing.htc" and $legacy-support-for-ie7: true */
+  /* Test zen-grid-item-base() with $box-sizing-polyfill-path: "/boxsizing.htc" and IE 7 support */
   $box-sizing-polyfill-path: "/boxsizing.htc" !global;
-  $legacy-support-for-ie7: true !global;
+  $browser-minimum-versions: ('ie': 7) !global;
   @include zen-grid-item-base();
   $box-sizing-polyfill-path: "" !global;
-  $legacy-support-for-ie7: false !global;
+  $browser-minimum-versions: ('ie': null) !global;
 
-  /* Test zen-grid-item-base() with $box-sizing-polyfill-path: "/boxsizing.htc" and $legacy-support-for-ie6: true */
+  /* Test zen-grid-item-base() with $box-sizing-polyfill-path: "/boxsizing.htc" and IE 6 support */
   $box-sizing-polyfill-path: "/boxsizing.htc" !global;
-  $legacy-support-for-ie6: true !global;
+  $browser-minimum-versions: ('ie': 6) !global;
   @include zen-grid-item-base();
   $box-sizing-polyfill-path: "" !global;
-  $legacy-support-for-ie6: false !global;
+  $browser-minimum-versions: ('ie': null) !global;
 
   /* Test zen-grid-item-base() with $zen-gutters: 15px */
   $zen-gutters: 15px !global;

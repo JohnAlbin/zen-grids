@@ -14,7 +14,7 @@
 }
 
 #test-zen-grid-container-2 {
-  /* Test zen-grid-container() with $legacy-support-for-ie7: true */
+  /* Test zen-grid-container() with IE 7 support */
   *position: relative;
   *zoom: 1;
 }
@@ -27,7 +27,7 @@
 }
 
 #test-zen-grid-container-3 {
-  /* Test zen-grid-container() with $legacy-support-for-ie6: true */
+  /* Test zen-grid-container() with IE 6 support */
   *position: relative;
   *zoom: 1;
 }

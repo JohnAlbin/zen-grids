@@ -11,19 +11,17 @@
 }
 
 #test-zen-grid-container-2 {
-  /* Test zen-grid-container() with $legacy-support-for-ie7: true */
-  $legacy-support-for-ie7: true !global;
+  /* Test zen-grid-container() with IE 7 support */
+  $browser-minimum-versions: ('ie': 7) !global;
   @include zen-grid-container();
-  $legacy-support-for-ie7: false !global;
+  $browser-minimum-versions: ('ie': null) !global;
 }
 
 #test-zen-grid-container-3 {
-  /* Test zen-grid-container() with $legacy-support-for-ie6: true */
-  $legacy-support-for-ie6: true !global;
-  $legacy-support-for-ie7: true !global;
+  /* Test zen-grid-container() with IE 6 support */
+  $browser-minimum-versions: ('ie': 6) !global;
   @include zen-grid-container();
-  $legacy-support-for-ie6: false !global;
-  $legacy-support-for-ie7: false !global;
+  $browser-minimum-versions: ('ie': null) !global;
 }
 
 #test-zen-grid-container-4 {
