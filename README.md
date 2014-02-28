@@ -76,6 +76,6 @@ For the zen-grids/background module only:
 
 ## LICENSE
 
-Available under the GPL v2 license. See LICENSE.txt.
+Available under the GPL v2 license. See (LICENSE.txt)[https://github.com/JohnAlbin/zen-grids/blob/master/LICENSE.txt].
 
 [![Build Status](https://travis-ci.org/JohnAlbin/zen-grids.png?branch=master)](https://travis-ci.org/JohnAlbin/zen-grids)
