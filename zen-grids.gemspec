@@ -18,22 +18,5 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency('sass', ">= 3.3.0-rc.1")
 
-  s.files       = %w[
-    bower.json
-    LICENSE.txt
-    README.txt
-    lib/zen-grids.rb
-    _zen-grids.scss
-    zen-grids/_background.scss
-    zen-grids/_flow.scss
-    zen-grids/_grids.scss
-    templates/project/_init.scss
-    templates/project/_layout.scss
-    templates/project/_modules.scss
-    templates/project/_visually-hidden.scss
-    templates/project/example.html
-    templates/project/manifest.rb
-    templates/project/styles.scss
-    zen-grids.gemspec
-  ]
+  s.files       = `git ls-files -z`.split "\0"
 end
