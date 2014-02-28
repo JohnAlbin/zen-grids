@@ -21,6 +21,7 @@
 
   /* Test zen-grid-item-base() with IE 7 support */
   $browser-minimum-versions: ('ie': 7) !global;
+  @warn "The following test will generate a warning.";
   @include zen-grid-item-base();
   $browser-minimum-versions: ('ie': null) !global;
 

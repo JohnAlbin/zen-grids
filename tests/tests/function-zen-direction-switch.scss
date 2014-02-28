@@ -19,5 +19,6 @@
   float: zen-direction-switch(none);
 
   /* Test zen-direction-switch(invalid) */
+  @warn "The following test will generate a warning.";
   float: zen-direction-switch(invalid);
 }
