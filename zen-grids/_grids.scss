@@ -4,6 +4,7 @@
 
 
 @import "variables"; // Import the global variables needed by all of Zen Grids.
+@import "functions"; // Import the helper functions.
 
 
 //
@@ -184,112 +185,4 @@
     $clear: zen-direction-switch($clear);
   }
   clear: $clear;
-}
-
-
-//
-// Helper functions for the Zen mixins.
-//
-
-// Returns a half gutter width. @see http://next.zengrids.com/reference/grids/#zen-half-gutter
-@function zen-half-gutter(
-  $gutters          : $zen-gutters,
-  $gutter-side      : $zen-direction,
-  $direction        : $zen-direction
-) {
-  $half-gutter: $gutters / 2;
-  // Special handling in case gutter has an odd number of pixels.
-  @if unit($gutters) == "px" {
-    @if $gutter-side == $direction {
-      @return floor($half-gutter);
-    }
-    @else {
-      @return ceil($half-gutter);
-    }
-  }
-  @return $half-gutter;
-}
-
-// Warns if the gutter and grid width units are not comparable.
-@function zen-compare-units(
-  $feature,
-  $gutters        : $zen-gutters,
-  $grid-width     : $zen-grid-width
-) {
-  @if not comparable($gutters, $grid-width) {
-    $units-gutter: unit($gutters);
-    $units-grid: unit($grid-width);
-    @warn "The layout cannot be calculated correctly; when using #{$feature}, the units of the gutter (#{$units-gutter} must match the units of the grid width (#{$units-grid}).";
-    @return false;
-  }
-  @return true;
-}
-
-// Calculates the unit width of a column. @see http://next.zengrids.com/reference/grids/#zen-unit-width
-@function zen-unit-width(
-  $columns        : $zen-columns,
-  $gutters        : $zen-gutters,
-  $gutter-method  : $zen-gutter-method,
-  $grid-width     : $zen-grid-width
-) {
-  $unit-width: 0;
-  @if $gutter-method == margin {
-    $test: zen-compare-units('gutter-method: margin', $gutters, $grid-width);
-    $unit-width: ($grid-width - ($columns - 1) * $gutters) / $columns;
-  }
-  @else {
-    $unit-width: $grid-width / $columns;
-  }
-  @if unit($unit-width) == "px" and floor($unit-width) != ceil($unit-width) {
-    @if $gutter-method == margin {
-      $num_gutters: $columns - 1;
-      @warn "You may experience rounding errors as the grid width, #{$grid-width}, does not divide evenly into #{$columns} columns with #{$num_gutters} of #{$gutters} gutters.";
-    }
-    @else {
-      @warn "You may experience rounding errors as the grid width, #{$grid-width}, does not divide evenly into #{$columns} columns.";
-    }
-  }
-  @return $unit-width;
-}
-
-// Calculates the width of a grid item that spans the specified number of columns.
-// @see http://next.zengrids.com/reference/grids/#zen-grid-item-width
-@function zen-grid-item-width(
-  $column-span,
-  $columns        : $zen-columns,
-  $gutters        : $zen-gutters,
-  $gutter-method  : $zen-gutter-method,
-  $grid-width     : $zen-grid-width,
-  $box-sizing     : $zen-box-sizing
-) {
-  $width: $column-span * zen-unit-width($columns, $gutters, $gutter-method, $grid-width);
-
-  // Add the margin gutters internal to the spanning grid item.
-  @if $gutter-method == margin {
-    $width: $width + (floor($column-span) - 1) * $gutters;
-  }
-  // For the original box model, remove the padding from the width.
-  @elseif $box-sizing == content-box {
-    $test: zen-compare-units('box-sizing: content-box', $gutters, $grid-width);
-    $width: $width - $gutters;
-  }
-  @return $width;
-}
-
-// Returns the opposite direction, given "left" or "right".
-// @see http://next.zengrids.com/reference/grids/#zen-direction-switch
-@function zen-direction-switch(
-  $dir
-) {
-  @if $dir == left {
-    @return right;
-  }
-  @else if $dir == right {
-    @return left;
-  }
-  @else if $dir == none or $dir == both {
-    @return $dir;
-  }
-  @warn "Invalid direction passed to zen-direction-switch().";
-  @return both;
 }
