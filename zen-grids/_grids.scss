@@ -5,6 +5,7 @@
 
 @import "variables"; // Import the global variables needed by all of Zen Grids.
 @import "functions"; // Import the helper functions.
+@import "internal/functions-compass-polyfill";
 
 
 //

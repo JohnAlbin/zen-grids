@@ -1,0 +1,27 @@
+//
+// Private functions for the Zen Grids system; not for public use.
+//
+
+
+//
+// Wrapper function that uses Compass' support-legacy-browser() if available.
+// @see http://next.zengrids.com/reference/functions/#zen-support-for
+//
+@function zen-support-for($browser, $min-version) {
+  @if function-exists('support-legacy-browser') {
+    @return support-legacy-browser($browser, $min-version);
+  }
+  @else {
+    @return zen-support-legacy-browser($browser, $min-version);
+  }
+}
+
+//
+// A stripped-down version of Compass' support-legacy-browser().
+// @see http://next.zengrids.com/reference/functions/#zen-support-legacy-browser
+//
+@function zen-support-legacy-browser($browser, $min-version) {
+  // Check against declared minimums.
+  $min-required-version: map-get($browser-minimum-versions, $browser);
+  @return ($min-required-version and ($min-version >= $min-required-version));
+}
