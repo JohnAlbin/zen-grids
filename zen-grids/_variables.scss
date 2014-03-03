@@ -27,13 +27,13 @@ $zen-box-sizing                   : border-box  !default;
 $zen-auto-include-box-sizing      : true        !default;
 
 // @see http://next.zengrids.com/reference/grids/#browser-minimum-versions
-$browser-minimum-versions: (
+$browser-minimum-versions         : (
   'chrome':  null,
   'firefox': null,
   'ie':      null,
   'safari':  null,
   'opera':   null
-) !default;
+)                                               !default;
 
 // Specify the default floating direction for zen grids' mixins. @see http://next.zengrids.com/reference/grids/#zen-direction
 $zen-direction                    : left        !default;
@@ -58,5 +58,5 @@ $zen-grid-color                   : #ffdede     !default;
 // Specify how to place the column numbers in the background grid image. @see http://next.zengrids.com/reference/background/#zen-grid-numbers
 $zen-grid-numbers                 : both        !default;
 
-// Specify an image set to number the columns of the background grid. @see http://next.zengrids.com/reference/background/#zen-grid-number-images
+// Specify a set of images to number the columns of the background grid. @see http://next.zengrids.com/reference/background/#zen-grid-number-images
 $zen-grid-number-images           : ()          !default;
