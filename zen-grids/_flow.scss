@@ -12,17 +12,17 @@
 //
 @mixin zen-grid-flow-item(
   $column-span,
-  $parent-column-span           : false,
-  $alpha-gutter                 : false,
-  $omega-gutter                 : true,
-  $direction                    : $zen-direction,
-  $columns                      : $zen-columns,
-  $gutters                      : $zen-gutters,
-  $gutter-method                : $zen-gutter-method,
-  $grid-width                   : $zen-grid-width,
-  $box-sizing                   : $zen-box-sizing,
-  $switch-direction             : $zen-switch-direction,
-  $auto-include-flow-item-base  : $zen-auto-include-flow-item-base
+  $parent-column-span   : false,
+  $alpha-gutter         : false,
+  $omega-gutter         : true,
+  $direction            : $zen-direction,
+  $columns              : $zen-columns,
+  $gutters              : $zen-gutters,
+  $gutter-method        : $zen-gutter-method,
+  $grid-width           : $zen-grid-width,
+  $box-sizing           : $zen-box-sizing,
+  $switch-direction     : $zen-switch-direction,
+  $include-base         : $zen-auto-include-flow-item-base
 ) {
 
   // Save the columns and gutters from the parent context.
@@ -61,8 +61,8 @@
     $gutters: $main-gutters * ($grid-width / $parent-width);
   }
 
-  // Auto-apply the unit base mixin.
-  @if $auto-include-flow-item-base {
+  // Include the flow item base mixin.
+  @if $include-base {
     // Since we are setting padding later, supress extraneous padding
     // declarations in the base by setting $gutter-method to none.
     @if $gutter-method == padding {

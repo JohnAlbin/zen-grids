@@ -75,14 +75,14 @@
 @mixin zen-grid-item(
   $column-span,
   $column-position,
-  $direction                    : $zen-direction,
-  $columns                      : $zen-columns,
-  $gutters                      : $zen-gutters,
-  $gutter-method                : $zen-gutter-method,
-  $grid-width                   : $zen-grid-width,
-  $box-sizing                   : $zen-box-sizing,
-  $switch-direction             : $zen-switch-direction,
-  $auto-include-grid-item-base  : $zen-auto-include-grid-item-base
+  $direction          : $zen-direction,
+  $columns            : $zen-columns,
+  $gutters            : $zen-gutters,
+  $gutter-method      : $zen-gutter-method,
+  $grid-width         : $zen-grid-width,
+  $box-sizing         : $zen-box-sizing,
+  $switch-direction   : $zen-switch-direction,
+  $include-base       : $zen-auto-include-grid-item-base
 ) {
 
   // Calculate the unit width.
@@ -114,12 +114,12 @@
     *margin-#{$rev}: -99.9%;
   }
 
-  // Auto-apply the unit base mixin.
-  @if $auto-include-grid-item-base {
+  // Include the grid item base mixin.
+  @if $include-base {
     @include zen-grid-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction);
   }
   // If the $gutters parameter has been used, set the gutters even if
-  // $apply-base is false.
+  // $include-base is false.
   @else if $gutters != $zen-gutters and $gutter-method == padding {
     @include zen-apply-gutter-padding($gutters, $direction, $switch-direction);
   }
