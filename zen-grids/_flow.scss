@@ -10,7 +10,7 @@
 // Apply this to an HTML item that is in the normal flow of a document to help
 // align it to the grid. @see http://next.zengrids.com/reference/flow/#zen-float
 //
-@mixin zen-grid-flow-item(
+@mixin zen-flow-item-width(
   $column-span,
   $parent-column-span   : false,
   $alpha-gutter         : false,
@@ -63,14 +63,7 @@
 
   // Include the flow item base mixin.
   @if $include-base {
-    // Since we are setting padding later, supress extraneous padding
-    // declarations in the base by setting $gutter-method to none.
-    @if $gutter-method == padding {
-      @include zen-grid-item-base($gutters, 'none', $box-sizing, $direction, $switch-direction);
-    }
-    @else {
-      @include zen-grid-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction);
-    }
+    @include zen-flow-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction);
   }
 
   // Calculate the item's width.
@@ -132,6 +125,26 @@
       padding-#{$rev}: 0;
     }
   }
+}
+
+//
+// Applies a standard set of properites to all flow items.
+// @see http://next.zengrids.com/reference/grids/#zen-grid-item-base
+//
+@mixin zen-flow-item-base(
+  $gutters                  : $zen-gutters,
+  $gutter-method            : $zen-gutter-method,
+  $box-sizing               : $zen-box-sizing,
+  $direction                : $zen-direction,
+  $switch-direction         : $zen-switch-direction
+) {
+
+  // Since we have to set padding in zen-flow-item-width(), supress extraneous
+  // padding declarations in the base by setting $gutter-method to none.
+  @if $gutter-method == padding {
+    $gutter-method: none;
+  }
+  @include zen-grid-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction);
 }
 
 //

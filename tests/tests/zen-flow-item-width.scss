@@ -1,0 +1,85 @@
+/**
+ * @file
+ * Test zen-flow-item-width()
+ */
+
+@import "zen-grids/flow";
+
+#test-zen-flow-item-width {
+  // We will use a 5 column grid for all tests.
+  $zen-columns: 5 !global;
+
+  /* Test zen-flow-item-width(1) without setting $parent-column-span */
+  @warn "The following test will generate a warning.";
+  @include zen-flow-item-width(1);
+
+  /* Test zen-flow-item-width(1, 4) with 20px gutter */
+  @include zen-flow-item-width(1, 4);
+
+  /* Test zen-flow-item-width(1, 4) with 15px gutter */
+  $zen-gutters: 15px !global;
+  @include zen-flow-item-width(1, 4);
+  $zen-gutters: 20px !global;
+
+  /* Test zen-flow-item-width(1) with 5 columns, 20px gutter and $zen-grid-width: 1000px */
+  $zen-grid-width: 1000px !global;
+  @include zen-flow-item-width(1);
+  $zen-grid-width: 100% !global;
+
+  /* Test zen-flow-item-width(1) with 5 columns, 20px gutter, $zen-grid-width: 1000px, $alpha-gutter: true and $omega-gutter: false */
+  $zen-grid-width: 1000px !global;
+  @include zen-flow-item-width(1, $alpha-gutter: true, $omega-gutter: false);
+  $zen-grid-width: 100% !global;
+
+  /* Test zen-flow-item-width(1) with 5 columns, 20px gutter, $zen-grid-width: 1000px and $omega-gutter: false */
+  $zen-grid-width: 1000px !global;
+  @include zen-flow-item-width(1, $omega-gutter: false);
+  $zen-grid-width: 100% !global;
+
+  /* Test zen-flow-item-width(1, 4) with 15px gutter and $zen-direction: right */
+  $zen-gutters: 15px !global;
+  $zen-direction: right !global;
+  @include zen-flow-item-width(1, 4);
+  $zen-gutters: 20px !global;
+  $zen-direction: left !global;
+
+  /* Test zen-flow-item-width(1, 4) with 15px gutter and $alpha-gutter: true */
+  $zen-gutters: 15px !global;
+  @include zen-flow-item-width(1, 4, $alpha-gutter: true);
+  $zen-gutters: 20px !global;
+
+  /* Test zen-flow-item-width(1, 4) with 15px gutter and $omega-gutter: false */
+  $zen-gutters: 15px !global;
+  @include zen-flow-item-width(1, 4, $omega-gutter: false);
+  $zen-gutters: 20px !global;
+
+  /* Test zen-flow-item-width(3, 4) with 20px gutter and $alpha-gutter: true */
+  @include zen-flow-item-width(3, 4, $alpha-gutter: true);
+
+  /* Test zen-flow-item-width(3, 4) with 20px gutter and $omega-gutter: false */
+  @include zen-flow-item-width(3, 4, $omega-gutter: false);
+
+  /* Test zen-flow-item-width(1, 4) with 15px gutter, $zen-direction: right and $alpha-gutter: true */
+  $zen-gutters: 15px !global;
+  $zen-direction: right !global;
+  @include zen-flow-item-width(1, 4, $alpha-gutter: true);
+  $zen-gutters: 20px !global;
+  $zen-direction: left !global;
+
+  /* Test zen-flow-item-width(1, 4) with $zen-box-sizing: content-box and 10% gutter */
+  $zen-gutters: 10% !global;
+  $zen-box-sizing: content-box !global;
+  @include zen-flow-item-width(1, 4);
+  $zen-gutters: 20px !global;
+  $zen-box-sizing: border-box !global;
+
+  /* Test zen-flow-item-width(1, 4) with $zen-box-sizing: universal-border-box */
+  $zen-box-sizing: universal-border-box !global;
+  @include zen-flow-item-width(1, 4);
+  $zen-box-sizing: border-box !global;
+
+  /* Test zen-flow-item-width(1, 4) with $zen-auto-include-flow-item-base: false */
+  $zen-auto-include-flow-item-base: false !global;
+  @include zen-flow-item-width(1, 4);
+  $zen-auto-include-flow-item-base: true !global;
+}
