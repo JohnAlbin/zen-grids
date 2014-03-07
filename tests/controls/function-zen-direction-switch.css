@@ -12,5 +12,5 @@
   /* Test zen-direction-switch(none) */
   float: none;
   /* Test zen-direction-switch(invalid) */
-  float: both;
+  float: invalid;
 }
