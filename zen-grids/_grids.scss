@@ -67,8 +67,7 @@
   $grid-width                   : $zen-grid-width,
   $box-sizing                   : $zen-box-sizing,
   $switch-direction             : $zen-switch-direction,
-  $auto-include-grid-item-base  : $zen-auto-include-grid-item-base,
-  $auto-include-box-sizing      : $zen-auto-include-box-sizing
+  $auto-include-grid-item-base  : $zen-auto-include-grid-item-base
 ) {
 
   // Calculate the unit width.
@@ -102,7 +101,7 @@
 
   // Auto-apply the unit base mixin.
   @if $auto-include-grid-item-base {
-    @include zen-grid-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction, $auto-include-box-sizing);
+    @include zen-grid-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction);
   }
 }
 
@@ -115,8 +114,7 @@
   $gutter-method            : $zen-gutter-method,
   $box-sizing               : $zen-box-sizing,
   $direction                : $zen-direction,
-  $switch-direction         : $zen-switch-direction,
-  $auto-include-box-sizing  : $zen-auto-include-box-sizing
+  $switch-direction         : $zen-switch-direction
 ) {
 
   $dir: $direction;
@@ -131,14 +129,14 @@
     }
   }
   // Specify the border-box properties.
-  @if $zen-auto-include-box-sizing and $box-sizing == border-box {
+  @if $box-sizing == border-box {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
   }
   // Prevent left/right borders since they'll break the layout with content-box.
-  @if $box-sizing == content-box {
+  @elseif $box-sizing == content-box {
     border: {
       left: 0 !important;
       right: 0 !important;

@@ -15,7 +15,7 @@
   padding-right: 10px;
   border-left: 0 !important;
   border-right: 0 !important;
-  /* Test zen-grid-item-base() with $zen-auto-include-box-sizing: false */
+  /* Test zen-grid-item-base() with $zen-box-sizing: universal-border-box */
   padding-left: 10px;
   padding-right: 10px;
   /* Test zen-grid-item-base() with IE 7 support */

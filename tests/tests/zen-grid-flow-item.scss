@@ -73,13 +73,13 @@
   $zen-gutters: 20px !global;
   $zen-box-sizing: border-box !global;
 
+  /* Test zen-grid-flow-item(1, 4) with $zen-box-sizing: universal-border-box */
+  $zen-box-sizing: universal-border-box !global;
+  @include zen-grid-flow-item(1, 4);
+  $zen-box-sizing: border-box !global;
+
   /* Test zen-grid-flow-item(1, 4) with $zen-auto-include-flow-item-base: false */
   $zen-auto-include-flow-item-base: false !global;
   @include zen-grid-flow-item(1, 4);
   $zen-auto-include-flow-item-base: true !global;
-
-  /* Test zen-grid-flow-item(1, 4) with $zen-auto-include-box-sizing: false */
-  $zen-auto-include-box-sizing: false !global;
-  @include zen-grid-flow-item(1, 4);
-  $zen-auto-include-box-sizing: true !global;
 }

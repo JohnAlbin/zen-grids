@@ -23,9 +23,6 @@ $box-sizing-polyfill-path         : ""          !default;
 // Specify the CSS3 box-sizing method. @see http://next.zengrids.com/reference/grids/#zen-box-sizing
 $zen-box-sizing                   : border-box  !default;
 
-// @see http://next.zengrids.com/reference/grids/#zen-auto-include-box-sizing
-$zen-auto-include-box-sizing      : true        !default;
-
 // @see http://next.zengrids.com/reference/grids/#browser-minimum-versions
 $browser-minimum-versions         : (
   'chrome':  null,

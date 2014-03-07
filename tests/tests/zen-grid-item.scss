@@ -11,12 +11,12 @@
   @include zen-grid-item(6, 4);
   $zen-columns: 1 !global;
 
-  /* Test zen-grid-item(6, 4) with 12 column grid and 20px gutter and $zen-auto-include-box-sizing: false */
+  /* Test zen-grid-item(6, 4) with 12 column grid and 20px gutter and $zen-box-sizing: universal-border-box */
   $zen-columns: 12 !global;
-  $zen-auto-include-box-sizing: false !global;
+  $zen-box-sizing: universal-border-box !global;
   @include zen-grid-item(6, 4);
   $zen-columns: 1 !global;
-  $zen-auto-include-box-sizing: true !global;
+  $zen-box-sizing: border-box !global;
 
   /* Test zen-grid-item(3, 3) with box-sizing: content-box, 5 column grid and 10% gutter */
   $zen-columns: 5 !global;
