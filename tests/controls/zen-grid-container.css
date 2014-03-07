@@ -53,9 +53,9 @@
 }
 
 #test-zen-grid-container-5 {
-  /* Test zen-grid-container() with $context: flow */
+  /* Test zen-grid-container() with $context: flow and $gutters: 21px */
   margin-left: -10px;
-  margin-right: -10px;
+  margin-right: -11px;
   padding-left: 0;
   padding-right: 0;
 }
@@ -68,12 +68,27 @@
 }
 
 #test-zen-grid-container-6 {
-  /* Test zen-grid-container() with $zen-gutter-method: margin */
+  /* Test zen-grid-container() with $context: flow and $gutters: 21px and $zen-switch-direction: true */
+  margin-left: -11px;
+  margin-right: -10px;
+  padding-left: 0;
+  padding-right: 0;
 }
 #test-zen-grid-container-6:before, #test-zen-grid-container-6:after {
   content: "";
   display: table;
 }
 #test-zen-grid-container-6:after {
+  clear: both;
+}
+
+#test-zen-grid-container-7 {
+  /* Test zen-grid-container() with $zen-gutter-method: margin */
+}
+#test-zen-grid-container-7:before, #test-zen-grid-container-7:after {
+  content: "";
+  display: table;
+}
+#test-zen-grid-container-7:after {
   clear: both;
 }

@@ -30,11 +30,18 @@
 }
 
 #test-zen-grid-container-5 {
-  /* Test zen-grid-container() with $context: flow */
-  @include zen-grid-container(flow);
+  /* Test zen-grid-container() with $context: flow and $gutters: 21px */
+  @include zen-grid-container(flow, $gutters: 21px);
 }
 
 #test-zen-grid-container-6 {
+  /* Test zen-grid-container() with $context: flow and $gutters: 21px and $zen-switch-direction: true */
+  $zen-switch-direction: true !global;
+  @include zen-grid-container(flow, $gutters: 21px);
+  $zen-switch-direction: false !global;
+}
+
+#test-zen-grid-container-7 {
   /* Test zen-grid-container() with $zen-gutter-method: margin */
   $zen-gutter-method: margin !global;
   @include zen-grid-container();

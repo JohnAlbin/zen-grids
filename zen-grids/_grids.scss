@@ -13,11 +13,17 @@
 // @see http://next.zengrids.com/reference/grids/#zen-grid-container
 //
 @mixin zen-grid-container(
-  $context          : none,
-  $gutters          : $zen-gutters,
-  $gutter-method    : $zen-gutter-method,
-  $direction        : $zen-direction
+  $context            : none,
+  $gutters            : $zen-gutters,
+  $gutter-method      : $zen-gutter-method,
+  $direction          : $zen-direction,
+  $switch-direction   : $zen-switch-direction
 ) {
+
+  $dir: $direction;
+  @if $switch-direction {
+    $dir: zen-direction-switch($dir);
+  }
 
   @if $context == flow-item {
     @warn "zen-grid-container()'s $context cannot be set to: flow-item. It has been set to: flow.";
@@ -49,8 +55,8 @@
   // Un-do the gutter padding of the parent grid item.
   @if $context == flow and $gutter-method == padding {
     margin: {
-      left: -(zen-half-gutter($gutters, left, $direction));
-      right: -(zen-half-gutter($gutters, right, $direction));
+      left: -(zen-half-gutter($gutters, left, $dir));
+      right: -(zen-half-gutter($gutters, right, $dir));
     }
   }
 
