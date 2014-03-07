@@ -77,4 +77,9 @@
   $zen-columns: 24 !global;
   @include zen-grid-background();
   $zen-columns: 1 !global;
+
+  /* Test zen-grid-background() with $display-zen-grid-background: false */
+  $display-zen-grid-background: false !global;
+  @include zen-grid-background();
+  $display-zen-grid-background: true !global;
 }

@@ -57,3 +57,8 @@ $zen-grid-numbers                 : both        !default;
 
 // Specify a set of images to number the columns of the background grid. @see http://next.zengrids.com/reference/background/#zen-grid-number-images
 $zen-grid-number-images           : ()          !default;
+
+// Set this to false to turn off all background grid images without having to
+// remove calls to zen-grid-background() from the code.
+// @see http://next.zengrids.com/reference/background/#display-zen-grid-background
+$display-zen-grid-background      : true        !default;
