@@ -19,6 +19,15 @@
   $direction        : $zen-direction
 ) {
 
+  @if $context == flow-item {
+    @warn "zen-grid-container()'s $context cannot be set to: flow-item. It has been set to: flow.";
+    $context: flow;
+  }
+  @else if $context == grid {
+    @warn "zen-grid-container()'s $context cannot be set to: grid. It has been set to: grid-item.";
+    $context: grid-item;
+  }
+
   // @TODO: This is a pre-IE8 line of code; don't remember why its needed.
   @if zen-support-for(ie, 7) {
     *position: relative;
