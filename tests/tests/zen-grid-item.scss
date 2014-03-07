@@ -95,4 +95,7 @@
   $zen-gutter-method: padding !global;
   $zen-columns: 1 !global;
   $zen-gutters: 20px !global;
+
+  /* Test zen-grid-item(1, 1) with $gutters: 10px and $zen-auto-include-grid-item-base: false */
+  @include zen-grid-item(1, 1, $gutters: 10px);
 }
