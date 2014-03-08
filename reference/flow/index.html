@@ -58,7 +58,7 @@
       </li>
       <li><a href="/reference/flow/#mixins">Mix-ins</a>
         <ul>
-        <li><a href="/reference/flow/#zen-grid-flow-item">zen-grid-flow-item</a></li>
+        <li><a href="/reference/flow/#zen-flow-item-width">zen-flow-item-width</a></li>
         <li><a href="/reference/flow/#zen-float">zen-float</a></li>
         </ul>
       </li>
@@ -91,25 +91,25 @@
     <h2>Flow Module: Mix-ins <a href="#mixins" title="permalink">#</a></h2>
 
     <article>
-    <h3 id="zen-grid-flow-item">zen-grid-flow-item(
+    <h3 id="zen-flow-item-width">zen-flow-item-width(
       $column-span,
       $parent-column-span
       )<br>
-      zen-grid-flow-item(
+      zen-flow-item-width(
       $column-span,
       $parent-column-span,
       $alpha-gutter,
       $omega-gutter
       )<br>
       <em>or for fixed length (em, px, etc.) layouts:</em><br>
-      zen-grid-flow-item(
+      zen-flow-item-width(
       $column-span
       )<br>
-      zen-grid-flow-item(
+      zen-flow-item-width(
       $column-span,
       $alpha-gutter: [value],
       $omega-gutter: [value]
-      ) <a href="#zen-grid-flow-item" title="permalink">#</a></h3>
+      ) <a href="#zen-flow-item-width" title="permalink">#</a></h3>
     <p>
     To use this mixin, you must first import the flow module with:
     <code>@import "zen-grids/flow";</code>
@@ -172,7 +172,7 @@
       </div>
     </figure>
     <p>
-    Now we’ve applied <code>@include zen-grid-flow-item(2, 4);</code> to the first paragraph. It now aligns to the first two columns of the grid item. We must tell the mixin that the parent grid item spans 4 items so that the width of the flow item is calculated properly. Note that the first paragraph is <em>still</em> in the normal flow along with the second paragraph.
+    Now we’ve applied <code>@include zen-flow-item-width(2, 4);</code> to the first paragraph. It now aligns to the first two columns of the grid item. We must tell the mixin that the parent grid item spans 4 items so that the width of the flow item is calculated properly. Note that the first paragraph is <em>still</em> in the normal flow along with the second paragraph.
     </p>
     <figure class="example-flow">
       <div class="example-flow__container">
@@ -190,7 +190,7 @@
       </div>
     </figure>
     <p>
-    Now, in addition to the <code>@include zen-grid-flow-item(2, 4);</code>, we’ve also applied <code>@include zen-float();</code> to the first paragraph. The first paragraph now floats to the left and allows other normal flow items (like the second paragraph) to wrap around it.
+    Now, in addition to the <code>@include zen-flow-item-width(2, 4);</code>, we’ve also applied <code>@include zen-float();</code> to the first paragraph. The first paragraph now floats to the left and allows other normal flow items (like the second paragraph) to wrap around it.
     </p>
     <figure class="example-flow">
       <div class="example-flow__container">

@@ -182,7 +182,7 @@ h1 {
   }
   .example-flow__flow {
     @extend .example-flow__none;
-    @include zen-grid-flow-item(2, 4);
+    @include zen-flow-item-width(2, 4);
   }
   .example-flow__float {
     @extend .example-flow__flow;
