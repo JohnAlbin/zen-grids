@@ -1,0 +1,100 @@
+@import 'zen-grids/layout';
+
+.test-columns {
+  $zen-columns: 12 !global;
+  before: $zen-columns;
+  @include zen-layout($columns: 6) {
+    during: $zen-columns;
+  }
+  after: $zen-columns;
+}
+
+.test-gutters {
+  $zen-gutters: 20px !global;
+  before: $zen-gutters;
+  @include zen-layout($gutters: 10em) {
+    during: $zen-gutters;
+  }
+  after: $zen-gutters;
+}
+
+.test-gutter-method {
+  $zen-gutter-method: padding !global;
+  before: $zen-gutter-method;
+  @include zen-layout($gutter-method: margin) {
+    during: $zen-gutter-method;
+  }
+  after: $zen-gutter-method;
+}
+
+.test-grid-width {
+  $zen-grid-width: 100% !global;
+  before: $zen-grid-width;
+  @include zen-layout($grid-width: 90%) {
+    during: $zen-grid-width;
+  }
+  after: $zen-grid-width;
+}
+
+.test-box-sizing {
+  $zen-box-sizing: border-box !global;
+  before: $zen-box-sizing;
+  @include zen-layout($box-sizing: content-box) {
+    during: $zen-box-sizing;
+  }
+  after: $zen-box-sizing;
+}
+
+.test-direction {
+  $zen-direction: left !global;
+  before: $zen-direction;
+  @include zen-layout($direction: right) {
+    during: $zen-direction;
+  }
+  after: $zen-direction;
+}
+
+.test-switch-direction {
+  $zen-switch-direction: false !global;
+  before: $zen-switch-direction;
+  @include zen-layout($switch-direction: true) {
+    during: $zen-switch-direction;
+  }
+  after: $zen-switch-direction;
+}
+
+.test-auto-include-grid-item-base {
+  $zen-auto-include-grid-item-base: true !global;
+  before: $zen-auto-include-grid-item-base;
+  @include zen-layout($auto-include-grid-item-base: false) {
+    during: $zen-auto-include-grid-item-base;
+  }
+  after: $zen-auto-include-grid-item-base;
+}
+
+.test-auto-include-flow-item-base {
+  $zen-auto-include-flow-item-base: true !global;
+  before: $zen-auto-include-flow-item-base;
+  @include zen-layout($auto-include-flow-item-base: false) {
+    during: $zen-auto-include-flow-item-base;
+  }
+  after: $zen-auto-include-flow-item-base;
+}
+
+.test-grid-color {
+  $zen-grid-color: #ffdede !global;
+  before: $zen-grid-color;
+  @include zen-layout($grid-color: #dedeff) {
+    during: $zen-grid-color;
+  }
+  after: $zen-grid-color;
+}
+
+.test-grid-numbers {
+  $zen-grid-numbers: both !global;
+  before: $zen-grid-numbers;
+  @include zen-layout($grid-numbers: top) {
+    during: $zen-grid-numbers;
+  }
+  after: $zen-grid-numbers;
+}

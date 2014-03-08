@@ -1,0 +1,145 @@
+// Layout module
+//
+// The "Layout" module for the Zen Grids system.
+//
+// When building a grid system for your site, properties (like number of columns or gutter size) will need different values at different viewport widths. In previous versions of Zen Grids, this meant changing the Zen Grids' global variables each time you wanted to build a layout at a different viewport size. With the layout module, you can instead set grid system properties that override your default global variables within the scope of the layout mixin.
+//
+// For example:
+// ```
+// $zen-columns: 1; // Default to one column for mobile layout.
+// @include zen-layout($columns: 3) {
+//   // $zen-columns is set to 3 inside this block and can be used to build a
+//   // layout for the following breakpoint.
+//   @media screen and (min-width: 777px) {
+//     .sidebar {
+//       // The sidebar will span the first column of the 3 columns defined.
+//       @include zen-grid-item(1, 1);
+//     }
+//   }
+// }
+// // $zen-columns is back to 1 after the zen-layout() block.
+// ```
+//
+// Style guide: layout
+
+@import "./grids";
+
+// zen-layout(...)
+//
+// Should be used to add a wrapping block where its parameters will override the
+// corresponding global `$zen-` variables within it.
+//
+// $layout - Specify the name of the layout from $zen-columns to use.
+// $columns - Defaults to $zen-columns.
+// $gutters - Defaults to $zen-gutters
+// $gutter-method - Defaults to $zen-gutter-method
+// $grid-width - Defaults to $zen-grid-width
+// $box-sizing - Defaults to $zen-box-sizing
+// $direction - Defaults to $zen-direction
+// $switch-direction - Defaults to $zen-switch-direction
+// $auto-include-grid-item-base - Defaults to $zen-auto-include-grid-item-base
+// $auto-include-flow-item-base - Defaults to $zen-auto-include-flow-item-base
+// $grid-color - Defaults to $zen-grid-color
+// $grid-numbers - Defaults to $zen-grid-numbers
+//
+// Style guide: layout.zen-layout
+@mixin zen-layout(
+  $layout                       : null,
+  $columns                      : null,
+  $gutters                      : null,
+  $gutter-method                : null,
+  $grid-width                   : null,
+  $box-sizing                   : null,
+  $direction                    : null,
+  $switch-direction             : null,
+  $auto-include-grid-item-base  : null,
+  $auto-include-flow-item-base  : null,
+  $grid-color                   : null,
+  $grid-numbers                 : null
+) {
+
+  // Save the previous versions of Zen's global variables.
+  $global-vars                      : (
+    'columns'                       : $zen-columns,
+    'gutters'                       : $zen-gutters,
+    'gutter-method'                 : $zen-gutter-method,
+    'grid-width'                    : $zen-grid-width,
+    'box-sizing'                    : $zen-box-sizing,
+    'direction'                     : $zen-direction,
+    'switch-direction'              : $zen-switch-direction,
+    'auto-include-grid-item-base'   : $zen-auto-include-grid-item-base,
+    'auto-include-flow-item-base'   : $zen-auto-include-flow-item-base,
+    'grid-color'                    : $zen-grid-color,
+    'grid-numbers'                  : $zen-grid-numbers
+  );
+
+  // Grab a layout from $zen-layouts while defaulting to the global values.
+  $local-defaults: $global-vars;
+  @if type-of($layout) != 'null' and map-has-key($zen-layouts, $layout) {
+    $local-defaults: map-merge($local-defaults, map-get($zen-layouts, $layout));
+  }
+
+  // Ensure our local parameters all have a value.
+  @if type-of($columns) == 'null' {
+    $columns: map-get($local-defaults, 'columns');
+  }
+  @if type-of($gutters) == 'null' {
+    $gutters: map-get($local-defaults, 'gutters');
+  }
+  @if type-of($gutter-method) == 'null' {
+    $gutter-method: map-get($local-defaults, 'gutter-method');
+  }
+  @if type-of($grid-width) == 'null' {
+    $grid-width: map-get($local-defaults, 'grid-width');
+  }
+  @if type-of($box-sizing) == 'null' {
+    $box-sizing: map-get($local-defaults, 'box-sizing');
+  }
+  @if type-of($direction) == 'null' {
+    $direction: map-get($local-defaults, 'direction');
+  }
+  @if type-of($switch-direction) == 'null' {
+    $switch-direction: map-get($local-defaults, 'switch-direction');
+  }
+  @if type-of($auto-include-grid-item-base) == 'null' {
+    $auto-include-grid-item-base: map-get($local-defaults, 'auto-include-grid-item-base');
+  }
+  @if type-of($auto-include-flow-item-base) == 'null' {
+    $auto-include-flow-item-base: map-get($local-defaults, 'auto-include-flow-item-base');
+  }
+  @if type-of($grid-color) == 'null' {
+    $grid-color: map-get($local-defaults, 'grid-color');
+  }
+  @if type-of($grid-numbers) == 'null' {
+    $grid-numbers: map-get($local-defaults, 'grid-numbers');
+  }
+
+  // Temporarily override Zen's global variables.
+  $zen-columns                      : $columns !global;
+  $zen-gutters                      : $gutters !global;
+  $zen-gutter-method                : $gutter-method !global;
+  $zen-grid-width                   : $grid-width !global;
+  $zen-box-sizing                   : $box-sizing !global;
+  $zen-direction                    : $direction !global;
+  $zen-switch-direction             : $switch-direction !global;
+  $zen-auto-include-grid-item-base  : $auto-include-grid-item-base !global;
+  $zen-auto-include-flow-item-base  : $auto-include-flow-item-base !global;
+  $zen-grid-color                   : $grid-color !global;
+  $zen-grid-numbers                 : $grid-numbers !global;
+
+  // Generate the content in the new global context.
+  @content;
+
+  // Restore Zen's global variables.
+  $zen-columns                      : map-get($global-vars, 'columns') !global;
+  $zen-gutters                      : map-get($global-vars, 'gutters') !global;
+  $zen-gutter-method                : map-get($global-vars, 'gutter-method') !global;
+  $zen-grid-width                   : map-get($global-vars, 'grid-width') !global;
+  $zen-box-sizing                   : map-get($global-vars, 'box-sizing') !global;
+  $zen-direction                    : map-get($global-vars, 'direction') !global;
+  $zen-switch-direction             : map-get($global-vars, 'switch-direction') !global;
+  $zen-auto-include-grid-item-base  : map-get($global-vars, 'auto-include-grid-item-base') !global;
+  $zen-auto-include-flow-item-base  : map-get($global-vars, 'auto-include-flow-item-base') !global;
+  $zen-grid-color                   : map-get($global-vars, 'grid-color') !global;
+  $zen-grid-numbers                 : map-get($global-vars, 'grid-numbers') !global;
+}
