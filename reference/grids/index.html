@@ -65,18 +65,11 @@
         <li><a href="/reference/grids/#zen-new-row">zen-new-row</a></li>
         </ul>
       </li>
-      <li><a href="/reference/grids/#functions">Functions</a>
-        <ul>
-        <li><a href="/reference/grids/#zen-half-gutter">zen-half-gutter</a></li>
-        <li><a href="/reference/grids/#zen-unit-width">zen-unit-width</a></li>
-        <li><a href="/reference/grids/#zen-grid-item-width">zen-grid-item-width</a></li>
-        <li><a href="/reference/grids/#zen-direction-switch">zen-direction-switch</a></li>
-        </ul>
-      </li>
       </ul>
     </li>
     <li><a href="/reference/background/">The “background” module</a></li>
     <li><a href="/reference/flow/">The “flow” module</a></li>
+    <li><a href="/reference/functions/">The “helper functions” module</a></li>
     <li><a href="/help/examples/">Examples</a></li>
     </ul>
     </section>
@@ -343,69 +336,6 @@ $legacy-support-for-ie6: false !default;</code></pre>
     <li><code>$direction: $zen-direction</code></li>
     <li><code>$switch-direction: $zen-switch-direction</code></li>
     </ul>
-    </article>
-
-    </section>
-
-    <section id="functions">
-    <h2>Grids Module: Functions <a href="#functions" title="permalink">#</a></h2>
-    <p>
-    Helper functions for the Zen mixins.
-    </p>
-
-    <article>
-    <h3 id="zen-half-gutter">zen-half-gutter()<br />
-      zen-half-gutter(
-      $gutter-side: [value]
-      ) <a href="#zen-half-gutter" title="permalink">#</a></h3>
-    <p>
-    Returns a half gutter width. The <code>$gutter-side</code> defaults to <a href="#zen-direction"><code>$zen-direction</code></a>.
-    </p>
-    <p>
-    If the gutter width is in pixels and is an odd number, then <code>$gutter-side: left</code> will return half of the gutter rounded down to a whole pixel; <code>$gutter-side: right</code> will return half of the gutter rounded up to a whole pixel.
-    </p>
-    <p>Additional optional parameters and their defaults:</p>
-    <ul>
-    <li><code>$gutters: $zen-gutters</code></li>
-    <li><code>$direction: $zen-direction</code></li>
-    </ul>
-    </article>
-
-    <article>
-    <h3 id="zen-unit-width">zen-unit-width() <a href="#zen-unit-width" title="permalink">#</a></h3>
-    <p>
-    Returns the unit width of a single column in the grid.
-    </p>
-    <p>Additional optional parameters and their defaults:</p>
-    <ul>
-    <li><code>$columns: $zen-columns</code></li>
-    <li><code>$grid-width: $zen-grid-width</code></li>
-    </ul>
-    </article>
-
-    <article>
-    <h3 id="zen-grid-item-width">zen-grid-item-width(
-      $column-span
-      ) <a href="#zen-grid-item-width" title="permalink">#</a></h3>
-    <p>
-    Calculates the width of a grid item that spans the specified number of columns. The $columns defaults to $zen-columns and $grid-width defaults to $zen-grid-width.
-    </p>
-    <p>Additional optional parameters and their defaults:</p>
-    <ul>
-    <li><code>$columns: $zen-columns</code></li>
-    <li><code>$gutters: $zen-gutters</code></li>
-    <li><code>$grid-width: $zen-grid-width</code></li>
-    <li><code>$box-sizing: $zen-box-sizing</code></li>
-    </ul>
-    </article>
-
-    <article>
-    <h3 id="zen-direction-switch">zen-direction-switch(
-      $dir
-      ) <a href="#zen-direction-switch" title="permalink">#</a></h3>
-    <p>
-    Returns the opposite direction, given "left" or "right".
-    </p>
     </article>
 
     </section>

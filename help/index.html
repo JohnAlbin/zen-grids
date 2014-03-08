@@ -48,6 +48,7 @@
     <ul>
     <li><a href="/help/#overview">Overview</a></li>
     <li><a href="/reference/grids/">The default “grids” module</a></li>
+    <li><a href="/reference/functions/">The “helper functions” module</a></li>
     <li><a href="/reference/background/">The “background” module</a></li>
     <li><a href="/reference/flow/">The “flow” module</a></li>
     <li><a href="/help/examples/">Examples</a></li>
@@ -57,19 +58,30 @@
     <section class="layout__start" id="overview">
     <h2>Overview <a href="#overview" title="permalink">#</a></h2>
     <p>
-    The Zen Grids system is organized into a handful of modules that can be
-    imported as needed. The basic functionality is contained in the “grids”
-    module. Optional functionality can be found in the “background” and “flow”
-    modules.
+    The Zen Grids system is organized into a handful of modules that can be imported as needed. The basic functionality is contained in the “grids” and “helper functions” module. Optional functionality can be found in the “background” and “flow” modules.
     </p>
     <h3 id="grids-module">The “grids” module <a href="#grids-module" title="permalink">#</a></h3>
     <p>
-    This is the default module imported using:
+    This is one of the default modules imported using:
     </p>
     <pre><code>@import "zen-grids";</code></pre>
     <p>
-    The grids module contains all the configurable variables, mixins and functions you’ll need to create a layout.
+    The grids module contains all the configurable variables and mixins you’ll need to create a layout. It will also automatically import the “helper functions” module so that you have access to the functions you’ll need when creating a layout.
     </p>
+    <h3 id="functions-module">The “helper functions” module <a href="#functions-module" title="permalink">#</a></h3>
+    <p>
+    This is one of the default modules imported using:
+    </p>
+    <pre><code>@import "zen-grids";</code></pre>
+    <p>
+    When combined with the grids module, you will have access to all the configurable variables, mixins, and functions you’ll need to create a layout.
+    </p>
+    <!--
+    <p>
+    @todo: why you'd imoprt it manually
+    </p>
+    -->
+    <pre><code>@import "zen-grids/functions";</code></pre>
     <h3 id="background-module">The “background” module <a href="#background-module" title="permalink">#</a></h3>
     <p>
     During development, it is often useful for the layout designer to see the
