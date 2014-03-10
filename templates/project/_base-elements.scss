@@ -9,12 +9,11 @@ html {
 }
 
 body {
-  padding: {
-    top:   $vertical-rhythm;
-    right: $vertical-rhythm;
-  }
+  margin: 0;
 }
 
+h1,
+h2,
 p {
   margin: {
     top:    $vertical-rhythm;
