@@ -3,7 +3,6 @@
  * Component styles.
  */
 
-
 /* Skip link styling */
 .skip-link {
   margin: 0;
@@ -24,16 +23,6 @@
     color: #fff;
     background-color: #666;
   }
-}
-
-/* Set a consistent padding around all containers */
-.header,
-.footer {
-  @extend %grid-item;
-}
-.grid-item,
-.footer {
-  padding-top: $vertical-rhythm;
 }
 
 /* Source-order meta info */
