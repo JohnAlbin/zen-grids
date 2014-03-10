@@ -1,0 +1,112 @@
+/**
+ * @file
+ * Test zen-grid-container() and zen-grid-item() after @import compass.
+ */
+#test-zen-grid-container {
+  /* Test zen-grid-container() */
+  *position: relative;
+  *zoom: 1;
+}
+#test-zen-grid-container:before, #test-zen-grid-container:after {
+  content: "";
+  display: table;
+}
+#test-zen-grid-container:after {
+  clear: both;
+}
+
+#test-zen-grid-container-2 {
+  /* Test zen-grid-container() with IE 8 support */
+}
+#test-zen-grid-container-2:before, #test-zen-grid-container-2:after {
+  content: "";
+  display: table;
+}
+#test-zen-grid-container-2:after {
+  clear: both;
+}
+
+#test-zen-grid-container-3 {
+  /* Test zen-grid-container() with IE 7 support */
+  *position: relative;
+  *zoom: 1;
+}
+#test-zen-grid-container-3:before, #test-zen-grid-container-3:after {
+  content: "";
+  display: table;
+}
+#test-zen-grid-container-3:after {
+  clear: both;
+}
+
+#test-zen-grid-container-4 {
+  /* Test zen-grid-container() with IE 6 support */
+  *position: relative;
+  *zoom: 1;
+}
+#test-zen-grid-container-4:before, #test-zen-grid-container-4:after {
+  content: "";
+  display: table;
+}
+#test-zen-grid-container-4:after {
+  clear: both;
+}
+
+#test-zen-grid-item {
+  /* Test zen-grid-item(1, 1) */
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  *margin-right: -99.9%;
+  padding-left: 10px;
+  padding-right: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  *behavior: url("/ie-box-sizing.htc");
+  *word-wrap: break-word;
+  /* Test zen-grid-item(1, 1) with IE 8 support */
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  /* Test zen-grid-item(1, 1) with IE 7 support */
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  *margin-right: -99.9%;
+  padding-left: 10px;
+  padding-right: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  *behavior: url("/ie-box-sizing.htc");
+  *word-wrap: break-word;
+  /* Test zen-grid-item(1, 1) with IE 6 support */
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  *margin-right: -99.9%;
+  padding-left: 10px;
+  padding-right: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  *behavior: url("/ie-box-sizing.htc");
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+  *word-wrap: break-word;
+}
