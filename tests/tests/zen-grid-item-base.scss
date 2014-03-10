@@ -20,24 +20,24 @@
   $zen-box-sizing: border-box !global;
 
   /* Test zen-grid-item-base() with IE 7 support */
-  $browser-minimum-versions: ('ie': 7) !global;
+  $browser-minimum-versions: (ie: "7") !global;
   @warn "The following test will generate a warning.";
   @include zen-grid-item-base();
-  $browser-minimum-versions: ('ie': null) !global;
+  $browser-minimum-versions: (ie: null) !global;
 
   /* Test zen-grid-item-base() with $box-sizing-polyfill-path: "/boxsizing.htc" and IE 7 support */
   $box-sizing-polyfill-path: "/boxsizing.htc" !global;
-  $browser-minimum-versions: ('ie': 7) !global;
+  $browser-minimum-versions: (ie: "7") !global;
   @include zen-grid-item-base();
   $box-sizing-polyfill-path: "" !global;
-  $browser-minimum-versions: ('ie': null) !global;
+  $browser-minimum-versions: (ie: null) !global;
 
   /* Test zen-grid-item-base() with $box-sizing-polyfill-path: "/boxsizing.htc" and IE 6 support */
   $box-sizing-polyfill-path: "/boxsizing.htc" !global;
-  $browser-minimum-versions: ('ie': 6) !global;
+  $browser-minimum-versions: (ie: "6") !global;
   @include zen-grid-item-base();
   $box-sizing-polyfill-path: "" !global;
-  $browser-minimum-versions: ('ie': null) !global;
+  $browser-minimum-versions: (ie: null) !global;
 
   /* Test zen-grid-item-base() with $zen-gutters: 15px */
   $zen-gutters: 15px !global;
