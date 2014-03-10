@@ -58,14 +58,16 @@
 .pull-quote {
   @include zen-float();
   @include zen-flow-item-width(1, 2);
-  @media all and (min-width: 999px) {
-    @include zen-flow-item-width(1, 3);
-  }
 
   margin: {
-    top: $vertical-rhythm;
+    bottom: $vertical-rhythm/2;
   }
+
   font-size: 1.2em;
   font-weight: bold;
   font-style: italic;
+
+  @media all and (min-width: 999px) {
+    @include zen-flow-item-width(1, 3);
+  }
 }
