@@ -191,10 +191,10 @@
     <article>
     <h4 id="browser-minimum-versions"><code>$browser-minimum-versions</code> <a href="#browser-minimum-versions" title="permalink">#</a></h4>
     <p>
-    Specify the minimum browser versions that must be supported. Currently, Zen Grids only uses the 'ie' value to determine if additional CSS properties are needed for IE 6 and IE 7 support. For example, to add support for IE 7, set <code>$browser-minimum-versions: ('ie': 7);</code>
+    Specify the minimum browser versions that must be supported. Currently, Zen Grids only uses the "ie" value to determine if additional CSS properties are needed for IE 6 and IE 7 support. For example, to add support for IE 7, set <code>$browser-minimum-versions: (ie: "7");</code>
     </p>
     <p>
-    This variable is a copy of the one used by <a href="http://beta.compass-style.org/reference/compass/support/">Compass’ Browser Support module</a>. Zen Grids does not require Compass, but will use Compass’ module if available. Note: as of 2014, Compass includes support for IE 7 by default because its browser usage (according to caniuse.com) is higher than 1 in 10,000 users. If your project uses Compass, you can <em>drop</em> support for IE 7, but setting <code>$browser-minimum-versions: ('ie': 8);</code>
+    This variable is a copy of the one used by <a href="http://beta.compass-style.org/reference/compass/support/">Compass’ Browser Support module</a>. Zen Grids does not require Compass, but will use Compass’ module if available. Note: as of 2014, Compass includes support for IE 7 by default because its browser usage (according to caniuse.com) is higher than 1 in 10,000 users. If your project uses Compass, you can <em>drop</em> support for IE 7, but setting <code>$browser-minimum-versions: (ie: "8");</code>
     </p>
     <pre><code>$browser-minimum-versions: (<br>
   'chrome':  null,<br>
@@ -211,7 +211,7 @@
     Specify the CSS3 box-sizing method. The default, "border-box", is compatible with all modern browsers, including IE 8 and later.
     </p>
     <p>
-    To add IE6 and IE7 support, you’ll need to set <a href="#browser-minimum-versions"><code>$browser-minimum-versions</code></a> to <code>('ie': 6)</code> and then either use a polyfill (see <a href="#box-sizing-polyfill-path"><code>$box-sizing-polyfill-path</code></a>) or set <code>$zen-box-sizing</code> to "content-box".
+    To add IE6 and IE7 support, you’ll need to set <a href="#browser-minimum-versions"><code>$browser-minimum-versions</code></a> to <code>(ie: "6")</code> and then either use a polyfill (see <a href="#box-sizing-polyfill-path"><code>$box-sizing-polyfill-path</code></a>) or set <code>$zen-box-sizing</code> to "content-box".
     </p>
     <p>
     Note: if <code>$zen-box-sizing</code> is set to "content-box", then <a href="#zen-gutters"><code>$zen-gutters</code></a> will need to use the same unit of measurement as the <a href="#zen-grid-width"><code>$zen-grid-width</code></a>.
