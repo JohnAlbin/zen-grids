@@ -13,15 +13,15 @@
   padding: 2px 0 3px 0;
   text-align: center;
 
-  /* The skip-link link will be completely hidden until a user tabs to the link. */
-  @media all and (min-width: 444px) {
-    @include visually-focusable();
-  }
-
   &,
   &:visited {
     color: #fff;
     background-color: #666;
+  }
+
+  /* The skip-link link will be completely hidden until a user tabs to the link. */
+  @media all and (min-width: 444px) {
+    @include visually-focusable();
   }
 }
 
