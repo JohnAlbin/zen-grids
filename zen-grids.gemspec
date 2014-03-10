@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.authors     = ['John Albin Wilkins']
   s.email       = 'virtually.johnalbin@gmail.com'
 
-  s.add_runtime_dependency('sass', ">= 3.3.0-rc.1")
+  s.add_runtime_dependency('sass', ">= 3.3")
 
   s.files       = `git ls-files -z`.split "\0"
 end
