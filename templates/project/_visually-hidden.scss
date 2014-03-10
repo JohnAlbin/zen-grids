@@ -1,6 +1,6 @@
 //
 // @file
-// Accessibility features.
+// This is an accessibility module.
 //
 
 // As defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
@@ -31,21 +31,5 @@
   &:active,
   &:focus {
     @include visually-hidden-off();
-  }
-}
-
-// Placeholder styles for use with @extend.
-%visually-hidden {
-  @include visually-hidden();
-}
-%visually-hidden-off {
-  @include visually-hidden-off();
-}
-%visually-focusable {
-  @extend %visually-hidden;
-
-  &:active,
-  &:focus {
-    @extend %visually-hidden-off;
   }
 }

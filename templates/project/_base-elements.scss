@@ -1,0 +1,22 @@
+/**
+ * @file
+ * Base HTML element styles.
+ */
+
+html {
+  font-size:   $base-font-size;
+  line-height: $base-line-height;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+p {
+  margin: {
+    top:    $vertical-rhythm;
+    bottom: $vertical-rhythm;
+  }
+}

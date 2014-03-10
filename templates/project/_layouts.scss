@@ -1,0 +1,143 @@
+/**
+ * @file
+ * Layout styles.
+ *
+ * We use example breakpoints of 27em, 41em, 49em, 63em and 69px. The right
+ * breakpoints to use for your site depend on your content.
+ * We use example breakpoints of 444px, 666px, 777px, 999px and 1111px. The
+ * right breakpoints to use for your site depend on your content.
+ */
+
+/* The container for our grid items. */
+.l-basic {
+  @include zen-grid-container();
+  @include zen-grid-background();
+  // Center the layout and ensure it doesn't grow too wide.
+  margin: {
+    left:  auto;
+    right: auto;
+  }
+  // Add some padding so we can see the grid background numbers more easily.
+  padding: {
+    top:   $vertical-rhythm;
+    bottom: $vertical-rhythm;
+  }
+  max-width: 1111px;
+}
+
+$zen-columns: 1;
+
+/* Mobile layout; all grid items are one column wide. */
+.l-basic__header,
+.l-basic__main,
+.l-basic__menu,
+.l-basic__content,
+.l-basic__aside1,
+.l-basic__aside2,
+.l-basic__footer {
+  /* Set the shared properties for all grid items. */
+  /* Note: we set $zen-auto-include-grid-item-base to false in _init.scss. */
+  @include zen-grid-item-base();
+}
+
+/* "main" is a grid-item (of .l-basic) that is also a nested grid container. */
+.l-basic__main {
+  @include zen-grid-container(grid-item);
+}
+
+/* Horizontal navigation bar */
+@media all and (min-width: 444px) {
+  $navbar-height: 5em;
+
+  .l-basic__main {
+    padding-top: $navbar-height;
+  }
+  .l-basic__menu {
+    @include zen-grid-item(1, 1);
+    margin-top: -$navbar-height;
+    height: $navbar-height;
+  }
+}
+
+$zen-columns: 2;
+@media all and (min-width: 444px) and (max-width: 665px) {
+  .l-basic {
+    @include zen-grid-background(); // Show the new 2-column background grid image.
+  }
+  .l-basic__content {
+    @include zen-grid-item(2, 1);
+  }
+  .l-basic__aside1 {
+    @include zen-new-row(); // Clear left-floated elements (.l-basic__content)
+    @include zen-grid-item(1, 1);
+  }
+  .l-basic__aside2 {
+    @include zen-grid-item(1, 2);
+  }
+}
+
+@media all and (min-width: 444px) {
+  .l-basic__columns {
+    @include zen-grid-container(flow);
+  }
+  .l-basic__col1,
+  .l-basic__col2 {
+    @include zen-grid-item-base();
+    margin: {
+      top: 0;
+      bottom: 0;
+    }
+  }
+  .l-basic__col1 {
+    @include zen-grid-item(1, 1);
+  }
+  .l-basic__col2 {
+    @include zen-grid-item(1, 2);
+  }
+}
+
+$zen-columns: 3;
+@media all and (min-width: 666px) and (max-width: 998px) {
+  .l-basic {
+    @include zen-grid-background(); // Show the new 3-column background grid image.
+  }
+  .l-basic__content {
+    @include zen-grid-item(2, 1);
+  }
+  .l-basic__aside1 {
+    @include zen-grid-item(1, 1, right); // Position from the right
+  }
+  .l-basic__aside2 {
+    @include zen-new-row(); // Clear left-floated elements (.l-basic__content)
+    @include zen-grid-item(2, 1);
+  }
+}
+
+@media all and (min-width: 777px) and (max-width: 998px) {
+  .l-basic__aside2 {
+    @include zen-new-row(right); // Clear right-floated elements (.l-basic__aside1)
+    @include zen-grid-item(1, 1, right);
+  }
+}
+
+$zen-columns: 5;
+@media all and (min-width: 999px) {
+  .l-basic {
+    @include zen-grid-background(); // Show the new 5-column background grid image.
+  }
+  .l-basic__content {
+    @include zen-grid-item(3, 2);
+  }
+  .l-basic__aside1 {
+    @include zen-grid-item(1, 1);
+  }
+  .l-basic__aside2 {
+    @include zen-grid-item(1, 5);
+  }
+  .l-basic__col1 {
+    @include zen-grid-item(2, 1, $columns: 3);
+  }
+  .l-basic__col2 {
+    @include zen-grid-item(1, 3, $columns: 3);
+  }
+}

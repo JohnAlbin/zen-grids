@@ -1,0 +1,73 @@
+/**
+ * @file
+ * Component styles.
+ */
+
+/* Skip link styling */
+.skip-link {
+  margin: 0;
+}
+.skip-link__link {
+  display: block;
+  width: 100%;
+  padding: 2px 0 3px 0;
+  text-align: center;
+
+  &,
+  &:visited {
+    color: #fff;
+    background-color: #666;
+  }
+
+  /* The skip-link link will be completely hidden until a user tabs to the link. */
+  @media all and (min-width: 444px) {
+    @include visually-focusable();
+  }
+}
+
+/* Source-order meta info */
+.meta {
+  margin: 0 0 .5rem 0;
+  display: block;
+  + * {
+    margin-top: 0;
+  }
+  font-family: sans-serif;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+%meta__child {
+  display: inline;
+  font-style: normal;
+  line-height: 1rem;
+}
+.meta__heading {
+  @extend %meta__child;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.meta__data {
+  @extend %meta__child;
+  font-size: 0.8rem;
+  font-weight: normal;
+//  text-transform: uppercase;
+  color: #c00;
+}
+
+/* Pull-quotes */
+.pull-quote {
+  @include zen-float();
+  @include zen-flow-item-width(1, 2);
+
+  margin: {
+    bottom: $vertical-rhythm/2;
+  }
+
+  font-size: 1.2em;
+  font-weight: bold;
+  font-style: italic;
+
+  @media all and (min-width: 999px) {
+    @include zen-flow-item-width(1, 3);
+  }
+}

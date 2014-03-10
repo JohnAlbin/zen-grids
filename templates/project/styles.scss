@@ -2,5 +2,6 @@
 @import "init";
 
 // Aggregate all the stylesheets into one file.
-@import "layout";
-@import "modules";
+@import "base-elements";
+@import "layouts";
+@import "components";

@@ -1,6 +1,6 @@
 //
 // @file
-// This file sets up all our variables and load all the modules we need for all
+// This file sets up all our variables and loads all the modules we need for all
 // generated CSS in this project. To use it, simply: @import "init";
 //
 
@@ -8,7 +8,7 @@
 $browser-minimum-versions: (
   'chrome':  null,
   'firefox': null,
-  'ie':      null,
+  'ie':      "8",
   'safari':  null,
   'opera':   null
 );
@@ -17,6 +17,11 @@ $browser-minimum-versions: (
 $zen-columns                      : 1;
 $zen-gutters                      : 20px;
 $zen-auto-include-grid-item-base  : false;
+
+// Set up a unit of vertical rhythm.
+$base-font-size                   : 16px;
+$base-line-height                 : 1.5em;
+$vertical-rhythm                  : 1rem*($base-line-height/1em);
 
 //
 // Import our modules.
