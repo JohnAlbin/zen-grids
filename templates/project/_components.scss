@@ -38,15 +38,30 @@
 
 /* Source-order meta info */
 .meta {
-  margin: 0;
+  margin: 0 0 .5rem 0;
+  display: block;
+  + * {
+    margin-top: 0;
+  }
+  font-family: sans-serif;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+%meta__child {
+  display: inline;
+  font-style: normal;
+  line-height: 1rem;
 }
 .meta__heading {
-  display: inline;
+  @extend %meta__child;
+  font-size: 1rem;
+  font-weight: bold;
 }
 .meta__data {
-  display: inline;
-  text-transform: uppercase;
-  font-size: 0.8em;
+  @extend %meta__child;
+  font-size: 0.8rem;
+  font-weight: normal;
+//  text-transform: uppercase;
   color: #c00;
 }
 
