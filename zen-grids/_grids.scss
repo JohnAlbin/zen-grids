@@ -150,7 +150,7 @@
     box-sizing: border-box;
   }
   // Prevent left/right borders since they'll break the layout with content-box.
-  @elseif $box-sizing == content-box {
+  @else if $box-sizing == content-box {
     border: {
       left: 0 !important;
       right: 0 !important;

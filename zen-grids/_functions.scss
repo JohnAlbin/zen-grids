@@ -92,7 +92,7 @@
     $width: $width + (floor($column-span) - 1) * $gutters;
   }
   // For the original box model, remove the padding from the width.
-  @elseif $box-sizing == content-box {
+  @else if $box-sizing == content-box {
     $test: zen-compare-units('box-sizing: content-box', $gutters, $grid-width);
     $width: $width - $gutters;
   }
