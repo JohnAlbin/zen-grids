@@ -126,15 +126,15 @@
 }
 
 //
-// Applies a standard set of properites to all grid items in the layout.
+// Applies a standard set of properites for grid items in the layout.
 // @see http://next.zengrids.com/reference/grids/#zen-grid-item-base
 //
 @mixin zen-grid-item-base(
-  $gutters                  : $zen-gutters,
-  $gutter-method            : $zen-gutter-method,
-  $box-sizing               : $zen-box-sizing,
-  $direction                : $zen-direction,
-  $switch-direction         : $zen-switch-direction
+  $gutters            : $zen-gutters,
+  $gutter-method      : $zen-gutter-method,
+  $box-sizing         : $zen-box-sizing,
+  $direction          : $zen-direction,
+  $switch-direction   : $zen-switch-direction
 ) {
 
   // Specify the padding if the gutter method uses padding.
