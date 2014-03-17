@@ -62,6 +62,7 @@
 
   // Prevent any padding from messing up the alignment of the nested grid.
   @if $context == grid-item or $context == flow {
+    // Copy of undo-zen-apply-gutter-padding()
     padding: {
       left: 0;
       right: 0;

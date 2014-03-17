@@ -1,0 +1,36 @@
+/**
+ * @file
+ * Test undo-zen-grid-item-base()
+ */
+#test-undo-zen-grid-item-base {
+  /* Test undo-zen-grid-item-base() */
+  padding-left: 0;
+  padding-right: 0;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  box-sizing: content-box;
+  /* Test undo-zen-grid-item-base() with $zen-box-sizing: content-box */
+  padding-left: 0;
+  padding-right: 0;
+  /* Test undo-zen-grid-item-base() with $zen-box-sizing: universal-border-box */
+  padding-left: 0;
+  padding-right: 0;
+  /* Test undo-zen-grid-item-base() with IE 7 support */
+  padding-left: 0;
+  padding-right: 0;
+  *word-wrap: normal;
+  /* Test undo-zen-grid-item-base() with $box-sizing-polyfill-path: "/boxsizing.htc" and IE 7 support */
+  padding-left: 0;
+  padding-right: 0;
+  *behavior: none;
+  *word-wrap: normal;
+  /* Test undo-zen-grid-item-base() with $box-sizing-polyfill-path: "/boxsizing.htc" and IE 6 support */
+  padding-left: 0;
+  padding-right: 0;
+  *behavior: none;
+  _display: block;
+  _overflow: visible;
+  *word-wrap: normal;
+  /* Test undo-zen-grid-item-base() with $zen-gutter-method: margin */
+}

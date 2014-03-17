@@ -1,0 +1,156 @@
+//
+// Undo module for the Zen Grids system.
+//
+
+
+@import "zen-grids/grids";
+
+
+//
+// Apply this to undo the grid container styling.
+// @see http://next.zengrids.com/reference/grids/#undo-zen-grid-container
+//
+// NOTE: if $context is flow, the zen-grid-container() set the left and right
+// padding to "0" to prevent it from messing up the alignment of the nested
+// grid. Since Zen Grids doesn't know what you previously used for this
+// element's padding, there is no way to undo that.
+//
+@mixin undo-zen-grid-container(
+  $context            : none,
+  $gutters            : $zen-gutters,
+  $gutter-method      : $zen-gutter-method,
+  $direction          : $zen-direction,
+  $switch-direction   : $zen-switch-direction
+) {
+
+  $dir: $direction;
+  @if $switch-direction {
+    $dir: zen-direction-switch($dir);
+  }
+
+  @if $context == flow-item {
+    @warn "zen-grid-container()'s $context cannot be set to: flow-item. It has been set to: flow.";
+    $context: flow;
+  }
+  @else if $context == grid {
+    @warn "zen-grid-container()'s $context cannot be set to: grid. It has been set to: grid-item.";
+    $context: grid-item;
+  }
+
+  // @TODO: This is a pre-IE8 line of code; don't remember why its needed.
+  @if zen-support-for(ie, "7") {
+    *position: static;
+  }
+
+  // Un-do the "micro clearfix".
+  &:before,
+  &:after {
+    content: normal;
+    display: inline;
+  }
+  &:after {
+    clear: none;
+  }
+  @if zen-support-for(ie, "7") {
+    *zoom: normal;
+  }
+
+  // Reset the negative margins that un-did the gutter padding of the parent
+  // grid item.
+  @if $context == flow and $gutter-method == padding {
+    margin: {
+      left: 0;
+      right: 0;
+    }
+  }
+
+  // Re-add the original gutters to the grid item.
+  @if $context == grid-item and $gutter-method == padding {
+    @include zen-apply-gutter-padding($gutters, $direction, $switch-direction);
+  }
+}
+
+//
+// Apply this to undo the grid item styling. @see http://next.zengrids.com/reference/grids/#undo-zen-grid-item
+//
+@mixin undo-zen-grid-item(
+  $gutters            : $zen-gutters,
+  $gutter-method      : $zen-gutter-method,
+  $box-sizing         : $zen-box-sizing,
+  $include-base       : $zen-auto-include-grid-item-base
+) {
+
+  float: none;
+  width: auto;
+  margin: {
+    left:  0;
+    right: 0;
+  }
+
+  // Include the grid item base mixin.
+  @if $include-base {
+    @include undo-zen-grid-item-base($gutter-method, $box-sizing);
+  }
+  // If the $gutters parameter has been used, undo the gutters even if
+  // $include-base is false.
+  @else if $gutters != $zen-gutters and $gutter-method == padding {
+    @include undo-zen-apply-gutter-padding();
+  }
+}
+
+//
+// Undoes the standard set of properites for grid items in the layout.
+// @see http://next.zengrids.com/reference/grids/#undo-zen-grid-item-base
+//
+// NOTE: if $box-sizing == content-box, the zen-grid-item-base() will add
+// left and right borders and padding of "0 !important" since non-zero values
+// would break the layout. There is no way to undo that.
+//
+@mixin undo-zen-grid-item-base(
+  $gutter-method      : $zen-gutter-method,
+  $box-sizing         : $zen-box-sizing
+) {
+
+  // Specify the padding if the gutter method uses padding.
+  @if $gutter-method == padding {
+    @include undo-zen-apply-gutter-padding();
+  }
+
+  // Specify the border-box properties.
+  @if $box-sizing == border-box {
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -ms-box-sizing: content-box;
+    box-sizing: content-box;
+  }
+
+  @if zen-support-for(ie, "7") {
+    @if $box-sizing-polyfill-path != "" {
+      *behavior: none;
+    }
+    @if zen-support-for(ie, "6") {
+      _display: block;
+      _overflow: visible;
+    }
+    *word-wrap: normal;
+  }
+}
+
+//
+// Apply this to prevent a grid item from starting a new row.
+// @see http://next.zengrids.com/reference/grids/#undo-zen-new-row
+//
+@mixin undo-zen-new-row() {
+  clear: none;
+}
+
+//
+// Undoes the gutter on a grid item when using the padding gutter method.
+// @see http://next.zengrids.com/reference/grids/#undo-zen-apply-gutter-padding
+//
+@mixin undo-zen-apply-gutter-padding() {
+  padding: {
+    left: 0;
+    right: 0;
+  }
+}

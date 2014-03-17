@@ -1,0 +1,11 @@
+/**
+ * @file
+ * Test undo-zen-apply-gutter-padding()
+ */
+
+@import "zen-grids/undo";
+
+#test-undo-zen-apply-gutter-padding {
+  /* Test undo-zen-apply-gutter-padding() */
+  @include undo-zen-apply-gutter-padding();
+}

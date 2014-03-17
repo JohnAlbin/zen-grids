@@ -1,0 +1,49 @@
+/**
+ * @file
+ * Test undo-zen-grid-item-base()
+ */
+
+@import "zen-grids/undo";
+
+#test-undo-zen-grid-item-base {
+  /* Test undo-zen-grid-item-base() */
+  @include undo-zen-grid-item-base();
+
+  /* Test undo-zen-grid-item-base() with $zen-box-sizing: content-box */
+  $zen-box-sizing: content-box !global;
+  @include undo-zen-grid-item-base();
+  $zen-box-sizing: border-box !global;
+
+  /* Test undo-zen-grid-item-base() with $zen-box-sizing: universal-border-box */
+  $zen-box-sizing: universal-border-box !global;
+  @include undo-zen-grid-item-base();
+  $zen-box-sizing: border-box !global;
+
+  // Set universal-border-box for the rest of the tests.
+  $zen-box-sizing: universal-border-box !global;
+
+  /* Test undo-zen-grid-item-base() with IE 7 support */
+  $browser-minimum-versions: (ie: "7") !global;
+  @warn "The following test will generate a warning.";
+  @include undo-zen-grid-item-base();
+  $browser-minimum-versions: (ie: null) !global;
+
+  /* Test undo-zen-grid-item-base() with $box-sizing-polyfill-path: "/boxsizing.htc" and IE 7 support */
+  $box-sizing-polyfill-path: "/boxsizing.htc" !global;
+  $browser-minimum-versions: (ie: "7") !global;
+  @include undo-zen-grid-item-base();
+  $box-sizing-polyfill-path: "" !global;
+  $browser-minimum-versions: (ie: null) !global;
+
+  /* Test undo-zen-grid-item-base() with $box-sizing-polyfill-path: "/boxsizing.htc" and IE 6 support */
+  $box-sizing-polyfill-path: "/boxsizing.htc" !global;
+  $browser-minimum-versions: (ie: "6") !global;
+  @include undo-zen-grid-item-base();
+  $box-sizing-polyfill-path: "" !global;
+  $browser-minimum-versions: (ie: null) !global;
+
+  /* Test undo-zen-grid-item-base() with $zen-gutter-method: margin */
+  $zen-gutter-method: margin !global;
+  @include undo-zen-grid-item-base();
+  $zen-gutter-method: padding !global;
+}

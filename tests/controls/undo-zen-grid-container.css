@@ -1,0 +1,53 @@
+/**
+ * @file
+ * Test undo-zen-grid-container()
+ */
+#test-undo-zen-grid-container {
+  /* Test undo-zen-grid-container() */
+}
+#test-undo-zen-grid-container:before, #test-undo-zen-grid-container:after {
+  content: normal;
+  display: inline;
+}
+#test-undo-zen-grid-container:after {
+  clear: none;
+}
+
+#test-undo-zen-grid-container-2 {
+  /* Test undo-zen-grid-container() with IE 7 support */
+  *position: static;
+  *zoom: normal;
+}
+#test-undo-zen-grid-container-2:before, #test-undo-zen-grid-container-2:after {
+  content: normal;
+  display: inline;
+}
+#test-undo-zen-grid-container-2:after {
+  clear: none;
+}
+
+#test-undo-zen-grid-container-3 {
+  /* Test undo-zen-grid-container() with $context: flow */
+  margin-left: 0;
+  margin-right: 0;
+}
+#test-undo-zen-grid-container-3:before, #test-undo-zen-grid-container-3:after {
+  content: normal;
+  display: inline;
+}
+#test-undo-zen-grid-container-3:after {
+  clear: none;
+}
+
+#test-undo-zen-grid-container-4 {
+  /* Test undo-zen-grid-container() with $context: grid-item */
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#test-undo-zen-grid-container-4:before, #test-undo-zen-grid-container-4:after {
+  content: normal;
+  display: inline;
+}
+#test-undo-zen-grid-container-4:after {
+  clear: none;
+}

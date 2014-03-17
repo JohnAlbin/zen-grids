@@ -1,0 +1,34 @@
+/**
+ * @file
+ * Test undo-zen-grid-item()
+ */
+#test-undo-zen-grid-item {
+  /* Test undo-zen-grid-item() */
+  float: none;
+  width: auto;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  box-sizing: content-box;
+  /* Test undo-zen-grid-item() with $zen-auto-include-grid-item-base: false */
+  float: none;
+  width: auto;
+  margin-left: 0;
+  margin-right: 0;
+  /* Test undo-zen-grid-item() with $gutters: 10px and $zen-auto-include-grid-item-base: false */
+  float: none;
+  width: auto;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  /* Test undo-zen-grid-item() with $gutters: 10px, $zen-auto-include-grid-item-base: false and $zen-gutter-method: margin */
+  float: none;
+  width: auto;
+  margin-left: 0;
+  margin-right: 0;
+}

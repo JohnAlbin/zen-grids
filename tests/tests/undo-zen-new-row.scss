@@ -1,0 +1,11 @@
+/**
+ * @file
+ * Test undo-zen-new-row()
+ */
+
+@import "zen-grids/undo";
+
+#test-undo-zen-new-row {
+  /* Test undo-zen-new-row() */
+  @include undo-zen-new-row();
+}

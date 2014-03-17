@@ -1,0 +1,23 @@
+/**
+ * @file
+ * Test undo-zen-grid-item()
+ */
+
+@import "zen-grids/undo";
+
+#test-undo-zen-grid-item {
+  /* Test undo-zen-grid-item() */
+  @include undo-zen-grid-item();
+
+  /* Test undo-zen-grid-item() with $zen-auto-include-grid-item-base: false */
+  $zen-auto-include-grid-item-base: false !global;
+  @include undo-zen-grid-item();
+
+  /* Test undo-zen-grid-item() with $gutters: 10px and $zen-auto-include-grid-item-base: false */
+  @include undo-zen-grid-item($gutters: 10px);
+
+  /* Test undo-zen-grid-item() with $gutters: 10px, $zen-auto-include-grid-item-base: false and $zen-gutter-method: margin */
+  $zen-gutter-method: margin !global;
+  @include undo-zen-grid-item($gutters: 10px);
+  $zen-gutter-method: padding !global;
+}

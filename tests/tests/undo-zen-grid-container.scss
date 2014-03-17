@@ -1,0 +1,28 @@
+/**
+ * @file
+ * Test undo-zen-grid-container()
+ */
+
+@import "zen-grids/undo";
+
+#test-undo-zen-grid-container {
+  /* Test undo-zen-grid-container() */
+  @include undo-zen-grid-container();
+}
+
+#test-undo-zen-grid-container-2 {
+  /* Test undo-zen-grid-container() with IE 7 support */
+  $browser-minimum-versions: (ie: "7") !global;
+  @include undo-zen-grid-container();
+  $browser-minimum-versions: (ie: null) !global;
+}
+
+#test-undo-zen-grid-container-3 {
+  /* Test undo-zen-grid-container() with $context: flow */
+  @include undo-zen-grid-container(flow);
+}
+
+#test-undo-zen-grid-container-4 {
+  /* Test undo-zen-grid-container() with $context: grid-item */
+  @include undo-zen-grid-container(grid-item);
+}
