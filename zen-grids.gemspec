@@ -18,5 +18,10 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency('sass', ">= 3.3")
 
-  spec.files        = `git ls-files -z`.split "\0"
+  spec.files        = `git ls-files`.split($/).select {|f| File.exist?(f) && f =~ %r{^(lib|stylesheets|templates)/} }
+  spec.files        += %w(
+    LICENSE.txt
+    README.md
+    zen-grids.gemspec
+  )
 end
