@@ -6,10 +6,11 @@
 @import "compass";
 @import "zen-grids";
 
+$critical-usage-threshold: 100;
 $box-sizing-polyfill-path: "/ie-box-sizing.htc";
 
 #test-zen-grid-container {
-  /* Test zen-grid-container() */
+  /* Test zen-grid-container() with no legacy support */
   @include zen-grid-container();
 }
 
@@ -35,7 +36,7 @@ $box-sizing-polyfill-path: "/ie-box-sizing.htc";
 }
 
 #test-zen-grid-item {
-  /* Test zen-grid-item(1, 1) */
+  /* Test zen-grid-item(1, 1) with no legacy support*/
   @include zen-grid-item(1, 1);
 
   /* Test zen-grid-item(1, 1) with IE 8 support */

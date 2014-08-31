@@ -3,9 +3,7 @@
  * Test zen-grid-container() and zen-grid-item() after @import compass.
  */
 #test-zen-grid-container {
-  /* Test zen-grid-container() */
-  *position: relative;
-  *zoom: 1;
+  /* Test zen-grid-container() with no legacy support */
 }
 #test-zen-grid-container:before, #test-zen-grid-container:after {
   content: "";
@@ -53,20 +51,17 @@
 }
 
 #test-zen-grid-item {
-  /* Test zen-grid-item(1, 1) */
+  /* Test zen-grid-item(1, 1) with no legacy support*/
   float: left;
   width: 100%;
   margin-left: 0%;
   margin-right: -100%;
-  *margin-right: -99.9%;
   padding-left: 10px;
   padding-right: 10px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  *behavior: url("/ie-box-sizing.htc");
-  *word-wrap: break-word;
   /* Test zen-grid-item(1, 1) with IE 8 support */
   float: left;
   width: 100%;
