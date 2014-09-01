@@ -20,35 +20,35 @@ class TestCompassOutput < Test::Unit::TestCase
 
     define_method "test_#{test_name}_compile " do
       # Compiled CSS file path
-      test_file_pwd = Compass.compiler.corresponding_css_file(sass_file)
+      css_file = Compass.compiler.corresponding_css_file(sass_file)
 
       # Relative path of compiled CSS file from Tests directory
-      relative_pwd = Pathname.new(test_file_pwd).relative_path_from(Pathname.new("#{Dir.pwd}/output")).to_s
+      css_file_relative = Pathname.new(css_file).relative_path_from(Pathname.new("#{Dir.pwd}/output")).to_s
 
       # Control files path
-      control_file_pwd = "#{Dir.pwd}/controls/" + relative_pwd
+      control_file = "#{Dir.pwd}/controls/" + css_file_relative
 
       # The base path of the sub folders, making the folders if needed
-      base_pwd = relative_pwd.sub(File.basename(relative_pwd), '')
-      FileUtils.mkdir_p "#{Dir.pwd}/output/#{base_pwd}"
+      base_dir = File.dirname(css_file_relative)
+      FileUtils.mkdir_p "#{Dir.pwd}/output/#{base_dir}"
 
       # Compiles Sass file
-      Compass.compiler.compile sass_file, test_file_pwd  # Raises exception upon error
+      Compass.compiler.compile sass_file, css_file  # Raises exception upon error
 
       begin
         # Assert that our test output matches our control output
-        passed = assert FileUtils.compare_file(test_file_pwd, control_file_pwd), "Compiled output for #{File.basename(sass_file)} does not match control output!".red
+        passed = assert FileUtils.compare_file(css_file, control_file), "Compiled output for #{File.basename(sass_file)} does not match control output!".red
       ensure
         # If there is a failure, generate a diff of the files and put it with the compiled file
         if !passed
-          test_file = File.open(test_file_pwd).read;
-          control_file = File.open(control_file_pwd).read;
-          diff_pwd = "#{Dir.pwd}/output/#{relative_pwd}.diff"
+          test_file = File.open(css_file).read;
+          control_file = File.open(control_file).read;
+          diff_file = "#{css_file}.diff"
           diff_content = Diffy::Diff.new(control_file, test_file, :include_diff_info => true)
 
-          File.open(diff_pwd, 'w') { |f| f.write(diff_content.to_s(:text)) }
+          File.open(diff_file, 'w') { |f| f.write(diff_content.to_s(:text)) }
 
-          puts "Control->Compiled diff output to ".yellow + "tests/output/#{relative_pwd}.diff".blue
+          puts "Control->Compiled diff output to ".yellow + "output/#{css_file_relative}.diff".blue
         end
       end
     end
