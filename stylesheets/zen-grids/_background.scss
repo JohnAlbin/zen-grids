@@ -3,9 +3,11 @@
 //
 
 
-@import "functions";
-@import "internal/variables-background"; // Add the default set of background images.
-@import "compass/css3/images"; // Unlike the rest of Zen Grids, this module requires Compass.
+@import "./functions";
+// Add the default set of background images.
+@import "./internal/variables-background";
+// Unlike the rest of Zen Grids, this module requires Compass.
+@import "compass/css3/images";
 
 
 //
