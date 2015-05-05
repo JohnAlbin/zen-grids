@@ -2,12 +2,12 @@
 
 require 'compass'
 require 'compass/exec'
-require 'test/unit'
+require 'minitest/autorun'
 require 'diffy'
 require 'colorize'
 require 'pathname'
 
-class TestCompassOutput < Test::Unit::TestCase
+class TestCompassOutput < Minitest::Test
 
   Compass.add_configuration 'config.rb'
   Compass.configuration.project_path = Dir.pwd
