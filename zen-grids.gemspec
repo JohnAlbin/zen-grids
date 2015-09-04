@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.authors     = ['John Albin Wilkins']
   s.email       = 'virtually.johnalbin@gmail.com'
 
-  s.add_runtime_dependency('sass', ">= 3.1")
+  s.add_runtime_dependency('sass', '>= 3.1', '< 3.4')
 
   s.files       = %w[
     LICENSE.txt
