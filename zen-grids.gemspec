@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.license     = 'GPL-2'
   s.rubyforge_project =
 
-  s.version     = '1.4'
-  s.date        = '2013-04-02'
+  s.version     = '1.5'
+  s.date        = '2015-09-04'
 
   s.authors     = ['John Albin Wilkins']
   s.email       = 'virtually.johnalbin@gmail.com'
