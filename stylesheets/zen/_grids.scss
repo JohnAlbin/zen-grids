@@ -202,6 +202,7 @@ $zen-reverse-all-floats           : false       !default;
   $parent-column-count          : false,
   $alpha-gutter                 : false,
   $omega-gutter                 : true,
+  $apply-gutters-to-children    : false,
   $flow-direction               : $zen-float-direction,
   $column-count                 : $zen-column-count,
   $gutter-width                 : $zen-gutter-width,
@@ -227,62 +228,80 @@ $zen-reverse-all-floats           : false       !default;
   }
   $rev: zen-direction-flip($dir);
 
-  // Auto-apply the unit base mixin.
+// Calculate the item's width.
+  $width: zen-grid-item-width($column-span, $columns, $grid-width);
+  @if $box-sizing == content-box {
+    @if not comparable($width, $gutter-width) {
+      $units-gutter: unit($gutter-width);
+      $units-grid: unit($grid-width);
+      @warn "The layout cannot be calculated correctly; when using box-sizing: content-box, the units of the gutter (#{$units-gutter} did not match the units of the grid width (#{$units-grid}).";
+    }
+    $width: $width - $gutter-width;
+  }
+  width: $width;
+
+// Auto-apply the unit base mixin.
   @if $auto-include-flow-item-base {
     @include zen-grid-item-base($gutter-width, $box-sizing);
   }
 
-  // Calculate the item's width.
-  $width: zen-grid-item-width($column-span, $columns, $gutter-width, $grid-width, $box-sizing);
+// Calculate count of columns per row
 
-  @if unit($grid-width) == "%" {
-    // Our percentage $width is off if the parent has $gutter-width padding.
-    // Calculate an adjusted gutter to fix the width.
-    $adjusted-gutter: ($columns - $column-span) * $gutter-width / $columns;
+  $grid-item-count-per-row: $column-count / $column-count;
 
-    width: $width;
+  @if ($parent-column-count) {
+    $grid-item-count-per-row: $parent-column-count / $column-span;
+  }
 
-    // Ensure the HTML item either has a full gutter or no gutter on each side.
-    padding-#{$dir}: 0;
-    @if $alpha-gutter {
-      margin-#{$dir}: $gutter-width;
-    }
-    padding-#{$rev}: $adjusted-gutter;
-    @if $omega-gutter {
-      margin-#{$rev}: $gutter-width - $adjusted-gutter;
-    }
-    @else {
-      margin-#{$rev}: -($adjusted-gutter);
+// Calculate margin/padding ratio for the specified culomn count
+  $padding-offset: $gutter-width * ($grid-item-count-per-row - 1) / $grid-item-count-per-row / 2;
+  $margin-offset: ($gutter-width / 2) - $padding-offset;
+
+// Applying calculated paddings and margins
+  @if $alpha-gutter {
+    padding-#{$dir}: $padding-offset;
+    margin-#{$dir}: $margin-offset;
+
+// Apply special styling to the first element in the row
+    &:nth-child(#{$grid-item-count-per-row}n+1) {
+      margin-left: -$padding-offset;
+      clear: $flow-direction;
     }
   }
-  @else {
-    @if $alpha-gutter and $omega-gutter {
-      width: $width;
-      @if $gutter-width != 0 {
-        margin: {
-          #{$dir}: zen-half-gutter($gutter-width, left, $dir);
-          #{$rev}: zen-half-gutter($gutter-width, right, $dir);
-        }
+
+  @if $omega-gutter {
+    padding-#{$rev}: $padding-offset;
+    margin-#{$rev}: $margin-offset;
+
+// Apply special styling to the last element in the row
+    &:nth-child(#{$grid-item-count-per-row}n) {
+      margin-right: -$padding-offset;
+    }
+  }
+
+  @include zen-float($flow-direction);
+
+// Apply the gutters to the immediate children if needed
+
+  @if ($apply-gutters-to-children) {
+
+    padding-left: 0;
+    padding-right: 0;
+
+    > * {
+      padding-left: $gutter-width / 2;
+      padding-right: $gutter-width / 2;
+    }
+
+    &:nth-child(#{$grid-item-count-per-row}n+1) {
+      > * {
+        padding-left: 0;
       }
     }
-    @else if not $alpha-gutter and not $omega-gutter {
-      width: if($box-sizing == border-box, ($width - $gutter-width), $width);
-      @if $gutter-width != 0 {
-        padding: {
-          left: 0;
-          right: 0;
-        }
-      }
-    }
-    @else {
-      width: $width;
-      @if $omega-gutter {
-        padding-#{$dir}: 0;
-        padding-#{$rev}: $gutter-width;
-      }
-      @else {
-        padding-#{$dir}: $gutter-width;
-        padding-#{$rev}: 0;
+
+    &:nth-child(#{$grid-item-count-per-row}n) {
+      > * {
+        padding-right: 0;
       }
     }
   }
