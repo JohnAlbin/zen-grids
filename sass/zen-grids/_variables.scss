@@ -2,70 +2,280 @@
 // Variables module for the Zen Grids system; auto-imported by other modules.
 //
 
-// Specify the number of columns in the grid. @see http://next.zengrids.com/reference/grids/#zen-columns
-$zen-columns                      : 1           !default;
+// Grids Module: Configurable Variables
+//
+// Compass’ reference website has documentation about [working with configurable variables](http://compass-style.org/help/tutorials/configurable-variables/).
+//
+// Style guide: grids.variables
 
-// Specify the width of the gutters (as padding). @see http://next.zengrids.com/reference/grids/#zen-gutters
-$zen-gutters                      : 20px        !default;
+// Common variables
+//
+// Style guide: grids.variables.common
 
-// Specify the gutter method. Can be padding or margin.
-$zen-gutter-method                : padding     !default;
+// $zen-columns
+//
+// Specifies the number of columns in the grid. Defaults to 1 as a hat tip to mobile first designs. You should set this variable each time you want to use a different grid for a set of media queries.
+//
+// `$zen-columns: 1 !default;`
+//
+// Style guide: grids.variables.common.zen-columns
+$zen-columns: 1 !default;
 
-// @see http://next.zengrids.com/reference/grids/#zen-auto-include-grid-item-base
-$zen-auto-include-grid-item-base  : true        !default;
+// $zen-gutters
+//
+// Specifies the width of each gutter, the horizontal space between two adjacent grid items.
+//
+// For a sense of aesthetics, we suggest this value could be proportional to your base font by setting `$zen-gutters` equal to a multiple of your base line height.
+//
+// If the [`$zen-gutter-method`](#zen-gutter-method) is set to `margin`, the unit of measurement of the gutters should be the same as the unit of measurement of the [`$zen-grid-width`](#zen-grid-width), e.g. if `$zen-grid-width: 100%`, then `$zen-gutters` should also be measured in `%`.
+//
+// `$zen-gutters: 20px !default;`
+//
+// Style guide: grids.variables.common.zen-gutters
+$zen-gutters: 20px !default;
 
-// Specify the width of the entire grid. @see http://next.zengrids.com/reference/grids/#zen-grid-width
-$zen-grid-width                   : 100%        !default;
+// $zen-gutter-method
+//
+// Specifies the type of gutters used for the grid, can be set to `padding` (the default) or `margin`.
+// If the “padding” gutter method is chosen, half of the gutter will be placed on each side of a grid item (as padding). This means there will be a full gutter between the content of adjacent grid items and half of a gutter on each edge of the grid.
+//
+// <figure class="ex-gutter-method ex-gutter-method-padding">
+//   <div class="ex-gutter-method__container">
+//     <div class="ex-gutter-method__content ex-gutter-method__content-1">
+//       <p>A grid item.</p>
+//     </div>
+//     <div class="ex-gutter-method__content ex-gutter-method__content-2">
+//       <p>A grid item.</p>
+//     </div>
+//     <div class="ex-gutter-method__content ex-gutter-method__content-3">
+//       <p>A grid item.</p>
+//     </div>
+//   </div>
+// </figure>
+//
+// If the “margin” gutter method is chosen, a full gutter will be placed between each grid item (as margin), but no gutter will be placed on each edge of the grid.
+//
+// <figure class="ex-gutter-method ex-gutter-method-margin">
+//   <div class="ex-gutter-method__container">
+//     <div class="ex-gutter-method__content ex-gutter-method__content-1">
+//       <p>A grid item.</p>
+//     </div>
+//     <div class="ex-gutter-method__content ex-gutter-method__content-2">
+//       <p>A grid item.</p>
+//     </div>
+//     <div class="ex-gutter-method__content ex-gutter-method__content-3">
+//       <p>A grid item.</p>
+//     </div>
+//   </div>
+// </figure>
+//
+// Note: that the “margin” gutter method requires that the gutters and the width of the grid have the same unit of measurement, e.g. both be measured in `%` or both in `px`. This means that a fluid, responsive layout using the “margin” gutter method will have gutters that are `%`-based. This is why the default gutter method is “padding”; the grid can be `%`-based, while the gutters remain a fixed measurement (like `20px` or `5 em`) at all viewport sizes.
+//
+// `$zen-gutter-method: padding !default;`
+//
+// Style guide: grids.variables.common.zen-gutter-method
+$zen-gutter-method: padding !default;
 
-// The box-sizing polyfill for IE6/7 requires an absolute path. @see http://next.zengrids.com/reference/grids/#box-sizing-polyfill-path
-$box-sizing-polyfill-path         : ""          !default;
+// $zen-auto-include-grid-item-base
+//
+// You can generate more efficient CSS if you set this to `false` and manually apply the [`zen-grid-item-base()`](#zen-grid-item-base) mixin to all grid items (and flow items) from within a single ruleset.
+//
+// `$zen-auto-include-grid-item-base: true !default;`
+//
+// Style guide: grids.variables.common.zen-auto-include-grid-item-base
+$zen-auto-include-grid-item-base: true !default;
 
-// Specify the CSS3 box-sizing method. @see http://next.zengrids.com/reference/grids/#zen-box-sizing
-$zen-box-sizing                   : border-box  !default;
 
-// Specify the minimum version numbers of supported browsers.
-// @see http://next.zengrids.com/reference/grids/#browser-minimum-versions
-$browser-minimum-versions         : (
+// Adaptive or fixed design variable
+//
+// Style guide: grids.variables.fixed
+
+// $zen-grid-width
+//
+// Specify the width of the entire grid. Defaults to `100%` for a fluid responsive design, but you can change this to any fixed value (using px or em, etc.) if you need a fixed grid.
+//
+// `$zen-grid-width: 100% !default;`
+//
+// Style guide: grids.variables.fixed.zen-grid-width
+$zen-grid-width: 100% !default;
+
+// Legacy IE support variables
+//
+// Style guide: grids.variables.legacy
+
+// $box-sizing-polyfill-path
+//
+// The box-sizing polyfill for IE 6/7 requires an absolute path to the boxsizing.htc file. See https://github.com/Schepp/box-sizing-polyfill
+//
+// `$box-sizing-polyfill-path: '' !default;`
+//
+// Style guide: grids.variables.legacy.box-sizing-polyfill-path
+$box-sizing-polyfill-path: '' !default;
+
+// $browser-minimum-versions
+//
+// Specify the minimum browser versions that must be supported. Currently, Zen Grids only uses the "ie" value to determine if additional CSS properties are needed for IE 6 and IE 7 support. For example, to add support for IE 7, set `$browser-minimum-versions: (ie: "7");`
+//
+// This variable is a copy of the one used by [Compass’ Browser Support module](http://compass-style.org/reference/compass/support/). Zen Grids does not require Compass, but will use Compass’ module if available. Note: as of 2015, Compass includes support for IE 7 by default because its browser usage (according to caniuse.com) is higher than 1 in 10,000 users. If your project uses Compass, you can <em>drop</em> support for IE 7 by setting `$critical-usage-threshold` above the usage threshold above caniuse’s IE7 usage stat.
+//
+// ```
+// $browser-minimum-versions: (
+//   'chrome':  null,
+//   'firefox': null,
+//   'ie':      null,
+//   'safari':  null,
+//   'opera':   null
+// ) !default;
+// ```
+//
+// Style guide: grids.variables.legacy.browser-minimum-versions
+$browser-minimum-versions: (
   'chrome':  null,
   'firefox': null,
   'ie':      null,
   'safari':  null,
   'opera':   null
-)                                               !default;
+) !default;
+
+// $zen-box-sizing
+//
+// Specify the CSS3 box-sizing method. The default, "border-box", is compatible with all modern browsers, including IE 8 and later.
+//
+// To add IE6 and IE7 support, you’ll need to set [`$browser-minimum-versions`](#browser-minimum-versions) to `(ie: "6")` and then either use a polyfill (see [`$box-sizing-polyfill-path`](#box-sizing-polyfill-path)) or set `$zen-box-sizing` to "content-box".
+//
+// Note: if `$zen-box-sizing` is set to "content-box", then [`$zen-gutters`](#zen-gutters) will need to use the same unit of measurement as the [`$zen-grid-width`](#zen-grid-width).
+//
+// Some developers use a universal selector to apply CSS’s “border-box” box sizing to all elements. Paul Irish describes this method in more detail in his blog post “[* { Box-sizing: Border-box } FTW](http://www.paulirish.com/2012/box-sizing-border-box-ftw/)”.
+//
+// If border-box is applied to all elements with a ruleset similar to `* { box-sizing: border-box; }` (don’t forget the vendor prefixes!), you can prevent Zen Grids from outputting redundant box-sizing rules by setting `$zen-box-sizing` to `universal-border-box`.
+//
+// `$zen-box-sizing: border-box !default;`
+//
+// Style guide: grids.variables.legacy.zen-box-sizing
+$zen-box-sizing: border-box !default;
+
+// RTL language variables
+//
+// Style guide: grids.variables.rtl
 
 // Specify the default floating direction for zen grids' mixins. @see http://next.zengrids.com/reference/grids/#zen-direction
-$zen-direction                    : left        !default;
-
-// Reverse the floating direction in all zen grids' mixins. @see http://next.zengrids.com/reference/grids/#zen-switch-direction
-$zen-switch-direction             : false       !default;
-
+// $zen-direction
 //
-// Variables used by the flow module.
+// Specify the default floating direction for zen grids’ mixins. If you are only building RTL layouts (and not LTR layouts), you should set this to `right`.
 //
-
-// @see http://next.zengrids.com/reference/flow/#zen-auto-include-flow-item-base
-$zen-auto-include-flow-item-base  : true        !default;
-
+// `$zen-direction: left !default;`
 //
-// Variables used by the layout module.
+// Style guide: grids.variables.rtl.zen-direction
+$zen-direction: left !default;
+
+// $zen-switch-direction
 //
-
-$zen-layouts                      : ()          !default;
-
+// Reverse the floating direction in all of zen grids’ mixins.
 //
-// Variables used by the background module.
+// If you are creating both LTR and RTL layouts, this helper variable can be used to automatically create one set of layouts based on the other set of layouts. For example:
 //
+// ```
+// $zen-switch-direction: true;
+// @import "an-LTR-layout";
+// ```
+//
+// In the above example, the existing LTR layout in the an-LTR-layout.scss file is used to create the corresponding RTL layout by first setting the `$zen-switch-direction` variable to `true` and then importing the LTR layout file.
+//
+// `$zen-switch-direction: false !default;`
+//
+// Style guide: grids.variables.rtl.zen-switch-direction
+$zen-switch-direction: false !default;
 
-// Specify the color of the background grid. @see http://next.zengrids.com/reference/background/#zen-grid-color
-$zen-grid-color                   : #ffdede     !default;
 
-// Specify how to place the column numbers in the background grid image. @see http://next.zengrids.com/reference/background/#zen-grid-numbers
-$zen-grid-numbers                 : both        !default;
 
-// Specify a set of images to number the columns of the background grid. @see http://next.zengrids.com/reference/background/#zen-grid-number-images
-$zen-grid-number-images           : ()          !default;
+// Flow Module: Configurable Variables
+//
+// Compass’ reference website has documentation about [working with configurable variables](http://compass-style.org/help/tutorials/configurable-variables/).
+//
+// Style guide: flow.variables
 
-// Set this to false to turn off all background grid images without having to
-// remove calls to zen-grid-background() from the code.
-// @see http://next.zengrids.com/reference/background/#display-zen-grid-background
-$display-zen-grid-background      : true        !default;
+// $zen-auto-include-flow-item-base
+//
+// This variable works the same as [`$zen-auto-include-grid-item-base`](./section-grids.html#zen-auto-include-grid-item-base), except it is used for flow items instead of grid items. You can generate more efficient CSS if you set this to `false` and manually apply the `zen-grid-item-base()` mixin to all flow items from within a single ruleset.
+//
+// `$zen-auto-include-flow-item-base: true !default;`
+//
+// Style guide: flow.variables.zen-auto-include-flow-item-base
+$zen-auto-include-flow-item-base: true !default;
+
+
+
+// Layout Module: Configurable Variables
+//
+// Compass’ reference website has documentation about [working with configurable variables](http://compass-style.org/help/tutorials/configurable-variables/).
+//
+// Style guide: layout.variables
+
+// $zen-layouts
+//
+// A map of layout names and their corresponding properties. Any zen grids variable name can be used as a property of a named layout, but the `zen-` prefix should be removed.
+//
+// For example:
+// ```
+// $zen-layouts: (
+//   medium: (
+//     columns: 3,    // Equivalent of $zen-columns for this layout.
+//     gutters: 15px, // Equivalent of $zen-gutters for this layout.
+//   ),
+// );
+// ```
+//
+// When a named layout is given to the `$layout` parameter of one of the layout module's mixins that layout's properties will be used instead of any global variables for the entirety of the mixin's `@content`.
+//
+// `$zen-layouts: () !default;`
+//
+// Style guide: layout.variables.zen-layouts
+$zen-layouts: () !default;
+
+
+
+// Background Module: Configurable Variables
+//
+// Compass’ reference website has documentation about [working with configurable variables](http://compass-style.org/help/tutorials/configurable-variables/).
+//
+// Style guide: background.variables
+
+// $zen-grid-color
+//
+// Specify the color used in the background grid image produced by the `zen-grid-background()` mixin.
+//
+// `$zen-grid-color: #ffdede !default;`
+//
+// Style guide: background.variables.zen-grid-color
+$zen-grid-color: #ffdede !default;
+
+// $zen-grid-numbers
+//
+// Specify how to place the column numbers in the background grid image. Normally, column numbers are displayed across the top of the background grid image and then displayed in reverse order along the bottom of the background grid image. Can be set to: `both`, `top`, or `none`.
+//
+// `$zen-grid-numbers: both !default;`
+//
+// Style guide: background.variables.zen-grid-numbers
+$zen-grid-numbers: both !default;
+
+// $zen-grid-number-images
+//
+// Specify the set of images used for the numbering of the columns in the background grid image.
+//
+// The default value of the `$zen-grid-number-images` variable is a list of the numbers 1 through 25, each rendered as an image and encoded as a data URI. Users who are crazy enough to use a 26-column grid or larger are free to extend this set.
+//
+// `$zen-grid-number-images: (url('data:image/png;base64, …), …) !default;`
+//
+// Style guide: background.variables.zen-grid-number-images
+$zen-grid-number-images: () !default;
+
+// $display-zen-grid-background
+//
+// Specifies whether the background grid image should be displayed.
+//
+// Since the background grid image is only useful during development and during debugging, we need an easy way to turn off the background grid image without removing all the calls to `zen-grid-background()` from the code base. To turn off all background grid images, set `$display-zen-grid-background` to `false`.
+//
+// `$display-zen-grid-background: true !default;`
+//
+// Style guide: background.variables.display-zen-grid-background
+$display-zen-grid-background: true !default;
