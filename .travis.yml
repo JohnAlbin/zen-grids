@@ -9,7 +9,4 @@ rvm:
   - 2.2.1
 gemfile:
   - tests/Gemfile
-branches:
-  only:
-    - master
 script: cd tests; bundle exec rake
