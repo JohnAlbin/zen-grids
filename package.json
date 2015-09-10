@@ -1,0 +1,35 @@
+{
+  "name": "zen-grids",
+  "version": "2.0.0-beta.3",
+  "homepage": "https://github.com/JohnAlbin/zen-grids",
+  "author": "John Albin Wilkins <virtually.johnalbin@gmail.com> (http://john.albin.net/)",
+  "description": "Zen Grids is an intuitive, flexible grid system to create responsive, adaptive, fluid and fixed-width layouts.",
+  "license": "GPL-2.0",
+  "keywords": [
+    "sass",
+    "layout",
+    "grid",
+    "rwd",
+    "responsive-web-design"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "kss": "^2.1.0",
+    "mocha": "^2.3.2",
+    "sassy-test": "^1.1.0"
+  },
+  "scripts": {
+    "test": "cd test; bundle exec rake"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/JohnAlbin/zen-grids.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JohnAlbin/zen-grids/issues"
+  }
+}
