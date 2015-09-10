@@ -23,7 +23,7 @@
     "sassy-test": "^1.1.0"
   },
   "scripts": {
-    "test": "cd test; bundle exec rake"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
