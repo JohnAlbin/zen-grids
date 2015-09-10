@@ -22,6 +22,6 @@
     "sache.json",
     "lib",
     "templates",
-    "tests"
+    "test"
   ]
 }

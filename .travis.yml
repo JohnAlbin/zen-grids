@@ -8,5 +8,5 @@ rvm:
   - 2.1.2
   - 2.2.1
 gemfile:
-  - tests/Gemfile
-script: cd tests; bundle exec rake
+  - test/Gemfile
+script: cd test; bundle exec rake
