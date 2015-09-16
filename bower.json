@@ -19,7 +19,6 @@
     "zen-grids.gemspec",
     "sache.json",
     "lib",
-    "templates",
     "test"
   ]
 }
