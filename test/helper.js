@@ -9,7 +9,7 @@ global.sassyTest = require('sassy-test');
 before(function(done) {
   sassyTest.configurePaths({
     // Path to Zen Grids.
-    library: path.join(__dirname, '../stylesheets')
+    library: path.join(__dirname, '../sass')
   });
   done();
 });

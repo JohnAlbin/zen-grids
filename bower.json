@@ -6,7 +6,7 @@
     "John Albin Wilkins"
   ],
   "description": "Zen Grids is an intuitive, flexible grid system to create responsive, adaptive, fluid and fixed-width layouts.",
-  "main": "stylesheets/_zen-grids.scss",
+  "main": "sass/_zen-grids.scss",
   "keywords": [
     "sass",
     "layout",
