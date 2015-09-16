@@ -18,5 +18,4 @@
   /* Test zen-unit-width() with $zen-columns: 3, $zen-gutter-method: margin, and $zen-gutters: 5% */
   width: 30%;
   /* Test zen-unit-width(3, 5px, margin, 100px) */
-  width: 30px;
-}
+  width: 30px; }

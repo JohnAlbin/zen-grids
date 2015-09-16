@@ -22,5 +22,4 @@
   /* Test zen-grid-item-width(3, 5, $gutters: 10%, $gutter-method: margin) */
   width: 56%;
   /* Test zen-grid-item-width(3.5, 5, $gutters: 10%, $gutter-method: margin) */
-  width: 62%;
-}
+  width: 62%; }

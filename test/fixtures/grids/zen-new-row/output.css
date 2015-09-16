@@ -12,5 +12,4 @@
   /* Test zen-new-row(left, $switch-direction: TRUE) */
   clear: right;
   /* Test zen-new-row(left) with: $zen-switch-direction: TRUE; */
-  clear: right;
-}
+  clear: right; }

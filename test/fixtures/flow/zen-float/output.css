@@ -12,5 +12,4 @@
   /* Test zen-float(left, $switch-direction: TRUE) */
   float: right;
   /* Test zen-float(left) with: $zen-switch-direction: TRUE; */
-  float: right;
-}
+  float: right; }

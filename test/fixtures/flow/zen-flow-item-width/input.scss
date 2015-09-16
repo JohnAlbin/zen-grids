@@ -10,7 +10,6 @@
   $zen-columns: 5 !global;
 
   /* Test zen-flow-item-width(1) without setting $parent-column-span */
-  @warn "The following test will generate a warning.";
   @include zen-flow-item-width(1);
 
   /* Test zen-flow-item-width(1, 4) with 20px gutter */

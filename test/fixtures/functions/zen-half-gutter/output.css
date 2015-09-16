@@ -20,5 +20,4 @@
   /* Test zen-half-gutter(11px) with $zen-direction: right */
   padding-left: 5px;
   /* Test zen-half-gutter(11px, left) with $zen-direction: right */
-  padding-left: 6px;
-}
+  padding-left: 6px; }

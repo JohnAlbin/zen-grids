@@ -32,5 +32,4 @@
   _display: block;
   _overflow: visible;
   *word-wrap: normal;
-  /* Test undo-zen-grid-item-base() with $zen-gutter-method: margin */
-}
+  /* Test undo-zen-grid-item-base() with $zen-gutter-method: margin */ }
