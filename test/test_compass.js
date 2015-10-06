@@ -9,7 +9,7 @@ describe('Compass compatibility', function() {
     done();
   });
 
-  it.skip('should work with Compass', function(done) {
+  it('should work with Compass', function(done) {
     sassyTest.renderFixture('./', {}, function(error, result, expectedOutput) {
       should.not.exist(error);
       done();
