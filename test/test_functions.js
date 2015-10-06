@@ -19,9 +19,17 @@ describe('@import "zen-grids/functions";', function() {
   });
 
   describe('@function zen-compare-units()', function() {
-    it.skip('should have some tests', function(done) {
-      sassyTest.renderFixture('zen-compare-units', {}, function(error, result, expectedOutput) {
+    it('should return true when units are comparable', function(done) {
+      sassyTest.renderFixture('zen-compare-units/comparable', {}, function(error, result, expectedOutput) {
         should.not.exist(error);
+        done();
+      });
+    });
+
+    it('should return false and warn when units are not comparable', function(done) {
+      sassyTest.renderFixture('zen-compare-units/warn', {}, function(error, result, expectedOutput) {
+        should.not.exist(error);
+        result.warn[0].should.equal('The layout cannot be calculated correctly; when using test feature, the units of the gutter (em must match the units of the grid width (rem).');
         done();
       });
     });

@@ -1,0 +1,5 @@
+@import 'zen-grids';
+
+.test {
+  zen-compare-units: zen-compare-units('test feature', 1em, 2rem);
+}
