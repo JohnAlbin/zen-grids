@@ -1,0 +1,8 @@
+@import 'zen-grids';
+
+.test {
+  left: zen-direction-switch(left);
+  right: zen-direction-switch(right);
+  both: zen-direction-switch(both);
+  none: zen-direction-switch(none);
+}

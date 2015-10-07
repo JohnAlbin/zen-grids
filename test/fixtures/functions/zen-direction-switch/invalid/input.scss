@@ -1,0 +1,5 @@
+@import 'zen-grids';
+
+.test {
+  float: zen-direction-switch(invalid);
+}

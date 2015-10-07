@@ -54,8 +54,15 @@ describe('@import "zen-grids/functions";', function() {
   });
 
   describe('@function zen-direction-switch()', function() {
-    it('should pass legacy tests', function(done) {
-      sassyTest.renderFixture('zen-direction-switch', {}, function(error, result, expectedOutput) {
+    it('should switch any direction', function(done) {
+      sassyTest.renderFixture('zen-direction-switch/valid', {}, function(error, result, expectedOutput) {
+        should.not.exist(error);
+        done();
+      });
+    });
+
+    it('should warn about invalid directions', function(done) {
+      sassyTest.renderFixture('zen-direction-switch/invalid', {}, function(error, result, expectedOutput) {
         should.not.exist(error);
         result.warn[0].should.equal('Invalid direction passed to zen-direction-switch().');
         done();
