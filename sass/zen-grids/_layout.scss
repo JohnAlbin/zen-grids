@@ -143,3 +143,219 @@
   $zen-grid-color                   : map-get($global-vars, 'grid-color') !global;
   $zen-grid-numbers                 : map-get($global-vars, 'grid-numbers') !global;
 }
+
+// zen-breakpoint(...)
+//
+// Combines zen-layout() with the Breakpoint module's breakpoint() mixin.
+//
+// Instead of nesting zen-layout() with breakpoint() like this:
+// ```
+// @include zen-layout($layout: 'm') {
+//   @include breakpoint($medium) {
+//     // Do something.
+//   }
+// }
+// ```
+//
+// You can use the zen-breakpoint() mixin like this:
+// ```
+// @include zen-breakpoint($medium, $layout: 'm') {
+//   // Do something.
+// }
+// ```
+//
+// $query - This parameter is passed on to the breakpoint() mixin.
+// $no-query - This parameter is passed on to the breakpoint() mixin.
+// $layout - Specify the name of the layout from $zen-columns to use.
+// $columns - Defaults to $zen-columns.
+// $gutters - Defaults to $zen-gutters
+// $gutter-method - Defaults to $zen-gutter-method
+// $grid-width - Defaults to $zen-grid-width
+// $box-sizing - Defaults to $zen-box-sizing
+// $direction - Defaults to $zen-direction
+// $switch-direction - Defaults to $zen-switch-direction
+// $auto-include-grid-item-base - Defaults to $zen-auto-include-grid-item-base
+// $auto-include-flow-item-base - Defaults to $zen-auto-include-flow-item-base
+// $grid-color - Defaults to $zen-grid-color
+// $grid-numbers - Defaults to $zen-grid-numbers
+//
+// Style guide: layout.zen-breakpoint
+@mixin zen-breakpoint(
+  $query,
+  $no-query: false,
+  $layout                       : null,
+  $columns                      : null,
+  $gutters                      : null,
+  $gutter-method                : null,
+  $grid-width                   : null,
+  $box-sizing                   : null,
+  $direction                    : null,
+  $switch-direction             : null,
+  $auto-include-grid-item-base  : null,
+  $auto-include-flow-item-base  : null,
+  $grid-color                   : null,
+  $grid-numbers                 : null
+) {
+
+  @if not mixin-exists('breakpoint') {
+    @error 'You need to @import the breakpoint mixin before using zen-breakpoint().';
+  }
+
+  @include zen-layout(
+    $layout,
+    $columns,
+    $gutters,
+    $gutter-method,
+    $grid-width,
+    $box-sizing,
+    $direction,
+    $switch-direction,
+    $auto-include-grid-item-base,
+    $auto-include-flow-item-base,
+    $grid-color,
+    $grid-numbers
+  ) {
+    @include breakpoint($query, $no-query) {
+      @content;
+    }
+  }
+}
+
+// zen-mq(...)
+//
+// An alias for the zen-breakpoint() mixin.
+//
+// Style guide: layout.zen-mq
+@mixin zen-mq(
+  $query,
+  $no-query: false,
+  $layout                       : null,
+  $columns                      : null,
+  $gutters                      : null,
+  $gutter-method                : null,
+  $grid-width                   : null,
+  $box-sizing                   : null,
+  $direction                    : null,
+  $switch-direction             : null,
+  $auto-include-grid-item-base  : null,
+  $auto-include-flow-item-base  : null,
+  $grid-color                   : null,
+  $grid-numbers                 : null
+) {
+
+  @if not mixin-exists('mq') {
+    @error 'You need to @import the mq mixin before using zen-mq().';
+  }
+
+  @include zen-layout(
+    $layout,
+    $columns,
+    $gutters,
+    $gutter-method,
+    $grid-width,
+    $box-sizing,
+    $direction,
+    $switch-direction,
+    $auto-include-grid-item-base,
+    $auto-include-flow-item-base,
+    $grid-color,
+    $grid-numbers
+  ) {
+    @include mq($query, $no-query) {
+      @content;
+    }
+  }
+}
+
+// zen-respond-to(...)
+//
+// Combines zen-layout() with the Breakpoint module's respond-to() mixin.
+//
+// Instead of nesting zen-layout() with respond-to() like this:
+// ```
+// @include zen-layout($layout: 'm') {
+//   @include respond-to('m') {
+//     // Do something.
+//   }
+// }
+// ```
+//
+// You can use the zen-respond-to() mixin like this:
+// ```
+// @include zen-respond-to('m') {
+//   // Do something.
+// }
+// ```
+//
+// Note that the 'm' in the above example uses the same name in the
+// $breakpoints map as is used in the $zen-layouts map.
+//
+// You can use a differently-named layout by explicitly specifying the $layout
+// parameter like this:
+// ```
+// @include zen-respond-to('m', $layout: 'medium') {
+//   // Do something.
+// }
+// ```
+//
+// $layout - Specify the name of the layout from $zen-columns to use.
+// $context - This parameter is passed on to the respond-to() mixin.
+// $no-query - This parameter is passed on to the respond-to() mixin.
+// $columns - Defaults to $zen-columns.
+// $gutters - Defaults to $zen-gutters
+// $gutter-method - Defaults to $zen-gutter-method
+// $grid-width - Defaults to $zen-grid-width
+// $box-sizing - Defaults to $zen-box-sizing
+// $direction - Defaults to $zen-direction
+// $switch-direction - Defaults to $zen-switch-direction
+// $auto-include-grid-item-base - Defaults to $zen-auto-include-grid-item-base
+// $auto-include-flow-item-base - Defaults to $zen-auto-include-flow-item-base
+// $grid-color - Defaults to $zen-grid-color
+// $grid-numbers - Defaults to $zen-grid-numbers
+//
+// Style guide: layout.zen-layout
+@mixin zen-respond-to(
+  $context,
+  $no-query: false,
+  $layout                       : null,
+  $columns                      : null,
+  $gutters                      : null,
+  $gutter-method                : null,
+  $grid-width                   : null,
+  $box-sizing                   : null,
+  $direction                    : null,
+  $switch-direction             : null,
+  $auto-include-grid-item-base  : null,
+  $auto-include-flow-item-base  : null,
+  $grid-color                   : null,
+  $grid-numbers                 : null
+) {
+
+  @if not mixin-exists('respond-to') {
+    @error 'You need to @import the respond-to mixin before using zen-respond-to().';
+  }
+
+  // Allow the first parameter to control both $context and $layout.
+  @if type-of($layout) == 'null' and map-has-key($zen-layouts, $context) {
+    $layout: $context;
+  }
+
+  @include zen-layout(
+    $layout,
+    $columns,
+    $gutters,
+    $gutter-method,
+    $grid-width,
+    $box-sizing,
+    $direction,
+    $switch-direction,
+    $auto-include-grid-item-base,
+    $auto-include-flow-item-base,
+    $grid-color,
+    $grid-numbers
+  ) {
+    @include respond-to($context, $no-query) {
+      @content;
+    }
+  }
+}

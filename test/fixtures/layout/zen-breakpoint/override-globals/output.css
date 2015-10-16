@@ -1,0 +1,95 @@
+.test-layout {
+  before: 12;
+  after: 12; }
+  .test-layout .breakpoint {
+    breakpoint-parameter-query-is: min-width 555px;
+    breakpoint-parameter-noquery-is: true;
+    during: 10; }
+
+.test-columns {
+  before: 12;
+  after: 12; }
+  .test-columns .breakpoint {
+    breakpoint-parameter-query-is: min-width 555px;
+    breakpoint-parameter-noquery-is: true;
+    during: 6; }
+
+.test-gutters {
+  before: 20px;
+  after: 20px; }
+  .test-gutters .breakpoint {
+    breakpoint-parameter-query-is: min-width 555px;
+    breakpoint-parameter-noquery-is: true;
+    during: 10em; }
+
+.test-gutter-method {
+  before: padding;
+  after: padding; }
+  .test-gutter-method .breakpoint {
+    breakpoint-parameter-query-is: min-width 555px;
+    breakpoint-parameter-noquery-is: true;
+    during: margin; }
+
+.test-grid-width {
+  before: 100%;
+  after: 100%; }
+  .test-grid-width .breakpoint {
+    breakpoint-parameter-query-is: min-width 555px;
+    breakpoint-parameter-noquery-is: true;
+    during: 90%; }
+
+.test-box-sizing {
+  before: border-box;
+  after: border-box; }
+  .test-box-sizing .breakpoint {
+    breakpoint-parameter-query-is: min-width 555px;
+    breakpoint-parameter-noquery-is: true;
+    during: content-box; }
+
+.test-direction {
+  before: left;
+  after: left; }
+  .test-direction .breakpoint {
+    breakpoint-parameter-query-is: min-width 555px;
+    breakpoint-parameter-noquery-is: true;
+    during: right; }
+
+.test-switch-direction {
+  before: false;
+  after: false; }
+  .test-switch-direction .breakpoint {
+    breakpoint-parameter-query-is: min-width 555px;
+    breakpoint-parameter-noquery-is: true;
+    during: true; }
+
+.test-auto-include-grid-item-base {
+  before: true;
+  after: true; }
+  .test-auto-include-grid-item-base .breakpoint {
+    breakpoint-parameter-query-is: min-width 555px;
+    breakpoint-parameter-noquery-is: true;
+    during: false; }
+
+.test-auto-include-flow-item-base {
+  before: true;
+  after: true; }
+  .test-auto-include-flow-item-base .breakpoint {
+    breakpoint-parameter-query-is: min-width 555px;
+    breakpoint-parameter-noquery-is: true;
+    during: false; }
+
+.test-grid-color {
+  before: #ffdede;
+  after: #ffdede; }
+  .test-grid-color .breakpoint {
+    breakpoint-parameter-query-is: min-width 555px;
+    breakpoint-parameter-noquery-is: true;
+    during: #dedeff; }
+
+.test-grid-numbers {
+  before: both;
+  after: both; }
+  .test-grid-numbers .breakpoint {
+    breakpoint-parameter-query-is: min-width 555px;
+    breakpoint-parameter-noquery-is: true;
+    during: top; }

@@ -1,0 +1,7 @@
+@import 'zen-grids/layout';
+
+.test {
+  @include zen-respond-to('m', $columns: 6) {
+    during: $zen-columns;
+  }
+}
