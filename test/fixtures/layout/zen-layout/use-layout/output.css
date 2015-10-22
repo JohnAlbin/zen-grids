@@ -1,0 +1,54 @@
+.test-columns {
+  before: 12;
+  during: 6;
+  after: 12; }
+
+.test-gutters {
+  before: 20px;
+  during: 10em;
+  after: 20px; }
+
+.test-gutter-method {
+  before: padding;
+  during: margin;
+  after: padding; }
+
+.test-grid-width {
+  before: 100%;
+  during: 90%;
+  after: 100%; }
+
+.test-box-sizing {
+  before: border-box;
+  during: content-box;
+  after: border-box; }
+
+.test-direction {
+  before: left;
+  during: right;
+  after: left; }
+
+.test-switch-direction {
+  before: false;
+  during: true;
+  after: false; }
+
+.test-auto-include-grid-item-base {
+  before: true;
+  during: false;
+  after: true; }
+
+.test-auto-include-flow-item-base {
+  before: true;
+  during: false;
+  after: true; }
+
+.test-grid-color {
+  before: #ffdede;
+  during: #dedeff;
+  after: #ffdede; }
+
+.test-grid-numbers {
+  before: both;
+  during: top;
+  after: both; }

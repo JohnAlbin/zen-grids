@@ -47,6 +47,12 @@ $zen-switch-direction             : false       !default;
 $zen-auto-include-flow-item-base  : true        !default;
 
 //
+// Variables used by the layout module.
+//
+
+$zen-layouts                      : ()          !default;
+
+//
 // Variables used by the background module.
 //
 

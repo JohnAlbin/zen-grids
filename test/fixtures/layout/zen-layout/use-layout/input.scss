@@ -1,0 +1,117 @@
+@import 'zen-grids/layout';
+
+$zen-layouts: (
+  test: (
+    columns: 6,
+    gutters: 10em,
+    gutter-method: margin,
+    grid-width: 90%,
+    box-sizing: content-box,
+    direction: right,
+    switch-direction: true,
+    auto-include-grid-item-base: false,
+    auto-include-flow-item-base: false,
+    grid-color: #dedeff,
+    grid-numbers: top,
+  ),
+);
+
+$zen-columns: 12;
+$zen-gutters: 20px;
+$zen-gutter-method: padding;
+$zen-grid-width: 100%;
+$zen-box-sizing: border-box;
+$zen-direction: left;
+$zen-switch-direction: false;
+$zen-auto-include-grid-item-base: true;
+$zen-auto-include-flow-item-base: true;
+$zen-grid-color: #ffdede;
+$zen-grid-numbers: both;
+
+.test-columns {
+  before: $zen-columns;
+  @include zen-layout(test) {
+    during: $zen-columns;
+  }
+  after: $zen-columns;
+}
+
+.test-gutters {
+  before: $zen-gutters;
+  @include zen-layout(test) {
+    during: $zen-gutters;
+  }
+  after: $zen-gutters;
+}
+
+.test-gutter-method {
+  before: $zen-gutter-method;
+  @include zen-layout(test) {
+    during: $zen-gutter-method;
+  }
+  after: $zen-gutter-method;
+}
+
+.test-grid-width {
+  before: $zen-grid-width;
+  @include zen-layout(test) {
+    during: $zen-grid-width;
+  }
+  after: $zen-grid-width;
+}
+
+.test-box-sizing {
+  before: $zen-box-sizing;
+  @include zen-layout(test) {
+    during: $zen-box-sizing;
+  }
+  after: $zen-box-sizing;
+}
+
+.test-direction {
+  before: $zen-direction;
+  @include zen-layout(test) {
+    during: $zen-direction;
+  }
+  after: $zen-direction;
+}
+
+.test-switch-direction {
+  before: $zen-switch-direction;
+  @include zen-layout(test) {
+    during: $zen-switch-direction;
+  }
+  after: $zen-switch-direction;
+}
+
+.test-auto-include-grid-item-base {
+  before: $zen-auto-include-grid-item-base;
+  @include zen-layout(test) {
+    during: $zen-auto-include-grid-item-base;
+  }
+  after: $zen-auto-include-grid-item-base;
+}
+
+.test-auto-include-flow-item-base {
+  before: $zen-auto-include-flow-item-base;
+  @include zen-layout(test) {
+    during: $zen-auto-include-flow-item-base;
+  }
+  after: $zen-auto-include-flow-item-base;
+}
+
+.test-grid-color {
+  before: $zen-grid-color;
+  @include zen-layout(test) {
+    during: $zen-grid-color;
+  }
+  after: $zen-grid-color;
+}
+
+.test-grid-numbers {
+  before: $zen-grid-numbers;
+  @include zen-layout(test) {
+    during: $zen-grid-numbers;
+  }
+  after: $zen-grid-numbers;
+}

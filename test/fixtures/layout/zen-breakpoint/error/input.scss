@@ -1,0 +1,9 @@
+@import 'zen-grids/layout';
+
+$breakpoint: min-width 555px;
+
+.test {
+  @include zen-breakpoint($breakpoint, $columns: 6) {
+    during: $zen-columns;
+  }
+}

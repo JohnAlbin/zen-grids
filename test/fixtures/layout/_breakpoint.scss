@@ -1,0 +1,26 @@
+// These mixins have the same parameters as Breakpoint's mixins, but with
+// functionality only needed for testing.
+
+@mixin breakpoint($query, $no-query: false) {
+  .breakpoint {
+    breakpoint-parameter-query-is: $query;
+    breakpoint-parameter-noquery-is: $no-query;
+    @content;
+  }
+}
+
+@mixin mq($query, $no-query: false) {
+  .mq {
+    mq-parameter-query-is: $query;
+    mq-parameter-noquery-is: $no-query;
+    @content;
+  }
+}
+
+@mixin respond-to($context, $no-query: false) {
+  .respond-to {
+    respond-to-parameter-context-is: $context;
+    respond-to-parameter-noquery-is: $no-query;
+    @content;
+  }
+}
