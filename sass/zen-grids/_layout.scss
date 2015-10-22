@@ -29,18 +29,18 @@
 // Should be used to add a wrapping block where its parameters will override the
 // corresponding global `$zen-` variables within it.
 //
-// $layout - Specify the name of the layout from $zen-columns to use.
-// $columns - Defaults to $zen-columns.
-// $gutters - Defaults to $zen-gutters
-// $gutter-method - Defaults to $zen-gutter-method
-// $grid-width - Defaults to $zen-grid-width
-// $box-sizing - Defaults to $zen-box-sizing
-// $direction - Defaults to $zen-direction
-// $switch-direction - Defaults to $zen-switch-direction
-// $auto-include-grid-item-base - Defaults to $zen-auto-include-grid-item-base
-// $auto-include-flow-item-base - Defaults to $zen-auto-include-flow-item-base
-// $grid-color - Defaults to $zen-grid-color
-// $grid-numbers - Defaults to $zen-grid-numbers
+// $layout                      - Optionally specify the name of the layout from `$zen-layouts` to use.
+// $columns                     - Defaults to `$zen-columns`
+// $gutters                     - Defaults to `$zen-gutters`
+// $gutter-method               - Defaults to `$zen-gutter-method`
+// $grid-width                  - Defaults to `$zen-grid-width`
+// $box-sizing                  - Defaults to `$zen-box-sizing`
+// $direction                   - Defaults to `$zen-direction`
+// $switch-direction            - Defaults to `$zen-switch-direction`
+// $auto-include-grid-item-base - Defaults to `$zen-auto-include-grid-item-base`
+// $auto-include-flow-item-base - Defaults to `$zen-auto-include-flow-item-base`
+// $grid-color                  - Defaults to `$zen-grid-color`
+// $grid-numbers                - Defaults to `$zen-grid-numbers`
 //
 // Style guide: layout.zen-layout
 @mixin zen-layout(
@@ -164,20 +164,20 @@
 // }
 // ```
 //
-// $query - This parameter is passed on to the breakpoint() mixin.
-// $no-query - This parameter is passed on to the breakpoint() mixin.
-// $layout - Specify the name of the layout from $zen-columns to use.
-// $columns - Defaults to $zen-columns.
-// $gutters - Defaults to $zen-gutters
-// $gutter-method - Defaults to $zen-gutter-method
-// $grid-width - Defaults to $zen-grid-width
-// $box-sizing - Defaults to $zen-box-sizing
-// $direction - Defaults to $zen-direction
-// $switch-direction - Defaults to $zen-switch-direction
-// $auto-include-grid-item-base - Defaults to $zen-auto-include-grid-item-base
-// $auto-include-flow-item-base - Defaults to $zen-auto-include-flow-item-base
-// $grid-color - Defaults to $zen-grid-color
-// $grid-numbers - Defaults to $zen-grid-numbers
+// $query                       - Required. This parameter is passed on to the `breakpoint()` mixin.
+// $no-query                    - This parameter is passed on to the `breakpoint()` mixin. Defaults to `false'.
+// $layout                      - Optionally specify the name of the layout from `$zen-layouts` to use.
+// $columns                     - Defaults to `$zen-columns`
+// $gutters                     - Defaults to `$zen-gutters`
+// $gutter-method               - Defaults to `$zen-gutter-method`
+// $grid-width                  - Defaults to `$zen-grid-width`
+// $box-sizing                  - Defaults to `$zen-box-sizing`
+// $direction                   - Defaults to `$zen-direction`
+// $switch-direction            - Defaults to `$zen-switch-direction`
+// $auto-include-grid-item-base - Defaults to `$zen-auto-include-grid-item-base`
+// $auto-include-flow-item-base - Defaults to `$zen-auto-include-flow-item-base`
+// $grid-color                  - Defaults to `$zen-grid-color`
+// $grid-numbers                - Defaults to `$zen-grid-numbers`
 //
 // Style guide: layout.zen-breakpoint
 @mixin zen-breakpoint(
@@ -298,20 +298,20 @@
 // }
 // ```
 //
-// $layout - Specify the name of the layout from $zen-columns to use.
-// $context - This parameter is passed on to the respond-to() mixin.
-// $no-query - This parameter is passed on to the respond-to() mixin.
-// $columns - Defaults to $zen-columns.
-// $gutters - Defaults to $zen-gutters
-// $gutter-method - Defaults to $zen-gutter-method
-// $grid-width - Defaults to $zen-grid-width
-// $box-sizing - Defaults to $zen-box-sizing
-// $direction - Defaults to $zen-direction
-// $switch-direction - Defaults to $zen-switch-direction
-// $auto-include-grid-item-base - Defaults to $zen-auto-include-grid-item-base
-// $auto-include-flow-item-base - Defaults to $zen-auto-include-flow-item-base
-// $grid-color - Defaults to $zen-grid-color
-// $grid-numbers - Defaults to $zen-grid-numbers
+// $context                     - This parameter is passed on to the respond-to() mixin.
+// $no-query                    - This parameter is passed on to the respond-to() mixin. Defaults to `false`.
+// $layout                      - Optionally specify the name of the layout from `$zen-layouts` to use.
+// $columns                     - Defaults to `$zen-columns`
+// $gutters                     - Defaults to `$zen-gutters`
+// $gutter-method               - Defaults to `$zen-gutter-method`
+// $grid-width                  - Defaults to `$zen-grid-width`
+// $box-sizing                  - Defaults to `$zen-box-sizing`
+// $direction                   - Defaults to `$zen-direction`
+// $switch-direction            - Defaults to `$zen-switch-direction`
+// $auto-include-grid-item-base - Defaults to `$zen-auto-include-grid-item-base`
+// $auto-include-flow-item-base - Defaults to `$zen-auto-include-flow-item-base`
+// $grid-color                  - Defaults to `$zen-grid-color`
+// $grid-numbers                - Defaults to `$zen-grid-numbers`
 //
 // Style guide: layout.zen-layout
 @mixin zen-respond-to(
