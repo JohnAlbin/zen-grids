@@ -1,7 +1,15 @@
+// Background module
 //
-// "Background grid image" module for the Zen Grids system.
+// During site development, it’s often useful to have a background image that shows the columns of the grid. The "Background grid image" module for the Zen Grids system provides a mixin to set this background image.
 //
-
+// Note: This module is not automatically loaded with `@import "zen-grids";`. Before using it, you must first import the module with:
+// ```
+// @import "zen-grids/background";
+// ```
+//
+// Unlike the rest of Zen Grids, this module requires Compass.
+//
+// Style guide: background
 
 @import "./functions";
 // Add the default set of background images.
@@ -10,10 +18,31 @@
 @import "compass/css3/images";
 
 
+// zen-grid-background()
 //
-// Add a background grid image to an element's background.
-// @see http://next.zengrids.com/reference/background/#zen-grid-background
+// Adds a background grid image to an element’s background.
 //
+// Common usage:
+// ```
+// @include zen-grid-background();
+// ```
+//
+// Since the mixins of Zen Grids use the `$column-position` for placement of grid items, the background grid image produced by this mixin numbers all of the columns. The `$grid-numbers` parameter specifies how to place the column numbers in the background grid image. By default, column numbers are displayed across the top of the background grid image and then displayed in reverse order along the bottom of the background grid image. `$grid-numbers` can be set to: `both` (the default), `top` (don’t display the bottom numbers), `bottom` (don’t display the top numbers), or `none` (don’t display any column numbers.)
+//
+// Note: when the `$direction` is set to `right` (for RTL languages), the column numbers are displayed right-to-left along the top and left-to-right along the bottom.
+//
+// The easiest way to align this background grid image to the actual grid is to apply this mixin to the same element that `zen-grid-container()` is applied to.
+//
+// $columns          - Defaults to `$zen-columns`
+// $gutters          - Defaults to `$zen-gutters`
+// $gutter-method    - Defaults to `$zen-gutter-method`
+// $grid-width       - Defaults to `$zen-grid-width`
+// $grid-color       - Defaults to `$zen-grid-color`
+// $grid-numbers     - Defaults to `$zen-grid-numbers`
+// $direction        - Defaults to `$zen-direction`
+// $switch-direction - Defaults to `$zen-switch-direction`
+//
+// Style guide: background.zen-grid-background
 @mixin zen-grid-background(
   $columns              : $zen-columns,
   $gutters              : $zen-gutters,
