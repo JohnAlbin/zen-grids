@@ -114,7 +114,13 @@
     #{$rev}: -100%;
   }
   @if zen-support-for(ie, "7") {
-    *margin-#{$rev}: -99.9%;
+    // Interpolation fails on libsass 3.3: *margin-#{$rev}: -99.9%;
+    @if $rev == 'right' {
+      *margin-right: -99.9%;
+    }
+    @else {
+      *margin-left: -99.9%;
+    }
   }
 
   // Include the grid item base mixin.
