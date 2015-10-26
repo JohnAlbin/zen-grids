@@ -1,17 +1,4 @@
-/**
- * @file
- * Test zen-flow-item-width()
- */
 #test-zen-flow-item-width {
-  /* Test zen-flow-item-width(1) without setting $parent-column-span */
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 100%;
-  padding-left: 0;
-  padding-right: 0px;
-  margin-right: 20px;
   /* Test zen-flow-item-width(1, 4) with 20px gutter */
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;

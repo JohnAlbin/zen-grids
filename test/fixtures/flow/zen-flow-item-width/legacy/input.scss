@@ -1,16 +1,8 @@
-/**
- * @file
- * Test zen-flow-item-width()
- */
-
-@import "zen-grids/flow";
+@import 'zen-grids/flow';
 
 #test-zen-flow-item-width {
   // We will use a 5 column grid for all tests.
   $zen-columns: 5 !global;
-
-  /* Test zen-flow-item-width(1) without setting $parent-column-span */
-  @include zen-flow-item-width(1);
 
   /* Test zen-flow-item-width(1, 4) with 20px gutter */
   @include zen-flow-item-width(1, 4);

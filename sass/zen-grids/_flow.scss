@@ -39,8 +39,7 @@
     @else {
       // If we don't know the number of columns the parent element spans, then
       // warn the user and force the flow item to span 100% of the parent.
-      @warn "For responsive layouts with a percentage-based grid width, you must set the $parent-column-span to the number of columns that the parent element spans.";
-      $column-span: $columns;
+      @error "For responsive layouts with a percentage-based grid width, you must set the $parent-column-span to the number of columns that the parent element spans.";
     }
     // We want our inner grid to span the entire width of the parent.
     $grid-width: 100%;
