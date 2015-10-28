@@ -27,7 +27,55 @@ describe('@import "zen-grids/flow";', function() {
   });
 
   describe('@mixin zen-flow-item-base()', function() {
-    it('should have some tests');
+    it('should add grid item base', function(done) {
+      sassyTest.renderFixture('zen-flow-item-base/gutters', {}, function (error, result, expectedOutput) {
+        should.not.exist(error);
+        done();
+      });
+    });
+
+    it('should use gutter-method option', function(done) {
+      sassyTest.renderFixture('zen-flow-item-base/gutter-method', {}, function (error, result, expectedOutput) {
+        should.not.exist(error);
+        done();
+      });
+    });
+
+    it('should use box-sizing option', function(done) {
+      sassyTest.renderFixture('zen-flow-item-base/box-sizing', {}, function (error, result, expectedOutput) {
+        should.not.exist(error);
+        done();
+      });
+    });
+
+    it('should use direction option', function(done) {
+      sassyTest.renderFixture('zen-flow-item-base/direction', {}, function (error, result, expectedOutput) {
+        should.not.exist(error);
+        done();
+      });
+    });
+
+    it('should use switch-direction option', function(done) {
+      sassyTest.renderFixture('zen-flow-item-base/switch-direction', {}, function (error, result, expectedOutput) {
+        should.not.exist(error);
+        done();
+      });
+    });
+
+    it('should support IE 7', function(done) {
+      sassyTest.renderFixture('zen-flow-item-base/ie', {}, function (error, result, expectedOutput) {
+        should.not.exist(error);
+        done();
+      });
+    });
+
+    it('should warn about IE 7 support', function(done) {
+      sassyTest.renderFixture('zen-flow-item-base/warn-box-sizing-polyfill-path', {}, function (error, result, expectedOutput) {
+        should.not.exist(error);
+        result.warn[0].should.equal('Setting $box-sizing to border-box will fail for IE 7 and earlier because the $box-sizing-polyfill-path is empty.');
+        done();
+      });
+    });
   });
 
   describe('@mixin zen-float()', function() {

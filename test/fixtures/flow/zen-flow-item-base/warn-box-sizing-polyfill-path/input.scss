@@ -1,0 +1,7 @@
+@import 'zen-grids/flow';
+
+.test {
+  $browser-minimum-versions: (ie: "7") !global;
+  @include zen-flow-item-base();
+  $browser-minimum-versions: (ie: null) !global;
+}

@@ -1,0 +1,15 @@
+@import 'zen-grids/flow';
+
+.test {
+  @include zen-flow-item-base($gutter-method: padding);
+}
+
+.test2 {
+  @include zen-flow-item-base($gutter-method: margin);
+}
+
+.test3 {
+  $zen-gutter-method: margin !global;
+  @include zen-flow-item-base();
+  $zen-gutter-method: padding !global;
+}

@@ -1,0 +1,14 @@
+@import 'zen-grids/flow';
+
+.test {
+  @include zen-flow-item-base();
+}
+
+.test2 {
+  @include zen-flow-item-base($gutters: 21px);
+}
+
+.test3 {
+  $zen-gutters: 10px !global;
+  @include zen-flow-item-base();
+}

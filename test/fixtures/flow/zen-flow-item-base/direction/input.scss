@@ -1,0 +1,14 @@
+@import 'zen-grids/flow';
+
+.test {
+  @include zen-flow-item-base($direction: right);
+}
+
+.test2 {
+  @include zen-flow-item-base(21px, $direction: right);
+}
+
+.test3 {
+  $zen-direction: right !global;
+  @include zen-flow-item-base(21px);
+}

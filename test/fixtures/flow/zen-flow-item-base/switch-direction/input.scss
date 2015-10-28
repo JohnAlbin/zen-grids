@@ -1,0 +1,10 @@
+@import 'zen-grids/flow';
+
+.test {
+  @include zen-flow-item-base(21px, $switch-direction: true);
+}
+
+.test2 {
+  $zen-switch-direction: true !global;
+  @include zen-flow-item-base(21px);
+}
