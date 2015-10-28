@@ -138,7 +138,7 @@
   $switch-direction         : $zen-switch-direction
 ) {
 
-  // Since we have to set padding in zen-flow-item-width(), supress extraneous
+  // Since we have to set padding in zen-flow-item-width(), suppress extraneous
   // padding declarations in the base by setting $gutter-method to none.
   @if $gutter-method == padding {
     $gutter-method: none;
