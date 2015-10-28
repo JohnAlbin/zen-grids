@@ -1,0 +1,11 @@
+.test {
+  clear: left; }
+
+.test2 {
+  clear: right; }
+
+.test3 {
+  clear: both; }
+
+.test4 {
+  clear: right; }

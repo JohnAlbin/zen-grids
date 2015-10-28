@@ -1,0 +1,15 @@
+@import 'zen-grids/grids';
+
+.test {
+  @include zen-grid-item-base($gutter-method: padding);
+}
+
+.test2 {
+  @include zen-grid-item-base($gutter-method: margin);
+}
+
+.test3 {
+  $zen-gutter-method: margin !global;
+  @include zen-grid-item-base();
+  $zen-gutter-method: padding !global;
+}

@@ -1,0 +1,33 @@
+.test {
+  padding-left: 10px;
+  padding-right: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.test2 {
+  padding-left: 10px;
+  padding-right: 10px;
+  border-left: 0 !important;
+  border-right: 0 !important; }
+
+.test3 {
+  padding-left: 10px;
+  padding-right: 10px;
+  border-left: 0 !important;
+  border-right: 0 !important; }
+
+.test4 {
+  border-left: 0 !important;
+  border-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
+
+.test5 {
+  padding-left: 10px;
+  padding-right: 10px; }
+
+.test6 {
+  padding-left: 10px;
+  padding-right: 10px; }

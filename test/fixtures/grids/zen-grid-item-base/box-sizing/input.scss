@@ -1,0 +1,29 @@
+@import 'zen-grids/grids';
+
+.test {
+  @include zen-grid-item-base($box-sizing: border-box);
+}
+
+.test2 {
+  @include zen-grid-item-base($box-sizing: content-box);
+}
+
+.test3 {
+  $zen-box-sizing: content-box !global;
+  @include zen-grid-item-base();
+  $zen-box-sizing: border-box !global;
+}
+
+.test4 {
+  @include zen-grid-item-base($box-sizing: content-box, $gutter-method: margin);
+}
+
+.test5 {
+  @include zen-grid-item-base($box-sizing: universal-border-box);
+}
+
+.test6 {
+  $zen-box-sizing: universal-border-box !global;
+  @include zen-grid-item-base();
+  $zen-box-sizing: border-box !global;
+}

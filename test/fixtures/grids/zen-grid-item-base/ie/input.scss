@@ -1,0 +1,23 @@
+@import 'zen-grids/grids';
+
+.test {
+  $browser-minimum-versions: (ie: "7") !global;
+  @include zen-grid-item-base();
+  $browser-minimum-versions: (ie: null) !global;
+}
+
+.test2 {
+  $box-sizing-polyfill-path: "/boxsizing.htc" !global;
+  $browser-minimum-versions: (ie: "7") !global;
+  @include zen-grid-item-base();
+  $box-sizing-polyfill-path: "" !global;
+  $browser-minimum-versions: (ie: null) !global;
+}
+
+.test3 {
+  $box-sizing-polyfill-path: "/boxsizing.htc" !global;
+  $browser-minimum-versions: (ie: "6") !global;
+  @include zen-grid-item-base();
+  $box-sizing-polyfill-path: "" !global;
+  $browser-minimum-versions: (ie: null) !global;
+}

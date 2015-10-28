@@ -1,0 +1,14 @@
+@import 'zen-grids/grids';
+
+.test {
+  @include zen-grid-item-base($direction: right);
+}
+
+.test2 {
+  @include zen-grid-item-base(21px, $direction: right);
+}
+
+.test3 {
+  $zen-direction: right !global;
+  @include zen-grid-item-base(21px);
+}

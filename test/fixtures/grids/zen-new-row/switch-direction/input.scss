@@ -1,0 +1,10 @@
+@import 'zen-grids/grids';
+
+.test {
+  @include zen-new-row($switch-direction: TRUE);
+}
+
+.test2 {
+  $zen-switch-direction: TRUE !global;
+  @include zen-new-row();
+}

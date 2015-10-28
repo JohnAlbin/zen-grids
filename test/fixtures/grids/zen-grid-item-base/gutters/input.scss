@@ -1,0 +1,14 @@
+@import 'zen-grids/grids';
+
+.test {
+  @include zen-grid-item-base();
+}
+
+.test2 {
+  @include zen-grid-item-base($gutters: 21px);
+}
+
+.test3 {
+  $zen-gutters: 10px !global;
+  @include zen-grid-item-base();
+}

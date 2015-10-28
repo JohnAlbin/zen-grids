@@ -1,0 +1,7 @@
+@import 'zen-grids/grids';
+
+.test {
+  $browser-minimum-versions: (ie: "7") !global;
+  @include zen-grid-item-base();
+  $browser-minimum-versions: (ie: null) !global;
+}

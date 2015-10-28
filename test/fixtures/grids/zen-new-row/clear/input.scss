@@ -1,0 +1,19 @@
+@import 'zen-grids/grids';
+
+.test {
+  @include zen-new-row();
+}
+
+.test2 {
+  @include zen-new-row($clear: right);
+}
+
+.test3 {
+  @include zen-new-row($clear: both);
+}
+
+.test4 {
+  $zen-direction: right !global;
+  @include zen-new-row();
+  $zen-direction: left !global;
+}

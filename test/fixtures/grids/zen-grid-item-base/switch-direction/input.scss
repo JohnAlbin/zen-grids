@@ -1,0 +1,10 @@
+@import 'zen-grids/grids';
+
+.test {
+  @include zen-grid-item-base(21px, $switch-direction: true);
+}
+
+.test2 {
+  $zen-switch-direction: true !global;
+  @include zen-grid-item-base(21px);
+}

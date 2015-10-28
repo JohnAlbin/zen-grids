@@ -1,0 +1,14 @@
+@import 'zen-grids/grids';
+
+.test {
+  @include zen-apply-gutter-padding();
+}
+
+.test2 {
+  @include zen-apply-gutter-padding(21px);
+}
+
+.test3 {
+  $zen-gutters: 10px !global;
+  @include zen-apply-gutter-padding();
+}
