@@ -1,0 +1,9 @@
+@import 'zen-grids/grids';
+
+.test {
+  @include zen-grid-container();
+}
+
+.test2 {
+  @include zen-grid-item(1, 1);
+}

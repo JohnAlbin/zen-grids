@@ -1,0 +1,19 @@
+.test:before,
+.test:after {
+  content: "";
+  display: table; }
+
+.test:after {
+  clear: both; }
+
+.test2 {
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }

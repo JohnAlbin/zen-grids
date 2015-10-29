@@ -18,9 +18,11 @@
   "dependencies": {},
   "devDependencies": {
     "chai": "^3.2.0",
+    "eyeglass": "^0.6.3",
     "kss": "^2.1.0",
     "mocha": "^2.3.2",
-    "sassy-test": "^1.1.0"
+    "node-sass-import-once": "^1.2.0",
+    "sassy-test": "^1.1.1"
   },
   "scripts": {
     "test": "mocha"
