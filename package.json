@@ -20,6 +20,9 @@
   ],
   "main": "sass/_zen-grids.scss",
   "style": "sass/_zen-grids.scss",
+  "eyeglass": {
+    "exports": "eyeglass-exports.js"
+  },
   "directories": {
     "lib": "sass",
     "test": "test"
