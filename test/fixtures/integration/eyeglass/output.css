@@ -1,5 +1,4 @@
-.test:before,
-.test:after {
+.test:before, .test:after {
   content: "";
   display: table; }
 
