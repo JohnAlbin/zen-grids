@@ -1,12 +1,13 @@
 {
   "name": "zen-grids",
-  "version": "2.0.0-beta.4",
-  "homepage": "http://zengrids.com",
-  "authors": [
-    "John Albin Wilkins"
-  ],
   "description": "Zen Grids is an intuitive, flexible grid system to create responsive, adaptive, fluid and fixed-width layouts.",
-  "main": "sass/_zen-grids.scss",
+  "main": [
+    "sass/_zen-grids.scss"
+  ],
+  "authors": [
+    "John Albin Wilkins <virtually.johnalbin@gmail.com> (http://john.albin.net/)"
+  ],
+  "license": "GPL-2.0",
   "keywords": [
     "sass",
     "layout",
@@ -14,11 +15,13 @@
     "rwd",
     "responsive-web-design"
   ],
-  "license": "GPL-2.0",
+  "homepage": "http://zengrids.com",
   "ignore": [
-    "zen-grids.gemspec",
-    "sache.json",
+    "**/.*",
     "lib",
-    "test"
+    "node_modules",
+    "sache.json",
+    "test",
+    "zen-grids.gemspec"
   ]
 }

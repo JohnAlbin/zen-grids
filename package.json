@@ -1,10 +1,16 @@
 {
   "name": "zen-grids",
   "version": "2.0.0-beta.4",
-  "homepage": "https://github.com/JohnAlbin/zen-grids",
-  "author": "John Albin Wilkins <virtually.johnalbin@gmail.com> (http://john.albin.net/)",
   "description": "Zen Grids is an intuitive, flexible grid system to create responsive, adaptive, fluid and fixed-width layouts.",
-  "license": "GPL-2.0",
+  "homepage": "https://github.com/JohnAlbin/zen-grids",
+  "bugs": {
+    "url": "https://github.com/JohnAlbin/zen-grids/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/JohnAlbin/zen-grids.git"
+  },
+  "author": "John Albin Wilkins <virtually.johnalbin@gmail.com> (http://john.albin.net/)",
   "keywords": [
     "sass",
     "layout",
@@ -12,26 +18,25 @@
     "rwd",
     "responsive-web-design"
   ],
+  "main": "sass/_zen-grids.scss",
+  "style": "sass/_zen-grids.scss",
   "directories": {
+    "lib": "sass",
     "test": "test"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "chai": "^3.2.0",
-    "eyeglass": "^0.6.3",
-    "kss": "^2.1.0",
-    "mocha": "^2.3.2",
-    "node-sass-import-once": "^1.2.0",
-    "sassy-test": "^1.1.1"
   },
   "scripts": {
     "test": "mocha"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/JohnAlbin/zen-grids.git"
+  "license": "GPL-2.0",
+  "dependencies": {
+    "support-for": "^1.0.0"
   },
-  "bugs": {
-    "url": "https://github.com/JohnAlbin/zen-grids/issues"
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "eyeglass": "^0.6.3",
+    "kss": "^2.1.0",
+    "mocha": "^2.3.4",
+    "node-sass-import-once": "^1.2.0",
+    "sassy-test": "^1.1.1"
   }
 }
