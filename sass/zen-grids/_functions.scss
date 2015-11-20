@@ -8,9 +8,28 @@
 @import "./variables";
 
 
+// zen-half-gutter()
 //
-// Returns a half gutter width. @see http://next.zengrids.com/reference/functions/#zen-half-gutter
+// Returns a half gutter width. The `$gutter-side` defaults to [`$zen-direction`](#zen-direction).
 //
+// If the gutter width is in pixels and is an odd number, then `$gutter-side: left` will return half of the gutter rounded down to a whole pixel; `$gutter-side: right` will return half of the gutter rounded up to a whole pixel.
+//
+// Common usage:
+// ```
+// .ex {
+//   property: zen-half-gutter();
+//   // or:
+//   property: zen-half-gutter($gutter-side: [left or right]);
+// }
+// ```
+//
+// $gutters - Defaults to `$zen-gutters`
+// $gutter-side - Defaults to `$zen-direction`
+// $direction - Defaults to `$zen-direction`
+//
+// weight: -1
+//
+// Style guide: functions.zen-half-gutter
 @function zen-half-gutter(
   $gutters          : $zen-gutters,
   $gutter-side      : $zen-direction,
@@ -29,9 +48,11 @@
   @return $half-gutter;
 }
 
+// zen-compare-units()
 //
-// Warns if the gutter and grid width units are not comparable.
+// Internal function. Warns if the gutter and grid width units are not comparable. It does not throw an `@error` because the line following the call to `zen-compare-units()` will cause a Sass math error with the a line number that is more useful than if it were to fail here.
 //
+// No style guide
 @function zen-compare-units(
   $feature,
   $gutters        : $zen-gutters,
@@ -46,9 +67,25 @@
   @return true;
 }
 
+// zen-unit-width()
 //
-// Calculates the unit width of a column. @see http://next.zengrids.com/reference/functions/#zen-unit-width
+// Returns the unit width of a single column in the grid.
 //
+// Common usage:
+// ```
+// .ex {
+//   property: zen-unit-width();
+// }
+// ```
+//
+// $columns - Defaults to `$zen-columns`
+// $gutters - Defaults to `$zen-gutters`
+// $gutter-method - Defaults to `$zen-gutter-method`
+// $grid-width - Defaults to `$zen-grid-width`
+//
+// weight: -1
+//
+// Style guide: functions.zen-unit-width
 @function zen-unit-width(
   $columns        : $zen-columns,
   $gutters        : $zen-gutters,
@@ -75,10 +112,25 @@
   @return $unit-width;
 }
 
+// zen-grid-item-width()
+//
+// Common usage:
+// ```
+// .ex {
+//   property: zen-grid-item-width([number]);
+// }
+// ```
 //
 // Calculates the width of a grid item that spans the specified number of columns.
-// @see http://next.zengrids.com/reference/functions/#zen-grid-item-width
 //
+// $column-span - Required. The number of columns to calculate the width of.
+// $columns - Defaults to `$zen-columns`
+// $gutters - Defaults to `$zen-gutters`
+// $gutter-method - Defaults to `$zen-gutter-method`
+// $grid-width - Defaults to `$zen-grid-width`
+// $box-sizing - Defaults to `$zen-box-sizing`
+//
+// Style guide: functions.zen-grid-item-width
 @function zen-grid-item-width(
   $column-span,
   $columns        : $zen-columns,
@@ -101,10 +153,20 @@
   @return $width;
 }
 
+// zen-direction-switch()
+//
+// Common usage:
+// ```
+// .ex {
+//   property: zen-direction-switch([left or right]);
+// }
+// ```
+//
+// weight: 1
 //
 // Returns the opposite direction, given "left" or "right".
-// @see http://next.zengrids.com/reference/functions/#zen-direction-switch
 //
+// Style guide: functions.zen-direction-switch
 @function zen-direction-switch(
   $dir
 ) {
@@ -122,9 +184,9 @@
 
 // zen-support-for-ie()
 //
-// Internal function that wraps support-for's function if it is installed.
+// Internal function. If you've installed support-for, this function will tell you if IE 6 or IE 7 should be supported. If support-for is not installed, this function always returns false.
 //
-// Style guide: functions.zen-support-for-ie
+// No style guide
 @function zen-support-for-ie($min-version) {
   @if function-exists('support-for') {
     @return support-for(ie, $min-version);

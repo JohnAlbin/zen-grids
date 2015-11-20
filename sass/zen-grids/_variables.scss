@@ -4,7 +4,7 @@
 
 // Grids Module: Configurable Variables
 //
-// Compass’ reference website has documentation about [working with configurable variables](http://compass-style.org/help/tutorials/configurable-variables/).
+// Zen Grids comes with several configuration variables that affect what CSS its mixins and functions output. The default values of these variables are all set using the “guarded assignment” flag, `!default`. So you can safely set those values before you `@import` Zen Grids and your values will be respected.
 //
 // Style guide: grids.variables
 
