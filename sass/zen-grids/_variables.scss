@@ -18,6 +18,8 @@
 //
 // `$zen-columns: 1 !default;`
 //
+// weight: -2
+//
 // Style guide: grids.variables.common.zen-columns
 $zen-columns: 1 !default;
 
@@ -30,6 +32,8 @@ $zen-columns: 1 !default;
 // If the [`$zen-gutter-method`](#zen-gutter-method) is set to `margin`, the unit of measurement of the gutters should be the same as the unit of measurement of the [`$zen-grid-width`](#zen-grid-width), e.g. if `$zen-grid-width: 100%`, then `$zen-gutters` should also be measured in `%`.
 //
 // `$zen-gutters: 20px !default;`
+//
+// weight: -2
 //
 // Style guide: grids.variables.common.zen-gutters
 $zen-gutters: 20px !default;
@@ -71,7 +75,11 @@ $zen-gutters: 20px !default;
 //
 // Note: that the “margin” gutter method requires that the gutters and the width of the grid have the same unit of measurement, e.g. both be measured in `%` or both in `px`. This means that a fluid, responsive layout using the “margin” gutter method will have gutters that are `%`-based. This is why the default gutter method is “padding”; the grid can be `%`-based, while the gutters remain a fixed measurement (like `20px` or `5 em`) at all viewport sizes.
 //
-// `$zen-gutter-method: padding !default;`
+// ```
+// $zen-gutter-method: padding !default;
+// ```
+//
+// weight: -1
 //
 // Style guide: grids.variables.common.zen-gutter-method
 $zen-gutter-method: padding !default;
@@ -84,6 +92,23 @@ $zen-gutter-method: padding !default;
 //
 // Style guide: grids.variables.common.zen-auto-include-grid-item-base
 $zen-auto-include-grid-item-base: true !default;
+
+// $zen-box-sizing
+//
+// Specify the CSS3 box-sizing method. The default, "border-box", is compatible with all modern browsers, including IE 8 and later.
+//
+// Some developers use a universal selector to apply CSS’s “border-box” box sizing to all elements. Paul Irish describes this method in more detail in his blog post “[* { Box-sizing: Border-box } FTW](http://www.paulirish.com/2012/box-sizing-border-box-ftw/)”. Since Zen Grids will automatically add `box-sizing: border-box;` to those elements that need it, you can prevent it from outputting redundant `box-sizing` properties by setting `$zen-box-sizing` to `universal-border-box`.
+//
+// To add IE6 and IE7 support, you’ll need to set [`$support-for`](#support-for) to `(ie: 6)` and then either use a polyfill (see [`$box-sizing-polyfill-path`](#box-sizing-polyfill-path)) or set `$zen-box-sizing` to "content-box".
+//
+// Note: if `$zen-box-sizing` is set to "content-box", then [`$zen-gutters`](#zen-gutters) will need to use the same unit of measurement as the [`$zen-grid-width`](#zen-grid-width).
+//
+// `$zen-box-sizing: border-box !default;`
+//
+// weight: 1
+//
+// Style guide: grids.variables.common.zen-box-sizing
+$zen-box-sizing: border-box !default;
 
 
 // Adaptive or fixed design variable
@@ -141,23 +166,6 @@ $box-sizing-polyfill-path: '' !default;
 // ```
 //
 // Style guide: grids.variables.legacy.support-for
-
-// $zen-box-sizing
-//
-// Specify the CSS3 box-sizing method. The default, "border-box", is compatible with all modern browsers, including IE 8 and later.
-//
-// To add IE6 and IE7 support, you’ll need to set [`$browser-minimum-versions`](#browser-minimum-versions) to `(ie: "6")` and then either use a polyfill (see [`$box-sizing-polyfill-path`](#box-sizing-polyfill-path)) or set `$zen-box-sizing` to "content-box".
-//
-// Note: if `$zen-box-sizing` is set to "content-box", then [`$zen-gutters`](#zen-gutters) will need to use the same unit of measurement as the [`$zen-grid-width`](#zen-grid-width).
-//
-// Some developers use a universal selector to apply CSS’s “border-box” box sizing to all elements. Paul Irish describes this method in more detail in his blog post “[* { Box-sizing: Border-box } FTW](http://www.paulirish.com/2012/box-sizing-border-box-ftw/)”.
-//
-// If border-box is applied to all elements with a ruleset similar to `* { box-sizing: border-box; }` (don’t forget the vendor prefixes!), you can prevent Zen Grids from outputting redundant box-sizing rules by setting `$zen-box-sizing` to `universal-border-box`.
-//
-// `$zen-box-sizing: border-box !default;`
-//
-// Style guide: grids.variables.legacy.zen-box-sizing
-$zen-box-sizing: border-box !default;
 
 // RTL language variables
 //
