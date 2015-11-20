@@ -7,7 +7,6 @@
 @import "./variables";
 // Import the helper functions.
 @import "./functions";
-@import "./internal/functions-compass-polyfill";
 
 
 //
@@ -37,7 +36,7 @@
   }
 
   // @TODO: This is a pre-IE8 line of code; don't remember why its needed.
-  @if zen-support-for(ie, "7") {
+  @if zen-support-for-ie(7) {
     *position: relative;
   }
 
@@ -50,7 +49,7 @@
   &:after {
     clear: both;
   }
-  @if zen-support-for(ie, "7") {
+  @if zen-support-for-ie(7) {
     *zoom: 1;
   }
 
@@ -113,7 +112,7 @@
     #{$dir}: $margin;
     #{$rev}: -100%;
   }
-  @if zen-support-for(ie, "7") {
+  @if zen-support-for-ie(7) {
     // @TODO: This interpolation fails on libsass 3.3.0: *margin-#{$rev}: -99.9%;
     #{'*margin-' + $rev}: -99.9%;
   }
@@ -167,14 +166,14 @@
     }
   }
 
-  @if zen-support-for(ie, "7") {
+  @if zen-support-for-ie(7) {
     @if $box-sizing == border-box and $box-sizing-polyfill-path == "" {
       @warn 'Setting $box-sizing to border-box will fail for IE 7 and earlier because the $box-sizing-polyfill-path is empty.';
     }
     @if $box-sizing-polyfill-path != "" {
       *behavior: url($box-sizing-polyfill-path);
     }
-    @if zen-support-for(ie, "6") {
+    @if zen-support-for-ie(6) {
       // Display inline or double your floated margin!
       // @see http://www.positioniseverything.net/explorer/doubled-margin.html
       _display: inline;

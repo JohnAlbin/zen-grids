@@ -101,6 +101,16 @@ $zen-grid-width: 100% !default;
 
 // Legacy IE support variables
 //
+// IE 6 and 7 require special CSS properties in order for Zen Grids to work with
+// such old browsers.
+//
+// If you need IE 6/7 support, you will need to install:
+//
+// 1. [support-for]() Sass module
+// 2. [box-sizing polyfill](https://github.com/Schepp/box-sizing-polyfill)'s boxsizing.htc
+//
+// weight: 1
+//
 // Style guide: grids.variables.legacy
 
 // $box-sizing-polyfill-path
@@ -112,30 +122,25 @@ $zen-grid-width: 100% !default;
 // Style guide: grids.variables.legacy.box-sizing-polyfill-path
 $box-sizing-polyfill-path: '' !default;
 
-// $browser-minimum-versions
+// $support-for
 //
-// Specify the minimum browser versions that must be supported. Currently, Zen Grids only uses the "ie" value to determine if additional CSS properties are needed for IE 6 and IE 7 support. For example, to add support for IE 7, set `$browser-minimum-versions: (ie: "7");`
+// Specify the minimum browser versions that must be supported. Currently, Zen Grids only uses the `ie` value to determine if additional CSS properties are needed for IE 6 and IE 7 support. For example, to add support for IE 7, set `$support-for: (ie: 7);`
 //
-// This variable is a copy of the one used by [Compass’ Browser Support module](http://compass-style.org/reference/compass/support/). Zen Grids does not require Compass, but will use Compass’ module if available. Note: as of 2015, Compass includes support for IE 7 by default because its browser usage (according to caniuse.com) is higher than 1 in 10,000 users. If your project uses Compass, you can <em>drop</em> support for IE 7 by setting `$critical-usage-threshold` above the usage threshold above caniuse’s IE7 usage stat.
+// This variable is a copy of the one used by [support-for](https://github.com/JohnAlbin/support-for). Zen Grids does not require support-for, but will use it if available.
 //
 // ```
-// $browser-minimum-versions: (
-//   'chrome':  null,
-//   'firefox': null,
-//   'ie':      null,
-//   'safari':  null,
-//   'opera':   null
+// $support-for: (
+//   chrome:  -4,
+//   edge:    -4,
+//   firefox: -4,
+//   ie:      9,
+//   opera:   -4,
+//   safari:  -4,
+//   '*':     -4,
 // ) !default;
 // ```
 //
-// Style guide: grids.variables.legacy.browser-minimum-versions
-$browser-minimum-versions: (
-  'chrome':  null,
-  'firefox': null,
-  'ie':      null,
-  'safari':  null,
-  'opera':   null
-) !default;
+// Style guide: grids.variables.legacy.support-for
 
 // $zen-box-sizing
 //

@@ -1,7 +1,8 @@
+@import 'support-for';
 @import 'zen-grids/grids';
 
 .test {
-  $browser-minimum-versions: (ie: "7") !global;
+  $support-for: (ie: 7) !global;
   @include zen-grid-item-base();
-  $browser-minimum-versions: (ie: null) !global;
+  $support-for: ('*': -4) !global;
 }

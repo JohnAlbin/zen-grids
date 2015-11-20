@@ -1,23 +1,24 @@
+@import 'support-for';
 @import 'zen-grids/flow';
 
 .test {
-  $browser-minimum-versions: (ie: "7") !global;
+  $support-for: (ie: 7) !global;
   @include zen-flow-item-base();
-  $browser-minimum-versions: (ie: null) !global;
+  $support-for: ('*': -4) !global;
 }
 
 .test2 {
   $box-sizing-polyfill-path: "/boxsizing.htc" !global;
-  $browser-minimum-versions: (ie: "7") !global;
+  $support-for: (ie: 7) !global;
   @include zen-flow-item-base();
   $box-sizing-polyfill-path: "" !global;
-  $browser-minimum-versions: (ie: null) !global;
+  $support-for: ('*': -4) !global;
 }
 
 .test3 {
   $box-sizing-polyfill-path: "/boxsizing.htc" !global;
-  $browser-minimum-versions: (ie: "6") !global;
+  $support-for: (ie: 6) !global;
   @include zen-flow-item-base();
   $box-sizing-polyfill-path: "" !global;
-  $browser-minimum-versions: (ie: null) !global;
+  $support-for: ('*': -4) !global;
 }

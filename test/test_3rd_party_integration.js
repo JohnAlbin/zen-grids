@@ -13,9 +13,9 @@ describe('compatibility with other libraries', function() {
     done();
   });
 
-  describe('Compass', function() {
-    it('should work with Compass', function(done) {
-      sassyTest.renderFixture('compass', {}, function(error, result, expectedOutput) {
+  describe('Support-for', function() {
+    it('should work with Support-for', function(done) {
+      sassyTest.renderFixture('support-for', {}, function(error, result, expectedOutput) {
         should.not.exist(error);
         done();
       });

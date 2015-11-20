@@ -3,10 +3,9 @@
  * Test zen-grid-container() and zen-grid-item() after @import compass.
  */
 
-@import "compass";
+@import 'support-for';
 @import "zen-grids";
 
-$critical-usage-threshold: 100;
 $box-sizing-polyfill-path: "/ie-box-sizing.htc";
 
 #test-zen-grid-container {
@@ -18,21 +17,21 @@ $box-sizing-polyfill-path: "/ie-box-sizing.htc";
   /* Test zen-grid-container() with IE 8 support */
   $browser-minimum-versions: (ie: "8") !global;
   @include zen-grid-container();
-  $browser-minimum-versions: (ie: null) !global;
+  $support-for: ('*': -4) !global;
 }
 
 #test-zen-grid-container-3 {
   /* Test zen-grid-container() with IE 7 support */
-  $browser-minimum-versions: (ie: "7") !global;
+  $support-for: (ie: 7) !global;
   @include zen-grid-container();
-  $browser-minimum-versions: (ie: null) !global;
+  $support-for: ('*': -4) !global;
 }
 
 #test-zen-grid-container-4 {
   /* Test zen-grid-container() with IE 6 support */
-  $browser-minimum-versions: (ie: "6") !global;
+  $support-for: (ie: 6) !global;
   @include zen-grid-container();
-  $browser-minimum-versions: (ie: null) !global;
+  $support-for: ('*': -4) !global;
 }
 
 #test-zen-grid-item {
@@ -42,15 +41,15 @@ $box-sizing-polyfill-path: "/ie-box-sizing.htc";
   /* Test zen-grid-item(1, 1) with IE 8 support */
   $browser-minimum-versions: (ie: "8") !global;
   @include zen-grid-item(1, 1);
-  $browser-minimum-versions: (ie: null) !global;
+  $support-for: ('*': -4) !global;
 
   /* Test zen-grid-item(1, 1) with IE 7 support */
-  $browser-minimum-versions: (ie: "7") !global;
+  $support-for: (ie: 7) !global;
   @include zen-grid-item(1, 1);
-  $browser-minimum-versions: (ie: null) !global;
+  $support-for: ('*': -4) !global;
 
   /* Test zen-grid-item(1, 1) with IE 6 support */
-  $browser-minimum-versions: (ie: "6") !global;
+  $support-for: (ie: 6) !global;
   @include zen-grid-item(1, 1);
-  $browser-minimum-versions: (ie: null) !global;
+  $support-for: ('*': -4) !global;
 }

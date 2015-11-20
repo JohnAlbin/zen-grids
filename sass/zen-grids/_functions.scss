@@ -117,3 +117,17 @@
   }
   @return $dir;
 }
+
+// zen-support-for-ie()
+//
+// Internal function that wraps support-for's function if it is installed.
+//
+// Style guide: functions.zen-support-for-ie
+@function zen-support-for-ie($min-version) {
+  @if function-exists('support-for') {
+    @return support-for(ie, $min-version);
+  }
+  @else {
+    @return false;
+  }
+}

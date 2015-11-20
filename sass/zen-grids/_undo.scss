@@ -38,7 +38,7 @@
   }
 
   // @TODO: This is a pre-IE8 line of code; don't remember why its needed.
-  @if zen-support-for(ie, "7") {
+  @if zen-support-for-ie(7) {
     *position: static;
   }
 
@@ -51,7 +51,7 @@
   &:after {
     clear: none;
   }
-  @if zen-support-for(ie, "7") {
+  @if zen-support-for-ie(7) {
     *zoom: normal;
   }
 
@@ -124,11 +124,11 @@
     box-sizing: content-box;
   }
 
-  @if zen-support-for(ie, "7") {
+  @if zen-support-for-ie(7) {
     @if $box-sizing-polyfill-path != "" {
       *behavior: none;
     }
-    @if zen-support-for(ie, "6") {
+    @if zen-support-for-ie(6) {
       _display: block;
       _overflow: visible;
     }

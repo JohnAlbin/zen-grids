@@ -3,6 +3,7 @@
  * Test undo-zen-grid-item-base()
  */
 
+@import 'support-for';
 @import "zen-grids/undo";
 
 #test-undo-zen-grid-item-base {
@@ -23,23 +24,23 @@
   $zen-box-sizing: universal-border-box !global;
 
   /* Test undo-zen-grid-item-base() with IE 7 support */
-  $browser-minimum-versions: (ie: "7") !global;
+  $support-for: (ie: 7) !global;
   @include undo-zen-grid-item-base();
-  $browser-minimum-versions: (ie: null) !global;
+  $support-for: ('*': -4) !global;
 
   /* Test undo-zen-grid-item-base() with $box-sizing-polyfill-path: "/boxsizing.htc" and IE 7 support */
   $box-sizing-polyfill-path: "/boxsizing.htc" !global;
-  $browser-minimum-versions: (ie: "7") !global;
+  $support-for: (ie: 7) !global;
   @include undo-zen-grid-item-base();
   $box-sizing-polyfill-path: "" !global;
-  $browser-minimum-versions: (ie: null) !global;
+  $support-for: ('*': -4) !global;
 
   /* Test undo-zen-grid-item-base() with $box-sizing-polyfill-path: "/boxsizing.htc" and IE 6 support */
   $box-sizing-polyfill-path: "/boxsizing.htc" !global;
-  $browser-minimum-versions: (ie: "6") !global;
+  $support-for: (ie: 6) !global;
   @include undo-zen-grid-item-base();
   $box-sizing-polyfill-path: "" !global;
-  $browser-minimum-versions: (ie: null) !global;
+  $support-for: ('*': -4) !global;
 
   /* Test undo-zen-grid-item-base() with $zen-gutter-method: margin */
   $zen-gutter-method: margin !global;

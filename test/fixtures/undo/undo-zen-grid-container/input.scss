@@ -3,6 +3,7 @@
  * Test undo-zen-grid-container()
  */
 
+@import 'support-for';
 @import "zen-grids/undo";
 
 #test-undo-zen-grid-container {
@@ -12,9 +13,9 @@
 
 #test-undo-zen-grid-container-2 {
   /* Test undo-zen-grid-container() with IE 7 support */
-  $browser-minimum-versions: (ie: "7") !global;
+  $support-for: (ie: 7) !global;
   @include undo-zen-grid-container();
-  $browser-minimum-versions: (ie: null) !global;
+  $support-for: ('*': -4) !global;
 }
 
 #test-undo-zen-grid-container-3 {
