@@ -1,15 +1,67 @@
+// Flow module
 //
-// "Flow" module for the Zen Grids system.
+// In your grid system, some HTML elements are grid containers and some HTML elements are grid items. Most of your content will be inside a grid item. According to CSS terminology, the unpositioned HTML elements inside a grid item are in the “normal flow” of a document.
 //
-
+// The "Flow" module for the Zen Grids system allows an item in the normal flow of a document to be aligned to the grid, e.g. an image can be aligned to the grid.
+//
+// Style guide: flow
 
 @import "./grids";
 
 
+// zen-flow-item-width()
 //
-// Apply this to an HTML item that is in the normal flow of a document to help
-// align it to the grid. @see http://next.zengrids.com/reference/flow/#zen-float
+// Common usage:
+// ```
+// @include zen-flow-item-width(
+//   [column-span],
+//   $parent-column-span: [integer]
+// );
+// ```
+// or:
+// ```
+// @include zen-flow-item-width(
+//   [column-span],
+//   $parent-column-span: [integer],
+//   $alpha-gutter: [boolean],
+//   $omega-gutter: [boolean]
+// );
+// ```
+// or for fixed length (em, px, etc.) layouts:
+// ```
+// @include zen-flow-item-width(
+//   [column-span]
+// );
+// ```
+// or:
+// ```
+// @include zen-flow-item-width(
+//   [column-span],
+//   $alpha-gutter: [boolean],
+//   $omega-gutter: [boolean]
+// );
+// ```
 //
+// Apply this to an HTML item that is in the normal flow of a document to help align it to the grid. Set the `$column-span` to the number of columns that the HTML element should span. For responsive layouts with a percentage-based grid width, set the `$parent-column-span` to the number of columns that the parent element spans; fixed-unit layouts using px, em, etc. do not need to specify this.
+//
+// Unlike the `zen-grid-item()` mixin, this mixin does not float the HTML item; see the related `zen-float()` mixin. This mixin also does not have a half-gutter on each side. By default, it has no gutter in the "alpha position" (the left side) and a full gutter in the "omega position" (the right side.) You can turn on or off the alpha and omega gutters by setting the `$alpha-gutter` and `$omega-gutter` parameters to `true` or `false`.
+//
+// Note: when the `$direction` is set to `right` (for RTL languages), the alpha position is on the right and the omega position is on the left.
+//
+// $column-span         - Required. The number of columns the flow item will span.
+// $parent-column-span  - Required for %-based layouts, but not for fixed-width layouts. The number of columns the parent grid item spans.
+// $alpha-gutter        - Whether the flow item should have a gutter on its left (or, for RTL layouts, on its right.) Defaults to `false`.
+// $omega-gutter        - Whether the flow item should have a gutter on its right (or, for RTL layouts, on its left.) Defaults to `true`.
+// $direction           - Defaults to `$zen-direction`
+// $columns             - Defaults to `$zen-columns`
+// $gutters             - Defaults to `$zen-gutters`
+// $gutter-method       - Defaults to `$zen-gutter-method`
+// $grid-width          - Defaults to `$zen-grid-width`
+// $box-sizing          - Defaults to `$zen-box-sizing`
+// $switch-direction    - Defaults to `$zen-switch-direction`
+// $include-base        - Defaults to `$zen-auto-include-flow-item-base`
+//
+// Style guide: flow.zen-flow-item-width
 @mixin zen-flow-item-width(
   $column-span,
   $parent-column-span   : false,
@@ -126,10 +178,22 @@
   }
 }
 
+// zen-flow-item-base()
 //
-// Applies a standard set of properites to all flow items.
-// @see http://next.zengrids.com/reference/grids/#zen-grid-item-base
+// Common usage:
+// ```
+// @include zen-flow-item-base();
+// ```
 //
+// Applies a standard set of properties to all flow items.
+//
+// $gutters          - Defaults to `$zen-gutters`
+// $gutter-method    - Defaults to `$zen-gutter-method`
+// $box-sizing       - Defaults to `$zen-box-sizing`
+// $direction        - Defaults to `$zen-direction`
+// $switch-direction - Defaults to `$zen-switch-direction`
+//
+// Style guide: flow.zen-flow-item-base
 @mixin zen-flow-item-base(
   $gutters                  : $zen-gutters,
   $gutter-method            : $zen-gutter-method,
@@ -146,10 +210,19 @@
   @include zen-grid-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction);
 }
 
+// zen-float()
 //
 // Apply this to flow items that need to be floated.
-// @see http://next.zengrids.com/reference/flow/#zen-float
 //
+// Common usage:
+// ```
+// @include zen-float();
+// ```
+//
+// $direction        - Defaults to `$zen-direction`
+// $switch-direction - Defaults to `$zen-switch-direction`
+//
+// Style guide: flow.zen-float
 @mixin zen-float(
   $direction          : $zen-direction,
   $switch-direction   : $zen-switch-direction
@@ -161,4 +234,3 @@
   }
   float: $dir;
 }
-
