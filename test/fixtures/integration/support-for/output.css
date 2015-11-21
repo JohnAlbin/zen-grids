@@ -1,6 +1,6 @@
 /**
  * @file
- * Test zen-grid-container() and zen-grid-item() after @import compass.
+ * Test zen-grid-container() and zen-grid-item() after @import support-for.
  */
 #test-zen-grid-container {
   /* Test zen-grid-container() with no legacy support */ }
