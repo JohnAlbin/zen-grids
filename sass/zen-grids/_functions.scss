@@ -166,6 +166,8 @@
 //
 // Returns the opposite direction, given "left" or "right".
 //
+// $dir - Required. The direction you want to switch.
+//
 // Style guide: functions.zen-direction-switch
 @function zen-direction-switch(
   $dir
