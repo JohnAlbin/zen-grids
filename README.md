@@ -53,7 +53,7 @@ Zen grids is distributed as a Ruby Gem. On your computer, simply run:
 gem install zen-grids
 ```
 
-If you are using Compass (and you should!) then you can add it to an existing project by editing the project's configuration file, config.rb, and adding this line:
+If you are using Compass then you can add it to an existing project by editing the project's configuration file, config.rb, and adding this line:
 
 ```ruby
 require 'zen-grids'

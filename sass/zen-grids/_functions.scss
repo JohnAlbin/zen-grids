@@ -10,9 +10,9 @@
 
 // zen-half-gutter()
 //
-// Returns a half gutter width. The `$gutter-side` defaults to [`$zen-direction`](#zen-direction).
+// Returns a half gutter width.
 //
-// If the gutter width is in pixels and is an odd number, then `$gutter-side: left` will return half of the gutter rounded down to a whole pixel; `$gutter-side: right` will return half of the gutter rounded up to a whole pixel.
+// If the gutter width is in pixels and is an odd number, then `$gutter-side: left` will return half of the gutter rounded down to a whole pixel; `$gutter-side: right` will return half of the gutter rounded up to a whole pixel. The `$gutter-side` defaults to [`$zen-direction`](#zen-direction).
 //
 // Common usage:
 // ```
