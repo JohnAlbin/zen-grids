@@ -1,0 +1,10 @@
+@import 'zen-grids/grids';
+
+.test {
+  @include zen-new-row($rtl-selector: '[dir="rtl"]');
+}
+
+.test2 {
+  $zen-rtl-selector: '[dir="rtl"]' !global;
+  @include zen-new-row();
+}

@@ -1,0 +1,9 @@
+.test {
+  clear: left; }
+  [dir="rtl"] .test {
+    clear: right; }
+
+.test2 {
+  clear: left; }
+  [dir="rtl"] .test2 {
+    clear: right; }

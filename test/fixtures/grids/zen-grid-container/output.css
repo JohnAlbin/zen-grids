@@ -85,3 +85,20 @@
     content: "";
     display: table;
     clear: both; }
+
+#test-zen-grid-container-8 {
+  /* Test zen-grid-container() with $context: flow, $gutters: 21px, $rtl-selector */
+  margin-left: -10px;
+  margin-right: -11px;
+  padding-left: 0;
+  padding-right: 0; }
+  #test-zen-grid-container-8:before {
+    content: "";
+    display: table; }
+  #test-zen-grid-container-8:after {
+    content: "";
+    display: table;
+    clear: both; }
+  [dir="rtl"] #test-zen-grid-container-8 {
+    margin-left: -11px;
+    margin-right: -10px; }

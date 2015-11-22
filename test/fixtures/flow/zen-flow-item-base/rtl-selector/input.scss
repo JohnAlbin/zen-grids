@@ -1,0 +1,14 @@
+@import 'zen-grids/flow';
+
+.test {
+  @include zen-flow-item-base($rtl-selector: '[dir="rtl"]');
+}
+
+.test2 {
+  @include zen-flow-item-base(21px, $rtl-selector: '[dir="rtl"]');
+}
+
+.test3 {
+  $zen-rtl-selector: '[dir="rtl"]' !global;
+  @include zen-flow-item-base(21px);
+}

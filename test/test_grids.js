@@ -93,6 +93,13 @@ describe('@import "zen-grids/grids";', function() {
         done();
       });
     });
+
+    it('should add RTL rules', function(done) {
+      sassyTest.renderFixture('zen-new-row/rtl-selector', {}, function(error, result, expectedOutput) {
+        should.not.exist(error);
+        done();
+      });
+    });
   });
 
   describe('@mixin zen-apply-gutter-padding()', function() {
@@ -112,6 +119,13 @@ describe('@import "zen-grids/grids";', function() {
 
     it('should switch directional padding', function(done) {
       sassyTest.renderFixture('zen-apply-gutter-padding/switch-direction', {}, function(error, result, expectedOutput) {
+        should.not.exist(error);
+        done();
+      });
+    });
+
+    it('should add RTL rules', function(done) {
+      sassyTest.renderFixture('zen-apply-gutter-padding/rtl-selector', {}, function(error, result, expectedOutput) {
         should.not.exist(error);
         done();
       });

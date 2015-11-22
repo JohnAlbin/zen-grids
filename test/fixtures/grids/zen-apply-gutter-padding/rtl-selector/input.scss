@@ -1,0 +1,14 @@
+@import 'zen-grids/grids';
+
+.test {
+  @include zen-apply-gutter-padding($rtl-selector: '[dir="rtl"]');
+}
+
+.test2 {
+  @include zen-apply-gutter-padding(21px, $rtl-selector: '[dir="rtl"]');
+}
+
+.test3 {
+  $zen-rtl-selector: '[dir="rtl"]' !global;
+  @include zen-apply-gutter-padding(21px);
+}

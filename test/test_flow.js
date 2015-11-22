@@ -62,6 +62,13 @@ describe('@import "zen-grids/flow";', function() {
       });
     });
 
+    it('should use rtl-selector option', function(done) {
+      sassyTest.renderFixture('zen-flow-item-base/rtl-selector', {}, function(error, result, expectedOutput) {
+        should.not.exist(error);
+        done();
+      });
+    });
+
     it('should support IE 7', function(done) {
       sassyTest.renderFixture('zen-flow-item-base/ie', {}, function(error, result, expectedOutput) {
         should.not.exist(error);

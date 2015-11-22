@@ -76,4 +76,12 @@
   margin-left: 0%;
   margin-right: -100%;
   padding-left: 5px;
-  padding-right: 5px; }
+  padding-right: 5px;
+  /* Test zen-grid-item(1, 1) with $rtl-selector and $zen-auto-include-grid-item-base: false */
+  float: left;
+  width: 50%;
+  margin-left: 0%;
+  margin-right: -100%; }
+  [dir="rtl"] #test-zen-grid-item {
+    margin-right: 0%;
+    margin-left: -100%; }

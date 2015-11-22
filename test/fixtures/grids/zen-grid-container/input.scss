@@ -48,3 +48,8 @@
   @include zen-grid-container();
   $zen-gutter-method: padding !global;
 }
+
+#test-zen-grid-container-8 {
+  /* Test zen-grid-container() with $context: flow, $gutters: 21px, $rtl-selector */
+  @include zen-grid-container(flow, $gutters: 21px, $rtl-selector: '[dir="rtl"]');
+}
