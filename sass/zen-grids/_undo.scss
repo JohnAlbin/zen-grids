@@ -20,7 +20,8 @@
   $gutters            : $zen-gutters,
   $gutter-method      : $zen-gutter-method,
   $direction          : $zen-direction,
-  $switch-direction   : $zen-switch-direction
+  $switch-direction   : $zen-switch-direction,
+  $rtl-selector       : $zen-rtl-selector
 ) {
 
   $dir: $direction;
@@ -63,11 +64,21 @@
       left: 0;
       right: 0;
     }
+
+    // If $gutters is an odd number of pixels, we need special RTL handling.
+    @if zen-half-gutter($gutters, left, $dir) != zen-half-gutter($gutters, right, $dir) {
+      @include zen-rtl($rtl-selector) {
+        margin: {
+          left: 0;
+          right: 0;
+        }
+      }
+    }
   }
 
   // Re-add the original gutters to the grid item.
   @if $context == grid-item and $gutter-method == padding {
-    @include zen-apply-gutter-padding($gutters, $direction, $switch-direction);
+    @include zen-apply-gutter-padding($gutters, $direction, $switch-direction, $rtl-selector);
   }
 }
 
@@ -75,9 +86,12 @@
 // Apply this to undo the grid item styling. @see http://next.zengrids.com/reference/grids/#undo-zen-grid-item
 //
 @mixin undo-zen-grid-item(
+  $direction          : $zen-direction,
   $gutters            : $zen-gutters,
   $gutter-method      : $zen-gutter-method,
   $box-sizing         : $zen-box-sizing,
+  $switch-direction   : $zen-switch-direction,
+  $rtl-selector       : $zen-rtl-selector,
   $include-base       : $zen-auto-include-grid-item-base
 ) {
 
@@ -90,12 +104,12 @@
 
   // Include the grid item base mixin.
   @if $include-base {
-    @include undo-zen-grid-item-base($gutter-method, $box-sizing);
+    @include undo-zen-grid-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction, $rtl-selector);
   }
   // If the $gutters parameter has been used, undo the gutters even if
   // $include-base is false.
   @else if $gutters != $zen-gutters and $gutter-method == padding {
-    @include undo-zen-apply-gutter-padding();
+    @include undo-zen-apply-gutter-padding($gutters, $direction, $switch-direction, $rtl-selector);
   }
 }
 
@@ -108,13 +122,17 @@
 // would break the layout. There is no way to undo that.
 //
 @mixin undo-zen-grid-item-base(
+  $gutters            : $zen-gutters,
   $gutter-method      : $zen-gutter-method,
-  $box-sizing         : $zen-box-sizing
+  $box-sizing         : $zen-box-sizing,
+  $direction          : $zen-direction,
+  $switch-direction   : $zen-switch-direction,
+  $rtl-selector       : $zen-rtl-selector
 ) {
 
   // Specify the padding if the gutter method uses padding.
   @if $gutter-method == padding {
-    @include undo-zen-apply-gutter-padding();
+    @include undo-zen-apply-gutter-padding($gutters, $direction, $switch-direction, $rtl-selector);
   }
 
   // Specify the border-box properties.
@@ -140,17 +158,47 @@
 // Apply this to prevent a grid item from starting a new row.
 // @see http://next.zengrids.com/reference/grids/#undo-zen-new-row
 //
-@mixin undo-zen-new-row() {
+@mixin undo-zen-new-row(
+  $clear              : $zen-direction,
+  $rtl-selector       : $zen-rtl-selector
+) {
   clear: none;
+
+  @if $clear == left or $clear == right {
+    @include zen-rtl($rtl-selector) {
+      clear: none;
+    }
+  }
 }
 
 //
 // Undoes the gutter on a grid item when using the padding gutter method.
 // @see http://next.zengrids.com/reference/grids/#undo-zen-apply-gutter-padding
 //
-@mixin undo-zen-apply-gutter-padding() {
+@mixin undo-zen-apply-gutter-padding(
+  $gutters            : $zen-gutters,
+  $direction          : $zen-direction,
+  $switch-direction   : $zen-switch-direction,
+  $rtl-selector       : $zen-rtl-selector
+) {
+
+  $dir: $direction;
+  @if $switch-direction {
+    $dir: zen-direction-switch($dir);
+  }
+
   padding: {
     left: 0;
     right: 0;
+  }
+
+  // If $gutters is an odd number of pixels, we need special RTL handling.
+  @if zen-half-gutter($gutters, left, $dir) != zen-half-gutter($gutters, right, $dir) {
+    @include zen-rtl($rtl-selector) {
+      padding: {
+        left: 0;
+        right: 0;
+      }
+    }
   }
 }

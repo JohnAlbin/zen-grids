@@ -41,6 +41,7 @@
 // $grid-numbers     - Defaults to `$zen-grid-numbers`
 // $direction        - Defaults to `$zen-direction`
 // $switch-direction - Defaults to `$zen-switch-direction`
+// $rtl-selector     - Defaults to `$zen-rtl-selector`
 //
 // Style guide: background.zen-grid-background
 @mixin zen-grid-background(
@@ -51,7 +52,8 @@
   $grid-color           : $zen-grid-color,
   $grid-numbers         : $zen-grid-numbers,
   $direction            : $zen-direction,
-  $switch-direction     : $zen-switch-direction
+  $switch-direction     : $zen-switch-direction,
+  $rtl-selector         : $zen-rtl-selector
 ) {
 
   // Check if the global variable is turning off background images.
@@ -166,5 +168,19 @@
 
     // Apply the full list of background images.
     @include background($bg-images);
+
+    @include zen-rtl($rtl-selector) {
+      @include zen-grid-background(
+        $columns              : $zen-columns,
+        $gutters              : $zen-gutters,
+        $gutter-method        : $zen-gutter-method,
+        $grid-width           : $zen-grid-width,
+        $grid-color           : $zen-grid-color,
+        $grid-numbers         : $zen-grid-numbers,
+        $direction            : zen-direction-switch($zen-direction),
+        $switch-direction     : $zen-switch-direction,
+        $rtl-selector         : false
+      );
+    }
   }
 }

@@ -59,6 +59,7 @@
 // $grid-width          - Defaults to `$zen-grid-width`
 // $box-sizing          - Defaults to `$zen-box-sizing`
 // $switch-direction    - Defaults to `$zen-switch-direction`
+// $rtl-selector        - Defaults to `$zen-rtl-selector`
 // $include-base        - Defaults to `$zen-auto-include-flow-item-base`
 //
 // Style guide: flow.zen-flow-item-width
@@ -74,6 +75,7 @@
   $grid-width           : $zen-grid-width,
   $box-sizing           : $zen-box-sizing,
   $switch-direction     : $zen-switch-direction,
+  $rtl-selector         : $zen-rtl-selector,
   $include-base         : $zen-auto-include-flow-item-base
 ) {
 
@@ -114,7 +116,7 @@
 
   // Include the flow item base mixin.
   @if $include-base {
-    @include zen-flow-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction);
+    @include zen-flow-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction, $rtl-selector);
   }
 
   // Calculate the item's width.
@@ -130,6 +132,18 @@
     }
     @if $omega-gutter {
       margin-#{$rev}: $gutters;
+    }
+    @if not ($omega-gutter and $omega-gutter) {
+      @include zen-rtl($rtl-selector) {
+        @if $alpha-gutter {
+          margin-#{$dir}: 0;
+          margin-#{$rev}: $gutters;
+        }
+        @else if $omega-gutter {
+          margin-#{$rev}: 0;
+          margin-#{$dir}: $gutters;
+        }
+      }
     }
   }
   @else if unit($grid-width) == "%" {
@@ -149,6 +163,19 @@
     @else {
       margin-#{$rev}: -($adjusted-gutter);
     }
+    @include zen-rtl($rtl-selector) {
+      padding-#{$rev}: 0;
+      @if $alpha-gutter {
+        margin-#{$rev}: $gutters;
+      }
+      padding-#{$dir}: $adjusted-gutter;
+      @if $omega-gutter {
+        margin-#{$dir}: $gutters - $adjusted-gutter;
+      }
+      @else {
+        margin-#{$dir}: -($adjusted-gutter);
+      }
+    }
   }
   @else {
     @if $alpha-gutter and $omega-gutter {
@@ -156,6 +183,15 @@
         margin: {
           #{$dir}: zen-half-gutter($gutters, left, $dir);
           #{$rev}: zen-half-gutter($gutters, right, $dir);
+        }
+        // If $gutters is an odd number of pixels, we need special RTL handling.
+        @if zen-half-gutter($gutters, left, $dir) != zen-half-gutter($gutters, right, $dir) {
+          @include zen-rtl($rtl-selector) {
+            margin: {
+              left: zen-half-gutter($gutters, right, $dir);
+              right: zen-half-gutter($gutters, left, $dir);
+            }
+          }
         }
       }
     }
@@ -170,10 +206,18 @@
     @else if $omega-gutter {
       padding-#{$dir}: 0;
       padding-#{$rev}: $gutters;
+      @include zen-rtl($rtl-selector) {
+        padding-#{$rev}: 0;
+        padding-#{$dir}: $gutters;
+      }
     }
     @else {
       padding-#{$dir}: $gutters;
       padding-#{$rev}: 0;
+      @include zen-rtl($rtl-selector) {
+        padding-#{$rev}: $gutters;
+        padding-#{$dir}: 0;
+      }
     }
   }
 }
@@ -192,6 +236,7 @@
 // $box-sizing       - Defaults to `$zen-box-sizing`
 // $direction        - Defaults to `$zen-direction`
 // $switch-direction - Defaults to `$zen-switch-direction`
+// $rtl-selector     - Defaults to `$zen-rtl-selector`
 //
 // Style guide: flow.zen-flow-item-base
 @mixin zen-flow-item-base(
@@ -199,7 +244,8 @@
   $gutter-method            : $zen-gutter-method,
   $box-sizing               : $zen-box-sizing,
   $direction                : $zen-direction,
-  $switch-direction         : $zen-switch-direction
+  $switch-direction         : $zen-switch-direction,
+  $rtl-selector             : $zen-rtl-selector
 ) {
 
   // Since we have to set padding in zen-flow-item-width(), suppress extraneous
@@ -207,7 +253,7 @@
   @if $gutter-method == padding {
     $gutter-method: none;
   }
-  @include zen-grid-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction);
+  @include zen-grid-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction, $rtl-selector);
 }
 
 // zen-float()
@@ -221,11 +267,13 @@
 //
 // $direction        - Defaults to `$zen-direction`
 // $switch-direction - Defaults to `$zen-switch-direction`
+// $rtl-selector     - Defaults to `$zen-rtl-selector`
 //
 // Style guide: flow.zen-float
 @mixin zen-float(
   $direction          : $zen-direction,
-  $switch-direction   : $zen-switch-direction
+  $switch-direction   : $zen-switch-direction,
+  $rtl-selector       : $zen-rtl-selector
 ) {
   // Determine the float direction.
   $dir: $direction;
@@ -233,4 +281,8 @@
     $dir: zen-direction-switch($dir);
   }
   float: $dir;
+
+  @include zen-rtl($rtl-selector) {
+    float: zen-direction-switch($dir);
+  }
 }

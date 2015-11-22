@@ -8,6 +8,30 @@
 // Import the helper functions.
 @import "./functions";
 
+// zen-rtl()
+//
+// Includes inline Right-To-Left language support if the `$zen-rtl-selector` variable is set to `[dir="rtl"]` or some other useful CSS selector.
+//
+// Since `$zen-rtl-selector` defaults to `false`, inline Right-To-Left language support is off by default.
+//
+// $selector - Defaults to $zen-rtl-selector.
+//
+// Style guide: grids.zen-rtl
+
+@mixin zen-rtl($selector: $zen-rtl-selector) {
+  @if $selector {
+    @if & {
+      #{$selector} & {
+        @content;
+      }
+    }
+    @else {
+      #{$selector} {
+        @content;
+      }
+    }
+  }
+}
 
 //
 // Apply this to create a grid container element.
@@ -18,7 +42,8 @@
   $gutters            : $zen-gutters,
   $gutter-method      : $zen-gutter-method,
   $direction          : $zen-direction,
-  $switch-direction   : $zen-switch-direction
+  $switch-direction   : $zen-switch-direction,
+  $rtl-selector       : $zen-rtl-selector
 ) {
 
   $dir: $direction;
@@ -60,6 +85,16 @@
       left: -(zen-half-gutter($gutters, left, $dir));
       right: -(zen-half-gutter($gutters, right, $dir));
     }
+
+    // If $gutters is an odd number of pixels, we need special RTL handling.
+    @if zen-half-gutter($gutters, left, $dir) != zen-half-gutter($gutters, right, $dir) {
+      @include zen-rtl($rtl-selector) {
+        margin: {
+          left: -(zen-half-gutter($gutters, right, $dir));
+          right: -(zen-half-gutter($gutters, left, $dir));
+        }
+      }
+    }
   }
 
   // Prevent any padding from messing up the alignment of the nested grid.
@@ -85,6 +120,7 @@
   $grid-width         : $zen-grid-width,
   $box-sizing         : $zen-box-sizing,
   $switch-direction   : $zen-switch-direction,
+  $rtl-selector       : $zen-rtl-selector,
   $include-base       : $zen-auto-include-grid-item-base
 ) {
 
@@ -117,15 +153,25 @@
     // @TODO: This interpolation fails on libsass 3.3.0: *margin-#{$rev}: -99.9%;
     #{'*margin-' + $rev}: -99.9%;
   }
+  @include zen-rtl($rtl-selector) {
+    margin: {
+      #{$rev}: $margin;
+      #{$dir}: -100%;
+    }
+    @if zen-support-for-ie(7) {
+      // @TODO: This interpolation fails on libsass 3.3.0: *margin-#{$rev}: -99.9%;
+      #{'*margin-' + $dir}: -99.9%;
+    }
+  }
 
   // Include the grid item base mixin.
   @if $include-base {
-    @include zen-grid-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction);
+    @include zen-grid-item-base($gutters, $gutter-method, $box-sizing, $direction, $switch-direction, $rtl-selector);
   }
   // If the $gutters parameter has been used, set the gutters even if
   // $include-base is false.
   @else if $gutters != $zen-gutters and $gutter-method == padding {
-    @include zen-apply-gutter-padding($gutters, $direction, $switch-direction);
+    @include zen-apply-gutter-padding($gutters, $direction, $switch-direction, $rtl-selector);
   }
 }
 
@@ -138,12 +184,13 @@
   $gutter-method      : $zen-gutter-method,
   $box-sizing         : $zen-box-sizing,
   $direction          : $zen-direction,
-  $switch-direction   : $zen-switch-direction
+  $switch-direction   : $zen-switch-direction,
+  $rtl-selector       : $zen-rtl-selector
 ) {
 
   // Specify the padding if the gutter method uses padding.
   @if $gutter-method == padding {
-    @include zen-apply-gutter-padding($gutters, $direction, $switch-direction);
+    @include zen-apply-gutter-padding($gutters, $direction, $switch-direction, $rtl-selector);
   }
 
   // Specify the border-box properties.
@@ -194,13 +241,20 @@
 //
 @mixin zen-new-row(
   $clear              : $zen-direction,
-  $switch-direction   : $zen-switch-direction
+  $switch-direction   : $zen-switch-direction,
+  $rtl-selector       : $zen-rtl-selector
 ) {
   // Determine the clearing direction.
   @if $switch-direction {
     $clear: zen-direction-switch($clear);
   }
   clear: $clear;
+
+  @if $clear == left or $clear == right {
+    @include zen-rtl($rtl-selector) {
+      clear: zen-direction-switch($clear);
+    }
+  }
 }
 
 //
@@ -210,7 +264,8 @@
 @mixin zen-apply-gutter-padding(
   $gutters            : $zen-gutters,
   $direction          : $zen-direction,
-  $switch-direction   : $zen-switch-direction
+  $switch-direction   : $zen-switch-direction,
+  $rtl-selector       : $zen-rtl-selector
 ) {
 
   $dir: $direction;
@@ -221,5 +276,15 @@
   padding: {
     left: zen-half-gutter($gutters, left, $dir);
     right: zen-half-gutter($gutters, right, $dir);
+  }
+
+  // If $gutters is an odd number of pixels, we need special RTL handling.
+  @if zen-half-gutter($gutters, left, $dir) != zen-half-gutter($gutters, right, $dir) {
+    @include zen-rtl($rtl-selector) {
+      padding: {
+        left: zen-half-gutter($gutters, right, $dir);
+        right: zen-half-gutter($gutters, left, $dir);
+      }
+    }
   }
 }
