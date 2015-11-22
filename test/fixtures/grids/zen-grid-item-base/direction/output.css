@@ -3,7 +3,6 @@
   padding-right: 10px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box; }
 
 .test2 {
@@ -11,7 +10,6 @@
   padding-right: 10px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box; }
 
 .test3 {
@@ -19,5 +17,4 @@
   padding-right: 10px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box; }

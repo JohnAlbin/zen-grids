@@ -12,7 +12,6 @@
   padding-right: 0;
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
-  -ms-box-sizing: content-box;
   box-sizing: content-box;
   /* Test undo-zen-grid-item() with $zen-auto-include-grid-item-base: false */
   float: none;

@@ -56,7 +56,6 @@
   padding-right: 10px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
   /* Test zen-grid-item(1, 1) with IE 8 support */
   float: left;
@@ -67,7 +66,6 @@
   padding-right: 10px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
   /* Test zen-grid-item(1, 1) with IE 7 support */
   float: left;
@@ -79,7 +77,6 @@
   padding-right: 10px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
   *behavior: url("/ie-box-sizing.htc");
   *word-wrap: break-word;
@@ -93,7 +90,6 @@
   padding-right: 10px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
   *behavior: url("/ie-box-sizing.htc");
   _display: inline;

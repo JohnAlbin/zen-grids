@@ -3,7 +3,6 @@
   padding-right: 10px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
   *word-wrap: break-word; }
 
@@ -12,7 +11,6 @@
   padding-right: 10px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
   *behavior: url("/boxsizing.htc");
   *word-wrap: break-word; }
@@ -22,7 +20,6 @@
   padding-right: 10px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
   *behavior: url("/boxsizing.htc");
   _display: inline;

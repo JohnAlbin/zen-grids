@@ -8,7 +8,6 @@
   padding-right: 0;
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
-  -ms-box-sizing: content-box;
   box-sizing: content-box;
   /* Test undo-zen-grid-item-base() with $zen-box-sizing: content-box */
   padding-left: 0;

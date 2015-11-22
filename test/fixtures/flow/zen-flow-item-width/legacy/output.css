@@ -2,7 +2,6 @@
   /* Test zen-flow-item-width(1, 4) with 20px gutter */
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
   width: 25%;
   padding-left: 0;
@@ -11,7 +10,6 @@
   /* Test zen-flow-item-width(1, 4) with 15px gutter */
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
   width: 25%;
   padding-left: 0;
@@ -20,7 +18,6 @@
   /* Test zen-flow-item-width(1) with 5 columns, 20px gutter and $zen-grid-width: 1000px */
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
   width: 200px;
   padding-left: 0;
@@ -28,7 +25,6 @@
   /* Test zen-flow-item-width(1) with 5 columns, 20px gutter, $zen-grid-width: 1000px, $alpha-gutter: true and $omega-gutter: false */
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
   width: 200px;
   padding-left: 20px;
@@ -36,7 +32,6 @@
   /* Test zen-flow-item-width(1) with 5 columns, 20px gutter, $zen-grid-width: 1000px and $omega-gutter: false */
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
   width: 180px;
   padding-left: 0;
@@ -44,7 +39,6 @@
   /* Test zen-flow-item-width(1, 4) with 15px gutter and $zen-direction: right */
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
   width: 25%;
   padding-right: 0;
@@ -53,7 +47,6 @@
   /* Test zen-flow-item-width(1, 4) with 15px gutter and $alpha-gutter: true */
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
   width: 25%;
   padding-left: 0;
@@ -63,7 +56,6 @@
   /* Test zen-flow-item-width(1, 4) with 15px gutter and $omega-gutter: false */
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
   width: 25%;
   padding-left: 0;
@@ -72,7 +64,6 @@
   /* Test zen-flow-item-width(3, 4) with 20px gutter and $alpha-gutter: true */
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
   width: 75%;
   padding-left: 0;
@@ -82,7 +73,6 @@
   /* Test zen-flow-item-width(3, 4) with 20px gutter and $omega-gutter: false */
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
   width: 75%;
   padding-left: 0;
@@ -91,7 +81,6 @@
   /* Test zen-flow-item-width(1, 4) with 15px gutter, $zen-direction: right and $alpha-gutter: true */
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
   width: 25%;
   padding-right: 0;
