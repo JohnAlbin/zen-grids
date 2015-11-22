@@ -57,6 +57,9 @@ You can then start using Zen Grids in your Sass files. Just add this line to one
 
 Now works with **libSass** or Ruby Sass!
 
+* LibSass 3.2.5 or later
+* _or_ Ruby Sass 3.4.0 or later
+
 ## LICENSE
 
 Available under the GPL v2 license. See [LICENSE.txt](https://github.com/JohnAlbin/zen-grids/blob/master/LICENSE.txt).
