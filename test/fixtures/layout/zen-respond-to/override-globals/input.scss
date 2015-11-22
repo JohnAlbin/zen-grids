@@ -79,6 +79,15 @@ $zen-layouts: (
   after: $zen-switch-direction;
 }
 
+.test-rtl-selector {
+  $zen-rtl-selector: false !global;
+  before: $zen-rtl-selector;
+  @include zen-respond-to('m', true, $rtl-selector: '[dir="rtl"]') {
+    during: $zen-rtl-selector;
+  }
+  after: $zen-rtl-selector;
+}
+
 .test-auto-include-grid-item-base {
   $zen-auto-include-grid-item-base: true !global;
   before: $zen-auto-include-grid-item-base;

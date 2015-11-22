@@ -10,6 +10,7 @@ $zen-layouts: (
     box-sizing: content-box,
     direction: right,
     switch-direction: true,
+    rtl-selector: '[dir="rtl"]',
     auto-include-grid-item-base: false,
     auto-include-flow-item-base: false,
     grid-color: #dedeff,
@@ -94,6 +95,14 @@ $zen-grid-numbers: both;
     during: $zen-switch-direction;
   }
   after: $zen-switch-direction;
+}
+
+.test-rtl-selector {
+  before: $zen-rtl-selector;
+  @include zen-respond-to('m') {
+    during: $zen-rtl-selector;
+  }
+  after: $zen-rtl-selector;
 }
 
 .test-auto-include-grid-item-base {

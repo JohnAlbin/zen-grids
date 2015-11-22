@@ -183,6 +183,32 @@ $box-sizing-polyfill-path: '' !default;
 // Style guide: grids.variables.rtl.zen-direction
 $zen-direction: left !default;
 
+// $zen-rtl-selector
+//
+// If you wish to output both LTR layouts and RTL layouts simultaneously, you can specify the parent selector that should be used to trigger an RTL override for any of Zen Grids' direction-specific CSS.
+//
+// For example, setting this:
+// ```
+// $zen-rtl-selector: '[dir="rtl"]';
+// ```
+//
+// After building a layout with Zen Grids' mixins, the CSS output will look similar to this:
+// ```
+// .my-layout-column {
+//   margin-left: 20%;
+//   margin-right: -100%;
+// }
+// [dir="rtl"] .my-layout-column {
+//   margin-left: -100%;
+//   margin-right: 20%;
+// }
+// ```
+//
+// `$zen-rtl-selector: false !default;`
+//
+// Style guide: grids.variables.rtl.zen-rtl-seelctor
+$zen-rtl-selector: false !default;
+
 // $zen-switch-direction
 //
 // Reverse the floating direction in all of zen grids’ mixins.

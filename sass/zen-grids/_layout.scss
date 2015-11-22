@@ -37,6 +37,7 @@
 // $box-sizing                  - Defaults to `$zen-box-sizing`
 // $direction                   - Defaults to `$zen-direction`
 // $switch-direction            - Defaults to `$zen-switch-direction`
+// $rtl-selector                - Defaults to `$zen-rtl-selector`
 // $auto-include-grid-item-base - Defaults to `$zen-auto-include-grid-item-base`
 // $auto-include-flow-item-base - Defaults to `$zen-auto-include-flow-item-base`
 // $grid-color                  - Defaults to `$zen-grid-color`
@@ -52,6 +53,7 @@
   $box-sizing                   : null,
   $direction                    : null,
   $switch-direction             : null,
+  $rtl-selector                 : null,
   $auto-include-grid-item-base  : null,
   $auto-include-flow-item-base  : null,
   $grid-color                   : null,
@@ -67,6 +69,7 @@
     'box-sizing'                    : $zen-box-sizing,
     'direction'                     : $zen-direction,
     'switch-direction'              : $zen-switch-direction,
+    'rtl-selector'                  : $zen-rtl-selector,
     'auto-include-grid-item-base'   : $zen-auto-include-grid-item-base,
     'auto-include-flow-item-base'   : $zen-auto-include-flow-item-base,
     'grid-color'                    : $zen-grid-color,
@@ -101,6 +104,9 @@
   @if type-of($switch-direction) == 'null' {
     $switch-direction: map-get($local-defaults, 'switch-direction');
   }
+  @if type-of($rtl-selector) == 'null' {
+    $rtl-selector: map-get($local-defaults, 'rtl-selector');
+  }
   @if type-of($auto-include-grid-item-base) == 'null' {
     $auto-include-grid-item-base: map-get($local-defaults, 'auto-include-grid-item-base');
   }
@@ -122,6 +128,7 @@
   $zen-box-sizing                   : $box-sizing !global;
   $zen-direction                    : $direction !global;
   $zen-switch-direction             : $switch-direction !global;
+  $zen-rtl-selector                 : $rtl-selector !global;
   $zen-auto-include-grid-item-base  : $auto-include-grid-item-base !global;
   $zen-auto-include-flow-item-base  : $auto-include-flow-item-base !global;
   $zen-grid-color                   : $grid-color !global;
@@ -138,6 +145,7 @@
   $zen-box-sizing                   : map-get($global-vars, 'box-sizing') !global;
   $zen-direction                    : map-get($global-vars, 'direction') !global;
   $zen-switch-direction             : map-get($global-vars, 'switch-direction') !global;
+  $zen-rtl-selector                 : map-get($global-vars, 'rtl-selector') !global;
   $zen-auto-include-grid-item-base  : map-get($global-vars, 'auto-include-grid-item-base') !global;
   $zen-auto-include-flow-item-base  : map-get($global-vars, 'auto-include-flow-item-base') !global;
   $zen-grid-color                   : map-get($global-vars, 'grid-color') !global;
@@ -174,6 +182,7 @@
 // $box-sizing                  - Defaults to `$zen-box-sizing`
 // $direction                   - Defaults to `$zen-direction`
 // $switch-direction            - Defaults to `$zen-switch-direction`
+// $rtl-selector                - Defaults to `$zen-rtl-selector`
 // $auto-include-grid-item-base - Defaults to `$zen-auto-include-grid-item-base`
 // $auto-include-flow-item-base - Defaults to `$zen-auto-include-flow-item-base`
 // $grid-color                  - Defaults to `$zen-grid-color`
@@ -191,6 +200,7 @@
   $box-sizing                   : null,
   $direction                    : null,
   $switch-direction             : null,
+  $rtl-selector                 : null,
   $auto-include-grid-item-base  : null,
   $auto-include-flow-item-base  : null,
   $grid-color                   : null,
@@ -210,6 +220,7 @@
     $box-sizing,
     $direction,
     $switch-direction,
+    $rtl-selector,
     $auto-include-grid-item-base,
     $auto-include-flow-item-base,
     $grid-color,
@@ -237,6 +248,7 @@
   $box-sizing                   : null,
   $direction                    : null,
   $switch-direction             : null,
+  $rtl-selector                 : null,
   $auto-include-grid-item-base  : null,
   $auto-include-flow-item-base  : null,
   $grid-color                   : null,
@@ -256,6 +268,7 @@
     $box-sizing,
     $direction,
     $switch-direction,
+    $rtl-selector,
     $auto-include-grid-item-base,
     $auto-include-flow-item-base,
     $grid-color,
@@ -308,6 +321,7 @@
 // $box-sizing                  - Defaults to `$zen-box-sizing`
 // $direction                   - Defaults to `$zen-direction`
 // $switch-direction            - Defaults to `$zen-switch-direction`
+// $rtl-selector                - Defaults to `$zen-rtl-selector`
 // $auto-include-grid-item-base - Defaults to `$zen-auto-include-grid-item-base`
 // $auto-include-flow-item-base - Defaults to `$zen-auto-include-flow-item-base`
 // $grid-color                  - Defaults to `$zen-grid-color`
@@ -325,6 +339,7 @@
   $box-sizing                   : null,
   $direction                    : null,
   $switch-direction             : null,
+  $rtl-selector                 : null,
   $auto-include-grid-item-base  : null,
   $auto-include-flow-item-base  : null,
   $grid-color                   : null,
@@ -349,6 +364,7 @@
     $box-sizing,
     $direction,
     $switch-direction,
+    $rtl-selector,
     $auto-include-grid-item-base,
     $auto-include-flow-item-base,
     $grid-color,

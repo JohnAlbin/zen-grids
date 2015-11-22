@@ -62,6 +62,14 @@
     mq-parameter-noquery-is: true;
     during: true; }
 
+.test-rtl-selector {
+  before: false;
+  after: false; }
+  .test-rtl-selector .mq {
+    mq-parameter-query-is: min-width 555px;
+    mq-parameter-noquery-is: true;
+    during: '[dir="rtl"]'; }
+
 .test-auto-include-grid-item-base {
   before: true;
   after: true; }

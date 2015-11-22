@@ -9,6 +9,7 @@ $zen-layouts: (
     box-sizing: content-box,
     direction: right,
     switch-direction: true,
+    rtl-selector: '[dir="rtl"]',
     auto-include-grid-item-base: false,
     auto-include-flow-item-base: false,
     grid-color: #dedeff,
@@ -23,6 +24,7 @@ $zen-grid-width: 100%;
 $zen-box-sizing: border-box;
 $zen-direction: left;
 $zen-switch-direction: false;
+$zen-rtl-selector: false;
 $zen-auto-include-grid-item-base: true;
 $zen-auto-include-flow-item-base: true;
 $zen-grid-color: #ffdede;
@@ -82,6 +84,14 @@ $zen-grid-numbers: both;
     during: $zen-switch-direction;
   }
   after: $zen-switch-direction;
+}
+
+.test-rtl-selector {
+  before: $zen-rtl-selector;
+  @include zen-layout(test) {
+    during: $zen-rtl-selector;
+  }
+  after: $zen-rtl-selector;
 }
 
 .test-auto-include-grid-item-base {

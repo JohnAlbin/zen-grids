@@ -33,6 +33,11 @@
   during: nope;
   after: false; }
 
+.test-rtl-selector {
+  before: false;
+  during: '[dir="rtl"]';
+  after: false; }
+
 .test-auto-include-grid-item-base {
   before: true;
   during: yes;

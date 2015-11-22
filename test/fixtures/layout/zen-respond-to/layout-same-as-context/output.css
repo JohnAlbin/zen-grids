@@ -62,6 +62,14 @@
     respond-to-parameter-noquery-is: false;
     during: true; }
 
+.test-rtl-selector {
+  before: false;
+  after: false; }
+  .test-rtl-selector .respond-to {
+    respond-to-parameter-context-is: "m";
+    respond-to-parameter-noquery-is: false;
+    during: '[dir="rtl"]'; }
+
 .test-auto-include-grid-item-base {
   before: true;
   after: true; }
