@@ -43,12 +43,13 @@
   }
 
   // Un-do the "micro clearfix".
-  &:before,
-  &:after {
+  &:before {
     content: normal;
     display: inline;
   }
   &:after {
+    content: normal;
+    display: inline;
     clear: none;
   }
   @if zen-support-for-ie(7) {
