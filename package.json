@@ -1,6 +1,6 @@
 {
   "name": "zen-grids",
-  "version": "2.0.0-beta.4",
+  "version": "2.0.0",
   "description": "Zen Grids is an intuitive, flexible grid system to create responsive, adaptive, fluid and fixed-width layouts.",
   "homepage": "https://github.com/JohnAlbin/zen-grids",
   "bugs": {
