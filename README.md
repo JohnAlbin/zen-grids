@@ -41,8 +41,8 @@ Within the `.container` element, the `.sidebar1`, `.sidebar2` and `.content` ele
 
 Install using one of the following methods:
 
-* Install with [npm](http://npmjs.org/): `npm install --save zen-grids`
-* Install with [Bower](http://bower.io/): `bower install --save zen-grids`
+* Install with [npm](http://npmjs.org/): `npm install --save-dev zen-grids`
+* Install with [Bower](http://bower.io/): `bower install --save-dev zen-grids`
 * Install with [Ruby Gem](https://rubygems.org/gems/zen-grids): `gem install zen-grids`<br>
   and, if using Compass, add `require "zen-grids"` to your config.rb file.
 * Install with [Bundler](http://bundler.io/) and Ruby Gem: `bundle inject zen-grids '~> 2.0'`
