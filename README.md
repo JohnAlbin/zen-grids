@@ -63,7 +63,7 @@ You can then start using Zen Grids in your Sass files. Just add this line to one
 
 ## REQUIREMENTS
 
-* Sass 3.3.0 or later
+* libSass or Ruby Sass 3.3.0 or later
 
 For the zen-grids/background module only:
 * Compass 1.0.0 or later
