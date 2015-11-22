@@ -7,15 +7,11 @@
 // @import "zen-grids/background";
 // ```
 //
-// Unlike the rest of Zen Grids, this module requires Compass.
-//
 // Style guide: background
 
-@import "./functions";
+@import "./grids";
 // Add the default set of background images.
 @import "./internal/variables-background";
-// Unlike the rest of Zen Grids, this module requires Compass.
-@import "compass/css3/images";
 
 
 // zen-grid-background()
@@ -159,15 +155,15 @@
 
     // Last, add the gradient (or gradient halves) to the background images list.
     @if $gutter-method == margin or comparable($gutters, $grid-width) {
-      $bg-images  : append($bg-images, linear-gradient(left, $gradient) left top no-repeat, comma);
+      $bg-images  : append($bg-images, linear-gradient(to right, $gradient) left top no-repeat, comma);
     }
     @else {
-      $bg-images  : append($bg-images, linear-gradient(left, $left-half-gradient) zen-half-gutter($gutters) top no-repeat, comma);
-      $bg-images  : append($bg-images, linear-gradient(left, $right-half-gradient) (-(zen-half-gutter($gutters))) top no-repeat, comma);
+      $bg-images  : append($bg-images, linear-gradient(to right, $left-half-gradient) zen-half-gutter($gutters) top no-repeat, comma);
+      $bg-images  : append($bg-images, linear-gradient(to right, $right-half-gradient) (-(zen-half-gutter($gutters))) top no-repeat, comma);
     }
 
     // Apply the full list of background images.
-    @include background($bg-images);
+    background: $bg-images;
 
     @include zen-rtl($rtl-selector) {
       @include zen-grid-background(

@@ -2,8 +2,7 @@
 
 Zen Grids is an intuitive, flexible grid system that leverages the natural source order of your content to make it easier to create fluid responsive designs. With an easy-to-use Sass mixin set, the Zen Grids system can be applied to an infinite number of layouts, including responsive, adaptive, fluid and fixed-width layouts.
 
-More information can be found at http://next.zengrids.com
-
+More information can be found at http://zengrids.com
 
 ## USAGE
 
@@ -38,21 +37,15 @@ Here's a simple example: a content column with a sidebar on each side, aligned t
 
 Within the `.container` element, the `.sidebar1`, `.sidebar2` and `.content` elements can be in any order.
 
-Zen Grids has built-in support for the Box-sizing Polyfill which adds `box-sizing: border-box` support to IE7 and earlier.
-
-* Download the polyfill at https://github.com/Schepp/box-sizing-polyfill
-* Place the `boxsizing.htc` file in your website.
-* Set Zen Grids' `$box-sizing-polyfill-path` variable to the absolute path to the boxsizing.htc file on your website. For example: `$box-sizing-polyfill-path: "/scripts/polyfills/boxsizing.htc";`
-
-
 ## INSTALLATION
 
 Install using one of the following methods:
 
 * Install with [npm](http://npmjs.org/): `npm install --save zen-grids`
 * Install with [Bower](http://bower.io/): `bower install --save zen-grids`
-* Install with [Ruby Gem](https://rubygems.org/gems/normalize-scss): `gem install zen-grids`<br>
+* Install with [Ruby Gem](https://rubygems.org/gems/zen-grids): `gem install zen-grids`<br>
   and, if using Compass, add `require "zen-grids"` to your config.rb file.
+* Install with [Bundler](http://bundler.io/) and Ruby Gem: `bundle inject zen-grids '~> 2.0'`
 
 You can then start using Zen Grids in your Sass files. Just add this line to one of your .sass or .scss files and start creating!
 
@@ -60,14 +53,9 @@ You can then start using Zen Grids in your Sass files. Just add this line to one
 @import "zen-grids";
 ```
 
-
 ## REQUIREMENTS
 
-* libSass or Ruby Sass 3.3.0 or later
-
-For the zen-grids/background module only:
-* Compass 1.0.0 or later
-
+Now works with **libSass** or Ruby Sass!
 
 ## LICENSE
 

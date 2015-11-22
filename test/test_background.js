@@ -9,7 +9,7 @@ describe('@import "zen-grids/background";', function() {
     done();
   });
 
-  it.skip('should output a background image', function(done) {
+  it('should output a background image', function(done) {
     sassyTest.renderFixture('./', {}, function(error, result, expectedOutput) {
       should.not.exist(error);
       done();
