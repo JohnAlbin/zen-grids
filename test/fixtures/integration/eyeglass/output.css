@@ -1,8 +1,10 @@
-.test:before, .test:after {
+.test:before {
   content: "";
   display: table; }
 
 .test:after {
+  content: "";
+  display: table;
   clear: both; }
 
 .test2 {

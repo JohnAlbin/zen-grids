@@ -40,13 +40,14 @@
     *position: relative;
   }
 
-  // We use the "micro clearfix", instead of Compass' clearfix or pie-clearfix.
-  &:before,
-  &:after {
+  // We use the "micro clearfix", optimized to reduce the number of &.
+  &:before {
     content: "";
     display: table;
   }
   &:after {
+    content: "";
+    display: table;
     clear: both;
   }
   @if zen-support-for-ie(7) {
