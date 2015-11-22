@@ -47,17 +47,12 @@ Zen Grids has built-in support for the Box-sizing Polyfill which adds `box-sizin
 
 ## INSTALLATION
 
-Zen grids is distributed as a Ruby Gem. On your computer, simply run:
+Install using one of the following methods:
 
-```sh
-gem install zen-grids
-```
-
-If you are using Compass then you can add it to an existing project by editing the project's configuration file, config.rb, and adding this line:
-
-```ruby
-require 'zen-grids'
-```
+* Install with [npm](http://npmjs.org/): `npm install --save zen-grids`
+* Install with [Bower](http://bower.io/): `bower install --save zen-grids`
+* Install with [Ruby Gem](https://rubygems.org/gems/normalize-scss): `gem install zen-grids`<br>
+  and, if using Compass, add `require "zen-grids"` to your config.rb file.
 
 You can then start using Zen Grids in your Sass files. Just add this line to one of your .sass or .scss files and start creating!
 
