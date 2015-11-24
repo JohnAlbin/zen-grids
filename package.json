@@ -12,6 +12,7 @@
   },
   "author": "John Albin Wilkins <virtually.johnalbin@gmail.com> (http://john.albin.net/)",
   "keywords": [
+    "eyeglass-module",
     "sass",
     "layout",
     "grid",
@@ -21,7 +22,8 @@
   "main": "sass/_zen-grids.scss",
   "style": "sass/_zen-grids.scss",
   "eyeglass": {
-    "exports": "eyeglass-exports.js"
+    "exports": "eyeglass-exports.js",
+    "needs": "^0.7.1"
   },
   "directories": {
     "lib": "sass",
