@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.homepage    = 'http://zengrids.com'
   spec.rubyforge_project =
 
-  spec.version     = '2.0.2'
-  spec.date        = '2016-04-30'
+  spec.version     = '2.0.3'
+  spec.date        = '2016-05-22'
   spec.licenses    = ['GPL-2']
 
   spec.authors     = ['John Albin Wilkins']
