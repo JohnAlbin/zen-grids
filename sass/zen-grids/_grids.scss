@@ -1,7 +1,10 @@
+// Grids module
 //
-// Main module for the Zen Grids system.
+// The “grids” module contains most of the configurable variables and mixins you’ll need to create a layout.
 //
-
+// Weight: -10
+//
+// Style guide: grids
 
 // Import the global variables needed by all of Zen Grids.
 @import "./variables";
@@ -14,7 +17,9 @@
 //
 // Since `$zen-rtl-selector` defaults to `false`, inline Right-To-Left language support is off by default.
 //
-// $selector - Defaults to $zen-rtl-selector.
+// $selector = $zen-rtl-selector - The RTL selector for this grid item. See the docs for [`$zen-rtl-selector`](section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector).
+//
+// weight: 20
 //
 // Style guide: grids.zen-rtl
 
@@ -33,10 +38,33 @@
   }
 }
 
+// zen-grid-container()
 //
 // Apply this to create a grid container element.
-// @see http://next.zengrids.com/reference/grids/#zen-grid-container
 //
+// If this grid is nested inside another grid, the `$context` parameter can be used to align the nested grid with the parent grid. `$context` can be set to `none` (the default), `grid-item`, or `flow`.
+//
+// If the nested grid’s container is a child element of the parent grid’s grid item, set `$context: flow`.
+//
+// Otherwise, if the nested grid’s container is the same element as the parent grid’s grid item, set `$context: grid-item` and apply this mixin *after* the [`zen-grid-item()`](#kssref-grids-zen-grid-item) mixin is applied for the parent grid. This mixin removes any gutters on the container since the nested grid will have its own gutters.
+//
+// Common usage:
+// ```
+// @include zen-grid-container();
+// ```
+// or:
+// ```
+// @include zen-grid-container(grid-item);
+// ```
+//
+// $context            = none - If this grid is nested inside another grid, the `$context` parameter can be used to align the nested grid with the parent grid. It can be set to `none`, `grid-item`, or `flow`.
+// $gutters            = $zen-gutters - The width of the gutters for this container. See the docs for [`$zen-gutters`](section-grids.html#kssref-grids-variables-zen-gutters).
+// $gutter-method      = $zen-gutter-method - The gutter method to use for this container. See the docs for [`$zen-gutter-method`](section-grids.html#kssref-grids-variables-zen-gutter-method).
+// $direction          = $zen-direction - The direction to use for this container. See the docs for [`$zen-direction`](section-grids.html#kssref-grids-variables-rtl-zen-direction).
+// $switch-direction   = $zen-switch-direction - Whether to switch the default direction for this container. See the docs for [`$zen-switch-direction`](section-grids.html#kssref-grids-variables-rtl-zen-switch-direction).
+// $rtl-selector       = $zen-rtl-selector - The RTL selector for this container. See the docs for [`$zen-rtl-selector`](section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector).
+//
+// Style guide: grids.zen-grid-container
 @mixin zen-grid-container(
   $context            : none,
   $gutters            : $zen-gutters,
@@ -107,9 +135,36 @@
   }
 }
 
+// zen-grid-item()
 //
-// Apply this to each grid item. @see http://next.zengrids.com/reference/grids/#zen-grid-item
+// Apply this to each grid item. Set the `$column-span` to the number of columns that the grid item spans. And set the `$column-position` to the column number the grid item starts on.
 //
+// To make the grid item float from the right, set the `$direction` to `right`; it defaults to `left` (the value of `$zen-direction`.) For grid items that are floated right, the `$column-position` is counted from the right instead of from the left.
+//
+// Common usage:
+// ```
+// // The grid item spans 2 columns starting from the 3rd column from the left,
+// // e.g. It spans columns 3 and 4 counting from the left.
+// @include zen-grid-item($column-span: 2, $column-position: 3);
+// ```
+// or:
+// ```
+// // The grid item spans 2 columns starting from the 3rd column from the right,
+// // e.g. It spans columns 3 and 4 counting from the right.
+// @include zen-grid-item(2, 3, right);
+// ```
+//
+// $column-span        - Required. The number of columns the grid item will span.
+// $column-position    - Required. The column number the grid item starts on.
+// $direction          = $zen-direction - The floating direction to use for this grid item. See the docs for [`$zen-direction`](section-grids.html#kssref-grids-variables-rtl-zen-direction).
+// $gutters            = $zen-gutters - The width of the gutters for this grid item. See the docs for [`$zen-gutters`](section-grids.html#kssref-grids-variables-zen-gutters).
+// $gutter-method      = $zen-gutter-method - The gutter method to use for this grid item. See the docs for [`$zen-gutter-method`](section-grids.html#kssref-grids-variables-zen-gutter-method).
+// $box-sizing         = $zen-box-sizing - The box sizing to use for this grid item. See the docs for [`$zen-box-sizing`](section-grids.html#kssref-grids-variables-zen-box-sizing).
+// $switch-direction   = $zen-switch-direction - Whether to switch the default direction for this grid item. See the docs for [`$zen-switch-direction`](section-grids.html#kssref-grids-variables-rtl-zen-switch-direction).
+// $rtl-selector       = $zen-rtl-selector - The RTL selector for this grid item. See the docs for [`$zen-rtl-selector`](section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector).
+// $include-base       = $zen-auto-include-grid-item-base - Whether to auto-include the zen-grid-item-base() mixin. See the docs for [`$zen-auto-include-grid-item-base`](section-grids.html#kssref-grids-variables-zen-auto-include-grid-item-base).
+//
+// Style guide: grids.zen-grid-item
 @mixin zen-grid-item(
   $column-span,
   $column-position,
@@ -175,10 +230,27 @@
   }
 }
 
+// zen-grid-item-base()
 //
-// Applies a standard set of properites for grid items in the layout.
-// @see http://next.zengrids.com/reference/grids/#zen-grid-item-base
+// Applies a standard set of properties for grid items in the layout.
 //
+// See the documentation for the [`$zen-auto-include-grid-item-base`](#kssref-grids-variables-zen-auto-include-grid-item-base) and [`$zen-auto-include-flow-item-base`](section-flow.html#kssref-flow-variables-zen-auto-include-flow-item-base) variables for when to use this mixin.
+//
+// Common usage:
+// ```
+// @include zen-grid-item-base();
+// ```
+//
+// $gutters            = $zen-gutters - The width of the gutters for this grid item. See the docs for [`$zen-gutters`](section-grids.html#kssref-grids-variables-zen-gutters).
+// $gutter-method      = $zen-gutter-method - The gutter method to use for this grid item. See the docs for [`$zen-gutter-method`](section-grids.html#kssref-grids-variables-zen-gutter-method).
+// $box-sizing         = $zen-box-sizing - The box sizing to use for this grid item. See the docs for [`$zen-box-sizing`](section-grids.html#kssref-grids-variables-zen-box-sizing).
+// $direction          = $zen-direction - The floating direction to use for this grid item. See the docs for [`$zen-direction`](section-grids.html#kssref-grids-variables-rtl-zen-direction).
+// $switch-direction   = $zen-switch-direction - Whether to switch the default direction for this grid item. See the docs for [`$zen-switch-direction`](section-grids.html#kssref-grids-variables-rtl-zen-switch-direction).
+// $rtl-selector       = $zen-rtl-selector - The RTL selector for this grid item. See the docs for [`$zen-rtl-selector`](section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector).
+//
+// weight: 10
+//
+// Style guide: grids.zen-grid-item-base
 @mixin zen-grid-item-base(
   $gutters            : $zen-gutters,
   $gutter-method      : $zen-gutter-method,
@@ -235,10 +307,24 @@
   }
 }
 
+// zen-new-row()
 //
 // Apply this to a grid item so that it starts a new row.
-// @see http://next.zengrids.com/reference/grids/#zen-new-row
 //
+// Common usage:
+// ```
+// @include zen-new-row();
+// ```
+// or:
+// ```
+// @include zen-new-row(right);
+// ```
+//
+// $clear             = $zen-direction - The floating direction to use for this grid item. See the docs for [`$zen-direction`](section-grids.html#kssref-grids-variables-rtl-zen-direction).
+// $switch-direction  = $zen-switch-direction - Whether to switch the default direction for this grid item. See the docs for [`$zen-switch-direction`](section-grids.html#kssref-grids-variables-rtl-zen-switch-direction).
+// $rtl-selector      = $zen-rtl-selector - The RTL selector for this grid item. See the docs for [`$zen-rtl-selector`](section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector).
+//
+// Style guide: grids.zen-new-row
 @mixin zen-new-row(
   $clear              : $zen-direction,
   $switch-direction   : $zen-switch-direction,
@@ -257,10 +343,23 @@
   }
 }
 
+// zen-apply-gutter-padding()
 //
 // Applies the gutter to a grid item when using the padding gutter method.
-// @see http://next.zengrids.com/reference/grids/#zen-apply-gutter-padding
 //
+// Common usage:
+// ```
+// @include zen-apply-gutter-padding();
+// ```
+//
+// $gutters           = $zen-gutters - The width of the gutters. See the docs for [`$zen-gutters`](section-grids.html#kssref-grids-variables-zen-gutters).
+// $direction         = $zen-direction - The floating direction to use. See the docs for [`$zen-direction`](section-grids.html#kssref-grids-variables-rtl-zen-direction).
+// $switch-direction  = $zen-switch-direction - Whether to switch the default direction. See the docs for [`$zen-switch-direction`](section-grids.html#kssref-grids-variables-rtl-zen-switch-direction).
+// $rtl-selector      = $zen-rtl-selector - The RTL selector. See the docs for [`$zen-rtl-selector`](section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector).
+//
+// weight: 30
+//
+// Style guide: grids.zen-apply-gutter-padding
 @mixin zen-apply-gutter-padding(
   $gutters            : $zen-gutters,
   $direction          : $zen-direction,

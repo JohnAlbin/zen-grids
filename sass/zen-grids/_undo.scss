@@ -1,20 +1,39 @@
+// Undo module
 //
-// Undo module for the Zen Grids system.
+// The undo module for the Zen Grids system.
 //
-
+// With responsive design, it is not uncommon to have wrapping elements that are have grid styling at some breakpoints, but not at other breakpoints. The undo module provides a set of mixins that allow you to undo the CSS of other Zen Grids mixins.
+//
+// Style guide: undo
 
 @import "./grids";
 
 
+// undo-zen-grid-container()
 //
-// Apply this to undo the grid container styling.
-// @see http://next.zengrids.com/reference/grids/#undo-zen-grid-container
+// Apply this to undo the grid container styling applied with [`zen-grid-container()`](section-grids.html#kssref-grids-zen-grid-container).
 //
-// NOTE: if $context is flow, the zen-grid-container() set the left and right
-// padding to "0" to prevent it from messing up the alignment of the nested
-// grid. Since Zen Grids doesn't know what you previously used for this
-// element's padding, there is no way to undo that.
+// NOTE: if `$context` is `flow`, the `zen-grid-container()` set the left and right padding to `0` to prevent it from messing up the alignment of the nested grid. Since Zen Grids doesn't know what you previously used for this element's padding, there is no way to undo that automatically; you will need to manually reset the padding.
 //
+// Common usage:
+// ```
+// @include undo-zen-grid-container();
+// ```
+// or:
+// ```
+// @include undo-zen-grid-container(grid-item);
+// ```
+//
+// $context            = none - If this grid is nested inside another grid, the `$context` parameter can be used to align the nested grid with the parent grid. It can be set to `none`, `grid-item`, or `flow`.
+// $gutters            = $zen-gutters - The width of the gutters for this container. See the docs for [`$zen-gutters`](section-grids.html#kssref-grids-variables-zen-gutters).
+// $gutter-method      = $zen-gutter-method - The gutter method to use for this container. See the docs for [`$zen-gutter-method`](section-grids.html#kssref-grids-variables-zen-gutter-method).
+// $direction          = $zen-direction - The direction to use for this container. See the docs for [`$zen-direction`](section-grids.html#kssref-grids-variables-rtl-zen-direction).
+// $switch-direction   = $zen-switch-direction - Whether to switch the default direction for this container. See the docs for [`$zen-switch-direction`](section-grids.html#kssref-grids-variables-rtl-zen-switch-direction).
+// $rtl-selector       = $zen-rtl-selector - The RTL selector for this container. See the docs for [`$zen-rtl-selector`](section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector).
+//
+// weight: -10
+//
+// Style guide: undo.undo-zen-grid-container
 @mixin undo-zen-grid-container(
   $context            : none,
   $gutters            : $zen-gutters,
@@ -82,9 +101,24 @@
   }
 }
 
+// undo-zen-grid-item()
 //
-// Apply this to undo the grid item styling. @see http://next.zengrids.com/reference/grids/#undo-zen-grid-item
+// Apply this to undo the grid item styling applied with [`zen-grid-item()`](section-grids.html#kssref-grids-zen-grid-item).
 //
+// Common usage:
+// ```
+// @include undo-zen-grid-item();
+// ```
+//
+// $direction          = $zen-direction - The floating direction to use for this grid item. See the docs for [`$zen-direction`](section-grids.html#kssref-grids-variables-rtl-zen-direction).
+// $gutters            = $zen-gutters - The width of the gutters for this grid item. See the docs for [`$zen-gutters`](section-grids.html#kssref-grids-variables-zen-gutters).
+// $gutter-method      = $zen-gutter-method - The gutter method to use for this grid item. See the docs for [`$zen-gutter-method`](section-grids.html#kssref-grids-variables-zen-gutter-method).
+// $box-sizing         = $zen-box-sizing - The box sizing to use for this grid item. See the docs for [`$zen-box-sizing`](section-grids.html#kssref-grids-variables-zen-box-sizing).
+// $switch-direction   = $zen-switch-direction - Whether to switch the default direction for this grid item. See the docs for [`$zen-switch-direction`](section-grids.html#kssref-grids-variables-rtl-zen-switch-direction).
+// $rtl-selector       = $zen-rtl-selector - The RTL selector for this grid item. See the docs for [`$zen-rtl-selector`](section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector).
+// $include-base       = $zen-auto-include-grid-item-base - Whether to auto-include the undo-zen-grid-item-base() mixin. See the docs for [`$zen-auto-include-grid-item-base`](section-grids.html#kssref-grids-variables-zen-auto-include-grid-item-base).
+//
+// Style guide: undo.undo-zen-grid-item
 @mixin undo-zen-grid-item(
   $direction          : $zen-direction,
   $gutters            : $zen-gutters,
@@ -113,14 +147,26 @@
   }
 }
 
+// undo-zen-grid-item-base()
 //
-// Undoes the standard set of properites for grid items in the layout.
-// @see http://next.zengrids.com/reference/grids/#undo-zen-grid-item-base
+// Undoes the standard set of properites for grid items in the layout. Apply this to undo the styling applied with [`zen-grid-item-base()`](section-grids.html#kssref-grids-zen-grid-item-base).
 //
-// NOTE: if $box-sizing == content-box, the zen-grid-item-base() will add
-// left and right borders and padding of "0 !important" since non-zero values
-// would break the layout. There is no way to undo that.
+// NOTE: if `$box-sizing` is `content-box`, the `zen-grid-item-base()` will add left and right borders and padding of `0 !important` since non-zero values would break the layout. There is no way to undo that automatically. You'll have to manually set the borders and padding to their original values.
 //
+// Common usage:
+// ```
+// @include undo-zen-grid-item-base();
+// ```
+//
+// $gutters            = $zen-gutters - The width of the gutters for this grid item. See the docs for [`$zen-gutters`](section-grids.html#kssref-grids-variables-zen-gutters).
+// $gutter-method      = $zen-gutter-method - The gutter method to use for this grid item. See the docs for [`$zen-gutter-method`](section-grids.html#kssref-grids-variables-zen-gutter-method).
+// $box-sizing         = $zen-box-sizing - The box sizing to use for this grid item. See the docs for [`$zen-box-sizing`](section-grids.html#kssref-grids-variables-zen-box-sizing).
+// $switch-direction   = $zen-switch-direction - Whether to switch the default direction for this grid item. See the docs for [`$zen-switch-direction`](section-grids.html#kssref-grids-variables-rtl-zen-switch-direction).
+// $rtl-selector       = $zen-rtl-selector - The RTL selector for this grid item. See the docs for [`$zen-rtl-selector`](section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector).
+//
+// weight: 10
+//
+// Style guide: undo.undo-zen-grid-item-base
 @mixin undo-zen-grid-item-base(
   $gutters            : $zen-gutters,
   $gutter-method      : $zen-gutter-method,
@@ -154,10 +200,23 @@
   }
 }
 
+// undo-zen-new-row()
 //
-// Apply this to prevent a grid item from starting a new row.
-// @see http://next.zengrids.com/reference/grids/#undo-zen-new-row
+// Apply this to prevent a grid item from starting a new row by undoing the styling applied with [`zen-new-row()`](section-grids.html#kssref-grids-zen-new-row).
 //
+// Common usage:
+// ```
+// @include undo-zen-new-row();
+// ```
+// or:
+// ```
+// @include undo-zen-new-row(right);
+// ```
+//
+// $clear             = $zen-direction - The clearing direction to use for this grid item. See the docs for [`$zen-direction`](section-grids.html#kssref-grids-variables-rtl-zen-direction).
+// $rtl-selector      = $zen-rtl-selector - The RTL selector for this grid item. See the docs for [`$zen-rtl-selector`](section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector).
+//
+// Style guide: undo.undo-zen-new-row
 @mixin undo-zen-new-row(
   $clear              : $zen-direction,
   $rtl-selector       : $zen-rtl-selector
@@ -171,10 +230,23 @@
   }
 }
 
+// undo-zen-apply-gutter-padding()
 //
-// Undoes the gutter on a grid item when using the padding gutter method.
-// @see http://next.zengrids.com/reference/grids/#undo-zen-apply-gutter-padding
+// Undoes the gutter on a grid item when using the padding gutter method. Apply this to undo the gutter padding styles applied with [`zen-apply-gutter-padding()`](section-grids.html#kssref-grids-zen-apply-gutter-padding).
 //
+// Common usage:
+// ```
+// @include undo-zen-apply-gutter-padding();
+// ```
+//
+// $gutters            = $zen-gutters - The width of the gutters for this grid item. See the docs for [`$zen-gutters`](section-grids.html#kssref-grids-variables-zen-gutters).
+// $direction          = $zen-direction - The direction to use for this grid item. See the docs for [`$zen-direction`](section-grids.html#kssref-grids-variables-rtl-zen-direction).
+// $switch-direction   = $zen-switch-direction - Whether to switch the default direction for this grid item. See the docs for [`$zen-switch-direction`](section-grids.html#kssref-grids-variables-rtl-zen-switch-direction).
+// $rtl-selector       = $zen-rtl-selector - The RTL selector for this grid item. See the docs for [`$zen-rtl-selector`](section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector).
+//
+// weight: 15
+//
+// Style guide: undo.undo-zen-apply-gutter-padding
 @mixin undo-zen-apply-gutter-padding(
   $gutters            : $zen-gutters,
   $direction          : $zen-direction,

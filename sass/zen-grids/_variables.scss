@@ -2,7 +2,13 @@
 // Variables module for the Zen Grids system; auto-imported by other modules.
 //
 
-// Grids Module: Configurable Variables
+
+
+//
+// Grids Module
+//
+
+// Configurable variables
 //
 // Zen Grids comes with several configuration variables that affect what CSS its mixins and functions output. The default values of these variables are all set using the “guarded assignment” flag, `!default`. So you can safely set those values before you `@import` Zen Grids and your values will be respected.
 //
@@ -10,19 +16,17 @@
 //
 // Style guide: grids.variables
 
-// Common variables
-//
-// Style guide: grids.variables.common
-
 // $zen-columns
 //
 // Specifies the number of columns in the grid. Defaults to 1 as a hat tip to mobile first designs. You should set this variable each time you want to use a different grid for a set of media queries.
 //
-// `$zen-columns: 1 !default;`
+// ```
+// $zen-columns: 1 !default;
+// ```
 //
 // weight: -2
 //
-// Style guide: grids.variables.common.zen-columns
+// Style guide: grids.variables.zen-columns
 $zen-columns: 1 !default;
 
 // $zen-gutters
@@ -33,11 +37,13 @@ $zen-columns: 1 !default;
 //
 // If the [`$zen-gutter-method`](#zen-gutter-method) is set to `margin`, the unit of measurement of the gutters should be the same as the unit of measurement of the [`$zen-grid-width`](#zen-grid-width), e.g. if `$zen-grid-width: 100%`, then `$zen-gutters` should also be measured in `%`.
 //
-// `$zen-gutters: 20px !default;`
+// ```
+// $zen-gutters: 20px !default;
+// ```
 //
 // weight: -2
 //
-// Style guide: grids.variables.common.zen-gutters
+// Style guide: grids.variables.zen-gutters
 $zen-gutters: 20px !default;
 
 // $zen-gutter-method
@@ -83,16 +89,18 @@ $zen-gutters: 20px !default;
 //
 // weight: -1
 //
-// Style guide: grids.variables.common.zen-gutter-method
+// Style guide: grids.variables.zen-gutter-method
 $zen-gutter-method: padding !default;
 
 // $zen-auto-include-grid-item-base
 //
 // You can generate more efficient CSS if you set this to `false` and manually apply the [`zen-grid-item-base()`](#zen-grid-item-base) mixin to all grid items (and flow items) from within a single ruleset.
 //
-// `$zen-auto-include-grid-item-base: true !default;`
+// ```
+// $zen-auto-include-grid-item-base: true !default;
+// ```
 //
-// Style guide: grids.variables.common.zen-auto-include-grid-item-base
+// Style guide: grids.variables.zen-auto-include-grid-item-base
 $zen-auto-include-grid-item-base: true !default;
 
 // $zen-box-sizing
@@ -105,15 +113,23 @@ $zen-auto-include-grid-item-base: true !default;
 //
 // Note: if `$zen-box-sizing` is set to "content-box", then [`$zen-gutters`](#zen-gutters) will need to use the same unit of measurement as the [`$zen-grid-width`](#zen-grid-width).
 //
-// `$zen-box-sizing: border-box !default;`
+// ```
+// $zen-box-sizing: border-box !default;
+// ```
 //
 // weight: 1
 //
-// Style guide: grids.variables.common.zen-box-sizing
+// Style guide: grids.variables.zen-box-sizing
 $zen-box-sizing: border-box !default;
 
 
+//
+// Grids Module: fixed variables
+//
+
 // Adaptive or fixed design variable
+//
+// Weight: 10
 //
 // Style guide: grids.variables.fixed
 
@@ -121,64 +137,31 @@ $zen-box-sizing: border-box !default;
 //
 // Specify the width of the entire grid. Defaults to `100%` for a fluid responsive design, but you can change this to any fixed value (using px or em, etc.) if you need a fixed grid.
 //
-// `$zen-grid-width: 100% !default;`
+// ```
+// $zen-grid-width: 100% !default;
+// ```
 //
 // Style guide: grids.variables.fixed.zen-grid-width
 $zen-grid-width: 100% !default;
 
-// Legacy IE support variables
-//
-// IE 6 and 7 require special CSS properties in order for Zen Grids to work with
-// such old browsers.
-//
-// If you need IE 6/7 support, you will need to install:
-//
-// 1. [support-for]() Sass module
-// 2. [box-sizing polyfill](https://github.com/Schepp/box-sizing-polyfill)'s boxsizing.htc
-//
-// weight: 1
-//
-// Style guide: grids.variables.legacy
 
-// $box-sizing-polyfill-path
 //
-// The box-sizing polyfill for IE 6/7 requires an absolute path to the boxsizing.htc file. See https://github.com/Schepp/box-sizing-polyfill
+// Grids Module: rtl variables
 //
-// `$box-sizing-polyfill-path: '' !default;`
-//
-// Style guide: grids.variables.legacy.box-sizing-polyfill-path
-$box-sizing-polyfill-path: '' !default;
-
-// $support-for
-//
-// Specify the minimum browser versions that must be supported. Currently, Zen Grids only uses the `ie` value to determine if additional CSS properties are needed for IE 6 and IE 7 support. For example, to add support for IE 7, set `$support-for: (ie: 7);`
-//
-// This variable is a copy of the one used by [support-for](https://github.com/JohnAlbin/support-for). Zen Grids does not require support-for, but will use it if available.
-//
-// ```
-// $support-for: (
-//   chrome:  -4,
-//   edge:    -4,
-//   firefox: -4,
-//   ie:      9,
-//   opera:   -4,
-//   safari:  -4,
-//   '*':     -4,
-// ) !default;
-// ```
-//
-// Style guide: grids.variables.legacy.support-for
 
 // RTL language variables
 //
+// Weight: 15
+//
 // Style guide: grids.variables.rtl
 
-// Specify the default floating direction for zen grids' mixins. @see http://next.zengrids.com/reference/grids/#zen-direction
 // $zen-direction
 //
 // Specify the default floating direction for zen grids’ mixins. If you are only building RTL layouts (and not LTR layouts), you should set this to `right`.
 //
-// `$zen-direction: left !default;`
+// ```
+// $zen-direction: left !default;
+// ```
 //
 // Style guide: grids.variables.rtl.zen-direction
 $zen-direction: left !default;
@@ -204,16 +187,18 @@ $zen-direction: left !default;
 // }
 // ```
 //
-// `$zen-rtl-selector: false !default;`
+// ```
+// $zen-rtl-selector: false !default;
+// ```
 //
-// Style guide: grids.variables.rtl.zen-rtl-seelctor
+// Style guide: grids.variables.rtl.zen-rtl-selector
 $zen-rtl-selector: false !default;
 
 // $zen-switch-direction
 //
 // Reverse the floating direction in all of zen grids’ mixins.
 //
-// If you are creating both LTR and RTL layouts, this helper variable can be used to automatically create one set of layouts based on the other set of layouts. For example:
+// If you are creating LTR and RTL layouts that are in separate style sheets, this helper variable can be used to automatically create one set of layouts based on the other set of layouts. For example:
 //
 // ```
 // $zen-switch-direction: true;
@@ -222,14 +207,72 @@ $zen-rtl-selector: false !default;
 //
 // In the above example, the existing LTR layout in the an-LTR-layout.scss file is used to create the corresponding RTL layout by first setting the `$zen-switch-direction` variable to `true` and then importing the LTR layout file.
 //
-// `$zen-switch-direction: false !default;`
+// ```
+// $zen-switch-direction: false !default;
+// ```
 //
 // Style guide: grids.variables.rtl.zen-switch-direction
 $zen-switch-direction: false !default;
 
 
+//
+// Grids Module: legacy IE variables
+//
 
-// Flow Module: Configurable Variables
+// Legacy IE support variables
+//
+// IE 6 and 7 require special CSS properties in order for Zen Grids to work with
+// such old browsers.
+//
+// If you need IE 6/7 support, you will need to install:
+//
+// 1. [support-for]() Sass module
+// 2. [box-sizing polyfill](https://github.com/Schepp/box-sizing-polyfill)'s boxsizing.htc
+//
+// Weight: 20
+//
+// Style guide: grids.variables.legacy
+
+// $box-sizing-polyfill-path
+//
+// The box-sizing polyfill for IE 6/7 requires an absolute path to the boxsizing.htc file. See https://github.com/Schepp/box-sizing-polyfill
+//
+// ```
+// $box-sizing-polyfill-path: '' !default;
+// ```
+//
+// Style guide: grids.variables.legacy.box-sizing-polyfill-path
+$box-sizing-polyfill-path: '' !default;
+
+// $support-for
+//
+// Specify the minimum browser versions that must be supported. Currently, Zen Grids only uses the `ie` value to determine if additional CSS properties are needed for IE 6 and IE 7 support. For example, to add support for IE 7, set `$support-for: (ie: 7);`
+//
+// This variable is _only_ used if the [support-for](https://github.com/JohnAlbin/support-for) module is loaded into your Sass style sheet. Otherwise, legacy IE support will not be included in your layouts. Zen Grids does not require support-for, but will use it if available.
+//
+// ```
+// $support-for: (
+//   chrome:  -4,
+//   edge:    -4,
+//   firefox: -4,
+//   ie:      9,
+//   opera:   -4,
+//   safari:  -4,
+//   '*':     -4,
+// ) !default;
+// ```
+//
+// Weight: -1
+//
+// Style guide: grids.variables.legacy.support-for
+
+
+
+//
+// Flow module
+//
+
+// Configurable variables
 //
 // Zen Grids comes with several configuration variables that affect what CSS its mixins and functions output. The default values of these variables are all set using the “guarded assignment” flag, `!default`. So you can safely set those values before you `@import` Zen Grids and your values will be respected.
 //
@@ -241,14 +284,20 @@ $zen-switch-direction: false !default;
 //
 // This variable works the same as [`$zen-auto-include-grid-item-base`](./section-grids.html#zen-auto-include-grid-item-base), except it is used for flow items instead of grid items. You can generate more efficient CSS if you set this to `false` and manually apply the `zen-grid-item-base()` mixin to all flow items from within a single ruleset.
 //
-// `$zen-auto-include-flow-item-base: true !default;`
+// ```
+// $zen-auto-include-flow-item-base: true !default;
+// ```
 //
 // Style guide: flow.variables.zen-auto-include-flow-item-base
 $zen-auto-include-flow-item-base: true !default;
 
 
 
-// Layout Module: Configurable Variables
+//
+// Layout Module
+//
+
+// Configurable variables
 //
 // Zen Grids comes with several configuration variables that affect what CSS its mixins and functions output. The default values of these variables are all set using the “guarded assignment” flag, `!default`. So you can safely set those values before you `@import` Zen Grids and your values will be respected.
 //
@@ -272,14 +321,20 @@ $zen-auto-include-flow-item-base: true !default;
 //
 // When a named layout is given to the `$layout` parameter of one of the layout module's mixins that layout's properties will be used instead of any global variables for the entirety of the mixin's `@content`.
 //
-// `$zen-layouts: () !default;`
+// ```
+// $zen-layouts: () !default;
+// ```
 //
 // Style guide: layout.variables.zen-layouts
 $zen-layouts: () !default;
 
 
 
-// Background Module: Configurable Variables
+//
+// Background Module
+//
+
+// Configurable variables
 //
 // Zen Grids comes with several configuration variables that affect what CSS its mixins and functions output. The default values of these variables are all set using the “guarded assignment” flag, `!default`. So you can safely set those values before you `@import` Zen Grids and your values will be respected.
 //
@@ -291,7 +346,9 @@ $zen-layouts: () !default;
 //
 // Specify the color used in the background grid image produced by the `zen-grid-background()` mixin.
 //
-// `$zen-grid-color: #ffdede !default;`
+// ```
+// $zen-grid-color: #ffdede !default;
+// ```
 //
 // Style guide: background.variables.zen-grid-color
 $zen-grid-color: #ffdede !default;
@@ -300,7 +357,9 @@ $zen-grid-color: #ffdede !default;
 //
 // Specify how to place the column numbers in the background grid image. Normally, column numbers are displayed across the top of the background grid image and then displayed in reverse order along the bottom of the background grid image. Can be set to: `both`, `top`, or `none`.
 //
-// `$zen-grid-numbers: both !default;`
+// ```
+// $zen-grid-numbers: both !default;
+// ```
 //
 // Style guide: background.variables.zen-grid-numbers
 $zen-grid-numbers: both !default;
@@ -311,7 +370,9 @@ $zen-grid-numbers: both !default;
 //
 // The default value of the `$zen-grid-number-images` variable is a list of the numbers 1 through 25, each rendered as an image and encoded as a data URI. Users who are crazy enough to use a 26-column grid or larger are free to extend this set.
 //
-// `$zen-grid-number-images: (url('data:image/png;base64, …), …) !default;`
+// ```
+// $zen-grid-number-images: (url('data:image/png;base64, …), …) !default;
+// ```
 //
 // Style guide: background.variables.zen-grid-number-images
 $zen-grid-number-images: () !default;
@@ -322,7 +383,9 @@ $zen-grid-number-images: () !default;
 //
 // Since the background grid image is only useful during development and during debugging, we need an easy way to turn off the background grid image without removing all the calls to `zen-grid-background()` from the code base. To turn off all background grid images, set `$display-zen-grid-background` to `false`.
 //
-// `$display-zen-grid-background: true !default;`
+// ```
+// $display-zen-grid-background: true !default;
+// ```
 //
 // Style guide: background.variables.display-zen-grid-background
 $display-zen-grid-background: true !default;

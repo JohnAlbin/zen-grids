@@ -20,6 +20,8 @@
 // // $zen-columns is back to 1 after the zen-layout() block.
 // ```
 //
+// Weight: -6
+//
 // Style guide: layout
 
 @import "./grids";
@@ -27,21 +29,37 @@
 // zen-layout(...)
 //
 // Should be used to add a wrapping block where its parameters will override the
-// corresponding global `$zen-` variables within it.
+// corresponding global `$zen-*` variables within it.
 //
-// $layout                      - Optionally specify the name of the layout from `$zen-layouts` to use.
-// $columns                     - Defaults to `$zen-columns`
-// $gutters                     - Defaults to `$zen-gutters`
-// $gutter-method               - Defaults to `$zen-gutter-method`
-// $grid-width                  - Defaults to `$zen-grid-width`
-// $box-sizing                  - Defaults to `$zen-box-sizing`
-// $direction                   - Defaults to `$zen-direction`
-// $switch-direction            - Defaults to `$zen-switch-direction`
-// $rtl-selector                - Defaults to `$zen-rtl-selector`
-// $auto-include-grid-item-base - Defaults to `$zen-auto-include-grid-item-base`
-// $auto-include-flow-item-base - Defaults to `$zen-auto-include-flow-item-base`
-// $grid-color                  - Defaults to `$zen-grid-color`
-// $grid-numbers                - Defaults to `$zen-grid-numbers`
+// Common usage:
+// ```
+// @include zen-layout(m) {
+//   // Use other Zen Grids mixins and layouts without changing global vars.
+// }
+// ```
+// or:
+// ```
+// @include zen-layout($gutters: 0) {
+//   // The code in this block will see `$zen-gutters: 0`, but code after this
+//   // block will see the usual value of that global variable.
+// }
+// ```
+//
+// $layout                      = null - Optionally specify the name of the layout from `$zen-layouts` to use. See the docs for [`$zen-layouts`](section-grids.html#kssref-layout-variables-zen-layouts).
+// $columns                     = $zen-columns - The number of columns. See the docs for [`$zen-columns`](section-grids.html#kssref-grids-variables-zen-columns).
+// $gutters                     = $zen-gutters - The width of the gutters. See the docs for [`$zen-gutters`](section-grids.html#kssref-grids-variables-zen-gutters).
+// $gutter-method               = $zen-gutter-method - The gutter method to use. See the docs for [`$zen-gutter-method`](section-grids.html#kssref-grids-variables-zen-gutter-method).
+// $grid-width                  = $zen-grid-width - The width of the entire grid. See the docs for [`$zen-gutter-method`](section-grids.html#kssref-grids-variables-fixed-zen-grid-width).
+// $box-sizing                  = $zen-box-sizing - The box sizing to use. See the docs for [`$zen-box-sizing`](section-grids.html#kssref-grids-variables-zen-box-sizing).
+// $direction                   = $zen-direction - The direction to use. See the docs for [`$zen-direction`](section-grids.html#kssref-grids-variables-rtl-zen-direction).
+// $switch-direction            = $zen-switch-direction - Whether to switch the default direction. See the docs for [`$zen-switch-direction`](section-grids.html#kssref-grids-variables-rtl-zen-switch-direction).
+// $rtl-selector                = $zen-rtl-selector - The RTL selector for this background. See the docs for [`$zen-rtl-selector`](section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector).
+// $auto-include-grid-item-base = $zen-auto-include-grid-item-base - Whether to auto-include the zen-grid-item-base() mixin. See the docs for [`$zen-auto-include-grid-item-base`](section-grids.html#kssref-grids-variables-zen-auto-include-grid-item-base).
+// $auto-include-flow-item-base = $zen-auto-include-flow-item-base - Whether to auto-include the zen-flow-item-base() mixin. See the docs for [`$zen-auto-include-flow-item-base`](section-flow.html#kssref-flow-variables-zen-auto-include-flow-item-base).
+// $grid-color                  = $zen-grid-color - The column color to use for the background grid image. See the docs for [`$zen-grid-color`](section-background.html#kssref-background-variables-zen-grid-color).
+// $grid-numbers                = $zen-grid-numbers - Specify the set of images used for the numbering of the columns in the background grid image. See the docs for [`$zen-grid-numbers`](section-background.html#kssref-background-variables-zen-grid-numbers).
+//
+// weight: -10
 //
 // Style guide: layout.zen-layout
 @mixin zen-layout(
@@ -173,20 +191,20 @@
 // ```
 //
 // $query                       - Required. This parameter is passed on to the `breakpoint()` mixin.
-// $no-query                    - This parameter is passed on to the `breakpoint()` mixin. Defaults to `false'.
-// $layout                      - Optionally specify the name of the layout from `$zen-layouts` to use.
-// $columns                     - Defaults to `$zen-columns`
-// $gutters                     - Defaults to `$zen-gutters`
-// $gutter-method               - Defaults to `$zen-gutter-method`
-// $grid-width                  - Defaults to `$zen-grid-width`
-// $box-sizing                  - Defaults to `$zen-box-sizing`
-// $direction                   - Defaults to `$zen-direction`
-// $switch-direction            - Defaults to `$zen-switch-direction`
-// $rtl-selector                - Defaults to `$zen-rtl-selector`
-// $auto-include-grid-item-base - Defaults to `$zen-auto-include-grid-item-base`
-// $auto-include-flow-item-base - Defaults to `$zen-auto-include-flow-item-base`
-// $grid-color                  - Defaults to `$zen-grid-color`
-// $grid-numbers                - Defaults to `$zen-grid-numbers`
+// $no-query                    = false - This parameter is passed on to the `breakpoint()` mixin.
+// $layout                      = null - Optionally specify the name of the layout from `$zen-layouts` to use. See the docs for [`$zen-layouts`](section-grids.html#kssref-layout-variables-zen-layouts).
+// $columns                     = $zen-columns - The number of columns. See the docs for [`$zen-columns`](section-grids.html#kssref-grids-variables-zen-columns).
+// $gutters                     = $zen-gutters - The width of the gutters. See the docs for [`$zen-gutters`](section-grids.html#kssref-grids-variables-zen-gutters).
+// $gutter-method               = $zen-gutter-method - The gutter method to use. See the docs for [`$zen-gutter-method`](section-grids.html#kssref-grids-variables-zen-gutter-method).
+// $grid-width                  = $zen-grid-width - The width of the entire grid. See the docs for [`$zen-gutter-method`](section-grids.html#kssref-grids-variables-fixed-zen-grid-width).
+// $box-sizing                  = $zen-box-sizing - The box sizing to use. See the docs for [`$zen-box-sizing`](section-grids.html#kssref-grids-variables-zen-box-sizing).
+// $direction                   = $zen-direction - The direction to use. See the docs for [`$zen-direction`](section-grids.html#kssref-grids-variables-rtl-zen-direction).
+// $switch-direction            = $zen-switch-direction - Whether to switch the default direction. See the docs for [`$zen-switch-direction`](section-grids.html#kssref-grids-variables-rtl-zen-switch-direction).
+// $rtl-selector                = $zen-rtl-selector - The RTL selector for this background. See the docs for [`$zen-rtl-selector`](section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector).
+// $auto-include-grid-item-base = $zen-auto-include-grid-item-base - Whether to auto-include the zen-grid-item-base() mixin. See the docs for [`$zen-auto-include-grid-item-base`](section-grids.html#kssref-grids-variables-zen-auto-include-grid-item-base).
+// $auto-include-flow-item-base = $zen-auto-include-flow-item-base - Whether to auto-include the zen-flow-item-base() mixin. See the docs for [`$zen-auto-include-flow-item-base`](section-flow.html#kssref-flow-variables-zen-auto-include-flow-item-base).
+// $grid-color                  = $zen-grid-color - The column color to use for the background grid image. See the docs for [`$zen-grid-color`](section-background.html#kssref-background-variables-zen-grid-color).
+// $grid-numbers                = $zen-grid-numbers - Specify the set of images used for the numbering of the columns in the background grid image. See the docs for [`$zen-grid-numbers`](section-background.html#kssref-background-variables-zen-grid-numbers).
 //
 // Style guide: layout.zen-breakpoint
 @mixin zen-breakpoint(
@@ -234,7 +252,7 @@
 
 // zen-mq(...)
 //
-// An alias for the zen-breakpoint() mixin.
+// An alias for the [`zen-breakpoint()`](#kssref-layout-zen-breakpoint) mixin.
 //
 // Style guide: layout.zen-mq
 @mixin zen-mq(
@@ -311,23 +329,23 @@
 // }
 // ```
 //
-// $context                     - This parameter is passed on to the respond-to() mixin.
-// $no-query                    - This parameter is passed on to the respond-to() mixin. Defaults to `false`.
-// $layout                      - Optionally specify the name of the layout from `$zen-layouts` to use.
-// $columns                     - Defaults to `$zen-columns`
-// $gutters                     - Defaults to `$zen-gutters`
-// $gutter-method               - Defaults to `$zen-gutter-method`
-// $grid-width                  - Defaults to `$zen-grid-width`
-// $box-sizing                  - Defaults to `$zen-box-sizing`
-// $direction                   - Defaults to `$zen-direction`
-// $switch-direction            - Defaults to `$zen-switch-direction`
-// $rtl-selector                - Defaults to `$zen-rtl-selector`
-// $auto-include-grid-item-base - Defaults to `$zen-auto-include-grid-item-base`
-// $auto-include-flow-item-base - Defaults to `$zen-auto-include-flow-item-base`
-// $grid-color                  - Defaults to `$zen-grid-color`
-// $grid-numbers                - Defaults to `$zen-grid-numbers`
+// $context                     - Required. This parameter is passed on to the respond-to() mixin.
+// $no-query                    = false - This parameter is passed on to the respond-to() mixin.
+// $layout                      = null - Optionally specify the name of the layout from `$zen-layouts` to use. See the docs for [`$zen-layouts`](section-grids.html#kssref-layout-variables-zen-layouts).
+// $columns                     = $zen-columns - The number of columns. See the docs for [`$zen-columns`](section-grids.html#kssref-grids-variables-zen-columns).
+// $gutters                     = $zen-gutters - The width of the gutters. See the docs for [`$zen-gutters`](section-grids.html#kssref-grids-variables-zen-gutters).
+// $gutter-method               = $zen-gutter-method - The gutter method to use. See the docs for [`$zen-gutter-method`](section-grids.html#kssref-grids-variables-zen-gutter-method).
+// $grid-width                  = $zen-grid-width - The width of the entire grid. See the docs for [`$zen-gutter-method`](section-grids.html#kssref-grids-variables-fixed-zen-grid-width).
+// $box-sizing                  = $zen-box-sizing - The box sizing to use. See the docs for [`$zen-box-sizing`](section-grids.html#kssref-grids-variables-zen-box-sizing).
+// $direction                   = $zen-direction - The direction to use. See the docs for [`$zen-direction`](section-grids.html#kssref-grids-variables-rtl-zen-direction).
+// $switch-direction            = $zen-switch-direction - Whether to switch the default direction. See the docs for [`$zen-switch-direction`](section-grids.html#kssref-grids-variables-rtl-zen-switch-direction).
+// $rtl-selector                = $zen-rtl-selector - The RTL selector for this background. See the docs for [`$zen-rtl-selector`](section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector).
+// $auto-include-grid-item-base = $zen-auto-include-grid-item-base - Whether to auto-include the zen-grid-item-base() mixin. See the docs for [`$zen-auto-include-grid-item-base`](section-grids.html#kssref-grids-variables-zen-auto-include-grid-item-base).
+// $auto-include-flow-item-base = $zen-auto-include-flow-item-base - Whether to auto-include the zen-flow-item-base() mixin. See the docs for [`$zen-auto-include-flow-item-base`](section-flow.html#kssref-flow-variables-zen-auto-include-flow-item-base).
+// $grid-color                  = $zen-grid-color - The column color to use for the background grid image. See the docs for [`$zen-grid-color`](section-background.html#kssref-background-variables-zen-grid-color).
+// $grid-numbers                = $zen-grid-numbers - Specify the set of images used for the numbering of the columns in the background grid image. See the docs for [`$zen-grid-numbers`](section-background.html#kssref-background-variables-zen-grid-numbers).
 //
-// Style guide: layout.zen-layout
+// Style guide: layout.zen-respond-to
 @mixin zen-respond-to(
   $context,
   $no-query: false,

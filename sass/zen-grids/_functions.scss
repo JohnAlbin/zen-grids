@@ -2,6 +2,10 @@
 //
 // Helper functions for the Zen Grids mixins.
 //
+// This module contains many Sass functions that you may find useful in your style sheet. These functions are also used internally by all of the mixins in Zen Grids.
+//
+// Weight: 10
+//
 // Style guide: functions
 
 
@@ -23,9 +27,9 @@
 // }
 // ```
 //
-// $gutters - Defaults to `$zen-gutters`
-// $gutter-side - Defaults to `$zen-direction`
-// $direction - Defaults to `$zen-direction`
+// $gutters     = $zen-gutters - The width of the gutters. See the docs for [`$zen-gutters`](section-grids.html#kssref-grids-variables-zen-gutters).
+// $gutter-side = $zen-direction - The side of the grid item the gutter is needed for.
+// $direction   = $zen-direction - The direction to use. See the docs for [`$zen-direction`](section-grids.html#kssref-grids-variables-rtl-zen-direction).
 //
 // weight: -1
 //
@@ -78,10 +82,10 @@
 // }
 // ```
 //
-// $columns - Defaults to `$zen-columns`
-// $gutters - Defaults to `$zen-gutters`
-// $gutter-method - Defaults to `$zen-gutter-method`
-// $grid-width - Defaults to `$zen-grid-width`
+// $columns       = $zen-columns - The number of columns in the grid. See the docs for [`$zen-columns`](section-grids.html#kssref-grids-variables-zen-columns).
+// $gutters       = $zen-gutters - The width of the gutters. See the docs for [`$zen-gutters`](section-grids.html#kssref-grids-variables-zen-gutters).
+// $gutter-method = $zen-gutter-method - The gutter method to use. See the docs for [`$zen-gutter-method`](section-grids.html#kssref-grids-variables-zen-gutter-method).
+// $grid-width    = $zen-grid-width - The width of the entire grid. See the docs for [`$zen-gutter-method`](section-grids.html#kssref-grids-variables-fixed-zen-grid-width).
 //
 // weight: -1
 //
@@ -114,6 +118,8 @@
 
 // zen-grid-item-width()
 //
+// Calculates the width of a grid item that spans the specified number of columns.
+//
 // Common usage:
 // ```
 // .ex {
@@ -121,14 +127,12 @@
 // }
 // ```
 //
-// Calculates the width of a grid item that spans the specified number of columns.
-//
-// $column-span - Required. The number of columns to calculate the width of.
-// $columns - Defaults to `$zen-columns`
-// $gutters - Defaults to `$zen-gutters`
-// $gutter-method - Defaults to `$zen-gutter-method`
-// $grid-width - Defaults to `$zen-grid-width`
-// $box-sizing - Defaults to `$zen-box-sizing`
+// $column-span   - Required. The number of columns to calculate the width of.
+// $columns       = $zen-columns - The number of columns in the grid. See the docs for [`$zen-columns`](section-grids.html#kssref-grids-variables-zen-columns).
+// $gutters       = $zen-gutters - The width of the gutters. See the docs for [`$zen-gutters`](section-grids.html#kssref-grids-variables-zen-gutters).
+// $gutter-method = $zen-gutter-method - The gutter method to use. See the docs for [`$zen-gutter-method`](section-grids.html#kssref-grids-variables-zen-gutter-method).
+// $grid-width    = $zen-grid-width - The width of the entire grid. See the docs for [`$zen-gutter-method`](section-grids.html#kssref-grids-variables-fixed-zen-grid-width).
+// $box-sizing    = $zen-box-sizing - The box sizing to use. See the docs for [`$zen-box-sizing`](section-grids.html#kssref-grids-variables-zen-box-sizing).
 //
 // Style guide: functions.zen-grid-item-width
 @function zen-grid-item-width(
@@ -155,6 +159,8 @@
 
 // zen-direction-switch()
 //
+// Returns the opposite direction, given "left" or "right".
+//
 // Common usage:
 // ```
 // .ex {
@@ -162,26 +168,24 @@
 // }
 // ```
 //
+// $direction - Required. The direction you want to switch.
+//
 // weight: 1
-//
-// Returns the opposite direction, given "left" or "right".
-//
-// $dir - Required. The direction you want to switch.
 //
 // Style guide: functions.zen-direction-switch
 @function zen-direction-switch(
-  $dir
+  $direction
 ) {
-  @if $dir == left {
+  @if $direction == left {
     @return right;
   }
-  @else if $dir == right {
+  @else if $direction == right {
     @return left;
   }
-  @else if $dir != none and $dir != both {
+  @else if $direction != none and $direction != both {
     @warn "Invalid direction passed to zen-direction-switch().";
   }
-  @return $dir;
+  @return $direction;
 }
 
 // zen-support-for-ie()
