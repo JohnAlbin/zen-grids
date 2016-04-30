@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Zen Grids 2.0 Docs</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="kss-assets/kss.css">
+  <link rel="stylesheet" href="/css/examples.css">
+
+</head>
+<body id="kss-node">
+
+<div class="kss-sidebar kss-style">
+  <header class="kss-header">
+    <h1 class="kss-doc-title">Zen Grids 2.0 Docs</h1>
+  </header>
+  <nav class="kss-nav">
+    <ul class="kss-nav__menu">
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="/">
+          <span class="kss-nav__ref">←</span
+          ><span class="kss-nav__name">Back to main website</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="./">
+          <span class="kss-nav__ref">0</span
+          ><span class="kss-nav__name">Overview</span>
+        </a>
+      </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-grids.html">
+          <span class="kss-nav__ref">1</span><span class="kss-nav__name">Grids module</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-flow.html">
+          <span class="kss-nav__ref">2</span><span class="kss-nav__name">Flow module</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-layout.html">
+          <span class="kss-nav__ref">3</span><span class="kss-nav__name">Layout module</span>
+        </a>
+                  <ul class="kss-nav__menu-child">
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-layout.html#kssref-layout-variables">
+                <span class="kss-nav__ref ">3.1</span
+                ><span class="kss-nav__name">Configurable variables</span>
+              </a>
+            </li>
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-layout.html#kssref-layout-variables-zen-layouts">
+                <span class="kss-nav__ref kss-nav__ref-child">3.1.1</span
+                ><span class="kss-nav__name">$zen-layouts</span>
+              </a>
+            </li>
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-layout.html#kssref-layout-zen-layout">
+                <span class="kss-nav__ref ">3.2</span
+                ><span class="kss-nav__name">zen-layout(...)</span>
+              </a>
+            </li>
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-layout.html#kssref-layout-zen-breakpoint">
+                <span class="kss-nav__ref ">3.3</span
+                ><span class="kss-nav__name">zen-breakpoint(...)</span>
+              </a>
+            </li>
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-layout.html#kssref-layout-zen-mq">
+                <span class="kss-nav__ref ">3.4</span
+                ><span class="kss-nav__name">zen-mq(...)</span>
+              </a>
+            </li>
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-layout.html#kssref-layout-zen-respond-to">
+                <span class="kss-nav__ref ">3.5</span
+                ><span class="kss-nav__name">zen-respond-to(...)</span>
+              </a>
+            </li>
+                    </ul>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-undo.html">
+          <span class="kss-nav__ref">4</span><span class="kss-nav__name">Undo module</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-functions.html">
+          <span class="kss-nav__ref">5</span><span class="kss-nav__name">Helper functions module</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-background.html">
+          <span class="kss-nav__ref">6</span><span class="kss-nav__name">Background module</span>
+        </a>
+              </li>
+        </ul>
+  </nav>
+</div>
+<article role="main" class="kss-main">
+
+  
+          <div id="kssref-layout" class="kss-section kss-section--depth-1">
+      <div class="kss-style">
+                <h1 class="kss-title kss-title--level-1">
+          <a class="kss-title__permalink" href="#kssref-layout">
+            <span class="kss-title__ref">
+              3
+              <span class="kss-title__permalink-hash">
+                layout
+              </span>
+            </span>
+            Layout module
+          </a>
+        </h1>
+
+                  <div class="kss-description">
+            <p>The &quot;Layout&quot; module for the Zen Grids system.</p>
+<p>When building a grid system for your site, properties (like number of columns or gutter size) will need different values at different viewport widths. In previous versions of Zen Grids, this meant changing the Zen Grids&#39; global variables each time you wanted to build a layout at a different viewport size. With the layout module, you can instead set grid system properties that override your default global variables within the scope of the layout mixin.</p>
+<p>For example:</p>
+<pre><code>$zen-columns: 1; // Default to one column for mobile layout.
+@include zen-layout($columns: 3) {
+  // $zen-columns is set to 3 inside this block and can be used to build a
+  // layout for the following breakpoint.
+  @media screen and (min-width: 777px) {
+    .sidebar {
+      // The sidebar will span the first column of the 3 columns defined.
+      @include zen-grid-item(1, 1);
+    }
+  }
+}
+// $zen-columns is back to 1 after the zen-layout() block.
+</code></pre>
+          </div>
+        
+              </div>
+
+      
+              <div class="kss-source kss-style">
+          Source: <code>zen-grids/_layout.scss</code>, line 1
+        </div>
+          </div>
+          <section id="kssref-layout-variables" class="kss-section kss-section--depth-2">
+      <div class="kss-style">
+                <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-layout-variables">
+            <span class="kss-title__ref">
+              3.1
+              <span class="kss-title__permalink-hash">
+                layout.variables
+              </span>
+            </span>
+            Configurable variables
+          </a>
+        </h2>
+
+                  <div class="kss-description">
+            <p>Zen Grids comes with several configuration variables that affect what CSS its mixins and functions output. The default values of these variables are all set using the “guarded assignment” flag, <code>!default</code>. So you can safely set those values before you <code>@import</code> Zen Grids and your values will be respected.</p>
+
+          </div>
+        
+              </div>
+
+      
+              <div class="kss-source kss-style">
+          Source: <code>zen-grids/_variables.scss</code>, line 300
+        </div>
+          </section>
+          <section id="kssref-layout-variables-zen-layouts" class="kss-section kss-section--depth-3">
+      <div class="kss-style">
+                <h3 class="kss-title kss-title--level-3">
+          <a class="kss-title__permalink" href="#kssref-layout-variables-zen-layouts">
+            <span class="kss-title__ref">
+              3.1.1
+              <span class="kss-title__permalink-hash">
+                layout.variables.zen-layouts
+              </span>
+            </span>
+            $zen-layouts
+          </a>
+        </h3>
+
+                  <div class="kss-description">
+            <p>A map of layout names and their corresponding properties. Any zen grids variable name can be used as a property of a named layout, but the <code>zen-</code> prefix should be removed.</p>
+<p>For example:</p>
+<pre><code>$zen-layouts: (
+  medium: (
+    columns: 3,    // Equivalent of $zen-columns for this layout.
+    gutters: 15px, // Equivalent of $zen-gutters for this layout.
+  ),
+);
+</code></pre><p>When a named layout is given to the <code>$layout</code> parameter of one of the layout module&#39;s mixins that layout&#39;s properties will be used instead of any global variables for the entirety of the mixin&#39;s <code>@content</code>.</p>
+<pre><code>$zen-layouts: () !default;
+</code></pre>
+          </div>
+        
+              </div>
+
+      
+              <div class="kss-source kss-style">
+          Source: <code>zen-grids/_variables.scss</code>, line 308
+        </div>
+          </section>
+          <section id="kssref-layout-zen-layout" class="kss-section kss-section--depth-2">
+      <div class="kss-style">
+                <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-layout-zen-layout">
+            <span class="kss-title__ref">
+              3.2
+              <span class="kss-title__permalink-hash">
+                layout.zen-layout
+              </span>
+            </span>
+            zen-layout(...)
+          </a>
+        </h2>
+
+                  <div class="kss-description">
+            <p>Should be used to add a wrapping block where its parameters will override the
+corresponding global <code>$zen-*</code> variables within it.</p>
+<p>Common usage:</p>
+<pre><code>@include zen-layout(m) {
+  // Use other Zen Grids mixins and layouts without changing global vars.
+}
+</code></pre><p>or:</p>
+<pre><code>@include zen-layout($gutters: 0) {
+  // The code in this block will see `$zen-gutters: 0`, but code after this
+  // block will see the usual value of that global variable.
+}
+</code></pre>
+          </div>
+        
+                              <div class="kss-parameters__title">Parameters:</div>
+            <ul class="kss-parameters">
+                      <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$layout</code></div>
+              <div class="kss-parameters__description">
+                Optionally specify the name of the layout from <code>$zen-layouts</code> to use. See the docs for <a href="section-grids.html#kssref-layout-variables-zen-layouts"><code>$zen-layouts</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>null</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$columns</code></div>
+              <div class="kss-parameters__description">
+                The number of columns. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-columns"><code>$zen-columns</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-columns</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$gutters</code></div>
+              <div class="kss-parameters__description">
+                The width of the gutters. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-gutters"><code>$zen-gutters</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-gutters</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$gutter-method</code></div>
+              <div class="kss-parameters__description">
+                The gutter method to use. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-gutter-method"><code>$zen-gutter-method</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-gutter-method</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$grid-width</code></div>
+              <div class="kss-parameters__description">
+                The width of the entire grid. See the docs for <a href="section-grids.html#kssref-grids-variables-fixed-zen-grid-width"><code>$zen-gutter-method</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-grid-width</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$box-sizing</code></div>
+              <div class="kss-parameters__description">
+                The box sizing to use. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-box-sizing"><code>$zen-box-sizing</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-box-sizing</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$direction</code></div>
+              <div class="kss-parameters__description">
+                The direction to use. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-direction"><code>$zen-direction</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-direction</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$switch-direction</code></div>
+              <div class="kss-parameters__description">
+                Whether to switch the default direction. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-switch-direction"><code>$zen-switch-direction</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-switch-direction</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$rtl-selector</code></div>
+              <div class="kss-parameters__description">
+                The RTL selector for this background. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector"><code>$zen-rtl-selector</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-rtl-selector</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$auto-include-grid-item-base</code></div>
+              <div class="kss-parameters__description">
+                Whether to auto-include the zen-grid-item-base() mixin. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-auto-include-grid-item-base"><code>$zen-auto-include-grid-item-base</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-auto-include-grid-item-base</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$auto-include-flow-item-base</code></div>
+              <div class="kss-parameters__description">
+                Whether to auto-include the zen-flow-item-base() mixin. See the docs for <a href="section-flow.html#kssref-flow-variables-zen-auto-include-flow-item-base"><code>$zen-auto-include-flow-item-base</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-auto-include-flow-item-base</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$grid-color</code></div>
+              <div class="kss-parameters__description">
+                The column color to use for the background grid image. See the docs for <a href="section-background.html#kssref-background-variables-zen-grid-color"><code>$zen-grid-color</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-grid-color</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$grid-numbers</code></div>
+              <div class="kss-parameters__description">
+                Specify the set of images used for the numbering of the columns in the background grid image. See the docs for <a href="section-background.html#kssref-background-variables-zen-grid-numbers"><code>$zen-grid-numbers</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-grid-numbers</code>
+                  </div>
+                              </div>
+            </li>
+                      </ul>
+                        </div>
+
+      
+              <div class="kss-source kss-style">
+          Source: <code>zen-grids/_layout.scss</code>, line 29
+        </div>
+          </section>
+          <section id="kssref-layout-zen-breakpoint" class="kss-section kss-section--depth-2">
+      <div class="kss-style">
+                <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-layout-zen-breakpoint">
+            <span class="kss-title__ref">
+              3.3
+              <span class="kss-title__permalink-hash">
+                layout.zen-breakpoint
+              </span>
+            </span>
+            zen-breakpoint(...)
+          </a>
+        </h2>
+
+                  <div class="kss-description">
+            <p>Combines zen-layout() with the Breakpoint module&#39;s breakpoint() mixin.</p>
+<p>Instead of nesting zen-layout() with breakpoint() like this:</p>
+<pre><code>@include zen-layout($layout: &#39;m&#39;) {
+  @include breakpoint($medium) {
+    // Do something.
+  }
+}
+</code></pre><p>You can use the zen-breakpoint() mixin like this:</p>
+<pre><code>@include zen-breakpoint($medium, $layout: &#39;m&#39;) {
+  // Do something.
+}
+</code></pre>
+          </div>
+        
+                              <div class="kss-parameters__title">Parameters:</div>
+            <ul class="kss-parameters">
+                      <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$query</code></div>
+              <div class="kss-parameters__description">
+                Required. This parameter is passed on to the <code>breakpoint()</code> mixin.
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$no-query</code></div>
+              <div class="kss-parameters__description">
+                This parameter is passed on to the <code>breakpoint()</code> mixin.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>false</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$layout</code></div>
+              <div class="kss-parameters__description">
+                Optionally specify the name of the layout from <code>$zen-layouts</code> to use. See the docs for <a href="section-grids.html#kssref-layout-variables-zen-layouts"><code>$zen-layouts</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>null</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$columns</code></div>
+              <div class="kss-parameters__description">
+                The number of columns. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-columns"><code>$zen-columns</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-columns</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$gutters</code></div>
+              <div class="kss-parameters__description">
+                The width of the gutters. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-gutters"><code>$zen-gutters</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-gutters</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$gutter-method</code></div>
+              <div class="kss-parameters__description">
+                The gutter method to use. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-gutter-method"><code>$zen-gutter-method</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-gutter-method</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$grid-width</code></div>
+              <div class="kss-parameters__description">
+                The width of the entire grid. See the docs for <a href="section-grids.html#kssref-grids-variables-fixed-zen-grid-width"><code>$zen-gutter-method</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-grid-width</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$box-sizing</code></div>
+              <div class="kss-parameters__description">
+                The box sizing to use. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-box-sizing"><code>$zen-box-sizing</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-box-sizing</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$direction</code></div>
+              <div class="kss-parameters__description">
+                The direction to use. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-direction"><code>$zen-direction</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-direction</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$switch-direction</code></div>
+              <div class="kss-parameters__description">
+                Whether to switch the default direction. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-switch-direction"><code>$zen-switch-direction</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-switch-direction</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$rtl-selector</code></div>
+              <div class="kss-parameters__description">
+                The RTL selector for this background. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector"><code>$zen-rtl-selector</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-rtl-selector</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$auto-include-grid-item-base</code></div>
+              <div class="kss-parameters__description">
+                Whether to auto-include the zen-grid-item-base() mixin. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-auto-include-grid-item-base"><code>$zen-auto-include-grid-item-base</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-auto-include-grid-item-base</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$auto-include-flow-item-base</code></div>
+              <div class="kss-parameters__description">
+                Whether to auto-include the zen-flow-item-base() mixin. See the docs for <a href="section-flow.html#kssref-flow-variables-zen-auto-include-flow-item-base"><code>$zen-auto-include-flow-item-base</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-auto-include-flow-item-base</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$grid-color</code></div>
+              <div class="kss-parameters__description">
+                The column color to use for the background grid image. See the docs for <a href="section-background.html#kssref-background-variables-zen-grid-color"><code>$zen-grid-color</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-grid-color</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$grid-numbers</code></div>
+              <div class="kss-parameters__description">
+                Specify the set of images used for the numbering of the columns in the background grid image. See the docs for <a href="section-background.html#kssref-background-variables-zen-grid-numbers"><code>$zen-grid-numbers</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-grid-numbers</code>
+                  </div>
+                              </div>
+            </li>
+                      </ul>
+                        </div>
+
+      
+              <div class="kss-source kss-style">
+          Source: <code>zen-grids/_layout.scss</code>, line 173
+        </div>
+          </section>
+          <section id="kssref-layout-zen-mq" class="kss-section kss-section--depth-2">
+      <div class="kss-style">
+                <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-layout-zen-mq">
+            <span class="kss-title__ref">
+              3.4
+              <span class="kss-title__permalink-hash">
+                layout.zen-mq
+              </span>
+            </span>
+            zen-mq(...)
+          </a>
+        </h2>
+
+                  <div class="kss-description">
+            <p>An alias for the <a href="#kssref-layout-zen-breakpoint"><code>zen-breakpoint()</code></a> mixin.</p>
+
+          </div>
+        
+              </div>
+
+      
+              <div class="kss-source kss-style">
+          Source: <code>zen-grids/_layout.scss</code>, line 253
+        </div>
+          </section>
+          <section id="kssref-layout-zen-respond-to" class="kss-section kss-section--depth-2">
+      <div class="kss-style">
+                <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-layout-zen-respond-to">
+            <span class="kss-title__ref">
+              3.5
+              <span class="kss-title__permalink-hash">
+                layout.zen-respond-to
+              </span>
+            </span>
+            zen-respond-to(...)
+          </a>
+        </h2>
+
+                  <div class="kss-description">
+            <p>Combines zen-layout() with the Breakpoint module&#39;s respond-to() mixin.</p>
+<p>Instead of nesting zen-layout() with respond-to() like this:</p>
+<pre><code>@include zen-layout($layout: &#39;m&#39;) {
+  @include respond-to(&#39;m&#39;) {
+    // Do something.
+  }
+}
+</code></pre><p>You can use the zen-respond-to() mixin like this:</p>
+<pre><code>@include zen-respond-to(&#39;m&#39;) {
+  // Do something.
+}
+</code></pre><p>Note that the &#39;m&#39; in the above example uses the same name in the
+$breakpoints map as is used in the $zen-layouts map.</p>
+<p>You can use a differently-named layout by explicitly specifying the $layout
+parameter like this:</p>
+<pre><code>@include zen-respond-to(&#39;m&#39;, $layout: &#39;medium&#39;) {
+  // Do something.
+}
+</code></pre>
+          </div>
+        
+                              <div class="kss-parameters__title">Parameters:</div>
+            <ul class="kss-parameters">
+                      <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$context</code></div>
+              <div class="kss-parameters__description">
+                Required. This parameter is passed on to the respond-to() mixin.
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$no-query</code></div>
+              <div class="kss-parameters__description">
+                This parameter is passed on to the respond-to() mixin.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>false</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$layout</code></div>
+              <div class="kss-parameters__description">
+                Optionally specify the name of the layout from <code>$zen-layouts</code> to use. See the docs for <a href="section-grids.html#kssref-layout-variables-zen-layouts"><code>$zen-layouts</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>null</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$columns</code></div>
+              <div class="kss-parameters__description">
+                The number of columns. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-columns"><code>$zen-columns</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-columns</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$gutters</code></div>
+              <div class="kss-parameters__description">
+                The width of the gutters. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-gutters"><code>$zen-gutters</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-gutters</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$gutter-method</code></div>
+              <div class="kss-parameters__description">
+                The gutter method to use. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-gutter-method"><code>$zen-gutter-method</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-gutter-method</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$grid-width</code></div>
+              <div class="kss-parameters__description">
+                The width of the entire grid. See the docs for <a href="section-grids.html#kssref-grids-variables-fixed-zen-grid-width"><code>$zen-gutter-method</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-grid-width</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$box-sizing</code></div>
+              <div class="kss-parameters__description">
+                The box sizing to use. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-box-sizing"><code>$zen-box-sizing</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-box-sizing</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$direction</code></div>
+              <div class="kss-parameters__description">
+                The direction to use. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-direction"><code>$zen-direction</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-direction</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$switch-direction</code></div>
+              <div class="kss-parameters__description">
+                Whether to switch the default direction. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-switch-direction"><code>$zen-switch-direction</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-switch-direction</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$rtl-selector</code></div>
+              <div class="kss-parameters__description">
+                The RTL selector for this background. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector"><code>$zen-rtl-selector</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-rtl-selector</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$auto-include-grid-item-base</code></div>
+              <div class="kss-parameters__description">
+                Whether to auto-include the zen-grid-item-base() mixin. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-auto-include-grid-item-base"><code>$zen-auto-include-grid-item-base</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-auto-include-grid-item-base</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$auto-include-flow-item-base</code></div>
+              <div class="kss-parameters__description">
+                Whether to auto-include the zen-flow-item-base() mixin. See the docs for <a href="section-flow.html#kssref-flow-variables-zen-auto-include-flow-item-base"><code>$zen-auto-include-flow-item-base</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-auto-include-flow-item-base</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$grid-color</code></div>
+              <div class="kss-parameters__description">
+                The column color to use for the background grid image. See the docs for <a href="section-background.html#kssref-background-variables-zen-grid-color"><code>$zen-grid-color</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-grid-color</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$grid-numbers</code></div>
+              <div class="kss-parameters__description">
+                Specify the set of images used for the numbering of the columns in the background grid image. See the docs for <a href="section-background.html#kssref-background-variables-zen-grid-numbers"><code>$zen-grid-numbers</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-grid-numbers</code>
+                  </div>
+                              </div>
+            </li>
+                      </ul>
+                        </div>
+
+      
+              <div class="kss-source kss-style">
+          Source: <code>zen-grids/_layout.scss</code>, line 301
+        </div>
+          </section>
+  </article>
+
+<!-- SCRIPTS -->
+<script src="kss-assets/kss.js"></script>
+<script src="kss-assets/scrollspy.js"></script>
+<script src="kss-assets/prettify.js"></script>
+<script>
+  prettyPrint();
+  var spy = new ScrollSpy('#kss-node', {
+    nav: '.kss-nav__menu-child > li > a',
+    className: 'is-in-viewport'
+  });
+</script>
+
+
+
+
+<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>

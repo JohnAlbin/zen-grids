@@ -1,0 +1,23 @@
+{
+  "name": "zen-grids-website",
+  "version": "2.0.0",
+  "description": "Website for the Zen Grids docs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "kss-node --builder custom-builder --source ~/Sites/projects/zen-grids/sass --destination help --title 'Zen Grids 2.0 Docs' --nav-depth 3 --css /css/examples.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnAlbin/zen-grids.git"
+  },
+  "author": "John Albin Wilkins <virtually.johnalbin@gmail.com> (http://john.albin.net/)",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/JohnAlbin/zen-grids/issues"
+  },
+  "homepage": "https://github.com/JohnAlbin/zen-grids#readme",
+  "devDependencies": {
+    "kss": "^3.0.0-beta.3"
+  }
+}

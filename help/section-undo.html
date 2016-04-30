@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Zen Grids 2.0 Docs</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="kss-assets/kss.css">
+  <link rel="stylesheet" href="/css/examples.css">
+
+</head>
+<body id="kss-node">
+
+<div class="kss-sidebar kss-style">
+  <header class="kss-header">
+    <h1 class="kss-doc-title">Zen Grids 2.0 Docs</h1>
+  </header>
+  <nav class="kss-nav">
+    <ul class="kss-nav__menu">
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="/">
+          <span class="kss-nav__ref">←</span
+          ><span class="kss-nav__name">Back to main website</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="./">
+          <span class="kss-nav__ref">0</span
+          ><span class="kss-nav__name">Overview</span>
+        </a>
+      </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-grids.html">
+          <span class="kss-nav__ref">1</span><span class="kss-nav__name">Grids module</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-flow.html">
+          <span class="kss-nav__ref">2</span><span class="kss-nav__name">Flow module</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-layout.html">
+          <span class="kss-nav__ref">3</span><span class="kss-nav__name">Layout module</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-undo.html">
+          <span class="kss-nav__ref">4</span><span class="kss-nav__name">Undo module</span>
+        </a>
+                  <ul class="kss-nav__menu-child">
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-undo.html#kssref-undo-undo-zen-grid-container">
+                <span class="kss-nav__ref ">4.1</span
+                ><span class="kss-nav__name">undo-zen-grid-container()</span>
+              </a>
+            </li>
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-undo.html#kssref-undo-undo-zen-grid-item">
+                <span class="kss-nav__ref ">4.2</span
+                ><span class="kss-nav__name">undo-zen-grid-item()</span>
+              </a>
+            </li>
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-undo.html#kssref-undo-undo-zen-new-row">
+                <span class="kss-nav__ref ">4.3</span
+                ><span class="kss-nav__name">undo-zen-new-row()</span>
+              </a>
+            </li>
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-undo.html#kssref-undo-undo-zen-grid-item-base">
+                <span class="kss-nav__ref ">4.4</span
+                ><span class="kss-nav__name">undo-zen-grid-item-base()</span>
+              </a>
+            </li>
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-undo.html#kssref-undo-undo-zen-apply-gutter-padding">
+                <span class="kss-nav__ref ">4.5</span
+                ><span class="kss-nav__name">undo-zen-apply-gutter-padding()</span>
+              </a>
+            </li>
+                    </ul>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-functions.html">
+          <span class="kss-nav__ref">5</span><span class="kss-nav__name">Helper functions module</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-background.html">
+          <span class="kss-nav__ref">6</span><span class="kss-nav__name">Background module</span>
+        </a>
+              </li>
+        </ul>
+  </nav>
+</div>
+<article role="main" class="kss-main">
+
+  
+          <div id="kssref-undo" class="kss-section kss-section--depth-1">
+      <div class="kss-style">
+                <h1 class="kss-title kss-title--level-1">
+          <a class="kss-title__permalink" href="#kssref-undo">
+            <span class="kss-title__ref">
+              4
+              <span class="kss-title__permalink-hash">
+                undo
+              </span>
+            </span>
+            Undo module
+          </a>
+        </h1>
+
+                  <div class="kss-description">
+            <p>The undo module for the Zen Grids system.</p>
+<p>With responsive design, it is not uncommon to have wrapping elements that are have grid styling at some breakpoints, but not at other breakpoints. The undo module provides a set of mixins that allow you to undo the CSS of other Zen Grids mixins.</p>
+
+          </div>
+        
+              </div>
+
+      
+              <div class="kss-source kss-style">
+          Source: <code>zen-grids/_undo.scss</code>, line 1
+        </div>
+          </div>
+          <section id="kssref-undo-undo-zen-grid-container" class="kss-section kss-section--depth-2">
+      <div class="kss-style">
+                <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-undo-undo-zen-grid-container">
+            <span class="kss-title__ref">
+              4.1
+              <span class="kss-title__permalink-hash">
+                undo.undo-zen-grid-container
+              </span>
+            </span>
+            undo-zen-grid-container()
+          </a>
+        </h2>
+
+                  <div class="kss-description">
+            <p>Apply this to undo the grid container styling applied with <a href="section-grids.html#kssref-grids-zen-grid-container"><code>zen-grid-container()</code></a>.</p>
+<p>NOTE: if <code>$context</code> is <code>flow</code>, the <code>zen-grid-container()</code> set the left and right padding to <code>0</code> to prevent it from messing up the alignment of the nested grid. Since Zen Grids doesn&#39;t know what you previously used for this element&#39;s padding, there is no way to undo that automatically; you will need to manually reset the padding.</p>
+<p>Common usage:</p>
+<pre><code>@include undo-zen-grid-container();
+</code></pre><p>or:</p>
+<pre><code>@include undo-zen-grid-container(grid-item);
+</code></pre>
+          </div>
+        
+                              <div class="kss-parameters__title">Parameters:</div>
+            <ul class="kss-parameters">
+                      <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$context</code></div>
+              <div class="kss-parameters__description">
+                If this grid is nested inside another grid, the <code>$context</code> parameter can be used to align the nested grid with the parent grid. It can be set to <code>none</code>, <code>grid-item</code>, or <code>flow</code>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>none</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$gutters</code></div>
+              <div class="kss-parameters__description">
+                The width of the gutters for this container. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-gutters"><code>$zen-gutters</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-gutters</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$gutter-method</code></div>
+              <div class="kss-parameters__description">
+                The gutter method to use for this container. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-gutter-method"><code>$zen-gutter-method</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-gutter-method</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$direction</code></div>
+              <div class="kss-parameters__description">
+                The direction to use for this container. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-direction"><code>$zen-direction</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-direction</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$switch-direction</code></div>
+              <div class="kss-parameters__description">
+                Whether to switch the default direction for this container. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-switch-direction"><code>$zen-switch-direction</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-switch-direction</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$rtl-selector</code></div>
+              <div class="kss-parameters__description">
+                The RTL selector for this container. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector"><code>$zen-rtl-selector</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-rtl-selector</code>
+                  </div>
+                              </div>
+            </li>
+                      </ul>
+                        </div>
+
+      
+              <div class="kss-source kss-style">
+          Source: <code>zen-grids/_undo.scss</code>, line 12
+        </div>
+          </section>
+          <section id="kssref-undo-undo-zen-grid-item" class="kss-section kss-section--depth-2">
+      <div class="kss-style">
+                <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-undo-undo-zen-grid-item">
+            <span class="kss-title__ref">
+              4.2
+              <span class="kss-title__permalink-hash">
+                undo.undo-zen-grid-item
+              </span>
+            </span>
+            undo-zen-grid-item()
+          </a>
+        </h2>
+
+                  <div class="kss-description">
+            <p>Apply this to undo the grid item styling applied with <a href="section-grids.html#kssref-grids-zen-grid-item"><code>zen-grid-item()</code></a>.</p>
+<p>Common usage:</p>
+<pre><code>@include undo-zen-grid-item();
+</code></pre>
+          </div>
+        
+                              <div class="kss-parameters__title">Parameters:</div>
+            <ul class="kss-parameters">
+                      <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$direction</code></div>
+              <div class="kss-parameters__description">
+                The floating direction to use for this grid item. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-direction"><code>$zen-direction</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-direction</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$gutters</code></div>
+              <div class="kss-parameters__description">
+                The width of the gutters for this grid item. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-gutters"><code>$zen-gutters</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-gutters</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$gutter-method</code></div>
+              <div class="kss-parameters__description">
+                The gutter method to use for this grid item. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-gutter-method"><code>$zen-gutter-method</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-gutter-method</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$box-sizing</code></div>
+              <div class="kss-parameters__description">
+                The box sizing to use for this grid item. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-box-sizing"><code>$zen-box-sizing</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-box-sizing</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$switch-direction</code></div>
+              <div class="kss-parameters__description">
+                Whether to switch the default direction for this grid item. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-switch-direction"><code>$zen-switch-direction</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-switch-direction</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$rtl-selector</code></div>
+              <div class="kss-parameters__description">
+                The RTL selector for this grid item. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector"><code>$zen-rtl-selector</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-rtl-selector</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$include-base</code></div>
+              <div class="kss-parameters__description">
+                Whether to auto-include the undo-zen-grid-item-base() mixin. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-auto-include-grid-item-base"><code>$zen-auto-include-grid-item-base</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-auto-include-grid-item-base</code>
+                  </div>
+                              </div>
+            </li>
+                      </ul>
+                        </div>
+
+      
+              <div class="kss-source kss-style">
+          Source: <code>zen-grids/_undo.scss</code>, line 104
+        </div>
+          </section>
+          <section id="kssref-undo-undo-zen-new-row" class="kss-section kss-section--depth-2">
+      <div class="kss-style">
+                <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-undo-undo-zen-new-row">
+            <span class="kss-title__ref">
+              4.3
+              <span class="kss-title__permalink-hash">
+                undo.undo-zen-new-row
+              </span>
+            </span>
+            undo-zen-new-row()
+          </a>
+        </h2>
+
+                  <div class="kss-description">
+            <p>Apply this to prevent a grid item from starting a new row by undoing the styling applied with <a href="section-grids.html#kssref-grids-zen-new-row"><code>zen-new-row()</code></a>.</p>
+<p>Common usage:</p>
+<pre><code>@include undo-zen-new-row();
+</code></pre><p>or:</p>
+<pre><code>@include undo-zen-new-row(right);
+</code></pre>
+          </div>
+        
+                              <div class="kss-parameters__title">Parameters:</div>
+            <ul class="kss-parameters">
+                      <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$clear</code></div>
+              <div class="kss-parameters__description">
+                The clearing direction to use for this grid item. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-direction"><code>$zen-direction</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-direction</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$rtl-selector</code></div>
+              <div class="kss-parameters__description">
+                The RTL selector for this grid item. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector"><code>$zen-rtl-selector</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-rtl-selector</code>
+                  </div>
+                              </div>
+            </li>
+                      </ul>
+                        </div>
+
+      
+              <div class="kss-source kss-style">
+          Source: <code>zen-grids/_undo.scss</code>, line 203
+        </div>
+          </section>
+          <section id="kssref-undo-undo-zen-grid-item-base" class="kss-section kss-section--depth-2">
+      <div class="kss-style">
+                <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-undo-undo-zen-grid-item-base">
+            <span class="kss-title__ref">
+              4.4
+              <span class="kss-title__permalink-hash">
+                undo.undo-zen-grid-item-base
+              </span>
+            </span>
+            undo-zen-grid-item-base()
+          </a>
+        </h2>
+
+                  <div class="kss-description">
+            <p>Undoes the standard set of properites for grid items in the layout. Apply this to undo the styling applied with <a href="section-grids.html#kssref-grids-zen-grid-item-base"><code>zen-grid-item-base()</code></a>.</p>
+<p>NOTE: if <code>$box-sizing</code> is <code>content-box</code>, the <code>zen-grid-item-base()</code> will add left and right borders and padding of <code>0 !important</code> since non-zero values would break the layout. There is no way to undo that automatically. You&#39;ll have to manually set the borders and padding to their original values.</p>
+<p>Common usage:</p>
+<pre><code>@include undo-zen-grid-item-base();
+</code></pre>
+          </div>
+        
+                              <div class="kss-parameters__title">Parameters:</div>
+            <ul class="kss-parameters">
+                      <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$gutters</code></div>
+              <div class="kss-parameters__description">
+                The width of the gutters for this grid item. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-gutters"><code>$zen-gutters</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-gutters</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$gutter-method</code></div>
+              <div class="kss-parameters__description">
+                The gutter method to use for this grid item. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-gutter-method"><code>$zen-gutter-method</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-gutter-method</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$box-sizing</code></div>
+              <div class="kss-parameters__description">
+                The box sizing to use for this grid item. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-box-sizing"><code>$zen-box-sizing</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-box-sizing</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$switch-direction</code></div>
+              <div class="kss-parameters__description">
+                Whether to switch the default direction for this grid item. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-switch-direction"><code>$zen-switch-direction</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-switch-direction</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$rtl-selector</code></div>
+              <div class="kss-parameters__description">
+                The RTL selector for this grid item. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector"><code>$zen-rtl-selector</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-rtl-selector</code>
+                  </div>
+                              </div>
+            </li>
+                      </ul>
+                        </div>
+
+      
+              <div class="kss-source kss-style">
+          Source: <code>zen-grids/_undo.scss</code>, line 150
+        </div>
+          </section>
+          <section id="kssref-undo-undo-zen-apply-gutter-padding" class="kss-section kss-section--depth-2">
+      <div class="kss-style">
+                <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-undo-undo-zen-apply-gutter-padding">
+            <span class="kss-title__ref">
+              4.5
+              <span class="kss-title__permalink-hash">
+                undo.undo-zen-apply-gutter-padding
+              </span>
+            </span>
+            undo-zen-apply-gutter-padding()
+          </a>
+        </h2>
+
+                  <div class="kss-description">
+            <p>Undoes the gutter on a grid item when using the padding gutter method. Apply this to undo the gutter padding styles applied with <a href="section-grids.html#kssref-grids-zen-apply-gutter-padding"><code>zen-apply-gutter-padding()</code></a>.</p>
+<p>Common usage:</p>
+<pre><code>@include undo-zen-apply-gutter-padding();
+</code></pre>
+          </div>
+        
+                              <div class="kss-parameters__title">Parameters:</div>
+            <ul class="kss-parameters">
+                      <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$gutters</code></div>
+              <div class="kss-parameters__description">
+                The width of the gutters for this grid item. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-gutters"><code>$zen-gutters</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-gutters</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$direction</code></div>
+              <div class="kss-parameters__description">
+                The direction to use for this grid item. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-direction"><code>$zen-direction</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-direction</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$switch-direction</code></div>
+              <div class="kss-parameters__description">
+                Whether to switch the default direction for this grid item. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-switch-direction"><code>$zen-switch-direction</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-switch-direction</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$rtl-selector</code></div>
+              <div class="kss-parameters__description">
+                The RTL selector for this grid item. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector"><code>$zen-rtl-selector</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-rtl-selector</code>
+                  </div>
+                              </div>
+            </li>
+                      </ul>
+                        </div>
+
+      
+              <div class="kss-source kss-style">
+          Source: <code>zen-grids/_undo.scss</code>, line 233
+        </div>
+          </section>
+  </article>
+
+<!-- SCRIPTS -->
+<script src="kss-assets/kss.js"></script>
+<script src="kss-assets/scrollspy.js"></script>
+<script src="kss-assets/prettify.js"></script>
+<script>
+  prettyPrint();
+  var spy = new ScrollSpy('#kss-node', {
+    nav: '.kss-nav__menu-child > li > a',
+    className: 'is-in-viewport'
+  });
+</script>
+
+
+
+
+<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>

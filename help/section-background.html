@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Zen Grids 2.0 Docs</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="kss-assets/kss.css">
+  <link rel="stylesheet" href="/css/examples.css">
+
+</head>
+<body id="kss-node">
+
+<div class="kss-sidebar kss-style">
+  <header class="kss-header">
+    <h1 class="kss-doc-title">Zen Grids 2.0 Docs</h1>
+  </header>
+  <nav class="kss-nav">
+    <ul class="kss-nav__menu">
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="/">
+          <span class="kss-nav__ref">←</span
+          ><span class="kss-nav__name">Back to main website</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="./">
+          <span class="kss-nav__ref">0</span
+          ><span class="kss-nav__name">Overview</span>
+        </a>
+      </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-grids.html">
+          <span class="kss-nav__ref">1</span><span class="kss-nav__name">Grids module</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-flow.html">
+          <span class="kss-nav__ref">2</span><span class="kss-nav__name">Flow module</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-layout.html">
+          <span class="kss-nav__ref">3</span><span class="kss-nav__name">Layout module</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-undo.html">
+          <span class="kss-nav__ref">4</span><span class="kss-nav__name">Undo module</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-functions.html">
+          <span class="kss-nav__ref">5</span><span class="kss-nav__name">Helper functions module</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-background.html">
+          <span class="kss-nav__ref">6</span><span class="kss-nav__name">Background module</span>
+        </a>
+                  <ul class="kss-nav__menu-child">
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-background.html#kssref-background-variables">
+                <span class="kss-nav__ref ">6.1</span
+                ><span class="kss-nav__name">Configurable variables</span>
+              </a>
+            </li>
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-background.html#kssref-background-variables-display-zen-grid-background">
+                <span class="kss-nav__ref kss-nav__ref-child">6.1.1</span
+                ><span class="kss-nav__name">$display-zen-grid-background</span>
+              </a>
+            </li>
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-background.html#kssref-background-variables-zen-grid-color">
+                <span class="kss-nav__ref kss-nav__ref-child">6.1.2</span
+                ><span class="kss-nav__name">$zen-grid-color</span>
+              </a>
+            </li>
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-background.html#kssref-background-variables-zen-grid-number-images">
+                <span class="kss-nav__ref kss-nav__ref-child">6.1.3</span
+                ><span class="kss-nav__name">$zen-grid-number-images</span>
+              </a>
+            </li>
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-background.html#kssref-background-variables-zen-grid-numbers">
+                <span class="kss-nav__ref kss-nav__ref-child">6.1.4</span
+                ><span class="kss-nav__name">$zen-grid-numbers</span>
+              </a>
+            </li>
+                      <li class="kss-nav__menu-item">
+              <a class="kss-nav__menu-link" href="section-background.html#kssref-background-zen-grid-background">
+                <span class="kss-nav__ref ">6.2</span
+                ><span class="kss-nav__name">zen-grid-background()</span>
+              </a>
+            </li>
+                    </ul>
+              </li>
+        </ul>
+  </nav>
+</div>
+<article role="main" class="kss-main">
+
+  
+          <div id="kssref-background" class="kss-section kss-section--depth-1">
+      <div class="kss-style">
+                <h1 class="kss-title kss-title--level-1">
+          <a class="kss-title__permalink" href="#kssref-background">
+            <span class="kss-title__ref">
+              6
+              <span class="kss-title__permalink-hash">
+                background
+              </span>
+            </span>
+            Background module
+          </a>
+        </h1>
+
+                  <div class="kss-description">
+            <p>During site development, it’s often useful to have a background image that shows the columns of the grid. The &quot;Background grid image&quot; module for the Zen Grids system provides a mixin to set this background image.</p>
+<p>Note: This module is not automatically loaded with <code>@import &quot;zen-grids&quot;;</code>. Before using it, you must first import the module with:</p>
+<pre><code>@import &quot;zen-grids/background&quot;;
+</code></pre>
+          </div>
+        
+              </div>
+
+      
+              <div class="kss-source kss-style">
+          Source: <code>zen-grids/_background.scss</code>, line 1
+        </div>
+          </div>
+          <section id="kssref-background-variables" class="kss-section kss-section--depth-2">
+      <div class="kss-style">
+                <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-background-variables">
+            <span class="kss-title__ref">
+              6.1
+              <span class="kss-title__permalink-hash">
+                background.variables
+              </span>
+            </span>
+            Configurable variables
+          </a>
+        </h2>
+
+                  <div class="kss-description">
+            <p>Zen Grids comes with several configuration variables that affect what CSS its mixins and functions output. The default values of these variables are all set using the “guarded assignment” flag, <code>!default</code>. So you can safely set those values before you <code>@import</code> Zen Grids and your values will be respected.</p>
+
+          </div>
+        
+              </div>
+
+      
+              <div class="kss-source kss-style">
+          Source: <code>zen-grids/_variables.scss</code>, line 337
+        </div>
+          </section>
+          <section id="kssref-background-variables-display-zen-grid-background" class="kss-section kss-section--depth-3">
+      <div class="kss-style">
+                <h3 class="kss-title kss-title--level-3">
+          <a class="kss-title__permalink" href="#kssref-background-variables-display-zen-grid-background">
+            <span class="kss-title__ref">
+              6.1.1
+              <span class="kss-title__permalink-hash">
+                background.variables.display-zen-grid-background
+              </span>
+            </span>
+            $display-zen-grid-background
+          </a>
+        </h3>
+
+                  <div class="kss-description">
+            <p>Specifies whether the background grid image should be displayed.</p>
+<p>Since the background grid image is only useful during development and during debugging, we need an easy way to turn off the background grid image without removing all the calls to <code>zen-grid-background()</code> from the code base. To turn off all background grid images, set <code>$display-zen-grid-background</code> to <code>false</code>.</p>
+<pre><code>$display-zen-grid-background: true !default;
+</code></pre>
+          </div>
+        
+              </div>
+
+      
+              <div class="kss-source kss-style">
+          Source: <code>zen-grids/_variables.scss</code>, line 380
+        </div>
+          </section>
+          <section id="kssref-background-variables-zen-grid-color" class="kss-section kss-section--depth-3">
+      <div class="kss-style">
+                <h3 class="kss-title kss-title--level-3">
+          <a class="kss-title__permalink" href="#kssref-background-variables-zen-grid-color">
+            <span class="kss-title__ref">
+              6.1.2
+              <span class="kss-title__permalink-hash">
+                background.variables.zen-grid-color
+              </span>
+            </span>
+            $zen-grid-color
+          </a>
+        </h3>
+
+                  <div class="kss-description">
+            <p>Specify the color used in the background grid image produced by the <code>zen-grid-background()</code> mixin.</p>
+<pre><code>$zen-grid-color: #ffdede !default;
+</code></pre>
+          </div>
+        
+              </div>
+
+      
+              <div class="kss-source kss-style">
+          Source: <code>zen-grids/_variables.scss</code>, line 345
+        </div>
+          </section>
+          <section id="kssref-background-variables-zen-grid-number-images" class="kss-section kss-section--depth-3">
+      <div class="kss-style">
+                <h3 class="kss-title kss-title--level-3">
+          <a class="kss-title__permalink" href="#kssref-background-variables-zen-grid-number-images">
+            <span class="kss-title__ref">
+              6.1.3
+              <span class="kss-title__permalink-hash">
+                background.variables.zen-grid-number-images
+              </span>
+            </span>
+            $zen-grid-number-images
+          </a>
+        </h3>
+
+                  <div class="kss-description">
+            <p>Specify the set of images used for the numbering of the columns in the background grid image.</p>
+<p>The default value of the <code>$zen-grid-number-images</code> variable is a list of the numbers 1 through 25, each rendered as an image and encoded as a data URI. Users who are crazy enough to use a 26-column grid or larger are free to extend this set.</p>
+<pre><code>$zen-grid-number-images: (url(&#39;data:image/png;base64, …), …) !default;
+</code></pre>
+          </div>
+        
+              </div>
+
+      
+              <div class="kss-source kss-style">
+          Source: <code>zen-grids/_variables.scss</code>, line 367
+        </div>
+          </section>
+          <section id="kssref-background-variables-zen-grid-numbers" class="kss-section kss-section--depth-3">
+      <div class="kss-style">
+                <h3 class="kss-title kss-title--level-3">
+          <a class="kss-title__permalink" href="#kssref-background-variables-zen-grid-numbers">
+            <span class="kss-title__ref">
+              6.1.4
+              <span class="kss-title__permalink-hash">
+                background.variables.zen-grid-numbers
+              </span>
+            </span>
+            $zen-grid-numbers
+          </a>
+        </h3>
+
+                  <div class="kss-description">
+            <p>Specify how to place the column numbers in the background grid image. Normally, column numbers are displayed across the top of the background grid image and then displayed in reverse order along the bottom of the background grid image. Can be set to: <code>both</code>, <code>top</code>, or <code>none</code>.</p>
+<pre><code>$zen-grid-numbers: both !default;
+</code></pre>
+          </div>
+        
+              </div>
+
+      
+              <div class="kss-source kss-style">
+          Source: <code>zen-grids/_variables.scss</code>, line 356
+        </div>
+          </section>
+          <section id="kssref-background-zen-grid-background" class="kss-section kss-section--depth-2">
+      <div class="kss-style">
+                <h2 class="kss-title kss-title--level-2">
+          <a class="kss-title__permalink" href="#kssref-background-zen-grid-background">
+            <span class="kss-title__ref">
+              6.2
+              <span class="kss-title__permalink-hash">
+                background.zen-grid-background
+              </span>
+            </span>
+            zen-grid-background()
+          </a>
+        </h2>
+
+                  <div class="kss-description">
+            <p>Adds a background grid image to an element’s background.</p>
+<p>Since the mixins of Zen Grids use the <code>$column-position</code> for placement of grid items, the background grid image produced by this mixin numbers all of the columns. The <code>$grid-numbers</code> parameter specifies how to place the column numbers in the background grid image. By default, column numbers are displayed across the top of the background grid image and then displayed in reverse order along the bottom of the background grid image. <code>$grid-numbers</code> can be set to: <code>both</code> (the default), <code>top</code> (don’t display the bottom numbers), <code>bottom</code> (don’t display the top numbers), or <code>none</code> (don’t display any column numbers.)</p>
+<p>Note: when the <code>$direction</code> is set to <code>right</code> (for RTL languages), the column numbers are displayed right-to-left along the top and left-to-right along the bottom.</p>
+<p>The easiest way to align this background grid image to the actual grid is to apply this mixin to the same element that <code>zen-grid-container()</code> is applied to.</p>
+<pre><code>.layout-container {
+  @include zen-grid-background();
+  @include zen-layout(m) {
+    @include zen-grid-background();
+  }
+  @include zen-layout(l) {
+    @include zen-grid-background();
+  }
+}
+</code></pre><p>Common usage:</p>
+<pre><code>@include zen-grid-background();
+</code></pre>
+          </div>
+        
+                              <div class="kss-parameters__title">Parameters:</div>
+            <ul class="kss-parameters">
+                      <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$columns</code></div>
+              <div class="kss-parameters__description">
+                The number of columns for this background. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-columns"><code>$zen-columns</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-columns</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$gutters</code></div>
+              <div class="kss-parameters__description">
+                The width of the gutters for this background. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-gutters"><code>$zen-gutters</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-gutters</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$gutter-method</code></div>
+              <div class="kss-parameters__description">
+                The gutter method to use for this background. See the docs for <a href="section-grids.html#kssref-grids-variables-zen-gutter-method"><code>$zen-gutter-method</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-gutter-method</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$grid-width</code></div>
+              <div class="kss-parameters__description">
+                The width of the entire grid for this background. See the docs for <a href="section-grids.html#kssref-grids-variables-fixed-zen-grid-width"><code>$zen-gutter-method</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-grid-width</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$grid-color</code></div>
+              <div class="kss-parameters__description">
+                The column color to use for the background grid image.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-grid-color</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$grid-numbers</code></div>
+              <div class="kss-parameters__description">
+                Specify the set of images used for the numbering of the columns in the background grid image.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-grid-numbers</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$direction</code></div>
+              <div class="kss-parameters__description">
+                The direction to use for this background. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-direction"><code>$zen-direction</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-direction</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$switch-direction</code></div>
+              <div class="kss-parameters__description">
+                Whether to switch the default direction for this background. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-switch-direction"><code>$zen-switch-direction</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-switch-direction</code>
+                  </div>
+                              </div>
+            </li>
+                                        <li class="kss-parameters__item">
+              <div class="kss-parameters__name"><code>$rtl-selector</code></div>
+              <div class="kss-parameters__description">
+                The RTL selector for this background. See the docs for <a href="section-grids.html#kssref-grids-variables-rtl-zen-rtl-selector"><code>$zen-rtl-selector</code></a>.
+                                  <div class="kss-parameters__default-value">
+                    Defaults to: <code>$zen-rtl-selector</code>
+                  </div>
+                              </div>
+            </li>
+                      </ul>
+                        </div>
+
+      
+              <div class="kss-source kss-style">
+          Source: <code>zen-grids/_background.scss</code>, line 19
+        </div>
+          </section>
+  </article>
+
+<!-- SCRIPTS -->
+<script src="kss-assets/kss.js"></script>
+<script src="kss-assets/scrollspy.js"></script>
+<script src="kss-assets/prettify.js"></script>
+<script>
+  prettyPrint();
+  var spy = new ScrollSpy('#kss-node', {
+    nav: '.kss-nav__menu-child > li > a',
+    className: 'is-in-viewport'
+  });
+</script>
+
+
+
+
+<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>

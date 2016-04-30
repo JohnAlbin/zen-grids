@@ -1,140 +1,105 @@
 <!DOCTYPE html>
-<!--[if IEMobile 7]><html class="iem7" lang="en"><![endif]-->
-<!--[if lte IE 6]><html class="ie6 ie6-7 ie6-8" lang="en"><![endif]-->
-<!--[if (IE 7)&(!IEMobile)]><html class="ie7 ie6-7 ie6-8" lang="en"><![endif]-->
-<!--[if IE 8]><html class="ie8 ie6-8" lang="en"><![endif]-->
-<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html lang="en"><!--<![endif]-->
+<html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Zen Grids Reference: a responsive grid system built with Compass and Sass</title>
+  <title>Zen Grids 2.0 Docs</title>
 
-  <link rel="stylesheet" href="/css/help.css" media="all">
-  <link rel="shortcut icon" href="/favicon.ico" sizes="16x16" type="image/vnd.microsoft.icon">
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
 
-  <meta name="HandheldFriendly" content="true">
-  <meta name="MobileOptimized" content="width">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta http-equiv="cleartype" content="on">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="stylesheet" href="kss-assets/kss.css">
+  <link rel="stylesheet" href="/css/examples.css">
+
 </head>
-<body>
+<body id="kss-node">
 
-<p id="skip-link">
-<a href="#main-menu">Jump to main menu</a>
-</p>
-
-<div class="page">
-
-  <header id="header" role="banner">
-    <a href="/" title="Home" rel="home" id="logo"><img src="/images/zen-grids-logo.png" alt="Zen Grids" width="269" height="216"></a>
-    <hgroup>
-      <h1>Zen Grids</h1>
-      <h2>A responsive grid system <em>built with the power of <a href="/#aside2">Sass</a></em></h2>
-    </hgroup>
+<div class="kss-sidebar kss-style">
+  <header class="kss-header">
+    <h1 class="kss-doc-title">Zen Grids 2.0 Docs</h1>
   </header>
-
-  <article id="content" role="main">
-    <section id="help-toc">
-    <h1>Reference documentation</h1>
-
-    <p>
-    This documentation is for the new 2.0 version of Zen Grids. Pardon our dust while we get the docs up-to-date.
-    </p>
-    <p>
-    For the previous Zen Grids 1.x documentation, see <a href="http://v1.zengrids.com/">v1.zengrids.com</a>.
-    </p>
-
-    <ul>
-    <li><a href="/help/#overview">Overview</a></li>
-    <li><a href="/reference/grids/">The default “grids” module</a></li>
-    <li><a href="/reference/functions/">The “helper functions” module</a></li>
-    <li><a href="/reference/background/">The “background” module</a></li>
-    <li><a href="/reference/flow/">The “flow” module</a></li>
-    <li><a href="/help/examples/">Examples</a></li>
-    </ul>
-    </section>
-
-    <section class="layout__start" id="overview">
-    <h2>Overview <a href="#overview" title="permalink">#</a></h2>
-    <p>
-    The Zen Grids system is organized into a handful of modules that can be imported as needed. The basic functionality is contained in the “grids” and “helper functions” module. Optional functionality can be found in the “background” and “flow” modules.
-    </p>
-    <h3 id="grids-module">The “grids” module <a href="#grids-module" title="permalink">#</a></h3>
-    <p>
-    This is one of the default modules imported using:
-    </p>
-    <pre><code>@import "zen-grids";</code></pre>
-    <p>
-    The grids module contains all the configurable variables and mixins you’ll need to create a layout. It will also automatically import the “helper functions” module so that you have access to the functions you’ll need when creating a layout.
-    </p>
-    <h3 id="functions-module">The “helper functions” module <a href="#functions-module" title="permalink">#</a></h3>
-    <p>
-    This is one of the default modules imported using:
-    </p>
-    <pre><code>@import "zen-grids";</code></pre>
-    <p>
-    When combined with the grids module, you will have access to all the configurable variables, mixins, and functions you’ll need to create a layout.
-    </p>
-    <!--
-    <p>
-    @todo: why you'd imoprt it manually
-    </p>
-    -->
-    <pre><code>@import "zen-grids/functions";</code></pre>
-    <h3 id="background-module">The “background” module <a href="#background-module" title="permalink">#</a></h3>
-    <p>
-    During development, it is often useful for the layout designer to see the
-    grid columns as the grid items are arranged on the page. The “background”
-    module can provide a background image for use during grid development. It
-    can be imported using:
-    </p>
-    <pre><code>@import "zen-grids/background";</code></pre>
-    <h3 id="flow-module">The “flow” module <a href="#flow-module" title="permalink">#</a></h3>
-    <p>
-    To understand this module, it is important to understand the CSS definition
-    of “normal flow”. According to CSS, all content is part of the <a href="http://www.w3.org/TR/CSS2/visuren.html#positioning-scheme">normal
-    <em>flow</em></a> by default. For example, paragraph text and images are part of
-    the normal flow.
-    </p>
-    <p>
-    Positioned elements (floats, absolute positioning, etc.) are not part of the
-    normal flow. Zen Grid’s grid items are also positioned elements and,
-    therefore, are no longer part of the normal flow.
-    </p>
-    <p>
-    Often, a layout designer will make one of Zen Grid’s grid items span
-    multiple columns. The elements within that grid item are part of the normal
-    flow and span the same number of columns as their grid item container. The
-    layout designer may wish to have an element in the normal flow align to one
-    or more of the columns within the grid item. For example, if a grid item
-    spans 3 columns, the layout designer may want to have all of the images
-    within it to align to the first column inside that grid item and have other
-    flow items wrap around those images.
-    </p>
-    <p>
-    The “flow” module contains helper mixins to help align normal flow items
-    within a grid item. It can be imported using:
-    </p>
-    <pre><code>@import "zen-grids/flow";</code></pre>
-    </section>
-
-  </article>
-
-  <nav id="main-menu" role="navigation">
-    <h2>Main menu</h2>
-    <p>
-    <a href="/">Intro</a> ★
-    <!-- <a href="/quick-demo.html">Quick Demo</a> ★ -->
-    <a href="/help/">Reference</a>
-    </p>
+  <nav class="kss-nav">
+    <ul class="kss-nav__menu">
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="/">
+          <span class="kss-nav__ref">←</span
+          ><span class="kss-nav__name">Back to main website</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="./">
+          <span class="kss-nav__ref">0</span
+          ><span class="kss-nav__name">Overview</span>
+        </a>
+      </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-grids.html">
+          <span class="kss-nav__ref">1</span><span class="kss-nav__name">Grids module</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-flow.html">
+          <span class="kss-nav__ref">2</span><span class="kss-nav__name">Flow module</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-layout.html">
+          <span class="kss-nav__ref">3</span><span class="kss-nav__name">Layout module</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-undo.html">
+          <span class="kss-nav__ref">4</span><span class="kss-nav__name">Undo module</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-functions.html">
+          <span class="kss-nav__ref">5</span><span class="kss-nav__name">Helper functions module</span>
+        </a>
+              </li>
+          <li class="kss-nav__menu-item">
+        <a class="kss-nav__menu-link" href="section-background.html">
+          <span class="kss-nav__ref">6</span><span class="kss-nav__name">Background module</span>
+        </a>
+              </li>
+        </ul>
   </nav>
-
-  <footer id="footer">
-    <small>© 2011-2015 <a href="http://john.albin.net/">John Albin Wilkins</a>. All rights reserved.  ★  <a href="https://github.com/JohnAlbin/zen-grids/blob/master/LICENSE.txt">Code licensed under GPL</a>.  ★  Built by <a href="http://twitter.com/JohnAlbin">@JohnAlbin</a></small>
-  </footer>
-
 </div>
+<article role="main" class="kss-main">
+  <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
+    <h2 id="zen-grids-2-0">Zen Grids 2.0</h2>
+<h3 id="reference-documentation">Reference documentation</h3>
+<p>This documentation is for the new 2.0 version of Zen Grids. Pardon our dust while we get the <em>design</em> up-to-date. Rest asured, the docs are up-to-date.</p>
+<p>For the previous Zen Grids 1.x documentation, see <a href="http://v1.zengrids.com">v1.zengrids.com</a>.</p>
+<h3 id="modules">Modules</h3>
+<p>Zen Grids 2.0 is divided into small modules that small and logical, making it easy to load and easier to understand.</p>
+<ul>
+<li><a href="section-grids.html">The “grids” module</a> contains most of the configurable variables and mixins you’ll need to create a layout.</li>
+<li><a href="section-flow.html">The “flow” module</a> helps align normal flow items within a grid.</li>
+<li><a href="section-layout.html">The “layout” module</a> helps to create a set of grids for responsive designs.</li>
+<li><a href="section-undo.html">The “undo” module</a> helps undo CSS applied in different media queries.</li>
+<li><a href="section-functions.html">The “helper functions” module</a> contains functions you may need to create a layout.</li>
+<li><a href="section-background.html">The “background” module</a> is used during development to help see the grid columns</li>
+</ul>
 
+  </div>
+</article>
+
+<!-- SCRIPTS -->
+<script src="kss-assets/kss.js"></script>
+<script src="kss-assets/scrollspy.js"></script>
+<script src="kss-assets/prettify.js"></script>
+<script>
+  prettyPrint();
+  var spy = new ScrollSpy('#kss-node', {
+    nav: '.kss-nav__menu-child > li > a',
+    className: 'is-in-viewport'
+  });
+</script>
+
+
+
+
+<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
 </body>
 </html>
