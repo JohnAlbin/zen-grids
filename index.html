@@ -44,13 +44,6 @@
   </nav>
 
   <aside id="tagline">
-    <p>
-    This documentation is for the new 2.0 version of Zen Grids. Pardon our dust while we get the docs up-to-date.
-    </p>
-    <p>
-    For the previous Zen Grids 1.x documentation, see <a href="http://v1.zengrids.com/">v1.zengrids.com</a>.
-    </p>
-    <!--
     <figure>
       <p class="limitless">Limitless layouts…</p>
       <img src="images/limitless-layouts.png" alt="" width="600" height="225" />
@@ -60,7 +53,7 @@
     Powerful ★
     Simple ★
     Rugged
-    </p>-->
+    </p>
   </aside>
 
   <aside id="warning">
@@ -215,26 +208,26 @@ $zen-gutters: <span class="tooltip-target">10px; <span class="tooltip up"><span 
     <a name="install"></a>
     <h2>Installation is easy!</h2>
     <p>If you haven’t already installed Sass:<br>
+    <kbd>npm install node-sass</kbd><br>
+    or, using Gem:<br>
     <kbd>gem install sass</kbd></p>
-    <p>
-    If you want to use Zen Grids’ background grid image, you’ll need to install
-    Compass as well:<br>
-    <kbd>gem install compass</kbd></p>
     <p class="more"><a href="http://sass-lang.com/download.html">More help…</a></p>
     <p>And installing Zen Grids is just as easy:<br>
+    <kbd>npm install zen-grids</kbd><br>
+    or, using Gem:<br>
     <kbd>gem install zen-grids</kbd><br>
     or, using <a href="http://twitter.github.io/bower/">Bower</a>:<br>
     <kbd>bower install zen-grids</kbd></p>
-    <p>Last thing. Your project <a href="http://www.youtube.com/watch?v=8BX-GL_8QNw">should have a config.rb file</a>. (If you don’t have one, you can <a href="/config.rb">copy mine</a>.) Add this line to it:<br>
-    <kbd>require 'zen-grids'</kbd></p>
+    <p>Then just add this to your Sass:<br>
+    <code>@import "path/to/install/zen-grids/sass/zen-grids";
     <p>That’s it. Seriously.</p>
   </aside>
 
   <aside id="news">
     <a name="news"></a>
     <h2>News</h2>
-    <p>Zen Grids 2.0.0-beta.3 is out now!</p>
-    <p><strong>More tutorials and demos are coming soon</strong> on aligning flow items to the grid, RTL language support, box-sizing polyfill for IE7 and earlier, and optimizing the generated CSS.</p>
+    <p>Zen Grids 2.0.2 is out now!</p>
+    <p><strong>Demos are coming soon</strong>.</p>
     <p>For now, read the <a href="/help/">Zen Grids reference docs</a>.</p>
     <p>Then, contribute, fix and discuss:<br>
     <a href="https://github.com/JohnAlbin/zen-grids">github.com/JohnAlbin/zen-grids</a></p>
@@ -245,14 +238,11 @@ $zen-gutters: <span class="tooltip-target">10px; <span class="tooltip up"><span 
     <h2>What is Sass?</h2>
     <p class="equation">Sass = CSS + Awesomeness</p>
     <p>Sass is a super-set of CSS. <strong>Any valid CSS code is valid Sass.</strong> But Sass adds author-friendly capabilities such as nesting, variables, arithmetic and mixins. And Sass gets compiled into regular CSS so its 100% compatible with all browsers.</p>
-    <p>Compass, its sister project, is a library of reusable, pre-made Sass code. You can learn more at:</p>
-    <p class="center"><big><a href="http://sass-lang.com/">sass-lang.com</a></big><br>
-    and<br>
-    <big><a href="http://compass-style.org/">compass-style.org</a></big></p>
+    <p class="center"><big><a href="http://sass-lang.com/">sass-lang.com</a></big></p>
   </aside>
 
   <footer id="footer">
-    <small>© 2011-2015 <a href="http://john.albin.net/">John Albin Wilkins</a>. All rights reserved.  ★  <a href="https://github.com/JohnAlbin/zen-grids/blob/master/LICENSE.txt">Code licensed under GPL</a>.  ★  Built by <a href="http://twitter.com/JohnAlbin">@JohnAlbin</a></small>
+    <small>© 2011-2016 <a href="http://john.albin.net/">John Albin Wilkins</a>. All rights reserved.  ★  <a href="https://github.com/JohnAlbin/zen-grids/blob/master/LICENSE.txt">GPL license</a>.  ★  Built by <a href="http://twitter.com/JohnAlbin">@JohnAlbin</a></small>
   </footer>
 
 </div>
