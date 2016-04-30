@@ -1,0 +1,14 @@
+{
+  "name": "eyeglass-test",
+  "version": "1.0.0",
+  "description": "A test of Eyeglass integration.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Albin Wilkins <virtually.johnalbin@gmail.com> (http://john.albin.net/)",
+  "license": "GPL-2.0",
+  "dependencies": {
+    "zen-grids": "*"
+  }
+}

@@ -36,13 +36,12 @@
   },
   "license": "GPL-2.0",
   "devDependencies": {
-    "chai": "^3.4.1",
-    "eslint": "^1.9.0",
+    "chai": "^3.5.0",
+    "eslint": "^2.9.0",
     "eyeglass": "^0.8.3",
-    "kss": "^2.1.0",
-    "mocha": "^2.3.4",
+    "mocha": "^2.4.5",
     "node-sass-import-once": "^1.2.0",
-    "sassy-test": "^2.0.0",
+    "sassy-test": "^3.0.0",
     "support-for": "^1.0.0"
   }
 }
