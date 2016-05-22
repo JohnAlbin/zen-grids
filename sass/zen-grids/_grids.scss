@@ -209,6 +209,7 @@
     #{'*margin-' + $rev}: -99.9%;
   }
   @include zen-rtl($rtl-selector) {
+    float: $rev;
     margin: {
       #{$rev}: $margin;
       #{$dir}: -100%;

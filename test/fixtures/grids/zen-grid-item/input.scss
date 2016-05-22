@@ -100,5 +100,5 @@
   @include zen-grid-item(1, 1, $gutters: 10px);
 
   /* Test zen-grid-item(1, 1) with $rtl-selector and $zen-auto-include-grid-item-base: false */
-  @include zen-grid-item(1, 1, $columns: 2, $rtl-selector: '[dir="rtl"]');
+  @include zen-grid-item(1, 2, $columns: 2, $rtl-selector: '[dir="rtl"]');
 }

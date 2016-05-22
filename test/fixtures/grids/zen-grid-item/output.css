@@ -80,8 +80,9 @@
   /* Test zen-grid-item(1, 1) with $rtl-selector and $zen-auto-include-grid-item-base: false */
   float: left;
   width: 50%;
-  margin-left: 0%;
+  margin-left: 50%;
   margin-right: -100%; }
   [dir="rtl"] #test-zen-grid-item {
-    margin-right: 0%;
+    float: right;
+    margin-right: 50%;
     margin-left: -100%; }
