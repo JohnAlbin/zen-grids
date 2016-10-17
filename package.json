@@ -32,7 +32,8 @@
   },
   "scripts": {
     "test": "mocha",
-    "posttest": "eslint test"
+    "posttest": "eslint test",
+    "test-only": "mocha"
   },
   "license": "GPL-2.0",
   "devDependencies": {

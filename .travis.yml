@@ -7,22 +7,5 @@ node_js:
   - '4'
   - '5'
   - '6'
-script: npm test
-
-# Eyeglass requires this to install on Node.js under Travis. *sigh*
-before_install:
-  - if [ $TRAVIS_OS_NAME == "linux" ]; then
-      export CC="gcc-4.7";
-      export CXX="g++-4.7";
-      export LINK="gcc-4.7";
-      export LINKXX="g++-4.7";
-    fi
-  - gcc --version
-  - g++ --version
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - gcc-4.7
-      - g++-4.7
+# Skip npm posttest script on Node 0.12.
+script: ./bin/is-modern-node && npm test || npm run test-only
