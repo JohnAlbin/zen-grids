@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "kss-node --builder custom-builder --source ~/Sites/projects/zen-grids/sass --destination help --title 'Zen Grids 2.0 Docs' --nav-depth 3 --css /css/examples.css"
+    "build": "kss --builder custom-builder --source ~/Sites/projects/zen-grids/sass --destination help --title 'Zen Grids 2.0 Docs' --nav-depth 3 --css /css/examples.css"
   },
   "repository": {
     "type": "git",
