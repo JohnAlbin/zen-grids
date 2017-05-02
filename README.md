@@ -1,5 +1,7 @@
 # About Zen Grids
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/JohnAlbin/zen-grids.svg)](https://greenkeeper.io/)
+
 Zen Grids is an intuitive, flexible grid system that leverages the natural source order of your content to make it easier to create fluid responsive designs. With an easy-to-use Sass mixin set, the Zen Grids system can be applied to an infinite number of layouts, including responsive, adaptive, fluid and fixed-width layouts.
 
 More information can be found at http://zengrids.com
