@@ -14,6 +14,8 @@
 //
 // Style guide: flow
 
+@use "sass:math";
+
 @import "./grids";
 
 
@@ -119,7 +121,7 @@
     // Calculate the parent's width.
     $parent-width: zen-grid-item-width($parent-column-span, $main-columns, $main-gutters, $gutter-method, $main-grid-width, $box-sizing);
     // Calculate the new gutters.
-    $gutters: $main-gutters * ($grid-width / $parent-width);
+    $gutters: $main-gutters * math.div($grid-width, $parent-width);
   }
 
   // Include the flow item base mixin.
@@ -157,7 +159,7 @@
   @else if unit($grid-width) == "%" {
     // Our percentage $width is off since the parent has $main-gutters padding.
     // Calculate an adjusted gutter to fix the width.
-    $adjusted-gutter: ($columns - $column-span) * $gutters / $columns;
+    $adjusted-gutter: math.div(($columns - $column-span) * $gutters, $columns);
 
     // Ensure the HTML item either has a full gutter or no gutter on each side.
     padding-#{$dir}: 0;
