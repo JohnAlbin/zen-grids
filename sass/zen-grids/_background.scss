@@ -76,7 +76,7 @@
 
     // Calculate half of the unit width.
     $unit-width           : zen-unit-width($columns, $gutters, $gutter-method, $grid-width);
-    $half-unit-width      : $unit-width / 2;
+    $half-unit-width      : $unit-width * 0.5;
 
     // Determine the float direction.
     $dir                  : $direction;

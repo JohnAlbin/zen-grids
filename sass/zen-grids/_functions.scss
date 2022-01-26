@@ -9,6 +9,8 @@
 // Style guide: functions
 
 
+@use "sass:math";
+
 @import "./variables";
 
 
@@ -39,7 +41,7 @@
   $gutter-side      : $zen-direction,
   $direction        : $zen-direction
 ) {
-  $half-gutter: $gutters / 2;
+  $half-gutter: $gutters * 0.5;
   // Special handling in case gutter has an odd number of pixels.
   @if unit($gutters) == "px" {
     @if $gutter-side == $direction {
@@ -99,10 +101,10 @@
   $unit-width: 0;
   @if $gutter-method == margin {
     $test: zen-compare-units('gutter-method: margin', $gutters, $grid-width);
-    $unit-width: ($grid-width - ($columns - 1) * $gutters) / $columns;
+    $unit-width: math.div($grid-width - ($columns - 1) * $gutters, $columns);
   }
   @else {
-    $unit-width: $grid-width / $columns;
+    $unit-width: math.div($grid-width, $columns);
   }
   @if unit($unit-width) == "px" and floor($unit-width) != ceil($unit-width) {
     @if $gutter-method == margin {
